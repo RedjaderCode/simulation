@@ -13,7 +13,7 @@ $(obj): $(files)
 	rm *.o *.su
 
 S: $(files)
-	g++ -S $(files) $(linker) $(include) $(flag)
+	g++ -S $(files) $(linker) $(include) $(flag) -fverbose-asm
 
 clean:
 	rm *.o *.su
