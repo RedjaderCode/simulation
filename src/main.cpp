@@ -33,6 +33,7 @@ ID2D1Factory* Factory               = nullptr;
 ID2D1HwndRenderTarget* RenderTarget = nullptr;
 ID2D1BitmapRenderTarget* BitmapRT   = nullptr;
 ID2D1Bitmap* Bitmap                 = nullptr;
+ID2D1SolidColorBrush** brushPool    = nullptr;
 
 #include "debug.h"
 
@@ -104,6 +105,14 @@ public:
 		cell(Vec3D _velocity)       : velocity(_velocity)         {}
 		cell(double _pressure)      : pressure(_pressure)         {}
 
+		~cell()
+		{
+			temperature  = 0.0f;
+			velocity     = Vec3D(0.0f, 0.0f, 0.0f);
+			pressure     = 0.0;
+			active       = false;
+		}
+
 		float temperature = 0.0f;
 		Vec3D velocity    = Vec3D(0.0f, 0.0f, 0.0f);
 		double pressure   = 0.0;
@@ -114,11 +123,16 @@ public:
 public:
 	uint32_t InitMatrix(uint32_t width, uint32_t height, uint32_t depth)
 	{
-		//void* mamory = malloc(sizeof(cell) * (width * height* depth));
-		//cell* CELL_FRONT_BUFFER = new(memory) cell[width * height* depth];
+		// front buffer
+		memoryfb = malloc(sizeof(cell) * (width * height * depth));
+		CELL_FRONT_BUFFER = new(memoryfb) cell[width * height* depth];
 
-		CELL_FRONT_BUFFER = std::unique_ptr<cell[]>(new cell[width * height * depth]);
-		CELL_BACK_BUFFER  = std::unique_ptr<cell[]>(new cell[width * height * depth]);
+		// back buffer
+		memorybb = malloc(sizeof(cell) * (width * height * depth));
+		CELL_BACK_BUFFER  = new(memorybb) cell[width * height * depth];
+
+		//CELL_FRONT_BUFFER = std::unique_ptr<cell[]>(new cell[width * height * depth]);
+		//CELL_BACK_BUFFER  = std::unique_ptr<cell[]>(new cell[width * height * depth]);
 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
 		w = width; h = height; d = depth;
 
@@ -128,6 +142,14 @@ public:
 			//CELL_BACK_BUFFER[i].MaterialType = element::air;
 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+		}
+
+		uint32_t i1 = 0;
+		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+		{
+			//CELL_BACK_BUFFER[i].MaterialType = element::air;
+			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
 		}
 
 		// create an initializer field for attributes of materials to tell the cells what their attributes are
@@ -225,7 +247,8 @@ public:
 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
 				{
 					// copy the back buffer to the front buffer up until the point at which a cell tranformation was detected
-					memcpy(CELL_FRONT_BUFFER.get() + i, CELL_BACK_BUFFER.get() + i, sizeof(cell) * (w*h*d - i));
+					//memcpy(CELL_FRONT_BUFFER.get() + i, CELL_BACK_BUFFER.get() + i, sizeof(cell) * (w*h*d - i));
+					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
 					InvalidateRect(hwnd, nullptr, FALSE);
 					break;
 				}
@@ -246,8 +269,6 @@ public:
 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
 					//WriteDataTo(x, y, z, cell(static_cast<element>(rand() % element::size)));
-
-					//WriteDataTo(x, AccessDataAt(x, y, z).MaterialType != element::air && AccessDataAt(x, y, z).MaterialType != element::Custom ? y - 0.01 : y, z, cell());
 				}
 			}
 		}
@@ -300,14 +321,15 @@ public:
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
 		return z * (w * h) + y * w + x; 
 	}
-	
-	
-	std::unique_ptr<cell[]> CELL_FRONT_BUFFER; //allowed to use for visual representation, but let's wrap it in a function later
+/////////////////////////////////////////////////	
+	void* memoryfb          = nullptr;
+	cell* CELL_FRONT_BUFFER = nullptr;
 
-private:///////////////////////////////////////////////////////////////////////////////////////|
-	std::unique_ptr<cell[]> CELL_BACK_BUFFER;    ///////////////////////////////////////////// |
-	std::unique_ptr<MaterialAttributes[]> matAtt;///////////////////////////////////////////// |
-public://///////////////////////////////////////////////////////////////////////////////////// |
+private://///////////////////////////////////////
+	void* memorybb          = nullptr; 
+	cell* CELL_BACK_BUFFER  = nullptr; 
+	std::unique_ptr<MaterialAttributes[]> matAtt;
+public://////////////////////////////////////////
 
 	uint32_t w = 0;
 	uint32_t h = 0;
@@ -322,6 +344,17 @@ public://///////////////////////////////////////////////////////////////////////
 	{
 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	}
+
+	inline void constexpr DestroyMatrix()
+	{
+		for(uint32_t i=0; i<w * h * d; ++i)
+		{
+			CELL_FRONT_BUFFER[i].~cell();
+			CELL_BACK_BUFFER[ i].~cell();
+		}
+		free(memorybb);
+		free(memoryfb);
 	}
 };
 
@@ -451,6 +484,15 @@ protected:
 
 namespace WINDOWGraphicsOverlay
 {
+	inline void ErrorHandle(HRESULT hr)
+	{
+		if(FAILED(hr))
+		{
+			wchar_t errorMsg[512];
+       		swprintf_s(errorMsg, L"D2D1CreateFactory failed with HRESULT: 0x%08X", hr);
+       		MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
+		}
+	}
 	COLORREF GetMaterialColor(MATRIX::element e)
 	{
 		switch(e)
@@ -464,9 +506,31 @@ namespace WINDOWGraphicsOverlay
 		}
 	}
 
+	inline void AllocBrushPool(HWND hwnd)
+	{ // cache a pool of collours for the direct3d api to use
+
+		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+
+		uint32_t N = static_cast<uint32_t>(MATRIX::element::size);
+
+		void** memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
+		brushPool 	  = reinterpret_cast<ID2D1SolidColorBrush**>(memory);
+
+		for(uint32_t i=0; i<=N -1; ++i)
+		{
+			brushPool[i] = nullptr;
+		}
+
+		for(uint32_t i=0; i<=N -1; ++i)
+		{
+			COLORREF Color 		  = WINDOWGraphicsOverlay::GetMaterialColor(static_cast<MATRIX::element>(i));
+			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+		}
+	}
+
 	bool blitOverlay(HWND hwnd, uint32_t zLevel, int32_t cellWidth, int32_t cellHeight)
 	{
-		printf("BitmapRT = %p\n", BitmapRT);
 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
 
 		if(!BitmapRT)
@@ -477,33 +541,19 @@ namespace WINDOWGraphicsOverlay
 
 		BitmapRT->BeginDraw();
 		BitmapRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
+
 		for (int j = 0; j < matrix->h; ++j)
     	{
     		for (int i = 0; i < matrix->w; ++i)
     		{
-				COLORREF CellColor = WINDOWGraphicsOverlay::GetMaterialColor(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, zLevel)].MaterialType);
-				D2D1_COLOR_F color = {GetRValue(CellColor) / 255.0f, GetGValue(CellColor) / 255.0f, GetBValue(CellColor) / 255.0f, 1.0f};
-				ID2D1SolidColorBrush* pBrush = nullptr;
-				BitmapRT->CreateSolidColorBrush(color, &pBrush);
-				D2D1_RECT_F rect = D2D1::RectF(
-    				static_cast<float>(i * cellWidth),
-    				static_cast<float>(j * cellHeight),
-    				static_cast<float>((i + 1) * cellWidth),
-    				static_cast<float>((j + 1) * cellHeight)
-    			);
-    			BitmapRT->FillRectangle(&rect, pBrush);
-    			pBrush->Release();
+				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+    			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
 			}
 		}
 		BitmapRT->EndDraw();
-		Bitmap->Release();
+		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
 		HRESULT hr = BitmapRT->GetBitmap(&Bitmap);
-		if(FAILED(hr))
-		{
-			wchar_t errorMsg[512];
-       		swprintf_s(errorMsg, L"D2D1CreateFactory failed with HRESULT: 0x%08X", hr);
-       		MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
-		}
+		ErrorHandle(hr);
 	}
 
 	LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp)
@@ -526,6 +576,17 @@ namespace WINDOWGraphicsOverlay
 
 			if(RenderTarget){RenderTarget->Release();}
 			if(Factory)     {Factory->Release();     }
+
+			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
+			{
+				if(brushPool[i])
+				{
+					brushPool[i]->Release();
+					brushPool[i] = nullptr;
+				}
+
+				free(brushPool);
+			}
 		}
 
 		switch(msg)
@@ -564,14 +625,7 @@ namespace WINDOWGraphicsOverlay
 				{
 					hr = Factory->CreateHwndRenderTarget(props, hwndProps, &RenderTarget);
 				}
-
-				if(FAILED(hr))
-				{
-					wchar_t errorMsg[512];
-        			swprintf_s(errorMsg, L"D2D1CreateFactory failed with HRESULT: 0x%08X", hr);
-        			MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
-					return FALSE;
-				}
+				ErrorHandle(hr);
 
 				if(RenderTarget)
 				{
@@ -641,36 +695,14 @@ namespace WINDOWGraphicsOverlay
 
 				Camera cam;
 
-				//RenderTarget->BeginDraw();
-				//RenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::Black));
-				//for (int j = 0; j < matrix->h; ++j)
-    			//{
-    			//	for (int i = 0; i < matrix->w; ++i)
-    			//	{
-				//		COLORREF CellColor = WINDOWGraphicsOverlay::GetMaterialColor(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType);
-				//		D2D1_COLOR_F color = {GetRValue(CellColor) / 255.0f, GetGValue(CellColor) / 255.0f, GetBValue(CellColor) / 255.0f, 1.0f};
-				//		ID2D1SolidColorBrush* pBrush = nullptr;
-				//		RenderTarget->CreateSolidColorBrush(color, &pBrush);
-				//		D2D1_RECT_F rect = D2D1::RectF(
-    			//			static_cast<float>(i * matrix->_pixelWidth),
-    			//			static_cast<float>(j * matrix->_pixelHeight),
-    			//			static_cast<float>((i + 1) * matrix->_pixelWidth),
-    			//			static_cast<float>((j + 1) * matrix->_pixelHeight)
-    			//		);
-    			//		RenderTarget->FillRectangle(&rect, pBrush);
-    			//		pBrush->Release();
-				//	}
-				//}
-				//RenderTarget->EndDraw();
-
-				if(RenderTarget)
+				if(RenderTarget && Bitmap)
 				{
 					RenderTarget->BeginDraw();
 					RenderTarget->DrawBitmap(Bitmap, D2D1::RectF(0, 0, static_cast<float>(WIDTH), static_cast<float>(HEIGHT)));
 					RenderTarget->EndDraw();
 				}
 				else{
-					printf("WM_PAINT: RENDERTARGET = nullptr");
+					printf("WM_PAINT: RENDERTARGET = nullptr\n");
 				}
 			}
 			break;
@@ -756,6 +788,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	uint32_t SizeOfMatrix = matrix->InitMatrix(width, height, depth);
 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
+	WINDOWGraphicsOverlay::AllocBrushPool(_handle);
 
 	std::atomic<bool> running = true;
 	std::atomic<bool> ready   = false;
@@ -862,5 +895,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		return msg.wParam;
 	}
 
+	delete matrix;
+	matrix=nullptr;
 	return EXIT_SUCCESS;
 }

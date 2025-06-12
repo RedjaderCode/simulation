@@ -1,5 +1,6 @@
 C:/msys64/mingw64/include/c++/12.2.0/x86_64-w64-mingw32/bits/c++config.h:516:3:constexpr bool std::__is_constant_evaluated()	16	static
 C:/msys64/mingw64/include/stdio.h:368:5:)	80	static
+C:/msys64/mingw64/include/c++/12.2.0/new:176:33:void* operator new [](std::size_t, void*)	16	static
 C:/msys64/mingw64/include/c++/12.2.0/x86_64-w64-mingw32/bits/gthr-default.h:685:1:__gthread_t __gthread_self()	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:104:3:constexpr std::memory_order std::operator&(memory_order, __memory_order_modifier)	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:85:7:std::thread::id::id()	16	static
@@ -33,57 +34,50 @@ C:\code\redjader\simulation\include/debug.h:178:7:void olcConsoleGameEngine::Cli
 C:\code\redjader\simulation\include/debug.h:238:2:olcConsoleGameEngine::~olcConsoleGameEngine()	48	static
 C:\code\redjader\simulation\include/debug.h:263:6:int olcConsoleGameEngine::ScreenWidth()	16	static
 C:\code\redjader\simulation\include/debug.h:268:6:int olcConsoleGameEngine::ScreenHeight()	16	static
-src\main.cpp:48:18:virtual void MatrixRain::OnUserUpdate()	96	static
-src\main.cpp:65:29:Vec3D::Vec3D(float, float, float)	16	static
-src\main.cpp:102:3:MATRIX::cell::cell(MATRIX::element)	48	static
-src\main.cpp:101:3:MATRIX::cell::cell()	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:235:24:std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >& std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >::operator=(std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >&&) [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>; bool <anonymous> = true; bool <anonymous> = true]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:680:7:std::unique_ptr<_Tp [], _Dp>& std::unique_ptr<_Tp [], _Dp>::operator=(std::unique_ptr<_Tp [], _Dp>&&) [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-src\main.cpp:87:9:MATRIX::MaterialAttributes::MaterialAttributes()	16	static
+src\main.cpp:49:18:virtual void MatrixRain::OnUserUpdate()	96	static
+src\main.cpp:66:29:Vec3D::Vec3D(float, float, float)	16	static
+src\main.cpp:103:3:MATRIX::cell::cell(MATRIX::element)	48	static
+src\main.cpp:108:3:MATRIX::cell::~cell()	64	static
+src\main.cpp:102:3:MATRIX::cell::cell()	48	static
+src\main.cpp:88:9:MATRIX::MaterialAttributes::MaterialAttributes()	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:235:24:std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >& std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >::operator=(std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >&&) [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>; bool <anonymous> = true; bool <anonymous> = true]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:680:7:std::unique_ptr<_Tp [], _Dp>& std::unique_ptr<_Tp [], _Dp>::operator=(std::unique_ptr<_Tp [], _Dp>&&) [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
-src\main.cpp:115:11:uint32_t MATRIX::InitMatrix(uint32_t, uint32_t, uint32_t)	240	static
-src\main.cpp:204:7:MATRIX::cell MATRIX::AccessDataAt(uint32_t, uint32_t, uint32_t)	64	static
-src\main.cpp:210:7:MATRIX::cell MATRIX::WriteDataTo(uint32_t, uint32_t, uint32_t, const cell&)	64	static
-src\main.cpp:217:14:void MATRIX::UpdateWorldView(HWND, std::atomic<bool>&)	80	static
-src\main.cpp:236:14:void MATRIX::FlushMatrix(std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	224	static
-src\main.cpp:258:14:void MATRIX::UpdateSimulationState(HWND, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>&, std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	112	static
-src\main.cpp:298:11:uint32_t MATRIX::FlattenedIndex(uint32_t, uint32_t, uint32_t)	16	static
-src\main.cpp:321:21:MATRIX::MaterialAttributes MATRIX::ReadCellAttributes(cell)	64	static
-src\main.cpp:330:2:Camera::Camera()	48	static
-src\main.cpp:454:11:COLORREF WINDOWGraphicsOverlay::GetMaterialColor(MATRIX::element)	16	static
-src\main.cpp:467:7:bool WINDOWGraphicsOverlay::blitOverlay(HWND, uint32_t, int32_t, int32_t)	1232	static
-src\main.cpp:82:8:MATRIX::~MATRIX()	48	static
-src\main.cpp:509:19:LRESULT WINDOWGraphicsOverlay::WindowProc(HWND, UINT, WPARAM, LPARAM)	1616	static
-src\main.cpp:684:7:void WINDOWGraphicsOverlay::ShowErrorMessage(const char*)	80	static
-src\main.cpp:692:8:void* WINDOWGraphicsOverlay::CreateWindowOverlay(MATRIX*, uint32_t, uint32_t)	224	static
-src\main.cpp:82:8:constexpr MATRIX::MATRIX()	48	static
-src\main.cpp:46:8:MatrixRain::MatrixRain()	48	static
-src\main.cpp:46:8:MatrixRain::~MatrixRain()	48	static
+src\main.cpp:124:11:uint32_t MATRIX::InitMatrix(uint32_t, uint32_t, uint32_t)	320	static
+src\main.cpp:226:7:MATRIX::cell MATRIX::AccessDataAt(uint32_t, uint32_t, uint32_t)	64	static
+src\main.cpp:232:7:MATRIX::cell MATRIX::WriteDataTo(uint32_t, uint32_t, uint32_t, const cell&)	64	static
+src\main.cpp:239:14:void MATRIX::UpdateWorldView(HWND, std::atomic<bool>&)	64	static
+src\main.cpp:259:14:void MATRIX::FlushMatrix(std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	240	static
+src\main.cpp:279:14:void MATRIX::UpdateSimulationState(HWND, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>&, std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	112	static
+src\main.cpp:319:11:uint32_t MATRIX::FlattenedIndex(uint32_t, uint32_t, uint32_t)	16	static
+src\main.cpp:343:21:MATRIX::MaterialAttributes MATRIX::ReadCellAttributes(cell)	64	static
+src\main.cpp:363:2:Camera::Camera()	48	static
+src\main.cpp:487:14:void WINDOWGraphicsOverlay::ErrorHandle(HRESULT)	1072	static
+src\main.cpp:496:11:COLORREF WINDOWGraphicsOverlay::GetMaterialColor(MATRIX::element)	16	static
+src\main.cpp:509:14:void WINDOWGraphicsOverlay::AllocBrushPool(HWND)	112	static
+src\main.cpp:532:7:bool WINDOWGraphicsOverlay::blitOverlay(HWND, uint32_t, int32_t, int32_t)	192	static
+src\main.cpp:83:8:MATRIX::~MATRIX()	48	static
+src\main.cpp:559:19:LRESULT WINDOWGraphicsOverlay::WindowProc(HWND, UINT, WPARAM, LPARAM)	1712	static
+src\main.cpp:716:7:void WINDOWGraphicsOverlay::ShowErrorMessage(const char*)	80	static
+src\main.cpp:724:8:void* WINDOWGraphicsOverlay::CreateWindowOverlay(MATRIX*, uint32_t, uint32_t)	224	static
+src\main.cpp:83:8:constexpr MATRIX::MATRIX()	48	static
+src\main.cpp:47:8:MatrixRain::MatrixRain()	48	static
+src\main.cpp:47:8:MatrixRain::~MatrixRain()	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:120:5:std::thread::thread()	48	static
-src\main.cpp:795:7:WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()>	176	static
-src\main.cpp:742:12:INT WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)	1552	static
+src\main.cpp:828:7:WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()>	176	static
+src\main.cpp:774:12:INT WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)	1552	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:196:5:std::_Require<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> > std::swap(_Tp&, _Tp&) [with _Tp = thread::id]	64	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:521:2:constexpr std::chrono::duration<_Rep, _Period>::rep std::chrono::duration<_Rep, _Period>::count() const [with _Rep = long long int; _Period = std::ratio<1>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:354:7:std::__atomic_base<_IntTp>::__int_type std::__atomic_base<_IntTp>::operator=(__int_type) [with _ITp = bool]	80	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:505:23:constexpr std::chrono::duration<_Rep, _Period>::duration(const _Rep2&) [with _Rep2 = int; <template-parameter-2-2> = void; _Rep = long long int; _Period = std::ratio<1, 1000>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:68:7:void std::this_thread::sleep_for(const std::chrono::duration<_Rep1, _Period1>&) [with _Rep = long long int; _Period = std::ratio<1, 1000>]	96	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:40:std::__uniq_ptr_data<MATRIX::cell, std::default_delete<MATRIX::cell []>, true, true>::__uniq_ptr_data(std::__uniq_ptr_impl<MATRIX::cell, std::default_delete<MATRIX::cell []> >::pointer) [inherited from std::__uniq_ptr_impl<MATRIX::cell, std::default_delete<MATRIX::cell []> >]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:598:2:std::unique_ptr<_Tp [], _Dp>::unique_ptr(_Up) [with _Up = MATRIX::cell*; _Vp = std::default_delete<MATRIX::cell []>; <template-parameter-2-3> = void; <template-parameter-2-4> = bool; _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:665:7:std::unique_ptr<_Tp [], _Dp>::~unique_ptr() [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	64	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:181:24:std::__uniq_ptr_impl<_Tp, _Dp>& std::__uniq_ptr_impl<_Tp, _Dp>::operator=(std::__uniq_ptr_impl<_Tp, _Dp>&&) [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:40:std::__uniq_ptr_data<MATRIX::MaterialAttributes, std::default_delete<MATRIX::MaterialAttributes []>, true, true>::__uniq_ptr_data(std::__uniq_ptr_impl<MATRIX::MaterialAttributes, std::default_delete<MATRIX::MaterialAttributes []> >::pointer) [inherited from std::__uniq_ptr_impl<MATRIX::MaterialAttributes, std::default_delete<MATRIX::MaterialAttributes []> >]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:598:2:std::unique_ptr<_Tp [], _Dp>::unique_ptr(_Up) [with _Up = MATRIX::MaterialAttributes*; _Vp = std::default_delete<MATRIX::MaterialAttributes []>; <template-parameter-2-3> = void; <template-parameter-2-4> = bool; _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:665:7:std::unique_ptr<_Tp [], _Dp>::~unique_ptr() [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	64	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:181:24:std::__uniq_ptr_impl<_Tp, _Dp>& std::__uniq_ptr_impl<_Tp, _Dp>::operator=(std::__uniq_ptr_impl<_Tp, _Dp>&&) [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:717:7:typename std::add_lvalue_reference<_Tp>::type std::unique_ptr<_Tp [], _Dp>::operator[](std::size_t) const [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:717:7:typename std::add_lvalue_reference<_Tp>::type std::unique_ptr<_Tp [], _Dp>::operator[](std::size_t) const [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:726:7:std::unique_ptr<_Tp [], _Dp>::pointer std::unique_ptr<_Tp [], _Dp>::get() const [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
+C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:196:5:std::_Require<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> > std::swap(_Tp&, _Tp&) [with _Tp = MATRIX::cell*]	64	static
 C:/msys64/mingw64/include/sec_api/stdio_s.h:821:3:) [with long long unsigned int __size = 512]	64	static
 C:/msys64/mingw64/include/d2d1.h:2520:9:HRESULT D2D1CreateFactory(D2D1_FACTORY_TYPE, Factory**) [with Factory = ID2D1Factory]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:166:7:constexpr std::__uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl() [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:40:constexpr std::__uniq_ptr_data<MATRIX::cell, std::default_delete<MATRIX::cell []>, true, true>::__uniq_ptr_data() [inherited from std::__uniq_ptr_impl<MATRIX::cell, std::default_delete<MATRIX::cell []> >]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:580:12:constexpr std::unique_ptr<_Tp [], _Dp>::unique_ptr() [with _Del = std::default_delete<MATRIX::cell []>; <template-parameter-2-2> = void; _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:166:7:constexpr std::__uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl() [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:40:constexpr std::__uniq_ptr_data<MATRIX::MaterialAttributes, std::default_delete<MATRIX::MaterialAttributes []>, true, true>::__uniq_ptr_data() [inherited from std::__uniq_ptr_impl<MATRIX::MaterialAttributes, std::default_delete<MATRIX::MaterialAttributes []> >]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:580:12:constexpr std::unique_ptr<_Tp [], _Dp>::unique_ptr() [with _Del = std::default_delete<MATRIX::MaterialAttributes []>; <template-parameter-2-2> = void; _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
@@ -103,14 +97,6 @@ C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:789:7:constexpr bool std::chr
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:252:7:constexpr std::chrono::__enable_if_is_duration<_ToDur> std::chrono::duration_cast(const duration<_Rep, _Period>&) [with _ToDur = duration<long long int>; _Rep = long long int; _Period = std::ratio<1, 1000>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:644:7:constexpr typename std::common_type<std::chrono::duration<_Rep1, _Period1>, std::chrono::duration<_Rep2, _Period2> >::type std::chrono::operator-(const duration<_Rep1, _Period1>&, const duration<_Rep2, _Period2>&) [with _Rep1 = long long int; _Period1 = std::ratio<1, 1000>; _Rep2 = long long int; _Period2 = std::ratio<1>]	96	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:252:7:constexpr std::chrono::__enable_if_is_duration<_ToDur> std::chrono::duration_cast(const duration<_Rep, _Period>&) [with _ToDur = duration<long long int, std::ratio<1, 1000000000> >; _Rep = long long int; _Period = std::ratio<1, 1000>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:7:std::__uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl(pointer) [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	64	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:189:18:std::__uniq_ptr_impl<_Tp, _Dp>::pointer& std::__uniq_ptr_impl<_Tp, _Dp>::_M_ptr() [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:732:7:std::unique_ptr<_Tp [], _Dp>::deleter_type& std::unique_ptr<_Tp [], _Dp>::get_deleter() [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:128:2:typename std::enable_if<std::is_convertible<_Up (*)[], _Tp (*)[]>::value>::type std::default_delete<_Tp []>::operator()(_Up*) const [with _Up = MATRIX::cell; _Tp = MATRIX::cell]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:198:12:void std::__uniq_ptr_impl<_Tp, _Dp>::reset(pointer) [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	80	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:207:15:std::__uniq_ptr_impl<_Tp, _Dp>::pointer std::__uniq_ptr_impl<_Tp, _Dp>::release() [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	64	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:193:18:_Dp& std::__uniq_ptr_impl<_Tp, _Dp>::_M_deleter() [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:77:5:constexpr _Tp&& std::forward(typename remove_reference<_Tp>::type&) [with _Tp = default_delete<MATRIX::cell []>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:7:std::__uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl(pointer) [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	64	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:189:18:std::__uniq_ptr_impl<_Tp, _Dp>::pointer& std::__uniq_ptr_impl<_Tp, _Dp>::_M_ptr() [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:732:7:std::unique_ptr<_Tp [], _Dp>::deleter_type& std::unique_ptr<_Tp [], _Dp>::get_deleter() [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
@@ -120,8 +106,7 @@ C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:207:15:std::__uniq_ptr_im
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:193:18:_Dp& std::__uniq_ptr_impl<_Tp, _Dp>::_M_deleter() [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:77:5:constexpr _Tp&& std::forward(typename remove_reference<_Tp>::type&) [with _Tp = default_delete<MATRIX::MaterialAttributes []>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:726:7:std::unique_ptr<_Tp [], _Dp>::pointer std::unique_ptr<_Tp [], _Dp>::get() const [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:191:18:std::__uniq_ptr_impl<_Tp, _Dp>::pointer std::__uniq_ptr_impl<_Tp, _Dp>::_M_ptr() const [with _Tp = MATRIX::cell; _Dp = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:1049:2:constexpr std::tuple<_T1, _T2>::tuple() [with bool _Dummy = true; typename std::enable_if<std::_TupleConstraints<_Dummy, _T1, _T2>::__is_implicitly_default_constructible(), bool>::type <anonymous> = true; _T1 = MATRIX::cell*; _T2 = std::default_delete<MATRIX::cell []>]	48	static
+C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:104:5:constexpr typename std::remove_reference<_Tp>::type&& std::move(_Tp&&) [with _Tp = MATRIX::cell*&]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1049:2:constexpr std::tuple<_T1, _T2>::tuple() [with bool _Dummy = true; typename std::enable_if<std::_TupleConstraints<_Dummy, _T1, _T2>::__is_implicitly_default_constructible(), bool>::type <anonymous> = true; _T1 = MATRIX::MaterialAttributes*; _T2 = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:7:std::__uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl(pointer) [with _Tp = std::thread; _Dp = std::default_delete<std::thread []>]	64	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:189:18:std::__uniq_ptr_impl<_Tp, _Dp>::pointer& std::__uniq_ptr_impl<_Tp, _Dp>::_M_ptr() [with _Tp = std::thread; _Dp = std::default_delete<std::thread []>]	48	static
@@ -141,13 +126,9 @@ C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:208:4:static constexpr _ToDur
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:521:2:constexpr std::chrono::duration<_Rep, _Period>::rep std::chrono::duration<_Rep, _Period>::count() const [with _Rep = long long int; _Period = std::ratio<1, 1000>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:513:14:constexpr std::chrono::duration<_Rep, _Period>::duration(const std::chrono::duration<_Rep, _Period>&) [with _Rep2 = long long int; _Period2 = std::ratio<1>; <template-parameter-2-3> = void; _Rep = long long int; _Period = std::ratio<1, 1000>]	64	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:221:4:static constexpr _ToDur std::chrono::__duration_cast_impl<_ToDur, _CF, _CR, false, true>::__cast(const std::chrono::duration<_Rep, _Period>&) [with _Rep = long long int; _Period = std::ratio<1, 1000>; _ToDur = std::chrono::duration<long long int, std::ratio<1, 1000000000> >; _CF = std::ratio<1000000, 1>; _CR = long long int]	64	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:1380:5:>&) [with long long unsigned int __i = 0; _Elements = {MATRIX::cell*, default_delete<MATRIX::cell []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:1380:5:>&) [with long long unsigned int __i = 1; _Elements = {MATRIX::cell*, default_delete<MATRIX::cell []>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1380:5:>&) [with long long unsigned int __i = 0; _Elements = {MATRIX::MaterialAttributes*, default_delete<MATRIX::MaterialAttributes []>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1380:5:>&) [with long long unsigned int __i = 1; _Elements = {MATRIX::MaterialAttributes*, default_delete<MATRIX::MaterialAttributes []>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:191:18:std::__uniq_ptr_impl<_Tp, _Dp>::pointer std::__uniq_ptr_impl<_Tp, _Dp>::_M_ptr() const [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:1386:5:>&) [with long long unsigned int __i = 0; _Elements = {MATRIX::cell*, default_delete<MATRIX::cell []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:279:17:>::_Tuple_impl() [with long long unsigned int _Idx = 0; _Head = MATRIX::cell*; _Tail = {std::default_delete<MATRIX::cell []>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:279:17:>::_Tuple_impl() [with long long unsigned int _Idx = 0; _Head = MATRIX::MaterialAttributes*; _Tail = {std::default_delete<MATRIX::MaterialAttributes []>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1049:2:constexpr std::tuple<_T1, _T2>::tuple() [with bool _Dummy = true; typename std::enable_if<std::_TupleConstraints<_Dummy, _T1, _T2>::__is_implicitly_default_constructible(), bool>::type <anonymous> = true; _T1 = std::thread*; _T2 = std::default_delete<std::thread []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1380:5:>&) [with long long unsigned int __i = 0; _Elements = {thread*, default_delete<thread []>}]	48	static
@@ -158,14 +139,9 @@ C:/msys64/mingw64/include/c++/12.2.0/tuple:1049:2:constexpr std::tuple<_T1, _T2>
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1380:5:>&) [with long long unsigned int __i = 0; _Elements = {thread::_State*, default_delete<thread::_State>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:193:18:_Dp& std::__uniq_ptr_impl<_Tp, _Dp>::_M_deleter() [with _Tp = std::thread::_State; _Dp = std::default_delete<std::thread::_State>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:252:7:constexpr std::chrono::__enable_if_is_duration<_ToDur> std::chrono::duration_cast(const duration<_Rep, _Period>&) [with _ToDur = duration<long long int, std::ratio<1, 1000> >; _Rep = long long int; _Period = std::ratio<1>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:1364:5:>&) [with long long unsigned int __i = 0; _Head = MATRIX::cell*; _Tail = {default_delete<MATRIX::cell []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:1364:5:>&) [with long long unsigned int __i = 1; _Head = default_delete<MATRIX::cell []>; _Tail = {}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1364:5:>&) [with long long unsigned int __i = 0; _Head = MATRIX::MaterialAttributes*; _Tail = {default_delete<MATRIX::MaterialAttributes []>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1364:5:>&) [with long long unsigned int __i = 1; _Head = default_delete<MATRIX::MaterialAttributes []>; _Tail = {}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1386:5:>&) [with long long unsigned int __i = 0; _Elements = {MATRIX::MaterialAttributes*, default_delete<MATRIX::MaterialAttributes []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:1369:5:>&) [with long long unsigned int __i = 0; _Head = MATRIX::cell*; _Tail = {default_delete<MATRIX::cell []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:430:7:constexpr std::_Tuple_impl<_Idx, _Head>::_Tuple_impl() [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::cell []>]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:189:17:constexpr std::_Head_base<_Idx, _Head, false>::_Head_base() [with long long unsigned int _Idx = 0; _Head = MATRIX::cell*]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:430:7:constexpr std::_Tuple_impl<_Idx, _Head>::_Tuple_impl() [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:189:17:constexpr std::_Head_base<_Idx, _Head, false>::_Head_base() [with long long unsigned int _Idx = 0; _Head = MATRIX::MaterialAttributes*]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:279:17:>::_Tuple_impl() [with long long unsigned int _Idx = 0; _Head = std::thread*; _Tail = {std::default_delete<std::thread []>}]	48	static
@@ -177,13 +153,9 @@ C:/msys64/mingw64/include/c++/12.2.0/tuple:279:17:>::_Tuple_impl() [with long lo
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1364:5:>&) [with long long unsigned int __i = 0; _Head = thread::_State*; _Tail = {default_delete<thread::_State>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1380:5:>&) [with long long unsigned int __i = 1; _Elements = {thread::_State*, default_delete<thread::_State>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:221:4:static constexpr _ToDur std::chrono::__duration_cast_impl<_ToDur, _CF, _CR, false, true>::__cast(const std::chrono::duration<_Rep, _Period>&) [with _Rep = long long int; _Period = std::ratio<1>; _ToDur = std::chrono::duration<long long int, std::ratio<1, 1000> >; _CF = std::ratio<1000, 1>; _CR = long long int]	64	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:268:7:>&) [with long long unsigned int _Idx = 0; _Head = MATRIX::cell*; _Tail = {std::default_delete<MATRIX::cell []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:424:7:static constexpr _Head& std::_Tuple_impl<_Idx, _Head>::_M_head(std::_Tuple_impl<_Idx, _Head>&) [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::cell []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:268:7:>&) [with long long unsigned int _Idx = 0; _Head = MATRIX::MaterialAttributes*; _Tail = {std::default_delete<MATRIX::MaterialAttributes []>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:424:7:static constexpr _Head& std::_Tuple_impl<_Idx, _Head>::_M_head(std::_Tuple_impl<_Idx, _Head>&) [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1369:5:>&) [with long long unsigned int __i = 0; _Head = MATRIX::MaterialAttributes*; _Tail = {default_delete<MATRIX::MaterialAttributes []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:271:7:>&) [with long long unsigned int _Idx = 0; _Head = MATRIX::cell*; _Tail = {std::default_delete<MATRIX::cell []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:80:17:constexpr std::_Head_base<_Idx, _Head, true>::_Head_base() [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::cell []>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:80:17:constexpr std::_Head_base<_Idx, _Head, true>::_Head_base() [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::MaterialAttributes []>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:430:7:constexpr std::_Tuple_impl<_Idx, _Head>::_Tuple_impl() [with long long unsigned int _Idx = 1; _Head = std::default_delete<std::thread []>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:189:17:constexpr std::_Head_base<_Idx, _Head, false>::_Head_base() [with long long unsigned int _Idx = 0; _Head = std::thread*]	16	static
@@ -195,12 +167,9 @@ C:/msys64/mingw64/include/c++/12.2.0/tuple:430:7:constexpr std::_Tuple_impl<_Idx
 C:/msys64/mingw64/include/c++/12.2.0/tuple:189:17:constexpr std::_Head_base<_Idx, _Head, false>::_Head_base() [with long long unsigned int _Idx = 0; _Head = std::thread::_State*]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:268:7:>&) [with long long unsigned int _Idx = 0; _Head = std::thread::_State*; _Tail = {std::default_delete<std::thread::_State>}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:1364:5:>&) [with long long unsigned int __i = 1; _Head = default_delete<thread::_State>; _Tail = {}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:233:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with long long unsigned int _Idx = 0; _Head = MATRIX::cell*]	16	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:124:7:static constexpr _Head& std::_Head_base<_Idx, _Head, true>::_M_head(std::_Head_base<_Idx, _Head, true>&) [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::cell []>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:233:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with long long unsigned int _Idx = 0; _Head = MATRIX::MaterialAttributes*]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:124:7:static constexpr _Head& std::_Head_base<_Idx, _Head, true>::_M_head(std::_Head_base<_Idx, _Head, true>&) [with long long unsigned int _Idx = 1; _Head = std::default_delete<MATRIX::MaterialAttributes []>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:271:7:>&) [with long long unsigned int _Idx = 0; _Head = MATRIX::MaterialAttributes*; _Tail = {std::default_delete<MATRIX::MaterialAttributes []>}]	48	static
-C:/msys64/mingw64/include/c++/12.2.0/tuple:236:7:static constexpr const _Head& std::_Head_base<_Idx, _Head, false>::_M_head(const std::_Head_base<_Idx, _Head, false>&) [with long long unsigned int _Idx = 0; _Head = MATRIX::cell*]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:80:17:constexpr std::_Head_base<_Idx, _Head, true>::_Head_base() [with long long unsigned int _Idx = 1; _Head = std::default_delete<std::thread []>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:233:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with long long unsigned int _Idx = 0; _Head = std::thread*]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:424:7:static constexpr _Head& std::_Tuple_impl<_Idx, _Head>::_M_head(std::_Tuple_impl<_Idx, _Head>&) [with long long unsigned int _Idx = 1; _Head = std::default_delete<std::thread []>]	48	static
@@ -215,7 +184,7 @@ C:/msys64/mingw64/include/c++/12.2.0/tuple:124:7:static constexpr _Head& std::_H
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:200:14:std::thread::_State_impl<std::thread::_Invoker<std::tuple<WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()> > > >::~_State_impl()	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:200:14:virtual std::thread::_State_impl<std::thread::_Invoker<std::tuple<WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()> > > >::~_State_impl()	48	static
 C:/msys64/mingw64/include/c++/12.2.0/iostream:74:25:void __tcf_0()	48	static
-src\main.cpp:866:1:void __static_initialization_and_destruction_0(int, int)	48	static
+src\main.cpp:901:1:void __static_initialization_and_destruction_0(int, int)	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:210:2:void std::thread::_State_impl<_Callable>::_M_run() [with _Callable = std::thread::_Invoker<std::tuple<WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()> > >]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:255:2:typename std::thread::_Invoker<_Tuple>::__result<_Tuple>::type std::thread::_Invoker<_Tuple>::operator()() [with _Tuple = std::tuple<WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()> >]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:251:4:_Ind = {0}; _Tuple = std::tuple<WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()> >]	48	static
@@ -226,4 +195,4 @@ C:/msys64/mingw64/include/c++/12.2.0/tuple:1364:5:>&) [with long long unsigned i
 C:/msys64/mingw64/include/c++/12.2.0/bits/invoke.h:60:5:) [with _Res = void; _Fn = WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()>; _Args = {}]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:424:7:static constexpr _Head& std::_Tuple_impl<_Idx, _Head>::_M_head(std::_Tuple_impl<_Idx, _Head>&) [with long long unsigned int _Idx = 0; _Head = WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()>]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/tuple:233:7:static constexpr _Head& std::_Head_base<_Idx, _Head, false>::_M_head(std::_Head_base<_Idx, _Head, false>&) [with long long unsigned int _Idx = 0; _Head = WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()>]	16	static
-src\main.cpp:866:1:cpp)	48	static
+src\main.cpp:901:1:cpp)	48	static
