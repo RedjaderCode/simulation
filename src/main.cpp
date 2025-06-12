@@ -131,8 +131,6 @@ public:
 		memorybb = malloc(sizeof(cell) * (width * height * depth));
 		CELL_BACK_BUFFER  = new(memorybb) cell[width * height * depth];
 
-		//CELL_FRONT_BUFFER = std::unique_ptr<cell[]>(new cell[width * height * depth]);
-		//CELL_BACK_BUFFER  = std::unique_ptr<cell[]>(new cell[width * height * depth]);
 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
 		w = width; h = height; d = depth;
 
@@ -894,6 +892,8 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		MessageBoxW(nullptr, L"WINDOW HANDLE IS EMPTY", L"ERROR", MB_ICONERROR | MB_OK);
 		return msg.wParam;
 	}
+
+	matrix->DestroyMatrix();
 
 	delete matrix;
 	matrix=nullptr;

@@ -810,7 +810,7 @@ _ZNKSt6atomicIbEcvbEv:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:488: 	return __atomic_load_n(&_M_i, int(__m));
 	.loc 5 488 40
 	testb	%al, %al	 # _20
-	setne	%al	 #, D.209745
+	setne	%al	 #, D.209746
 .LBE76:
 .LBE75:
  # C:/msys64/mingw64/include/c++/12.2.0/atomic:87:     { return _M_base.load(); }
@@ -1267,8 +1267,8 @@ _ZN20olcConsoleGameEngineC2Ev:
 	addq	$24, %rax	 #, _6
 	movq	%rax, %rcx	 # _6,
 	call	_ZNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEED1Ev	 #
-	movq	%rbx, %rax	 # tmp101, D.209844
-	movq	%rax, %rcx	 # D.209844,
+	movq	%rbx, %rax	 # tmp101, D.209845
+	movq	%rax, %rcx	 # D.209845,
 .LEHB1:
 	call	_Unwind_Resume	 #
 	nop	
@@ -2322,8 +2322,8 @@ _ZN6MATRIX10InitMatrixEjjj:
 	.loc 12 132 21 is_stmt 1 discriminator 7
 	movq	192(%rbp), %rax	 # this, tmp289
 	movq	%rdi, 24(%rax)	 # _218, this_194(D)->CELL_BACK_BUFFER
- # src\main.cpp:136: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
-	.loc 12 136 117 discriminator 7
+ # src\main.cpp:134: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+	.loc 12 134 117 discriminator 7
 	movl	$240, %ecx	 #,
 	call	_Znay	 #
 	movq	%rax, %rdi	 # tmp290, _227
@@ -2331,159 +2331,159 @@ _ZN6MATRIX10InitMatrixEjjj:
 	movl	$5, %ebx	 #, _170
 	jmp	.L105	 #
 .L106:
- # src\main.cpp:136: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
-	.loc 12 136 117 is_stmt 0 discriminator 5
+ # src\main.cpp:134: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+	.loc 12 134 117 is_stmt 0 discriminator 5
 	movq	%rsi, %rcx	 # _169,
 	call	_ZN6MATRIX18MaterialAttributesC1Ev	 #
 	subq	$1, %rbx	 #, _170
 	addq	$40, %rsi	 #, _169
 .L105:
- # src\main.cpp:136: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
-	.loc 12 136 117 discriminator 3
+ # src\main.cpp:134: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+	.loc 12 134 117 discriminator 3
 	testq	%rbx, %rbx	 # _170
 	jns	.L106	 #,
- # src\main.cpp:136: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
-	.loc 12 136 25 is_stmt 1 discriminator 6
+ # src\main.cpp:134: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+	.loc 12 134 25 is_stmt 1 discriminator 6
 	leaq	-40(%rbp), %rax	 #, tmp291
 	movq	%rdi, %rdx	 # _227,
 	movq	%rax, %rcx	 # tmp291,
 	call	_ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEC1IPS1_S4_vbEET_	 #
- # src\main.cpp:136: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
-	.loc 12 136 118 discriminator 6
+ # src\main.cpp:134: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+	.loc 12 134 118 discriminator 6
 	movq	192(%rbp), %rax	 # this, tmp292
 	leaq	32(%rax), %rcx	 #, _25
 	leaq	-40(%rbp), %rax	 #, tmp293
 	movq	%rax, %rdx	 # tmp293,
 	call	_ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEaSEOS5_	 #
- # src\main.cpp:136: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
-	.loc 12 136 25 discriminator 6
+ # src\main.cpp:134: 		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+	.loc 12 134 25 discriminator 6
 	leaq	-40(%rbp), %rax	 #, tmp294
 	movq	%rax, %rcx	 # tmp294,
 	call	_ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EED1Ev	 #
- # src\main.cpp:137: 		w = width; h = height; d = depth;
-	.loc 12 137 5 discriminator 6
+ # src\main.cpp:135: 		w = width; h = height; d = depth;
+	.loc 12 135 5 discriminator 6
 	movq	192(%rbp), %rax	 # this, tmp295
 	movl	200(%rbp), %edx	 # width, tmp296
 	movl	%edx, 40(%rax)	 # tmp296, this_194(D)->w
- # src\main.cpp:137: 		w = width; h = height; d = depth;
-	.loc 12 137 16 discriminator 6
+ # src\main.cpp:135: 		w = width; h = height; d = depth;
+	.loc 12 135 16 discriminator 6
 	movq	192(%rbp), %rax	 # this, tmp297
 	movl	208(%rbp), %edx	 # height, tmp298
 	movl	%edx, 44(%rax)	 # tmp298, this_194(D)->h
- # src\main.cpp:137: 		w = width; h = height; d = depth;
-	.loc 12 137 28 discriminator 6
+ # src\main.cpp:135: 		w = width; h = height; d = depth;
+	.loc 12 135 28 discriminator 6
 	movq	192(%rbp), %rax	 # this, tmp299
 	movl	216(%rbp), %edx	 # depth, tmp300
 	movl	%edx, 48(%rax)	 # tmp300, this_194(D)->d
- # src\main.cpp:139: 		printf("-> cells set to: element::air\n");
-	.loc 12 139 9 discriminator 6
+ # src\main.cpp:137: 		printf("-> cells set to: element::air\n");
+	.loc 12 137 9 discriminator 6
 	leaq	.LC3(%rip), %rax	 #, tmp301
 	movq	%rax, %rcx	 # tmp301,
 	call	_Z6printfPKcz	 #
 .LEHE2:
 .LBB88:
- # src\main.cpp:140: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
-	.loc 12 140 16 discriminator 6
+ # src\main.cpp:138: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
+	.loc 12 138 16 discriminator 6
 	movl	$0, 140(%rbp)	 #, i
- # src\main.cpp:140: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
-	.loc 12 140 3 discriminator 6
+ # src\main.cpp:138: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
+	.loc 12 138 3 discriminator 6
 	jmp	.L107	 #
 .L113:
 .LBB89:
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 21
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 21
 	movq	192(%rbp), %rax	 # this, tmp302
 	movl	40(%rax), %ecx	 # this_194(D)->w, _26
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 13
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 13
 	movl	140(%rbp), %eax	 # i, tmp304
 	movl	$0, %edx	 #, tmp305
 	divl	%ecx	 # _26
 	movl	%edx, 116(%rbp)	 # tmp305, x
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 42
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 42
 	movq	192(%rbp), %rax	 # this, tmp307
 	movl	40(%rax), %edi	 # this_194(D)->w, _27
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 40
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 40
 	movl	140(%rbp), %eax	 # i, tmp310
 	movl	$0, %edx	 #, tmp309
 	divl	%edi	 # _27
 	movl	%eax, %edx	 # tmp308, _28
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 47
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 47
 	movq	192(%rbp), %rax	 # this, tmp311
 	movl	44(%rax), %ecx	 # this_194(D)->h, _29
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 33
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 33
 	movl	%edx, %eax	 # _28, _28
 	movl	$0, %edx	 #, tmp312
 	divl	%ecx	 # _29
 	movl	%edx, 112(%rbp)	 # tmp312, y
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 68
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 68
 	movq	192(%rbp), %rax	 # this, tmp314
 	movl	40(%rax), %edx	 # this_194(D)->w, _30
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 72
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 72
 	movq	192(%rbp), %rax	 # this, tmp315
 	movl	44(%rax), %eax	 # this_194(D)->h, _31
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 70
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 70
 	movl	%edx, %edi	 # _30, _30
 	imull	%eax, %edi	 # _31, _30
- # src\main.cpp:143: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 143 59
+ # src\main.cpp:141: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 141 59
 	movl	140(%rbp), %eax	 # i, tmp318
 	movl	$0, %edx	 #, tmp317
 	divl	%edi	 # _32
 	movl	%eax, 108(%rbp)	 # tmp316, z
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 136
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 136
 	movl	$0, %ebx	 #, cleanup.108_174
 	movl	$0, %esi	 #, cleanup.109_176
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 49
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 49
 	cmpl	$0, 116(%rbp)	 #, x
 	je	.L108	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 28 discriminator 2
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 28 discriminator 2
 	movq	192(%rbp), %rax	 # this, tmp319
 	movl	40(%rax), %eax	 # this_194(D)->w, _33
 	subl	$1, %eax	 #, _34
 	cmpl	%eax, 116(%rbp)	 # _34, x
 	je	.L108	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 28 is_stmt 0 discriminator 4
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 28 is_stmt 0 discriminator 4
 	cmpl	$0, 112(%rbp)	 #, y
 	je	.L108	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 28 discriminator 6
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 28 discriminator 6
 	movq	192(%rbp), %rax	 # this, tmp320
 	movl	44(%rax), %eax	 # this_194(D)->h, _35
 	subl	$1, %eax	 #, _36
 	cmpl	%eax, 112(%rbp)	 # _36, y
 	je	.L108	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 28 discriminator 8
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 28 discriminator 8
 	cmpl	$0, 108(%rbp)	 #, z
 	je	.L108	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 28 discriminator 10
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 28 discriminator 10
 	movq	192(%rbp), %rax	 # this, tmp321
 	movl	48(%rax), %eax	 # this_194(D)->d, _37
 	subl	$1, %eax	 #, _38
 	cmpl	%eax, 108(%rbp)	 # _38, z
 	jne	.L109	 #,
 .L108:
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 72 is_stmt 1 discriminator 11
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 72 is_stmt 1 discriminator 11
 	leaq	-32(%rbp), %rax	 #, tmp322
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # tmp322,
 	call	_ZN6MATRIX4cellC1ENS_7elementE	 #
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 136 discriminator 11
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 136 discriminator 11
 	movl	$1, %ebx	 #, cleanup.108_174
 	leaq	-80(%rbp), %rax	 #, tmp323
 	movl	112(%rbp), %r9d	 # y, tmp324
@@ -2496,18 +2496,18 @@ _ZN6MATRIX10InitMatrixEjjj:
 	movq	%rax, %rcx	 # tmp323,
 .LEHB3:
 	call	_ZN6MATRIX11WriteDataToEjjjRKNS_4cellE	 #
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 136 is_stmt 0
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 136 is_stmt 0
 	jmp	.L110	 #
 .L109:
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 118 is_stmt 1 discriminator 12
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 118 is_stmt 1 discriminator 12
 	movq	%rbp, %rax	 #, tmp329
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # tmp329,
 	call	_ZN6MATRIX4cellC1ENS_7elementE	 #
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 136 discriminator 12
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 136 discriminator 12
 	movl	$1, %esi	 #, cleanup.109_176
 	leaq	-80(%rbp), %rax	 #, tmp330
 	movl	112(%rbp), %r9d	 # y, tmp331
@@ -2521,77 +2521,77 @@ _ZN6MATRIX10InitMatrixEjjj:
 	call	_ZN6MATRIX11WriteDataToEjjjRKNS_4cellE	 #
 .LEHE3:
 .L110:
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 118 discriminator 15
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 118 discriminator 15
 	testb	%sil, %sil	 # cleanup.109_176
 	je	.L111	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 118 is_stmt 0 discriminator 16
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 118 is_stmt 0 discriminator 16
 	movq	%rbp, %rax	 #, tmp336
 	movq	%rax, %rcx	 # tmp336,
 	call	_ZN6MATRIX4cellD1Ev	 #
 .L111:
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 72 is_stmt 1 discriminator 18
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 72 is_stmt 1 discriminator 18
 	testb	%bl, %bl	 # cleanup.108_174
 	je	.L112	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 72 is_stmt 0 discriminator 19
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 72 is_stmt 0 discriminator 19
 	leaq	-32(%rbp), %rax	 #, tmp337
 	movq	%rax, %rcx	 # tmp337,
 	call	_ZN6MATRIX4cellD1Ev	 #
 .L112:
- # src\main.cpp:145: 		}
-	.loc 12 145 3 is_stmt 1 discriminator 21
+ # src\main.cpp:143: 		}
+	.loc 12 143 3 is_stmt 1 discriminator 21
 	leaq	-80(%rbp), %rax	 #, tmp338
 	movq	%rax, %rcx	 # tmp338,
 	call	_ZN6MATRIX4cellD1Ev	 #
 .LBE89:
- # src\main.cpp:140: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
-	.loc 12 140 3 discriminator 21
+ # src\main.cpp:138: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
+	.loc 12 138 3 discriminator 21
 	addl	$1, 140(%rbp)	 #, i
 .L107:
- # src\main.cpp:140: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
-	.loc 12 140 31 discriminator 2
+ # src\main.cpp:138: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
+	.loc 12 138 31 discriminator 2
 	movl	200(%rbp), %eax	 # width, tmp339
 	imull	208(%rbp), %eax	 # height, _39
- # src\main.cpp:140: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
-	.loc 12 140 40 discriminator 2
+ # src\main.cpp:138: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
+	.loc 12 138 40 discriminator 2
 	imull	216(%rbp), %eax	 # depth, _40
- # src\main.cpp:140: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
-	.loc 12 140 48 discriminator 2
+ # src\main.cpp:138: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
+	.loc 12 138 48 discriminator 2
 	subl	$1, %eax	 #, _41
- # src\main.cpp:140: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
-	.loc 12 140 22 discriminator 2
+ # src\main.cpp:138: 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
+	.loc 12 138 22 discriminator 2
 	cmpl	140(%rbp), %eax	 # i, _41
 	jnb	.L113	 #,
 .LBE88:
- # src\main.cpp:147: 		uint32_t i1 = 0;
-	.loc 12 147 12
+ # src\main.cpp:145: 		uint32_t i1 = 0;
+	.loc 12 145 12
 	movl	$0, 136(%rbp)	 #, i1
 .LBB91:
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 49
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 49
 	movq	192(%rbp), %rax	 # this, tmp340
 	movl	48(%rax), %eax	 # this_194(D)->d, _42
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 32
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 32
 	shrl	%eax	 # _42
 	movl	%eax, %r8d	 # _42, _43
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 41
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 41
 	movq	192(%rbp), %rax	 # this, tmp341
 	movl	44(%rax), %eax	 # this_194(D)->h, _44
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 32
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 32
 	shrl	%eax	 # _44
 	movl	%eax, %ecx	 # _44, _45
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 33
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 33
 	movq	192(%rbp), %rax	 # this, tmp342
 	movl	40(%rax), %eax	 # this_194(D)->w, _46
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 32
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 32
 	shrl	%eax	 # _46
 	movl	%eax, %edx	 # _46, _47
 	movq	192(%rbp), %rax	 # this, tmp343
@@ -2600,81 +2600,81 @@ _ZN6MATRIX10InitMatrixEjjj:
 	movq	%rax, %rcx	 # tmp343,
 	call	_ZN6MATRIX14FlattenedIndexEjjj	 #
 	movl	%eax, 132(%rbp)	 # tmp344, i
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 3
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 3
 	jmp	.L114	 #
 .L115:
 .LBB92:
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 21
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 21
 	movq	192(%rbp), %rax	 # this, tmp345
 	movl	40(%rax), %ecx	 # this_194(D)->w, _48
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 13
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 13
 	movl	132(%rbp), %eax	 # i, tmp347
 	movl	$0, %edx	 #, tmp348
 	divl	%ecx	 # _48
 	movl	%edx, 128(%rbp)	 # tmp348, x
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 42
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 42
 	movq	192(%rbp), %rax	 # this, tmp350
 	movl	40(%rax), %esi	 # this_194(D)->w, _49
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 40
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 40
 	movl	132(%rbp), %eax	 # i, tmp353
 	movl	$0, %edx	 #, tmp352
 	divl	%esi	 # _49
 	movl	%eax, %edx	 # tmp351, _50
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 47
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 47
 	movq	192(%rbp), %rax	 # this, tmp354
 	movl	44(%rax), %ecx	 # this_194(D)->h, _51
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 33
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 33
 	movl	%edx, %eax	 # _50, _50
 	movl	$0, %edx	 #, tmp355
 	divl	%ecx	 # _51
 	movl	%edx, 124(%rbp)	 # tmp355, y
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 68
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 68
 	movq	192(%rbp), %rax	 # this, tmp357
 	movl	40(%rax), %edx	 # this_194(D)->w, _52
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 72
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 72
 	movq	192(%rbp), %rax	 # this, tmp358
 	movl	44(%rax), %eax	 # this_194(D)->h, _53
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 70
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 70
 	movl	%edx, %edi	 # _52, _52
 	imull	%eax, %edi	 # _53, _52
- # src\main.cpp:151: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-	.loc 12 151 59
+ # src\main.cpp:149: 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
+	.loc 12 149 59
 	movl	132(%rbp), %eax	 # i, tmp361
 	movl	$0, %edx	 #, tmp360
 	divl	%edi	 # _54
 	movl	%eax, 120(%rbp)	 # tmp359, z
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 86
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 86
 	movq	192(%rbp), %rax	 # this, tmp362
 	movl	48(%rax), %eax	 # this_194(D)->d, _55
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 69
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 69
 	shrl	%eax	 # _55
 	movl	%eax, %r8d	 # _55, _56
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 78
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 78
 	movq	192(%rbp), %rax	 # this, tmp363
 	movl	44(%rax), %eax	 # this_194(D)->h, _57
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 69
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 69
 	shrl	%eax	 # _57
 	movl	%eax, %ecx	 # _57, _58
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 70
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 70
 	movq	192(%rbp), %rax	 # this, tmp364
 	movl	40(%rax), %eax	 # this_194(D)->w, _59
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 69
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 69
 	shrl	%eax	 # _59
 	movl	%eax, %edx	 # _59, _60
 	movq	192(%rbp), %rax	 # this, tmp365
@@ -2682,17 +2682,17 @@ _ZN6MATRIX10InitMatrixEjjj:
 	movl	%ecx, %r8d	 # _58,
 	movq	%rax, %rcx	 # tmp365,
 	call	_ZN6MATRIX14FlattenedIndexEjjj	 #
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 53
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 53
 	movl	132(%rbp), %edx	 # i, tmp366
 	subl	%eax, %edx	 # _61, _62
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 25
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 25
 	leaq	64(%rbp), %rax	 #, tmp367
 	movq	%rax, %rcx	 # tmp367,
 	call	_ZN6MATRIX4cellC1ENS_7elementE	 #
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 15
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 15
 	leaq	32(%rbp), %rax	 #, tmp368
 	movl	124(%rbp), %r9d	 # y, tmp369
 	movl	128(%rbp), %r8d	 # x, tmp370
@@ -2705,671 +2705,671 @@ _ZN6MATRIX10InitMatrixEjjj:
 .LEHB4:
 	call	_ZN6MATRIX11WriteDataToEjjjRKNS_4cellE	 #
 .LEHE4:
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 15 is_stmt 0 discriminator 2
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 15 is_stmt 0 discriminator 2
 	leaq	32(%rbp), %rax	 #, tmp374
 	movq	%rax, %rcx	 # tmp374,
 	call	_ZN6MATRIX4cellD1Ev	 #
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 25 is_stmt 1 discriminator 2
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 25 is_stmt 1 discriminator 2
 	leaq	64(%rbp), %rax	 #, tmp375
 	movq	%rax, %rcx	 # tmp375,
 	call	_ZN6MATRIX4cellD1Ev	 #
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 98 discriminator 2
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 98 discriminator 2
 	addl	$1, 136(%rbp)	 #, i1
 .LBE92:
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 3 discriminator 2
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 3 discriminator 2
 	addl	$1, 132(%rbp)	 #, i
 .L114:
- # src\main.cpp:148: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-	.loc 12 148 59 discriminator 2
+ # src\main.cpp:146: 		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
+	.loc 12 146 59 discriminator 2
 	cmpl	$5, 132(%rbp)	 #, i
 	jbe	.L115	 #,
 .LBE91:
- # src\main.cpp:156: 		printf("-> elements::name... \n");
-	.loc 12 156 9
+ # src\main.cpp:154: 		printf("-> elements::name... \n");
+	.loc 12 154 9
 	leaq	.LC4(%rip), %rax	 #, tmp376
 	movq	%rax, %rcx	 # tmp376,
 .LEHB5:
 	call	_Z6printfPKcz	 #
- # src\main.cpp:157: 		matAtt[static_cast<uint32_t>(element::air)   ].name 			   = "air";
-	.loc 12 157 48
+ # src\main.cpp:155: 		matAtt[static_cast<uint32_t>(element::air)   ].name 			   = "air";
+	.loc 12 155 48
 	movq	192(%rbp), %rax	 # this, tmp377
 	addq	$32, %rax	 #, _63
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _63,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:157: 		matAtt[static_cast<uint32_t>(element::air)   ].name 			   = "air";
-	.loc 12 157 61
+ # src\main.cpp:155: 		matAtt[static_cast<uint32_t>(element::air)   ].name 			   = "air";
+	.loc 12 155 61
 	leaq	.LC5(%rip), %rdx	 #, tmp378
 	movq	%rdx, 32(%rax)	 # tmp378, _64->name
- # src\main.cpp:158: 		matAtt[static_cast<uint32_t>(element::water) ].name 			   = "water";
-	.loc 12 158 48
+ # src\main.cpp:156: 		matAtt[static_cast<uint32_t>(element::water) ].name 			   = "water";
+	.loc 12 156 48
 	movq	192(%rbp), %rax	 # this, tmp379
 	addq	$32, %rax	 #, _65
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _65,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:158: 		matAtt[static_cast<uint32_t>(element::water) ].name 			   = "water";
-	.loc 12 158 61
+ # src\main.cpp:156: 		matAtt[static_cast<uint32_t>(element::water) ].name 			   = "water";
+	.loc 12 156 61
 	leaq	.LC6(%rip), %rdx	 #, tmp380
 	movq	%rdx, 32(%rax)	 # tmp380, _66->name
- # src\main.cpp:159: 		matAtt[static_cast<uint32_t>(element::wood)  ].name 			   = "wood";
-	.loc 12 159 48
+ # src\main.cpp:157: 		matAtt[static_cast<uint32_t>(element::wood)  ].name 			   = "wood";
+	.loc 12 157 48
 	movq	192(%rbp), %rax	 # this, tmp381
 	addq	$32, %rax	 #, _67
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _67,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:159: 		matAtt[static_cast<uint32_t>(element::wood)  ].name 			   = "wood";
-	.loc 12 159 61
+ # src\main.cpp:157: 		matAtt[static_cast<uint32_t>(element::wood)  ].name 			   = "wood";
+	.loc 12 157 61
 	leaq	.LC7(%rip), %rdx	 #, tmp382
 	movq	%rdx, 32(%rax)	 # tmp382, _68->name
- # src\main.cpp:160: 		matAtt[static_cast<uint32_t>(element::fire)  ].name 			   = "fire";
-	.loc 12 160 48
+ # src\main.cpp:158: 		matAtt[static_cast<uint32_t>(element::fire)  ].name 			   = "fire";
+	.loc 12 158 48
 	movq	192(%rbp), %rax	 # this, tmp383
 	addq	$32, %rax	 #, _69
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _69,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:160: 		matAtt[static_cast<uint32_t>(element::fire)  ].name 			   = "fire";
-	.loc 12 160 61
+ # src\main.cpp:158: 		matAtt[static_cast<uint32_t>(element::fire)  ].name 			   = "fire";
+	.loc 12 158 61
 	leaq	.LC8(%rip), %rdx	 #, tmp384
 	movq	%rdx, 32(%rax)	 # tmp384, _70->name
- # src\main.cpp:161: 		matAtt[static_cast<uint32_t>(element::metal) ].name 			   = "metal";
-	.loc 12 161 48
+ # src\main.cpp:159: 		matAtt[static_cast<uint32_t>(element::metal) ].name 			   = "metal";
+	.loc 12 159 48
 	movq	192(%rbp), %rax	 # this, tmp385
 	addq	$32, %rax	 #, _71
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _71,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:161: 		matAtt[static_cast<uint32_t>(element::metal) ].name 			   = "metal";
-	.loc 12 161 61
+ # src\main.cpp:159: 		matAtt[static_cast<uint32_t>(element::metal) ].name 			   = "metal";
+	.loc 12 159 61
 	leaq	.LC9(%rip), %rdx	 #, tmp386
 	movq	%rdx, 32(%rax)	 # tmp386, _72->name
- # src\main.cpp:162: 		matAtt[static_cast<uint32_t>(element::Custom)].name 			   = "Custom";
-	.loc 12 162 48
+ # src\main.cpp:160: 		matAtt[static_cast<uint32_t>(element::Custom)].name 			   = "Custom";
+	.loc 12 160 48
 	movq	192(%rbp), %rax	 # this, tmp387
 	addq	$32, %rax	 #, _73
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _73,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:162: 		matAtt[static_cast<uint32_t>(element::Custom)].name 			   = "Custom";
-	.loc 12 162 61
+ # src\main.cpp:160: 		matAtt[static_cast<uint32_t>(element::Custom)].name 			   = "Custom";
+	.loc 12 160 61
 	leaq	.LC10(%rip), %rdx	 #, tmp388
 	movq	%rdx, 32(%rax)	 # tmp388, _74->name
- # src\main.cpp:164: 		printf("-> elements::density... \n");
-	.loc 12 164 9
+ # src\main.cpp:162: 		printf("-> elements::density... \n");
+	.loc 12 162 9
 	leaq	.LC11(%rip), %rax	 #, tmp389
 	movq	%rax, %rcx	 # tmp389,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:165: 		matAtt[static_cast<uint32_t>(element::air)   ].density 			   = 1.225f;
-	.loc 12 165 48
+ # src\main.cpp:163: 		matAtt[static_cast<uint32_t>(element::air)   ].density 			   = 1.225f;
+	.loc 12 163 48
 	movq	192(%rbp), %rax	 # this, tmp390
 	addq	$32, %rax	 #, _75
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _75,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:165: 		matAtt[static_cast<uint32_t>(element::air)   ].density 			   = 1.225f;
-	.loc 12 165 64
+ # src\main.cpp:163: 		matAtt[static_cast<uint32_t>(element::air)   ].density 			   = 1.225f;
+	.loc 12 163 64
 	movss	.LC12(%rip), %xmm0	 #, tmp391
 	movss	%xmm0, (%rax)	 # tmp391, _76->density
- # src\main.cpp:166: 		matAtt[static_cast<uint32_t>(element::water) ].density 			   = 1000.0f;
-	.loc 12 166 48
+ # src\main.cpp:164: 		matAtt[static_cast<uint32_t>(element::water) ].density 			   = 1000.0f;
+	.loc 12 164 48
 	movq	192(%rbp), %rax	 # this, tmp392
 	addq	$32, %rax	 #, _77
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _77,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:166: 		matAtt[static_cast<uint32_t>(element::water) ].density 			   = 1000.0f;
-	.loc 12 166 64
+ # src\main.cpp:164: 		matAtt[static_cast<uint32_t>(element::water) ].density 			   = 1000.0f;
+	.loc 12 164 64
 	movss	.LC13(%rip), %xmm0	 #, tmp393
 	movss	%xmm0, (%rax)	 # tmp393, _78->density
- # src\main.cpp:167: 		matAtt[static_cast<uint32_t>(element::wood)  ].density 			   = 700.0f;
-	.loc 12 167 48
+ # src\main.cpp:165: 		matAtt[static_cast<uint32_t>(element::wood)  ].density 			   = 700.0f;
+	.loc 12 165 48
 	movq	192(%rbp), %rax	 # this, tmp394
 	addq	$32, %rax	 #, _79
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _79,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:167: 		matAtt[static_cast<uint32_t>(element::wood)  ].density 			   = 700.0f;
-	.loc 12 167 64
+ # src\main.cpp:165: 		matAtt[static_cast<uint32_t>(element::wood)  ].density 			   = 700.0f;
+	.loc 12 165 64
 	movss	.LC14(%rip), %xmm0	 #, tmp395
 	movss	%xmm0, (%rax)	 # tmp395, _80->density
- # src\main.cpp:168: 		matAtt[static_cast<uint32_t>(element::fire)  ].density 			   = 0.0f;
-	.loc 12 168 48
+ # src\main.cpp:166: 		matAtt[static_cast<uint32_t>(element::fire)  ].density 			   = 0.0f;
+	.loc 12 166 48
 	movq	192(%rbp), %rax	 # this, tmp396
 	addq	$32, %rax	 #, _81
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _81,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:168: 		matAtt[static_cast<uint32_t>(element::fire)  ].density 			   = 0.0f;
-	.loc 12 168 64
+ # src\main.cpp:166: 		matAtt[static_cast<uint32_t>(element::fire)  ].density 			   = 0.0f;
+	.loc 12 166 64
 	pxor	%xmm0, %xmm0	 # tmp397
 	movss	%xmm0, (%rax)	 # tmp397, _82->density
- # src\main.cpp:169: 		matAtt[static_cast<uint32_t>(element::metal) ].density 			   = 7800.0f;
-	.loc 12 169 48
+ # src\main.cpp:167: 		matAtt[static_cast<uint32_t>(element::metal) ].density 			   = 7800.0f;
+	.loc 12 167 48
 	movq	192(%rbp), %rax	 # this, tmp398
 	addq	$32, %rax	 #, _83
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _83,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:169: 		matAtt[static_cast<uint32_t>(element::metal) ].density 			   = 7800.0f;
-	.loc 12 169 64
+ # src\main.cpp:167: 		matAtt[static_cast<uint32_t>(element::metal) ].density 			   = 7800.0f;
+	.loc 12 167 64
 	movss	.LC15(%rip), %xmm0	 #, tmp399
 	movss	%xmm0, (%rax)	 # tmp399, _84->density
- # src\main.cpp:170: 		matAtt[static_cast<uint32_t>(element::Custom)].density 			   = 0.0f;
-	.loc 12 170 48
+ # src\main.cpp:168: 		matAtt[static_cast<uint32_t>(element::Custom)].density 			   = 0.0f;
+	.loc 12 168 48
 	movq	192(%rbp), %rax	 # this, tmp400
 	addq	$32, %rax	 #, _85
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _85,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:170: 		matAtt[static_cast<uint32_t>(element::Custom)].density 			   = 0.0f;
-	.loc 12 170 64
+ # src\main.cpp:168: 		matAtt[static_cast<uint32_t>(element::Custom)].density 			   = 0.0f;
+	.loc 12 168 64
 	pxor	%xmm0, %xmm0	 # tmp401
 	movss	%xmm0, (%rax)	 # tmp401, _86->density
- # src\main.cpp:172: 		printf("-> elements::friction... \n");
-	.loc 12 172 9
+ # src\main.cpp:170: 		printf("-> elements::friction... \n");
+	.loc 12 170 9
 	leaq	.LC16(%rip), %rax	 #, tmp402
 	movq	%rax, %rcx	 # tmp402,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:173: 		matAtt[static_cast<uint32_t>(element::air)   ].friction 		   = 0.02f;
-	.loc 12 173 48
+ # src\main.cpp:171: 		matAtt[static_cast<uint32_t>(element::air)   ].friction 		   = 0.02f;
+	.loc 12 171 48
 	movq	192(%rbp), %rax	 # this, tmp403
 	addq	$32, %rax	 #, _87
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _87,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:173: 		matAtt[static_cast<uint32_t>(element::air)   ].friction 		   = 0.02f;
-	.loc 12 173 64
+ # src\main.cpp:171: 		matAtt[static_cast<uint32_t>(element::air)   ].friction 		   = 0.02f;
+	.loc 12 171 64
 	movss	.LC17(%rip), %xmm0	 #, tmp404
 	movss	%xmm0, 4(%rax)	 # tmp404, _88->friction
- # src\main.cpp:174: 		matAtt[static_cast<uint32_t>(element::water) ].friction 		   = 0.1f;
-	.loc 12 174 48
+ # src\main.cpp:172: 		matAtt[static_cast<uint32_t>(element::water) ].friction 		   = 0.1f;
+	.loc 12 172 48
 	movq	192(%rbp), %rax	 # this, tmp405
 	addq	$32, %rax	 #, _89
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _89,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:174: 		matAtt[static_cast<uint32_t>(element::water) ].friction 		   = 0.1f;
-	.loc 12 174 64
+ # src\main.cpp:172: 		matAtt[static_cast<uint32_t>(element::water) ].friction 		   = 0.1f;
+	.loc 12 172 64
 	movss	.LC18(%rip), %xmm0	 #, tmp406
 	movss	%xmm0, 4(%rax)	 # tmp406, _90->friction
- # src\main.cpp:175: 		matAtt[static_cast<uint32_t>(element::wood)  ].friction 		   = 0.4f;
-	.loc 12 175 48
+ # src\main.cpp:173: 		matAtt[static_cast<uint32_t>(element::wood)  ].friction 		   = 0.4f;
+	.loc 12 173 48
 	movq	192(%rbp), %rax	 # this, tmp407
 	addq	$32, %rax	 #, _91
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _91,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:175: 		matAtt[static_cast<uint32_t>(element::wood)  ].friction 		   = 0.4f;
-	.loc 12 175 64
+ # src\main.cpp:173: 		matAtt[static_cast<uint32_t>(element::wood)  ].friction 		   = 0.4f;
+	.loc 12 173 64
 	movss	.LC19(%rip), %xmm0	 #, tmp408
 	movss	%xmm0, 4(%rax)	 # tmp408, _92->friction
- # src\main.cpp:176: 		matAtt[static_cast<uint32_t>(element::fire)  ].friction 		   = 0.0f;
-	.loc 12 176 48
+ # src\main.cpp:174: 		matAtt[static_cast<uint32_t>(element::fire)  ].friction 		   = 0.0f;
+	.loc 12 174 48
 	movq	192(%rbp), %rax	 # this, tmp409
 	addq	$32, %rax	 #, _93
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _93,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:176: 		matAtt[static_cast<uint32_t>(element::fire)  ].friction 		   = 0.0f;
-	.loc 12 176 64
+ # src\main.cpp:174: 		matAtt[static_cast<uint32_t>(element::fire)  ].friction 		   = 0.0f;
+	.loc 12 174 64
 	pxor	%xmm0, %xmm0	 # tmp410
 	movss	%xmm0, 4(%rax)	 # tmp410, _94->friction
- # src\main.cpp:177: 		matAtt[static_cast<uint32_t>(element::metal) ].friction 		   = 0.6f;
-	.loc 12 177 48
+ # src\main.cpp:175: 		matAtt[static_cast<uint32_t>(element::metal) ].friction 		   = 0.6f;
+	.loc 12 175 48
 	movq	192(%rbp), %rax	 # this, tmp411
 	addq	$32, %rax	 #, _95
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _95,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:177: 		matAtt[static_cast<uint32_t>(element::metal) ].friction 		   = 0.6f;
-	.loc 12 177 64
+ # src\main.cpp:175: 		matAtt[static_cast<uint32_t>(element::metal) ].friction 		   = 0.6f;
+	.loc 12 175 64
 	movss	.LC20(%rip), %xmm0	 #, tmp412
 	movss	%xmm0, 4(%rax)	 # tmp412, _96->friction
- # src\main.cpp:178: 		matAtt[static_cast<uint32_t>(element::Custom)].friction 		   = 0.0f;
-	.loc 12 178 48
+ # src\main.cpp:176: 		matAtt[static_cast<uint32_t>(element::Custom)].friction 		   = 0.0f;
+	.loc 12 176 48
 	movq	192(%rbp), %rax	 # this, tmp413
 	addq	$32, %rax	 #, _97
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _97,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:178: 		matAtt[static_cast<uint32_t>(element::Custom)].friction 		   = 0.0f;
-	.loc 12 178 64
+ # src\main.cpp:176: 		matAtt[static_cast<uint32_t>(element::Custom)].friction 		   = 0.0f;
+	.loc 12 176 64
 	pxor	%xmm0, %xmm0	 # tmp414
 	movss	%xmm0, 4(%rax)	 # tmp414, _98->friction
- # src\main.cpp:180: 		printf("-> elements::ThermalConductivity... \n");
-	.loc 12 180 9
+ # src\main.cpp:178: 		printf("-> elements::ThermalConductivity... \n");
+	.loc 12 178 9
 	leaq	.LC21(%rip), %rax	 #, tmp415
 	movq	%rax, %rcx	 # tmp415,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:181: 		matAtt[static_cast<uint32_t>(element::air)   ].thermalConductivity = 0.025f;
-	.loc 12 181 48
+ # src\main.cpp:179: 		matAtt[static_cast<uint32_t>(element::air)   ].thermalConductivity = 0.025f;
+	.loc 12 179 48
 	movq	192(%rbp), %rax	 # this, tmp416
 	addq	$32, %rax	 #, _99
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _99,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:181: 		matAtt[static_cast<uint32_t>(element::air)   ].thermalConductivity = 0.025f;
-	.loc 12 181 70
+ # src\main.cpp:179: 		matAtt[static_cast<uint32_t>(element::air)   ].thermalConductivity = 0.025f;
+	.loc 12 179 70
 	movss	.LC22(%rip), %xmm0	 #, tmp417
 	movss	%xmm0, 8(%rax)	 # tmp417, _100->thermalConductivity
- # src\main.cpp:182: 		matAtt[static_cast<uint32_t>(element::water) ].thermalConductivity = 0.6f;
-	.loc 12 182 48
+ # src\main.cpp:180: 		matAtt[static_cast<uint32_t>(element::water) ].thermalConductivity = 0.6f;
+	.loc 12 180 48
 	movq	192(%rbp), %rax	 # this, tmp418
 	addq	$32, %rax	 #, _101
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _101,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:182: 		matAtt[static_cast<uint32_t>(element::water) ].thermalConductivity = 0.6f;
-	.loc 12 182 70
+ # src\main.cpp:180: 		matAtt[static_cast<uint32_t>(element::water) ].thermalConductivity = 0.6f;
+	.loc 12 180 70
 	movss	.LC20(%rip), %xmm0	 #, tmp419
 	movss	%xmm0, 8(%rax)	 # tmp419, _102->thermalConductivity
- # src\main.cpp:183: 		matAtt[static_cast<uint32_t>(element::wood)  ].thermalConductivity = 0.12f;
-	.loc 12 183 48
+ # src\main.cpp:181: 		matAtt[static_cast<uint32_t>(element::wood)  ].thermalConductivity = 0.12f;
+	.loc 12 181 48
 	movq	192(%rbp), %rax	 # this, tmp420
 	addq	$32, %rax	 #, _103
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _103,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:183: 		matAtt[static_cast<uint32_t>(element::wood)  ].thermalConductivity = 0.12f;
-	.loc 12 183 70
+ # src\main.cpp:181: 		matAtt[static_cast<uint32_t>(element::wood)  ].thermalConductivity = 0.12f;
+	.loc 12 181 70
 	movss	.LC23(%rip), %xmm0	 #, tmp421
 	movss	%xmm0, 8(%rax)	 # tmp421, _104->thermalConductivity
- # src\main.cpp:184: 		matAtt[static_cast<uint32_t>(element::fire)  ].thermalConductivity = 0.0f;
-	.loc 12 184 48
+ # src\main.cpp:182: 		matAtt[static_cast<uint32_t>(element::fire)  ].thermalConductivity = 0.0f;
+	.loc 12 182 48
 	movq	192(%rbp), %rax	 # this, tmp422
 	addq	$32, %rax	 #, _105
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _105,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:184: 		matAtt[static_cast<uint32_t>(element::fire)  ].thermalConductivity = 0.0f;
-	.loc 12 184 70
+ # src\main.cpp:182: 		matAtt[static_cast<uint32_t>(element::fire)  ].thermalConductivity = 0.0f;
+	.loc 12 182 70
 	pxor	%xmm0, %xmm0	 # tmp423
 	movss	%xmm0, 8(%rax)	 # tmp423, _106->thermalConductivity
- # src\main.cpp:185: 		matAtt[static_cast<uint32_t>(element::metal) ].thermalConductivity = 400.0f;
-	.loc 12 185 48
+ # src\main.cpp:183: 		matAtt[static_cast<uint32_t>(element::metal) ].thermalConductivity = 400.0f;
+	.loc 12 183 48
 	movq	192(%rbp), %rax	 # this, tmp424
 	addq	$32, %rax	 #, _107
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _107,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:185: 		matAtt[static_cast<uint32_t>(element::metal) ].thermalConductivity = 400.0f;
-	.loc 12 185 70
+ # src\main.cpp:183: 		matAtt[static_cast<uint32_t>(element::metal) ].thermalConductivity = 400.0f;
+	.loc 12 183 70
 	movss	.LC24(%rip), %xmm0	 #, tmp425
 	movss	%xmm0, 8(%rax)	 # tmp425, _108->thermalConductivity
- # src\main.cpp:186: 		matAtt[static_cast<uint32_t>(element::Custom)].thermalConductivity = 0.0f;
-	.loc 12 186 48
+ # src\main.cpp:184: 		matAtt[static_cast<uint32_t>(element::Custom)].thermalConductivity = 0.0f;
+	.loc 12 184 48
 	movq	192(%rbp), %rax	 # this, tmp426
 	addq	$32, %rax	 #, _109
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _109,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:186: 		matAtt[static_cast<uint32_t>(element::Custom)].thermalConductivity = 0.0f;
-	.loc 12 186 70
+ # src\main.cpp:184: 		matAtt[static_cast<uint32_t>(element::Custom)].thermalConductivity = 0.0f;
+	.loc 12 184 70
 	pxor	%xmm0, %xmm0	 # tmp427
 	movss	%xmm0, 8(%rax)	 # tmp427, _110->thermalConductivity
- # src\main.cpp:188: 		printf("-> elements::specificHeat... \n");
-	.loc 12 188 9
+ # src\main.cpp:186: 		printf("-> elements::specificHeat... \n");
+	.loc 12 186 9
 	leaq	.LC25(%rip), %rax	 #, tmp428
 	movq	%rax, %rcx	 # tmp428,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:189: 		matAtt[static_cast<uint32_t>(element::air)   ].specificHeat 	   = 1005.0f;
-	.loc 12 189 48
+ # src\main.cpp:187: 		matAtt[static_cast<uint32_t>(element::air)   ].specificHeat 	   = 1005.0f;
+	.loc 12 187 48
 	movq	192(%rbp), %rax	 # this, tmp429
 	addq	$32, %rax	 #, _111
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _111,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:189: 		matAtt[static_cast<uint32_t>(element::air)   ].specificHeat 	   = 1005.0f;
-	.loc 12 189 67
+ # src\main.cpp:187: 		matAtt[static_cast<uint32_t>(element::air)   ].specificHeat 	   = 1005.0f;
+	.loc 12 187 67
 	movss	.LC26(%rip), %xmm0	 #, tmp430
 	movss	%xmm0, 12(%rax)	 # tmp430, _112->specificHeat
- # src\main.cpp:190: 		matAtt[static_cast<uint32_t>(element::water) ].specificHeat 	   = 4186.0f;
-	.loc 12 190 48
+ # src\main.cpp:188: 		matAtt[static_cast<uint32_t>(element::water) ].specificHeat 	   = 4186.0f;
+	.loc 12 188 48
 	movq	192(%rbp), %rax	 # this, tmp431
 	addq	$32, %rax	 #, _113
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _113,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:190: 		matAtt[static_cast<uint32_t>(element::water) ].specificHeat 	   = 4186.0f;
-	.loc 12 190 67
+ # src\main.cpp:188: 		matAtt[static_cast<uint32_t>(element::water) ].specificHeat 	   = 4186.0f;
+	.loc 12 188 67
 	movss	.LC27(%rip), %xmm0	 #, tmp432
 	movss	%xmm0, 12(%rax)	 # tmp432, _114->specificHeat
- # src\main.cpp:191: 		matAtt[static_cast<uint32_t>(element::wood)  ].specificHeat 	   = 2400.0f;
-	.loc 12 191 48
+ # src\main.cpp:189: 		matAtt[static_cast<uint32_t>(element::wood)  ].specificHeat 	   = 2400.0f;
+	.loc 12 189 48
 	movq	192(%rbp), %rax	 # this, tmp433
 	addq	$32, %rax	 #, _115
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _115,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:191: 		matAtt[static_cast<uint32_t>(element::wood)  ].specificHeat 	   = 2400.0f;
-	.loc 12 191 67
+ # src\main.cpp:189: 		matAtt[static_cast<uint32_t>(element::wood)  ].specificHeat 	   = 2400.0f;
+	.loc 12 189 67
 	movss	.LC28(%rip), %xmm0	 #, tmp434
 	movss	%xmm0, 12(%rax)	 # tmp434, _116->specificHeat
- # src\main.cpp:192: 		matAtt[static_cast<uint32_t>(element::fire)  ].specificHeat 	   = 0.0f;
-	.loc 12 192 48
+ # src\main.cpp:190: 		matAtt[static_cast<uint32_t>(element::fire)  ].specificHeat 	   = 0.0f;
+	.loc 12 190 48
 	movq	192(%rbp), %rax	 # this, tmp435
 	addq	$32, %rax	 #, _117
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _117,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:192: 		matAtt[static_cast<uint32_t>(element::fire)  ].specificHeat 	   = 0.0f;
-	.loc 12 192 67
+ # src\main.cpp:190: 		matAtt[static_cast<uint32_t>(element::fire)  ].specificHeat 	   = 0.0f;
+	.loc 12 190 67
 	pxor	%xmm0, %xmm0	 # tmp436
 	movss	%xmm0, 12(%rax)	 # tmp436, _118->specificHeat
- # src\main.cpp:193: 		matAtt[static_cast<uint32_t>(element::metal) ].specificHeat 	   = 450.0f;
-	.loc 12 193 48
+ # src\main.cpp:191: 		matAtt[static_cast<uint32_t>(element::metal) ].specificHeat 	   = 450.0f;
+	.loc 12 191 48
 	movq	192(%rbp), %rax	 # this, tmp437
 	addq	$32, %rax	 #, _119
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _119,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:193: 		matAtt[static_cast<uint32_t>(element::metal) ].specificHeat 	   = 450.0f;
-	.loc 12 193 67
+ # src\main.cpp:191: 		matAtt[static_cast<uint32_t>(element::metal) ].specificHeat 	   = 450.0f;
+	.loc 12 191 67
 	movss	.LC29(%rip), %xmm0	 #, tmp438
 	movss	%xmm0, 12(%rax)	 # tmp438, _120->specificHeat
- # src\main.cpp:194: 		matAtt[static_cast<uint32_t>(element::Custom)].specificHeat 	   = 0.0f;
-	.loc 12 194 48
+ # src\main.cpp:192: 		matAtt[static_cast<uint32_t>(element::Custom)].specificHeat 	   = 0.0f;
+	.loc 12 192 48
 	movq	192(%rbp), %rax	 # this, tmp439
 	addq	$32, %rax	 #, _121
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _121,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:194: 		matAtt[static_cast<uint32_t>(element::Custom)].specificHeat 	   = 0.0f;
-	.loc 12 194 67
+ # src\main.cpp:192: 		matAtt[static_cast<uint32_t>(element::Custom)].specificHeat 	   = 0.0f;
+	.loc 12 192 67
 	pxor	%xmm0, %xmm0	 # tmp440
 	movss	%xmm0, 12(%rax)	 # tmp440, _122->specificHeat
- # src\main.cpp:196: 		printf("-> elements::restitution... \n");
-	.loc 12 196 9
+ # src\main.cpp:194: 		printf("-> elements::restitution... \n");
+	.loc 12 194 9
 	leaq	.LC30(%rip), %rax	 #, tmp441
 	movq	%rax, %rcx	 # tmp441,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:197: 		matAtt[static_cast<uint32_t>(element::air)   ].restitution 		   = 0.0f;
-	.loc 12 197 48
+ # src\main.cpp:195: 		matAtt[static_cast<uint32_t>(element::air)   ].restitution 		   = 0.0f;
+	.loc 12 195 48
 	movq	192(%rbp), %rax	 # this, tmp442
 	addq	$32, %rax	 #, _123
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _123,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:197: 		matAtt[static_cast<uint32_t>(element::air)   ].restitution 		   = 0.0f;
-	.loc 12 197 67
+ # src\main.cpp:195: 		matAtt[static_cast<uint32_t>(element::air)   ].restitution 		   = 0.0f;
+	.loc 12 195 67
 	pxor	%xmm0, %xmm0	 # tmp443
 	movss	%xmm0, 16(%rax)	 # tmp443, _124->restitution
- # src\main.cpp:198: 		matAtt[static_cast<uint32_t>(element::water) ].restitution 		   = 0.1f;
-	.loc 12 198 48
+ # src\main.cpp:196: 		matAtt[static_cast<uint32_t>(element::water) ].restitution 		   = 0.1f;
+	.loc 12 196 48
 	movq	192(%rbp), %rax	 # this, tmp444
 	addq	$32, %rax	 #, _125
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _125,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:198: 		matAtt[static_cast<uint32_t>(element::water) ].restitution 		   = 0.1f;
-	.loc 12 198 67
+ # src\main.cpp:196: 		matAtt[static_cast<uint32_t>(element::water) ].restitution 		   = 0.1f;
+	.loc 12 196 67
 	movss	.LC18(%rip), %xmm0	 #, tmp445
 	movss	%xmm0, 16(%rax)	 # tmp445, _126->restitution
- # src\main.cpp:199: 		matAtt[static_cast<uint32_t>(element::wood)  ].restitution 		   = 0.3f;
-	.loc 12 199 48
+ # src\main.cpp:197: 		matAtt[static_cast<uint32_t>(element::wood)  ].restitution 		   = 0.3f;
+	.loc 12 197 48
 	movq	192(%rbp), %rax	 # this, tmp446
 	addq	$32, %rax	 #, _127
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _127,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:199: 		matAtt[static_cast<uint32_t>(element::wood)  ].restitution 		   = 0.3f;
-	.loc 12 199 67
+ # src\main.cpp:197: 		matAtt[static_cast<uint32_t>(element::wood)  ].restitution 		   = 0.3f;
+	.loc 12 197 67
 	movss	.LC31(%rip), %xmm0	 #, tmp447
 	movss	%xmm0, 16(%rax)	 # tmp447, _128->restitution
- # src\main.cpp:200: 		matAtt[static_cast<uint32_t>(element::fire)  ].restitution 		   = 0.0f;
-	.loc 12 200 48
+ # src\main.cpp:198: 		matAtt[static_cast<uint32_t>(element::fire)  ].restitution 		   = 0.0f;
+	.loc 12 198 48
 	movq	192(%rbp), %rax	 # this, tmp448
 	addq	$32, %rax	 #, _129
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _129,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:200: 		matAtt[static_cast<uint32_t>(element::fire)  ].restitution 		   = 0.0f;
-	.loc 12 200 67
+ # src\main.cpp:198: 		matAtt[static_cast<uint32_t>(element::fire)  ].restitution 		   = 0.0f;
+	.loc 12 198 67
 	pxor	%xmm0, %xmm0	 # tmp449
 	movss	%xmm0, 16(%rax)	 # tmp449, _130->restitution
- # src\main.cpp:201: 		matAtt[static_cast<uint32_t>(element::metal) ].restitution 		   = 0.9f;
-	.loc 12 201 48
+ # src\main.cpp:199: 		matAtt[static_cast<uint32_t>(element::metal) ].restitution 		   = 0.9f;
+	.loc 12 199 48
 	movq	192(%rbp), %rax	 # this, tmp450
 	addq	$32, %rax	 #, _131
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _131,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:201: 		matAtt[static_cast<uint32_t>(element::metal) ].restitution 		   = 0.9f;
-	.loc 12 201 67
+ # src\main.cpp:199: 		matAtt[static_cast<uint32_t>(element::metal) ].restitution 		   = 0.9f;
+	.loc 12 199 67
 	movss	.LC32(%rip), %xmm0	 #, tmp451
 	movss	%xmm0, 16(%rax)	 # tmp451, _132->restitution
- # src\main.cpp:202: 		matAtt[static_cast<uint32_t>(element::Custom)].restitution 		   = 0.0f;
-	.loc 12 202 48
+ # src\main.cpp:200: 		matAtt[static_cast<uint32_t>(element::Custom)].restitution 		   = 0.0f;
+	.loc 12 200 48
 	movq	192(%rbp), %rax	 # this, tmp452
 	addq	$32, %rax	 #, _133
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _133,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:202: 		matAtt[static_cast<uint32_t>(element::Custom)].restitution 		   = 0.0f;
-	.loc 12 202 67
+ # src\main.cpp:200: 		matAtt[static_cast<uint32_t>(element::Custom)].restitution 		   = 0.0f;
+	.loc 12 200 67
 	pxor	%xmm0, %xmm0	 # tmp453
 	movss	%xmm0, 16(%rax)	 # tmp453, _134->restitution
- # src\main.cpp:204: 		printf("-> elements::hardness... \n");
-	.loc 12 204 9
+ # src\main.cpp:202: 		printf("-> elements::hardness... \n");
+	.loc 12 202 9
 	leaq	.LC33(%rip), %rax	 #, tmp454
 	movq	%rax, %rcx	 # tmp454,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:205: 		matAtt[static_cast<uint32_t>(element::air)   ].hardness 		   = 0.0f;
-	.loc 12 205 48
+ # src\main.cpp:203: 		matAtt[static_cast<uint32_t>(element::air)   ].hardness 		   = 0.0f;
+	.loc 12 203 48
 	movq	192(%rbp), %rax	 # this, tmp455
 	addq	$32, %rax	 #, _135
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _135,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:205: 		matAtt[static_cast<uint32_t>(element::air)   ].hardness 		   = 0.0f;
-	.loc 12 205 64
+ # src\main.cpp:203: 		matAtt[static_cast<uint32_t>(element::air)   ].hardness 		   = 0.0f;
+	.loc 12 203 64
 	pxor	%xmm0, %xmm0	 # tmp456
 	movss	%xmm0, 20(%rax)	 # tmp456, _136->hardness
- # src\main.cpp:206: 		matAtt[static_cast<uint32_t>(element::water) ].hardness 		   = 0.1f;
-	.loc 12 206 48
+ # src\main.cpp:204: 		matAtt[static_cast<uint32_t>(element::water) ].hardness 		   = 0.1f;
+	.loc 12 204 48
 	movq	192(%rbp), %rax	 # this, tmp457
 	addq	$32, %rax	 #, _137
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _137,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:206: 		matAtt[static_cast<uint32_t>(element::water) ].hardness 		   = 0.1f;
-	.loc 12 206 64
+ # src\main.cpp:204: 		matAtt[static_cast<uint32_t>(element::water) ].hardness 		   = 0.1f;
+	.loc 12 204 64
 	movss	.LC18(%rip), %xmm0	 #, tmp458
 	movss	%xmm0, 20(%rax)	 # tmp458, _138->hardness
- # src\main.cpp:207: 		matAtt[static_cast<uint32_t>(element::wood)  ].hardness 		   = 0.3f;
-	.loc 12 207 48
+ # src\main.cpp:205: 		matAtt[static_cast<uint32_t>(element::wood)  ].hardness 		   = 0.3f;
+	.loc 12 205 48
 	movq	192(%rbp), %rax	 # this, tmp459
 	addq	$32, %rax	 #, _139
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _139,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:207: 		matAtt[static_cast<uint32_t>(element::wood)  ].hardness 		   = 0.3f;
-	.loc 12 207 64
+ # src\main.cpp:205: 		matAtt[static_cast<uint32_t>(element::wood)  ].hardness 		   = 0.3f;
+	.loc 12 205 64
 	movss	.LC31(%rip), %xmm0	 #, tmp460
 	movss	%xmm0, 20(%rax)	 # tmp460, _140->hardness
- # src\main.cpp:208: 		matAtt[static_cast<uint32_t>(element::fire)  ].hardness 		   = 0.0f;
-	.loc 12 208 48
+ # src\main.cpp:206: 		matAtt[static_cast<uint32_t>(element::fire)  ].hardness 		   = 0.0f;
+	.loc 12 206 48
 	movq	192(%rbp), %rax	 # this, tmp461
 	addq	$32, %rax	 #, _141
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _141,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:208: 		matAtt[static_cast<uint32_t>(element::fire)  ].hardness 		   = 0.0f;
-	.loc 12 208 64
+ # src\main.cpp:206: 		matAtt[static_cast<uint32_t>(element::fire)  ].hardness 		   = 0.0f;
+	.loc 12 206 64
 	pxor	%xmm0, %xmm0	 # tmp462
 	movss	%xmm0, 20(%rax)	 # tmp462, _142->hardness
- # src\main.cpp:209: 		matAtt[static_cast<uint32_t>(element::metal) ].hardness 		   = 0.9f;
-	.loc 12 209 48
+ # src\main.cpp:207: 		matAtt[static_cast<uint32_t>(element::metal) ].hardness 		   = 0.9f;
+	.loc 12 207 48
 	movq	192(%rbp), %rax	 # this, tmp463
 	addq	$32, %rax	 #, _143
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _143,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:209: 		matAtt[static_cast<uint32_t>(element::metal) ].hardness 		   = 0.9f;
-	.loc 12 209 64
+ # src\main.cpp:207: 		matAtt[static_cast<uint32_t>(element::metal) ].hardness 		   = 0.9f;
+	.loc 12 207 64
 	movss	.LC32(%rip), %xmm0	 #, tmp464
 	movss	%xmm0, 20(%rax)	 # tmp464, _144->hardness
- # src\main.cpp:210: 		matAtt[static_cast<uint32_t>(element::Custom)].hardness 		   = 10000.0f;
-	.loc 12 210 48
+ # src\main.cpp:208: 		matAtt[static_cast<uint32_t>(element::Custom)].hardness 		   = 10000.0f;
+	.loc 12 208 48
 	movq	192(%rbp), %rax	 # this, tmp465
 	addq	$32, %rax	 #, _145
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _145,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:210: 		matAtt[static_cast<uint32_t>(element::Custom)].hardness 		   = 10000.0f;
-	.loc 12 210 64
+ # src\main.cpp:208: 		matAtt[static_cast<uint32_t>(element::Custom)].hardness 		   = 10000.0f;
+	.loc 12 208 64
 	movss	.LC34(%rip), %xmm0	 #, tmp466
 	movss	%xmm0, 20(%rax)	 # tmp466, _146->hardness
- # src\main.cpp:212: 		printf("-> elements::hardness... \n");
-	.loc 12 212 9
+ # src\main.cpp:210: 		printf("-> elements::hardness... \n");
+	.loc 12 210 9
 	leaq	.LC33(%rip), %rax	 #, tmp467
 	movq	%rax, %rcx	 # tmp467,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:213: 		matAtt[static_cast<uint32_t>(element::air)   ].liquid 			   = false;
-	.loc 12 213 48
+ # src\main.cpp:211: 		matAtt[static_cast<uint32_t>(element::air)   ].liquid 			   = false;
+	.loc 12 211 48
 	movq	192(%rbp), %rax	 # this, tmp468
 	addq	$32, %rax	 #, _147
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _147,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:213: 		matAtt[static_cast<uint32_t>(element::air)   ].liquid 			   = false;
-	.loc 12 213 63
+ # src\main.cpp:211: 		matAtt[static_cast<uint32_t>(element::air)   ].liquid 			   = false;
+	.loc 12 211 63
 	movb	$0, 24(%rax)	 #, _148->liquid
- # src\main.cpp:214: 		matAtt[static_cast<uint32_t>(element::water) ].liquid 			   = true;
-	.loc 12 214 48
+ # src\main.cpp:212: 		matAtt[static_cast<uint32_t>(element::water) ].liquid 			   = true;
+	.loc 12 212 48
 	movq	192(%rbp), %rax	 # this, tmp469
 	addq	$32, %rax	 #, _149
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # _149,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:214: 		matAtt[static_cast<uint32_t>(element::water) ].liquid 			   = true;
-	.loc 12 214 63
+ # src\main.cpp:212: 		matAtt[static_cast<uint32_t>(element::water) ].liquid 			   = true;
+	.loc 12 212 63
 	movb	$1, 24(%rax)	 #, _150->liquid
- # src\main.cpp:215: 		matAtt[static_cast<uint32_t>(element::wood)  ].liquid 			   = false;
-	.loc 12 215 48
+ # src\main.cpp:213: 		matAtt[static_cast<uint32_t>(element::wood)  ].liquid 			   = false;
+	.loc 12 213 48
 	movq	192(%rbp), %rax	 # this, tmp470
 	addq	$32, %rax	 #, _151
 	movl	$2, %edx	 #,
 	movq	%rax, %rcx	 # _151,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:215: 		matAtt[static_cast<uint32_t>(element::wood)  ].liquid 			   = false;
-	.loc 12 215 63
+ # src\main.cpp:213: 		matAtt[static_cast<uint32_t>(element::wood)  ].liquid 			   = false;
+	.loc 12 213 63
 	movb	$0, 24(%rax)	 #, _152->liquid
- # src\main.cpp:216: 		matAtt[static_cast<uint32_t>(element::fire)  ].liquid 			   = false;
-	.loc 12 216 48
+ # src\main.cpp:214: 		matAtt[static_cast<uint32_t>(element::fire)  ].liquid 			   = false;
+	.loc 12 214 48
 	movq	192(%rbp), %rax	 # this, tmp471
 	addq	$32, %rax	 #, _153
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # _153,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:216: 		matAtt[static_cast<uint32_t>(element::fire)  ].liquid 			   = false;
-	.loc 12 216 63
+ # src\main.cpp:214: 		matAtt[static_cast<uint32_t>(element::fire)  ].liquid 			   = false;
+	.loc 12 214 63
 	movb	$0, 24(%rax)	 #, _154->liquid
- # src\main.cpp:217: 		matAtt[static_cast<uint32_t>(element::metal) ].liquid 			   = false;
-	.loc 12 217 48
+ # src\main.cpp:215: 		matAtt[static_cast<uint32_t>(element::metal) ].liquid 			   = false;
+	.loc 12 215 48
 	movq	192(%rbp), %rax	 # this, tmp472
 	addq	$32, %rax	 #, _155
 	movl	$4, %edx	 #,
 	movq	%rax, %rcx	 # _155,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:217: 		matAtt[static_cast<uint32_t>(element::metal) ].liquid 			   = false;
-	.loc 12 217 63
+ # src\main.cpp:215: 		matAtt[static_cast<uint32_t>(element::metal) ].liquid 			   = false;
+	.loc 12 215 63
 	movb	$0, 24(%rax)	 #, _156->liquid
- # src\main.cpp:218: 		matAtt[static_cast<uint32_t>(element::Custom)].liquid 			   = false;
-	.loc 12 218 48
+ # src\main.cpp:216: 		matAtt[static_cast<uint32_t>(element::Custom)].liquid 			   = false;
+	.loc 12 216 48
 	movq	192(%rbp), %rax	 # this, tmp473
 	addq	$32, %rax	 #, _157
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # _157,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
- # src\main.cpp:218: 		matAtt[static_cast<uint32_t>(element::Custom)].liquid 			   = false;
-	.loc 12 218 63
+ # src\main.cpp:216: 		matAtt[static_cast<uint32_t>(element::Custom)].liquid 			   = false;
+	.loc 12 216 63
 	movb	$0, 24(%rax)	 #, _158->liquid
- # src\main.cpp:222: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
-	.loc 12 222 60
+ # src\main.cpp:220: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
+	.loc 12 220 60
 	movq	192(%rbp), %rax	 # this, tmp474
 	movl	40(%rax), %edx	 # this_194(D)->w, _159
- # src\main.cpp:222: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
-	.loc 12 222 62
+ # src\main.cpp:220: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
+	.loc 12 220 62
 	movq	192(%rbp), %rax	 # this, tmp475
 	movl	44(%rax), %eax	 # this_194(D)->h, _160
- # src\main.cpp:222: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
-	.loc 12 222 61
+ # src\main.cpp:220: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
+	.loc 12 220 61
 	imull	%eax, %edx	 # _160, _161
- # src\main.cpp:222: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
-	.loc 12 222 64
+ # src\main.cpp:220: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
+	.loc 12 220 64
 	movq	192(%rbp), %rax	 # this, tmp476
 	movl	48(%rax), %eax	 # this_194(D)->d, _162
- # src\main.cpp:222: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
-	.loc 12 222 9
+ # src\main.cpp:220: 		printf("matrix initialized: CELLS: [%d] BPC: [%d]\n\n", (w*h*d), sizeof(CELL_BACK_BUFFER[0]));
+	.loc 12 220 9
 	imull	%edx, %eax	 # _161, _163
 	movl	$32, %r8d	 #,
 	movl	%eax, %edx	 # _163,
 	leaq	.LC35(%rip), %rax	 #, tmp477
 	movq	%rax, %rcx	 # tmp477,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:223: 		return width * height * depth;
-	.loc 12 223 16
+ # src\main.cpp:221: 		return width * height * depth;
+	.loc 12 221 16
 	movl	200(%rbp), %eax	 # width, tmp478
 	imull	208(%rbp), %eax	 # height, _164
- # src\main.cpp:223: 		return width * height * depth;
-	.loc 12 223 27
+ # src\main.cpp:221: 		return width * height * depth;
+	.loc 12 221 27
 	imull	216(%rbp), %eax	 # depth, _352
 	jmp	.L123	 #
 .L121:
 .LBB94:
 .LBB90:
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 118
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 118
 	movq	%rax, %rdi	 #, tmp482
 	testb	%sil, %sil	 # cleanup.109_176
 	je	.L118	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 118 is_stmt 0 discriminator 22
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 118 is_stmt 0 discriminator 22
 	movq	%rbp, %rax	 #, tmp480
 	movq	%rax, %rcx	 # tmp480,
 	call	_ZN6MATRIX4cellD1Ev	 #
 .L118:
 	movq	%rdi, %rsi	 # tmp482, tmp481
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 72 is_stmt 1
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 72 is_stmt 1
 	testb	%bl, %bl	 # cleanup.108_174
 	je	.L119	 #,
- # src\main.cpp:144: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-	.loc 12 144 72 is_stmt 0 discriminator 23
+ # src\main.cpp:142: 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+	.loc 12 142 72 is_stmt 0 discriminator 23
 	leaq	-32(%rbp), %rax	 #, tmp485
 	movq	%rax, %rcx	 # tmp485,
 	call	_ZN6MATRIX4cellD1Ev	 #
 .L119:
-	movq	%rsi, %rax	 # tmp481, D.209848
-	movq	%rax, %rcx	 # D.209848,
+	movq	%rsi, %rax	 # tmp481, D.209849
+	movq	%rax, %rcx	 # D.209849,
 	call	_Unwind_Resume	 #
 .L122:
 .LBE90:
 .LBE94:
 .LBB95:
 .LBB93:
- # src\main.cpp:152: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
-	.loc 12 152 25 is_stmt 1
+ # src\main.cpp:150: 			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+	.loc 12 150 25 is_stmt 1
 	movq	%rax, %rbx	 #, tmp487
 	leaq	64(%rbp), %rax	 #, tmp486
 	movq	%rax, %rcx	 # tmp486,
 	call	_ZN6MATRIX4cellD1Ev	 #
-	movq	%rbx, %rax	 # tmp487, D.209849
-	movq	%rax, %rcx	 # D.209849,
+	movq	%rbx, %rax	 # tmp487, D.209850
+	movq	%rax, %rcx	 # D.209850,
 	call	_Unwind_Resume	 #
 .LEHE5:
 .L123:
 .LBE93:
 .LBE95:
- # src\main.cpp:224: 	}
-	.loc 12 224 2
+ # src\main.cpp:222: 	}
+	.loc 12 222 2
 	addq	$280, %rsp	 #,
 	popq	%rbx	 #
 .LCFI149:
@@ -3417,7 +3417,7 @@ _ZN6MATRIX10InitMatrixEjjj:
 	.seh_proc	_ZN6MATRIX12AccessDataAtEjjj
 _ZN6MATRIX12AccessDataAtEjjj:
 .LFB10166:
-	.loc 12 226 7
+	.loc 12 224 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
 .LCFI153:
@@ -3435,84 +3435,84 @@ _ZN6MATRIX12AccessDataAtEjjj:
 	movq	%rdx, 40(%rbp)	 # this, this
 	movl	%r8d, 48(%rbp)	 # x, x
 	movl	%r9d, 56(%rbp)	 # y, y
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 10
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 10
 	movq	40(%rbp), %rax	 # this, tmp96
 	movl	40(%rax), %eax	 # this_15(D)->w, _1
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 12
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 12
 	cmpl	%eax, 48(%rbp)	 # _1, x
 	jb	.L125	 #,
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 14 discriminator 1
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 14 discriminator 1
 	movq	40(%rbp), %rax	 # this, tmp97
 	movl	40(%rax), %eax	 # this_15(D)->w, _2
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 12 discriminator 1
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 12 discriminator 1
 	subl	$1, %eax	 #, iftmp.71_11
 	jmp	.L126	 #
 .L125:
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 12 is_stmt 0 discriminator 2
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 12 is_stmt 0 discriminator 2
 	movl	48(%rbp), %eax	 # x, iftmp.71_11
 .L126:
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 5 is_stmt 1 discriminator 4
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 5 is_stmt 1 discriminator 4
 	movl	%eax, 48(%rbp)	 # iftmp.71_11, x
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 30 discriminator 4
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 30 discriminator 4
 	movq	40(%rbp), %rax	 # this, tmp98
 	movl	44(%rax), %eax	 # this_15(D)->h, _3
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 32 discriminator 4
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 32 discriminator 4
 	cmpl	%eax, 56(%rbp)	 # _3, y
 	jb	.L127	 #,
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 34 discriminator 5
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 34 discriminator 5
 	movq	40(%rbp), %rax	 # this, tmp99
 	movl	44(%rax), %eax	 # this_15(D)->h, _4
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 32 discriminator 5
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 32 discriminator 5
 	subl	$1, %eax	 #, iftmp.72_12
 	jmp	.L128	 #
 .L127:
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 32 is_stmt 0 discriminator 6
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 32 is_stmt 0 discriminator 6
 	movl	56(%rbp), %eax	 # y, iftmp.72_12
 .L128:
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 25 is_stmt 1 discriminator 8
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 25 is_stmt 1 discriminator 8
 	movl	%eax, 56(%rbp)	 # iftmp.72_12, y
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 50 discriminator 8
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 50 discriminator 8
 	movq	40(%rbp), %rax	 # this, tmp100
 	movl	48(%rax), %eax	 # this_15(D)->d, _5
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 52 discriminator 8
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 52 discriminator 8
 	cmpl	%eax, 64(%rbp)	 # _5, z
 	jb	.L129	 #,
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 54 discriminator 9
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 54 discriminator 9
 	movq	40(%rbp), %rax	 # this, tmp101
 	movl	48(%rax), %eax	 # this_15(D)->d, _6
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 52 discriminator 9
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 52 discriminator 9
 	subl	$1, %eax	 #, iftmp.73_13
 	jmp	.L130	 #
 .L129:
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 52 is_stmt 0 discriminator 10
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 52 is_stmt 0 discriminator 10
 	movl	64(%rbp), %eax	 # z, iftmp.73_13
 .L130:
- # src\main.cpp:228: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 228 45 is_stmt 1 discriminator 12
+ # src\main.cpp:226: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 226 45 is_stmt 1 discriminator 12
 	movl	%eax, 64(%rbp)	 # iftmp.73_13, z
- # src\main.cpp:229: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
-	.loc 12 229 10 discriminator 12
+ # src\main.cpp:227: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
+	.loc 12 227 10 discriminator 12
 	movq	40(%rbp), %rax	 # this, tmp102
 	movq	24(%rax), %rbx	 # this_15(D)->CELL_BACK_BUFFER, _28
- # src\main.cpp:229: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
-	.loc 12 229 41 discriminator 12
+ # src\main.cpp:227: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
+	.loc 12 227 41 discriminator 12
 	movl	64(%rbp), %r8d	 # z, tmp103
 	movl	56(%rbp), %ecx	 # y, tmp104
 	movl	48(%rbp), %edx	 # x, tmp105
@@ -3522,8 +3522,8 @@ _ZN6MATRIX12AccessDataAtEjjj:
 	movq	%rax, %rcx	 # tmp106,
 	call	_ZN6MATRIX14FlattenedIndexEjjj	 #
 	movl	%eax, %eax	 # _7, _8
- # src\main.cpp:229: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
-	.loc 12 229 50 discriminator 12
+ # src\main.cpp:227: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
+	.loc 12 227 50 discriminator 12
 	salq	$5, %rax	 #, _9
 	leaq	(%rbx,%rax), %r8	 #, _10
 	movq	32(%rbp), %rcx	 # <retval>, tmp107
@@ -3535,8 +3535,8 @@ _ZN6MATRIX12AccessDataAtEjjj:
 	movq	24(%r8), %rdx	 # MEM[(const struct cell &)_10],
 	movq	%rax, 16(%rcx)	 # tmp109, *_30(D)
 	movq	%rdx, 24(%rcx)	 #, *_30(D)
- # src\main.cpp:230: 	}
-	.loc 12 230 2 discriminator 12
+ # src\main.cpp:228: 	}
+	.loc 12 228 2 discriminator 12
 	movq	32(%rbp), %rax	 # <retval>,
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
@@ -3554,7 +3554,7 @@ _ZN6MATRIX12AccessDataAtEjjj:
 	.seh_proc	_ZN6MATRIX11WriteDataToEjjjRKNS_4cellE
 _ZN6MATRIX11WriteDataToEjjjRKNS_4cellE:
 .LFB10167:
-	.loc 12 232 7
+	.loc 12 230 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
 .LCFI159:
@@ -3572,84 +3572,84 @@ _ZN6MATRIX11WriteDataToEjjjRKNS_4cellE:
 	movq	%rdx, 40(%rbp)	 # this, this
 	movl	%r8d, 48(%rbp)	 # x, x
 	movl	%r9d, 56(%rbp)	 # y, y
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 10
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 10
 	movq	40(%rbp), %rax	 # this, tmp101
 	movl	40(%rax), %eax	 # this_19(D)->w, _1
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 12
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 12
 	cmpl	%eax, 48(%rbp)	 # _1, x
 	jb	.L133	 #,
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 14 discriminator 1
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 14 discriminator 1
 	movq	40(%rbp), %rax	 # this, tmp102
 	movl	40(%rax), %eax	 # this_19(D)->w, _2
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 12 discriminator 1
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 12 discriminator 1
 	subl	$1, %eax	 #, iftmp.68_15
 	jmp	.L134	 #
 .L133:
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 12 is_stmt 0 discriminator 2
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 12 is_stmt 0 discriminator 2
 	movl	48(%rbp), %eax	 # x, iftmp.68_15
 .L134:
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 5 is_stmt 1 discriminator 4
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 5 is_stmt 1 discriminator 4
 	movl	%eax, 48(%rbp)	 # iftmp.68_15, x
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 30 discriminator 4
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 30 discriminator 4
 	movq	40(%rbp), %rax	 # this, tmp103
 	movl	44(%rax), %eax	 # this_19(D)->h, _3
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 32 discriminator 4
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 32 discriminator 4
 	cmpl	%eax, 56(%rbp)	 # _3, y
 	jb	.L135	 #,
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 34 discriminator 5
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 34 discriminator 5
 	movq	40(%rbp), %rax	 # this, tmp104
 	movl	44(%rax), %eax	 # this_19(D)->h, _4
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 32 discriminator 5
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 32 discriminator 5
 	subl	$1, %eax	 #, iftmp.69_16
 	jmp	.L136	 #
 .L135:
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 32 is_stmt 0 discriminator 6
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 32 is_stmt 0 discriminator 6
 	movl	56(%rbp), %eax	 # y, iftmp.69_16
 .L136:
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 25 is_stmt 1 discriminator 8
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 25 is_stmt 1 discriminator 8
 	movl	%eax, 56(%rbp)	 # iftmp.69_16, y
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 50 discriminator 8
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 50 discriminator 8
 	movq	40(%rbp), %rax	 # this, tmp105
 	movl	48(%rax), %eax	 # this_19(D)->d, _5
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 52 discriminator 8
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 52 discriminator 8
 	cmpl	%eax, 64(%rbp)	 # _5, z
 	jb	.L137	 #,
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 54 discriminator 9
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 54 discriminator 9
 	movq	40(%rbp), %rax	 # this, tmp106
 	movl	48(%rax), %eax	 # this_19(D)->d, _6
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 52 discriminator 9
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 52 discriminator 9
 	subl	$1, %eax	 #, iftmp.70_17
 	jmp	.L138	 #
 .L137:
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 52 is_stmt 0 discriminator 10
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 52 is_stmt 0 discriminator 10
 	movl	64(%rbp), %eax	 # z, iftmp.70_17
 .L138:
- # src\main.cpp:234: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 234 45 is_stmt 1 discriminator 12
+ # src\main.cpp:232: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 232 45 is_stmt 1 discriminator 12
 	movl	%eax, 64(%rbp)	 # iftmp.70_17, z
- # src\main.cpp:235: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
-	.loc 12 235 3 discriminator 12
+ # src\main.cpp:233: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
+	.loc 12 233 3 discriminator 12
 	movq	40(%rbp), %rax	 # this, tmp107
 	movq	24(%rax), %rbx	 # this_19(D)->CELL_BACK_BUFFER, _32
- # src\main.cpp:235: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
-	.loc 12 235 34 discriminator 12
+ # src\main.cpp:233: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
+	.loc 12 233 34 discriminator 12
 	movl	64(%rbp), %r8d	 # z, tmp108
 	movl	56(%rbp), %ecx	 # y, tmp109
 	movl	48(%rbp), %edx	 # x, tmp110
@@ -3659,12 +3659,12 @@ _ZN6MATRIX11WriteDataToEjjjRKNS_4cellE:
 	movq	%rax, %rcx	 # tmp111,
 	call	_ZN6MATRIX14FlattenedIndexEjjj	 #
 	movl	%eax, %eax	 # _7, _8
- # src\main.cpp:235: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
-	.loc 12 235 43 discriminator 12
+ # src\main.cpp:233: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
+	.loc 12 233 43 discriminator 12
 	salq	$5, %rax	 #, _9
 	leaq	(%rbx,%rax), %r8	 #, _10
- # src\main.cpp:235: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
-	.loc 12 235 45 discriminator 12
+ # src\main.cpp:233: 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
+	.loc 12 233 45 discriminator 12
 	movq	72(%rbp), %rcx	 # _data, tmp112
 	movq	(%rcx), %rax	 # *_data_34(D), tmp113
 	movq	8(%rcx), %rdx	 # *_data_34(D),
@@ -3674,12 +3674,12 @@ _ZN6MATRIX11WriteDataToEjjjRKNS_4cellE:
 	movq	24(%rcx), %rdx	 # *_data_34(D),
 	movq	%rax, 16(%r8)	 # tmp114, *_10
 	movq	%rdx, 24(%r8)	 #, *_10
- # src\main.cpp:236: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
-	.loc 12 236 10 discriminator 12
+ # src\main.cpp:234: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
+	.loc 12 234 10 discriminator 12
 	movq	40(%rbp), %rax	 # this, tmp115
 	movq	24(%rax), %rbx	 # this_19(D)->CELL_BACK_BUFFER, _36
- # src\main.cpp:236: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
-	.loc 12 236 41 discriminator 12
+ # src\main.cpp:234: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
+	.loc 12 234 41 discriminator 12
 	movl	64(%rbp), %r8d	 # z, tmp116
 	movl	56(%rbp), %ecx	 # y, tmp117
 	movl	48(%rbp), %edx	 # x, tmp118
@@ -3689,8 +3689,8 @@ _ZN6MATRIX11WriteDataToEjjjRKNS_4cellE:
 	movq	%rax, %rcx	 # tmp119,
 	call	_ZN6MATRIX14FlattenedIndexEjjj	 #
 	movl	%eax, %eax	 # _11, _12
- # src\main.cpp:236: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
-	.loc 12 236 50 discriminator 12
+ # src\main.cpp:234: 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
+	.loc 12 234 50 discriminator 12
 	salq	$5, %rax	 #, _13
 	leaq	(%rbx,%rax), %r8	 #, _14
 	movq	32(%rbp), %rcx	 # <retval>, tmp120
@@ -3702,8 +3702,8 @@ _ZN6MATRIX11WriteDataToEjjjRKNS_4cellE:
 	movq	24(%r8), %rdx	 # MEM[(const struct cell &)_14],
 	movq	%rax, 16(%rcx)	 # tmp122, *_38(D)
 	movq	%rdx, 24(%rcx)	 #, *_38(D)
- # src\main.cpp:237: 	}
-	.loc 12 237 2 discriminator 12
+ # src\main.cpp:235: 	}
+	.loc 12 235 2 discriminator 12
 	movq	32(%rbp), %rax	 # <retval>,
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
@@ -3721,7 +3721,7 @@ _ZN6MATRIX11WriteDataToEjjjRKNS_4cellE:
 	.seh_proc	_ZN6MATRIX15UpdateWorldViewEP6HWND__RSt6atomicIbE
 _ZN6MATRIX15UpdateWorldViewEP6HWND__RSt6atomicIbE:
 .LFB10168:
-	.loc 12 239 14
+	.loc 12 237 14
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
 .LCFI165:
@@ -3735,82 +3735,82 @@ _ZN6MATRIX15UpdateWorldViewEP6HWND__RSt6atomicIbE:
 	movq	%rdx, 24(%rbp)	 # hwnd, hwnd
 	movq	%r8, 32(%rbp)	 # running, running
 .LBB96:
- # src\main.cpp:241: 		if(running)
-	.loc 12 241 6
+ # src\main.cpp:239: 		if(running)
+	.loc 12 239 6
 	movq	32(%rbp), %rax	 # running, tmp103
 	movq	%rax, %rcx	 # tmp103,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:241: 		if(running)
-	.loc 12 241 3
+ # src\main.cpp:239: 		if(running)
+	.loc 12 239 3
 	testb	%al, %al	 # retval.126_27
 	je	.L147	 #,
 .LBB97:
 .LBB98:
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 17
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 17
 	movl	$0, -4(%rbp)	 #, i
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 4
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 4
 	jmp	.L142	 #
 .L146:
- # src\main.cpp:245: 				if(!running){break;}
-	.loc 12 245 9
+ # src\main.cpp:243: 				if(!running){break;}
+	.loc 12 243 9
 	movq	32(%rbp), %rax	 # running, tmp104
 	movq	%rax, %rcx	 # tmp104,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:245: 				if(!running){break;}
-	.loc 12 245 8
+ # src\main.cpp:243: 				if(!running){break;}
+	.loc 12 243 8
 	xorl	$1, %eax	 #, retval.127_31
- # src\main.cpp:245: 				if(!running){break;}
-	.loc 12 245 5
+ # src\main.cpp:243: 				if(!running){break;}
+	.loc 12 243 5
 	testb	%al, %al	 # retval.127_31
 	jne	.L148	 #,
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 8
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 8
 	movq	16(%rbp), %rax	 # this, tmp105
 	movq	24(%rax), %rax	 # this_29(D)->CELL_BACK_BUFFER, _2
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 25
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 25
 	movl	-4(%rbp), %edx	 # i, _3
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 26
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 26
 	salq	$5, %rdx	 #, _4
 	addq	%rdx, %rax	 # _4, _5
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 28
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 28
 	movl	28(%rax), %edx	 # _5->MaterialType, _6
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 44
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 44
 	movq	16(%rbp), %rax	 # this, tmp106
 	movq	8(%rax), %rax	 # this_29(D)->CELL_FRONT_BUFFER, _7
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 62
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 62
 	movl	-4(%rbp), %ecx	 # i, _8
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 63
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 63
 	salq	$5, %rcx	 #, _9
 	addq	%rcx, %rax	 # _9, _10
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 65
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 65
 	movl	28(%rax), %eax	 # _10->MaterialType, _11
- # src\main.cpp:247: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-	.loc 12 247 5
+ # src\main.cpp:245: 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
+	.loc 12 245 5
 	cmpl	%eax, %edx	 # _11, _6
 	je	.L145	 #,
- # src\main.cpp:251: 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
-	.loc 12 251 35
+ # src\main.cpp:249: 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
+	.loc 12 249 35
 	movq	16(%rbp), %rax	 # this, tmp107
 	leaq	24(%rax), %rdx	 #, _12
- # src\main.cpp:251: 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
-	.loc 12 251 16
+ # src\main.cpp:249: 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
+	.loc 12 249 16
 	movq	16(%rbp), %rax	 # this, tmp108
 	addq	$8, %rax	 #, _13
- # src\main.cpp:251: 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
-	.loc 12 251 15
+ # src\main.cpp:249: 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
+	.loc 12 249 15
 	movq	%rax, %rcx	 # _13,
 	call	_ZSt4swapIPN6MATRIX4cellEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS7_ESt18is_move_assignableIS7_EEE5valueEvE4typeERS7_SH_	 #
- # src\main.cpp:252: 					InvalidateRect(hwnd, nullptr, FALSE);
-	.loc 12 252 20
+ # src\main.cpp:250: 					InvalidateRect(hwnd, nullptr, FALSE);
+	.loc 12 250 20
 	movq	24(%rbp), %rax	 # hwnd, tmp109
 	movl	$0, %r8d	 #,
 	movl	$0, %edx	 #,
@@ -3818,59 +3818,59 @@ _ZN6MATRIX15UpdateWorldViewEP6HWND__RSt6atomicIbE:
 	movq	__imp_InvalidateRect(%rip), %rax	 #, tmp110
 	call	*%rax	 # tmp110
 .LVL12:
- # src\main.cpp:253: 					break;
-	.loc 12 253 6
+ # src\main.cpp:251: 					break;
+	.loc 12 251 6
 	jmp	.L141	 #
 .L145:
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 4 discriminator 2
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 4 discriminator 2
 	addl	$1, -4(%rbp)	 #, i
 .L142:
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 25 discriminator 1
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 25 discriminator 1
 	movq	16(%rbp), %rax	 # this, tmp111
 	movl	40(%rax), %edx	 # this_29(D)->w, _14
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 27 discriminator 1
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 27 discriminator 1
 	movq	16(%rbp), %rax	 # this, tmp112
 	movl	44(%rax), %eax	 # this_29(D)->h, _15
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 26 discriminator 1
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 26 discriminator 1
 	imull	%eax, %edx	 # _15, _16
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 29 discriminator 1
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 29 discriminator 1
 	movq	16(%rbp), %rax	 # this, tmp113
 	movl	48(%rax), %eax	 # this_29(D)->d, _17
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 28 discriminator 1
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 28 discriminator 1
 	imull	%edx, %eax	 # _16, _18
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 31 discriminator 1
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 31 discriminator 1
 	subl	$1, %eax	 #, _19
- # src\main.cpp:243: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
-	.loc 12 243 23 discriminator 1
+ # src\main.cpp:241: 			for(uint32_t i=0; i<=w*h*d -1; ++i)
+	.loc 12 241 23 discriminator 1
 	cmpl	-4(%rbp), %eax	 # i, _19
 	jnb	.L146	 #,
 .LBE98:
 .LBE97:
 .LBE96:
- # src\main.cpp:257: 	}
-	.loc 12 257 2
+ # src\main.cpp:255: 	}
+	.loc 12 255 2
 	jmp	.L147	 #
 .L148:
 .LBB101:
 .LBB100:
 .LBB99:
- # src\main.cpp:245: 				if(!running){break;}
-	.loc 12 245 18
+ # src\main.cpp:243: 				if(!running){break;}
+	.loc 12 243 18
 	nop	
 .L141:
 .L147:
 .LBE99:
 .LBE100:
 .LBE101:
- # src\main.cpp:257: 	}
-	.loc 12 257 2
+ # src\main.cpp:255: 	}
+	.loc 12 255 2
 	nop	
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
@@ -3886,7 +3886,7 @@ _ZN6MATRIX15UpdateWorldViewEP6HWND__RSt6atomicIbE:
 	.seh_proc	_ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj
 _ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj:
 .LFB10170:
-	.loc 12 259 14
+	.loc 12 257 14
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
 .LCFI168:
@@ -3905,92 +3905,92 @@ _ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj:
 	movl	%r8d, 48(%rbp)	 # x1, x1
 	movl	%r9d, 56(%rbp)	 # x2, x2
 .LBB102:
- # src\main.cpp:261: 		for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 261 16
+ # src\main.cpp:259: 		for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 259 16
 	movl	80(%rbp), %eax	 # z1, tmp92
 	movl	%eax, -4(%rbp)	 # tmp92, z
- # src\main.cpp:261: 		for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 261 3
+ # src\main.cpp:259: 		for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 259 3
 	jmp	.L150	 #
 .L161:
 .LBB103:
- # src\main.cpp:263: 			if(!running) break;
-	.loc 12 263 8
+ # src\main.cpp:261: 			if(!running) break;
+	.loc 12 261 8
 	movq	40(%rbp), %rax	 # running, tmp93
 	movq	%rax, %rcx	 # tmp93,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:263: 			if(!running) break;
-	.loc 12 263 7
+ # src\main.cpp:261: 			if(!running) break;
+	.loc 12 261 7
 	xorl	$1, %eax	 #, retval.120_26
- # src\main.cpp:263: 			if(!running) break;
-	.loc 12 263 4
+ # src\main.cpp:261: 			if(!running) break;
+	.loc 12 261 4
 	testb	%al, %al	 # retval.120_26
 	jne	.L165	 #,
 .LBB104:
- # src\main.cpp:265: 			for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 265 17
+ # src\main.cpp:263: 			for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 263 17
 	movl	64(%rbp), %eax	 # y1, tmp94
 	movl	%eax, -8(%rbp)	 # tmp94, y
- # src\main.cpp:265: 			for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 265 4
+ # src\main.cpp:263: 			for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 263 4
 	jmp	.L153	 #
 .L160:
 .LBB105:
 .LBB106:
- # src\main.cpp:267: 				for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 267 18
+ # src\main.cpp:265: 				for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 265 18
 	movl	48(%rbp), %eax	 # x1, tmp95
 	movl	%eax, -12(%rbp)	 # tmp95, x
- # src\main.cpp:267: 				for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 267 5
+ # src\main.cpp:265: 				for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 265 5
 	jmp	.L154	 #
 .L159:
 .LBB107:
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 115
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 115
 	movl	$0, %ebx	 #, cleanup.121_11
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 50
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 50
 	cmpl	$0, -12(%rbp)	 #, x
 	je	.L155	 #,
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 29 discriminator 2
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 29 discriminator 2
 	movq	32(%rbp), %rax	 # this, tmp96
 	movl	40(%rax), %eax	 # this_36(D)->w, _2
 	subl	$1, %eax	 #, _3
 	cmpl	%eax, -12(%rbp)	 # _3, x
 	je	.L155	 #,
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 29 is_stmt 0 discriminator 4
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 29 is_stmt 0 discriminator 4
 	cmpl	$0, -8(%rbp)	 #, y
 	je	.L155	 #,
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 29 discriminator 6
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 29 discriminator 6
 	movq	32(%rbp), %rax	 # this, tmp97
 	movl	44(%rax), %eax	 # this_36(D)->h, _4
 	subl	$1, %eax	 #, _5
 	cmpl	%eax, -8(%rbp)	 # _5, y
 	je	.L155	 #,
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 29 discriminator 8
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 29 discriminator 8
 	cmpl	$0, -4(%rbp)	 #, z
 	je	.L155	 #,
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 29 discriminator 10
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 29 discriminator 10
 	movq	32(%rbp), %rax	 # this, tmp98
 	movl	48(%rax), %eax	 # this_36(D)->d, _6
 	subl	$1, %eax	 #, _7
 	cmpl	%eax, -4(%rbp)	 # _7, z
 	jne	.L156	 #,
 .L155:
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 73 is_stmt 1 discriminator 11
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 73 is_stmt 1 discriminator 11
 	leaq	-80(%rbp), %rax	 #, tmp99
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # tmp99,
 	call	_ZN6MATRIX4cellC1ENS_7elementE	 #
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 115 discriminator 11
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 115 discriminator 11
 	movl	$1, %ebx	 #, cleanup.121_11
 	leaq	-160(%rbp), %rax	 #, tmp100
 	movl	-8(%rbp), %r9d	 # y, tmp101
@@ -4004,25 +4004,25 @@ _ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj:
 	call	_ZN6MATRIX11WriteDataToEjjjRKNS_4cellE	 #
 	jmp	.L157	 #
 .L156:
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 115 is_stmt 0 discriminator 12
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 115 is_stmt 0 discriminator 12
 	leaq	-160(%rbp), %rax	 #, tmp106
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # tmp106,
 	call	_ZN6MATRIX4cellC1ENS_7elementE	 #
 .L157:
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 73 is_stmt 1 discriminator 14
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 73 is_stmt 1 discriminator 14
 	testb	%bl, %bl	 # cleanup.121_11
 	je	.L158	 #,
- # src\main.cpp:269: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-	.loc 12 269 73 is_stmt 0 discriminator 15
+ # src\main.cpp:267: 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+	.loc 12 267 73 is_stmt 0 discriminator 15
 	leaq	-80(%rbp), %rax	 #, tmp107
 	movq	%rax, %rcx	 # tmp107,
 	call	_ZN6MATRIX4cellD1Ev	 #
 .L158:
- # src\main.cpp:270: 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
-	.loc 12 270 48 is_stmt 1 discriminator 17
+ # src\main.cpp:268: 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
+	.loc 12 268 48 is_stmt 1 discriminator 17
 	movq	-160(%rbp), %rax	 # genericCellRead, tmp108
 	movq	-152(%rbp), %rdx	 # genericCellRead,
 	movq	%rax, -48(%rbp)	 # tmp108, D.186090
@@ -4039,62 +4039,62 @@ _ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj:
 .LEHB6:
 	call	_ZN6MATRIX18ReadCellAttributesENS_4cellE	 #
 .LEHE6:
- # src\main.cpp:270: 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
-	.loc 12 270 48 is_stmt 0 discriminator 2
+ # src\main.cpp:268: 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
+	.loc 12 268 48 is_stmt 0 discriminator 2
 	leaq	-48(%rbp), %rax	 #, tmp113
 	movq	%rax, %rcx	 # tmp113,
 	call	_ZN6MATRIX4cellD1Ev	 #
- # src\main.cpp:272: 				}
-	.loc 12 272 5 is_stmt 1 discriminator 2
+ # src\main.cpp:270: 				}
+	.loc 12 270 5 is_stmt 1 discriminator 2
 	leaq	-160(%rbp), %rax	 #, tmp114
 	movq	%rax, %rcx	 # tmp114,
 	call	_ZN6MATRIX4cellD1Ev	 #
 .LBE107:
- # src\main.cpp:267: 				for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 267 5 discriminator 2
+ # src\main.cpp:265: 				for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 265 5 discriminator 2
 	addl	$1, -12(%rbp)	 #, x
 .L154:
- # src\main.cpp:267: 				for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 267 25 discriminator 2
+ # src\main.cpp:265: 				for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 265 25 discriminator 2
 	movl	-12(%rbp), %eax	 # x, tmp115
 	cmpl	%eax, 56(%rbp)	 # tmp115, x2
 	jnb	.L159	 #,
 .LBE106:
 .LBE105:
- # src\main.cpp:265: 			for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 265 4 discriminator 2
+ # src\main.cpp:263: 			for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 263 4 discriminator 2
 	addl	$1, -8(%rbp)	 #, y
 .L153:
- # src\main.cpp:265: 			for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 265 24 discriminator 1
+ # src\main.cpp:263: 			for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 263 24 discriminator 1
 	movl	-8(%rbp), %eax	 # y, tmp116
 	cmpl	%eax, 72(%rbp)	 # tmp116, y2
 	jnb	.L160	 #,
 .LBE104:
 .LBE103:
- # src\main.cpp:261: 		for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 261 3 discriminator 2
+ # src\main.cpp:259: 		for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 259 3 discriminator 2
 	addl	$1, -4(%rbp)	 #, z
 .L150:
- # src\main.cpp:261: 		for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 261 23 discriminator 1
+ # src\main.cpp:259: 		for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 259 23 discriminator 1
 	movl	-4(%rbp), %eax	 # z, tmp117
 	cmpl	%eax, 88(%rbp)	 # tmp117, z2
 	jnb	.L161	 #,
 .LBE102:
- # src\main.cpp:275: 	}
-	.loc 12 275 2
+ # src\main.cpp:273: 	}
+	.loc 12 273 2
 	jmp	.L149	 #
 .L165:
 .LBB114:
 .LBB112:
- # src\main.cpp:263: 			if(!running) break;
-	.loc 12 263 17
+ # src\main.cpp:261: 			if(!running) break;
+	.loc 12 261 17
 	nop	
 .LBE112:
 .LBE114:
- # src\main.cpp:275: 	}
-	.loc 12 275 2
+ # src\main.cpp:273: 	}
+	.loc 12 273 2
 	jmp	.L149	 #
 .L163:
 .LBB115:
@@ -4103,19 +4103,19 @@ _ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj:
 .LBB110:
 .LBB109:
 .LBB108:
- # src\main.cpp:270: 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
-	.loc 12 270 48
+ # src\main.cpp:268: 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
+	.loc 12 268 48
 	movq	%rax, %rbx	 #, tmp120
 	leaq	-48(%rbp), %rax	 #, tmp118
 	movq	%rax, %rcx	 # tmp118,
 	call	_ZN6MATRIX4cellD1Ev	 #
- # src\main.cpp:272: 				}
-	.loc 12 272 5
+ # src\main.cpp:270: 				}
+	.loc 12 270 5
 	leaq	-160(%rbp), %rax	 #, tmp123
 	movq	%rax, %rcx	 # tmp123,
 	call	_ZN6MATRIX4cellD1Ev	 #
-	movq	%rbx, %rax	 # tmp119, D.209871
-	movq	%rax, %rcx	 # D.209871,
+	movq	%rbx, %rax	 # tmp119, D.209872
+	movq	%rax, %rcx	 # D.209872,
 .LEHB7:
 	call	_Unwind_Resume	 #
 	nop	
@@ -4127,8 +4127,8 @@ _ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj:
 .LBE111:
 .LBE113:
 .LBE115:
- # src\main.cpp:275: 	}
-	.loc 12 275 2
+ # src\main.cpp:273: 	}
+	.loc 12 273 2
 	addq	$216, %rsp	 #,
 	popq	%rbx	 #
 .LCFI172:
@@ -4168,7 +4168,7 @@ _ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj:
 	.seh_proc	_ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj
 _ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj:
 .LFB10171:
-	.loc 12 279 14
+	.loc 12 277 14
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
 .LCFI174:
@@ -4182,19 +4182,19 @@ _ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj:
 	movq	%rdx, 24(%rbp)	 # hwnd, hwnd
 	movq	%r8, 32(%rbp)	 # pressed, pressed
 	movq	%r9, 40(%rbp)	 # held, held
- # src\main.cpp:281: 		ready = false;
-	.loc 12 281 9
+ # src\main.cpp:279: 		ready = false;
+	.loc 12 279 9
 	movq	64(%rbp), %rax	 # ready, tmp88
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # tmp88,
 	call	_ZNSt6atomicIbEaSEb	 #
- # src\main.cpp:283: 		while(running)
-	.loc 12 283 3
+ # src\main.cpp:281: 		while(running)
+	.loc 12 281 3
 	jmp	.L167	 #
 .L177:
 .LBB116:
- # src\main.cpp:287: 			FlushMatrix(running, x1, x2, y1, y2, z1, z2);
-	.loc 12 287 15
+ # src\main.cpp:285: 			FlushMatrix(running, x1, x2, y1, y2, z1, z2);
+	.loc 12 285 15
 	movl	80(%rbp), %r9d	 # x2, tmp89
 	movl	72(%rbp), %r8d	 # x1, tmp90
 	movq	56(%rbp), %rdx	 # running, tmp91
@@ -4210,98 +4210,98 @@ _ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj:
 	movq	%rax, %rcx	 # tmp92,
 	call	_ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj	 #
 .LBB117:
- # src\main.cpp:292: 			for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 292 17
+ # src\main.cpp:290: 			for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 290 17
 	movl	104(%rbp), %eax	 # z1, tmp97
 	movl	%eax, -4(%rbp)	 # tmp97, z
- # src\main.cpp:292: 			for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 292 4
+ # src\main.cpp:290: 			for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 290 4
 	jmp	.L168	 #
 .L175:
 .LBB118:
- # src\main.cpp:294: 				if(!running) break;
-	.loc 12 294 9
+ # src\main.cpp:292: 				if(!running) break;
+	.loc 12 292 9
 	movq	56(%rbp), %rax	 # running, tmp98
 	movq	%rax, %rcx	 # tmp98,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:294: 				if(!running) break;
-	.loc 12 294 8
+ # src\main.cpp:292: 				if(!running) break;
+	.loc 12 292 8
 	xorl	$1, %eax	 #, retval.117_27
- # src\main.cpp:294: 				if(!running) break;
-	.loc 12 294 5
+ # src\main.cpp:292: 				if(!running) break;
+	.loc 12 292 5
 	testb	%al, %al	 # retval.117_27
 	jne	.L178	 #,
 .LBB119:
- # src\main.cpp:296: 				for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 296 18
+ # src\main.cpp:294: 				for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 294 18
 	movl	88(%rbp), %eax	 # y1, tmp99
 	movl	%eax, -8(%rbp)	 # tmp99, y
- # src\main.cpp:296: 				for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 296 5
+ # src\main.cpp:294: 				for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 294 5
 	jmp	.L171	 #
 .L174:
 .LBB120:
 .LBB121:
- # src\main.cpp:298: 					for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 298 19
+ # src\main.cpp:296: 					for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 296 19
 	movl	72(%rbp), %eax	 # x1, tmp100
 	movl	%eax, -12(%rbp)	 # tmp100, x
- # src\main.cpp:298: 					for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 298 6
+ # src\main.cpp:296: 					for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 296 6
 	jmp	.L172	 #
 .L173:
- # src\main.cpp:298: 					for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 298 6 is_stmt 0 discriminator 3
+ # src\main.cpp:296: 					for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 296 6 is_stmt 0 discriminator 3
 	addl	$1, -12(%rbp)	 #, x
 .L172:
- # src\main.cpp:298: 					for(uint32_t x=x1; x<=x2; ++x)
-	.loc 12 298 26 is_stmt 1 discriminator 1
+ # src\main.cpp:296: 					for(uint32_t x=x1; x<=x2; ++x)
+	.loc 12 296 26 is_stmt 1 discriminator 1
 	movl	-12(%rbp), %eax	 # x, tmp101
 	cmpl	%eax, 80(%rbp)	 # tmp101, x2
 	jnb	.L173	 #,
 .LBE121:
 .LBE120:
- # src\main.cpp:296: 				for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 296 5 discriminator 2
+ # src\main.cpp:294: 				for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 294 5 discriminator 2
 	addl	$1, -8(%rbp)	 #, y
 .L171:
- # src\main.cpp:296: 				for(uint32_t y=y1; y<=y2; ++y)
-	.loc 12 296 25 discriminator 1
+ # src\main.cpp:294: 				for(uint32_t y=y1; y<=y2; ++y)
+	.loc 12 294 25 discriminator 1
 	movl	-8(%rbp), %eax	 # y, tmp102
 	cmpl	%eax, 96(%rbp)	 # tmp102, y2
 	jnb	.L174	 #,
 .LBE119:
 .LBE118:
- # src\main.cpp:292: 			for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 292 4 discriminator 2
+ # src\main.cpp:290: 			for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 290 4 discriminator 2
 	addl	$1, -4(%rbp)	 #, z
 .L168:
- # src\main.cpp:292: 			for(uint32_t z=z1; z<=z2; ++z)
-	.loc 12 292 24 discriminator 1
+ # src\main.cpp:290: 			for(uint32_t z=z1; z<=z2; ++z)
+	.loc 12 290 24 discriminator 1
 	movl	-4(%rbp), %eax	 # z, tmp103
 	cmpl	%eax, 112(%rbp)	 # tmp103, z2
 	jnb	.L175	 #,
 	jmp	.L170	 #
 .L178:
 .LBB122:
- # src\main.cpp:294: 				if(!running) break;
-	.loc 12 294 18
+ # src\main.cpp:292: 				if(!running) break;
+	.loc 12 292 18
 	nop	
 .L170:
 .LBE122:
 .LBE117:
- # src\main.cpp:305: 			if(held[VK_SPACE])
-	.loc 12 305 20
+ # src\main.cpp:303: 			if(held[VK_SPACE])
+	.loc 12 303 20
 	movq	40(%rbp), %rax	 # held, tmp104
 	addq	$32, %rax	 #, _2
 	movq	%rax, %rcx	 # _2,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:305: 			if(held[VK_SPACE])
-	.loc 12 305 4
+ # src\main.cpp:303: 			if(held[VK_SPACE])
+	.loc 12 303 4
 	testb	%al, %al	 # retval.118_35
 	je	.L176	 #,
- # src\main.cpp:307: 				printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
-	.loc 12 307 11
+ # src\main.cpp:305: 				printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
+	.loc 12 305 11
 	call	_ZNSt11this_thread6get_idEv	 #
 	movq	%rax, %rdx	 #, D.209264
 	movl	88(%rbp), %r8d	 # y1, tmp105
@@ -4320,37 +4320,37 @@ _ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj:
 	movq	%rax, %rcx	 # tmp111,
 	call	_Z6printfPKcz	 #
 .L176:
- # src\main.cpp:310: 			std::this_thread::sleep_for(std::chrono::milliseconds(TIME_DURATION));
-	.loc 12 310 58
+ # src\main.cpp:308: 			std::this_thread::sleep_for(std::chrono::milliseconds(TIME_DURATION));
+	.loc 12 308 58
 	movl	$500, -16(%rbp)	 #, D.186118
- # src\main.cpp:310: 			std::this_thread::sleep_for(std::chrono::milliseconds(TIME_DURATION));
-	.loc 12 310 45
+ # src\main.cpp:308: 			std::this_thread::sleep_for(std::chrono::milliseconds(TIME_DURATION));
+	.loc 12 308 45
 	leaq	-16(%rbp), %rdx	 #, tmp112
 	leaq	-24(%rbp), %rax	 #, tmp113
 	movq	%rax, %rcx	 # tmp113,
 	call	_ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IivEERKT_	 #
- # src\main.cpp:310: 			std::this_thread::sleep_for(std::chrono::milliseconds(TIME_DURATION));
-	.loc 12 310 31
+ # src\main.cpp:308: 			std::this_thread::sleep_for(std::chrono::milliseconds(TIME_DURATION));
+	.loc 12 308 31
 	leaq	-24(%rbp), %rax	 #, tmp114
 	movq	%rax, %rcx	 # tmp114,
 	call	_ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0_EE	 #
 .L167:
 .LBE116:
- # src\main.cpp:283: 		while(running)
-	.loc 12 283 9
+ # src\main.cpp:281: 		while(running)
+	.loc 12 281 9
 	movq	56(%rbp), %rax	 # running, tmp115
 	movq	%rax, %rcx	 # tmp115,
 	call	_ZNKSt6atomicIbEcvbEv	 #
 	testb	%al, %al	 # retval.119_15
 	jne	.L177	 #,
- # src\main.cpp:314: 		ready = true;
-	.loc 12 314 9
+ # src\main.cpp:312: 		ready = true;
+	.loc 12 312 9
 	movq	64(%rbp), %rax	 # ready, tmp116
 	movl	$1, %edx	 #,
 	movq	%rax, %rcx	 # tmp116,
 	call	_ZNSt6atomicIbEaSEb	 #
- # src\main.cpp:315: 	}
-	.loc 12 315 2
+ # src\main.cpp:313: 	}
+	.loc 12 313 2
 	nop	
 	addq	$96, %rsp	 #,
 	popq	%rbp	 #
@@ -4366,7 +4366,7 @@ _ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj:
 	.seh_proc	_ZN6MATRIX14FlattenedIndexEjjj
 _ZN6MATRIX14FlattenedIndexEjjj:
 .LFB10173:
-	.loc 12 319 11
+	.loc 12 317 11
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
 .LCFI177:
@@ -4378,109 +4378,109 @@ _ZN6MATRIX14FlattenedIndexEjjj:
 	movl	%edx, 24(%rbp)	 # x, x
 	movl	%r8d, 32(%rbp)	 # y, y
 	movl	%r9d, 40(%rbp)	 # z, z
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 10
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 10
 	movq	16(%rbp), %rax	 # this, tmp100
 	movl	40(%rax), %eax	 # this_18(D)->w, _1
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 12
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 12
 	cmpl	%eax, 24(%rbp)	 # _1, x
 	jb	.L180	 #,
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 14 discriminator 1
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 14 discriminator 1
 	movq	16(%rbp), %rax	 # this, tmp101
 	movl	40(%rax), %eax	 # this_18(D)->w, _2
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 12 discriminator 1
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 12 discriminator 1
 	subl	$1, %eax	 #, iftmp.25_14
 	jmp	.L181	 #
 .L180:
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 12 is_stmt 0 discriminator 2
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 12 is_stmt 0 discriminator 2
 	movl	24(%rbp), %eax	 # x, iftmp.25_14
 .L181:
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 5 is_stmt 1 discriminator 4
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 5 is_stmt 1 discriminator 4
 	movl	%eax, 24(%rbp)	 # iftmp.25_14, x
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 30 discriminator 4
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 30 discriminator 4
 	movq	16(%rbp), %rax	 # this, tmp102
 	movl	44(%rax), %eax	 # this_18(D)->h, _3
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 32 discriminator 4
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 32 discriminator 4
 	cmpl	%eax, 32(%rbp)	 # _3, y
 	jb	.L182	 #,
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 34 discriminator 5
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 34 discriminator 5
 	movq	16(%rbp), %rax	 # this, tmp103
 	movl	44(%rax), %eax	 # this_18(D)->h, _4
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 32 discriminator 5
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 32 discriminator 5
 	subl	$1, %eax	 #, iftmp.26_15
 	jmp	.L183	 #
 .L182:
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 32 is_stmt 0 discriminator 6
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 32 is_stmt 0 discriminator 6
 	movl	32(%rbp), %eax	 # y, iftmp.26_15
 .L183:
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 25 is_stmt 1 discriminator 8
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 25 is_stmt 1 discriminator 8
 	movl	%eax, 32(%rbp)	 # iftmp.26_15, y
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 50 discriminator 8
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 50 discriminator 8
 	movq	16(%rbp), %rax	 # this, tmp104
 	movl	48(%rax), %eax	 # this_18(D)->d, _5
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 52 discriminator 8
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 52 discriminator 8
 	cmpl	%eax, 40(%rbp)	 # _5, z
 	jb	.L184	 #,
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 54 discriminator 9
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 54 discriminator 9
 	movq	16(%rbp), %rax	 # this, tmp105
 	movl	48(%rax), %eax	 # this_18(D)->d, _6
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 52 discriminator 9
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 52 discriminator 9
 	subl	$1, %eax	 #, iftmp.27_16
 	jmp	.L185	 #
 .L184:
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 52 is_stmt 0 discriminator 10
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 52 is_stmt 0 discriminator 10
 	movl	40(%rbp), %eax	 # z, iftmp.27_16
 .L185:
- # src\main.cpp:321: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-	.loc 12 321 45 is_stmt 1 discriminator 12
+ # src\main.cpp:319: 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+	.loc 12 319 45 is_stmt 1 discriminator 12
 	movl	%eax, 40(%rbp)	 # iftmp.27_16, z
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 15 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 15 discriminator 12
 	movq	16(%rbp), %rax	 # this, tmp106
 	movl	40(%rax), %edx	 # this_18(D)->w, _7
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 19 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 19 discriminator 12
 	movq	16(%rbp), %rax	 # this, tmp107
 	movl	44(%rax), %eax	 # this_18(D)->h, _8
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 17 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 17 discriminator 12
 	imull	%edx, %eax	 # _7, _9
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 12 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 12 discriminator 12
 	imull	40(%rbp), %eax	 # z, _9
 	movl	%eax, %edx	 # _9, _10
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 28 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 28 discriminator 12
 	movq	16(%rbp), %rax	 # this, tmp108
 	movl	40(%rax), %eax	 # this_18(D)->w, _11
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 26 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 26 discriminator 12
 	imull	32(%rbp), %eax	 # y, _12
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 22 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 22 discriminator 12
 	addl	%eax, %edx	 # _12, _13
- # src\main.cpp:322: 		return z * (w * h) + y * w + x; 
-	.loc 12 322 32 discriminator 12
+ # src\main.cpp:320: 		return z * (w * h) + y * w + x; 
+	.loc 12 320 32 discriminator 12
 	movl	24(%rbp), %eax	 # x, tmp109
 	addl	%edx, %eax	 # _13, _31
- # src\main.cpp:323: 	}
-	.loc 12 323 2 discriminator 12
+ # src\main.cpp:321: 	}
+	.loc 12 321 2 discriminator 12
 	popq	%rbp	 #
 .LCFI179:
 	ret	
@@ -4498,7 +4498,7 @@ _ZN6MATRIX14FlattenedIndexEjjj:
 	.seh_proc	_ZN6MATRIX18ReadCellAttributesENS_4cellE
 _ZN6MATRIX18ReadCellAttributesENS_4cellE:
 .LFB10174:
-	.loc 12 343 21
+	.loc 12 341 21
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
 .LCFI180:
@@ -4515,58 +4515,58 @@ _ZN6MATRIX18ReadCellAttributesENS_4cellE:
 	movq	%rcx, 32(%rbp)	 # .result_ptr, .result_ptr
 	movq	%rdx, 40(%rbp)	 # this, this
 	movq	%r8, 48(%rbp)	 # c, c
- # src\main.cpp:345: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
-	.loc 12 345 8
+ # src\main.cpp:343: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
+	.loc 12 343 8
 	movq	48(%rbp), %rax	 # c, tmp92
 	movl	28(%rax), %eax	 # c_14(D)->MaterialType, _1
- # src\main.cpp:345: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
-	.loc 12 345 3
+ # src\main.cpp:343: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
+	.loc 12 343 3
 	cmpl	$5, %eax	 #, _2
 	jle	.L188	 #,
- # src\main.cpp:345: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
-	.loc 12 345 169 discriminator 1
+ # src\main.cpp:343: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
+	.loc 12 343 169 discriminator 1
 	movq	48(%rbp), %rax	 # c, tmp93
 	movl	28(%rax), %eax	 # c_14(D)->MaterialType, _3
- # src\main.cpp:345: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
-	.loc 12 345 46 discriminator 1
+ # src\main.cpp:343: 		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
+	.loc 12 343 46 discriminator 1
 	movl	%eax, %edx	 # _3,
 	leaq	.LC37(%rip), %rax	 #, tmp94
 	movq	%rax, %rcx	 # tmp94,
 	call	_Z6printfPKcz	 #
 .L188:
- # src\main.cpp:346: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	.loc 12 346 12
+ # src\main.cpp:344: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	.loc 12 344 12
 	movq	48(%rbp), %rax	 # c, tmp95
 	movl	28(%rax), %eax	 # c_14(D)->MaterialType, _4
- # src\main.cpp:346: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	.loc 12 346 41
+ # src\main.cpp:344: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	.loc 12 344 41
 	cmpl	$5, %eax	 #, _5
 	jg	.L189	 #,
- # src\main.cpp:346: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	.loc 12 346 87 discriminator 1
+ # src\main.cpp:344: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	.loc 12 344 87 discriminator 1
 	movq	40(%rbp), %rax	 # this, tmp96
 	addq	$32, %rax	 #, _6
- # src\main.cpp:346: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	.loc 12 346 74 discriminator 1
+ # src\main.cpp:344: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	.loc 12 344 74 discriminator 1
 	movq	48(%rbp), %rdx	 # c, tmp97
 	movl	28(%rdx), %edx	 # c_14(D)->MaterialType, _7
- # src\main.cpp:346: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	.loc 12 346 87 discriminator 1
+ # src\main.cpp:344: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	.loc 12 344 87 discriminator 1
 	movl	%edx, %edx	 # _7, _8
 	movq	%rax, %rcx	 # _6,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
 	jmp	.L190	 #
 .L189:
- # src\main.cpp:346: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	.loc 12 346 133 discriminator 2
+ # src\main.cpp:344: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	.loc 12 344 133 discriminator 2
 	movq	40(%rbp), %rax	 # this, tmp98
 	addq	$32, %rax	 #, _9
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # _9,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy	 #
 .L190:
- # src\main.cpp:346: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	.loc 12 346 133 is_stmt 0 discriminator 4
+ # src\main.cpp:344: 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
+	.loc 12 344 133 is_stmt 0 discriminator 4
 	movq	32(%rbp), %rdx	 # .result_ptr, tmp99
 	movq	(%rax), %rcx	 # MEM[(const struct MaterialAttributes &)iftmp.74_10], tmp100
 	movq	8(%rax), %rbx	 # MEM[(const struct MaterialAttributes &)iftmp.74_10],
@@ -4578,8 +4578,8 @@ _ZN6MATRIX18ReadCellAttributesENS_4cellE:
 	movq	%rbx, 24(%rdx)	 #, <retval>
 	movq	32(%rax), %rax	 # MEM[(const struct MaterialAttributes &)iftmp.74_10], tmp102
 	movq	%rax, 32(%rdx)	 # tmp102, <retval>
- # src\main.cpp:347: 	}
-	.loc 12 347 2 is_stmt 1 discriminator 4
+ # src\main.cpp:345: 	}
+	.loc 12 345 2 is_stmt 1 discriminator 4
 	movq	32(%rbp), %rax	 # .result_ptr,
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
@@ -4589,6 +4589,111 @@ _ZN6MATRIX18ReadCellAttributesENS_4cellE:
 	ret	
 .LFE10174:
 	.seh_endproc
+	.section	.text$_ZN6MATRIX13DestroyMatrixEv,"x"
+	.linkonce discard
+	.align 2
+	.globl	_ZN6MATRIX13DestroyMatrixEv
+	.def	_ZN6MATRIX13DestroyMatrixEv;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZN6MATRIX13DestroyMatrixEv
+_ZN6MATRIX13DestroyMatrixEv:
+.LFB10175:
+	.loc 12 347 24
+	pushq	%rbp	 #
+	.seh_pushreg	%rbp
+.LCFI186:
+	movq	%rsp, %rbp	 #,
+	.seh_setframe	%rbp, 0
+.LCFI187:
+	subq	$48, %rsp	 #,
+	.seh_stackalloc	48
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)	 # this, this
+.LBB123:
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 16
+	movl	$0, -4(%rbp)	 #, i
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 3
+	jmp	.L193	 #
+.L194:
+ # src\main.cpp:351: 			CELL_FRONT_BUFFER[i].~cell();
+	.loc 12 351 4 discriminator 3
+	movq	16(%rbp), %rax	 # this, tmp97
+	movq	8(%rax), %rax	 # this_20(D)->CELL_FRONT_BUFFER, _1
+ # src\main.cpp:351: 			CELL_FRONT_BUFFER[i].~cell();
+	.loc 12 351 22 discriminator 3
+	movl	-4(%rbp), %edx	 # i, _2
+ # src\main.cpp:351: 			CELL_FRONT_BUFFER[i].~cell();
+	.loc 12 351 23 discriminator 3
+	salq	$5, %rdx	 #, _3
+ # src\main.cpp:351: 			CELL_FRONT_BUFFER[i].~cell();
+	.loc 12 351 30 discriminator 3
+	addq	%rdx, %rax	 # _3, _4
+	movq	%rax, %rcx	 # _4,
+	call	_ZN6MATRIX4cellD1Ev	 #
+ # src\main.cpp:352: 			CELL_BACK_BUFFER[ i].~cell();
+	.loc 12 352 4 discriminator 3
+	movq	16(%rbp), %rax	 # this, tmp98
+	movq	24(%rax), %rax	 # this_20(D)->CELL_BACK_BUFFER, _5
+ # src\main.cpp:352: 			CELL_BACK_BUFFER[ i].~cell();
+	.loc 12 352 22 discriminator 3
+	movl	-4(%rbp), %edx	 # i, _6
+ # src\main.cpp:352: 			CELL_BACK_BUFFER[ i].~cell();
+	.loc 12 352 23 discriminator 3
+	salq	$5, %rdx	 #, _7
+ # src\main.cpp:352: 			CELL_BACK_BUFFER[ i].~cell();
+	.loc 12 352 30 discriminator 3
+	addq	%rdx, %rax	 # _7, _8
+	movq	%rax, %rcx	 # _8,
+	call	_ZN6MATRIX4cellD1Ev	 #
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 3 discriminator 3
+	addl	$1, -4(%rbp)	 #, i
+.L193:
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 23 discriminator 1
+	movq	16(%rbp), %rax	 # this, tmp99
+	movl	40(%rax), %edx	 # this_20(D)->w, _9
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 27 discriminator 1
+	movq	16(%rbp), %rax	 # this, tmp100
+	movl	44(%rax), %eax	 # this_20(D)->h, _10
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 25 discriminator 1
+	imull	%eax, %edx	 # _10, _11
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 31 discriminator 1
+	movq	16(%rbp), %rax	 # this, tmp101
+	movl	48(%rax), %eax	 # this_20(D)->d, _12
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 29 discriminator 1
+	imull	%edx, %eax	 # _11, _13
+ # src\main.cpp:349: 		for(uint32_t i=0; i<w * h * d; ++i)
+	.loc 12 349 22 discriminator 1
+	cmpl	%eax, -4(%rbp)	 # _13, i
+	jb	.L194	 #,
+.LBE123:
+ # src\main.cpp:354: 		free(memorybb);
+	.loc 12 354 7
+	movq	16(%rbp), %rax	 # this, tmp102
+	movq	16(%rax), %rax	 # this_20(D)->memorybb, _14
+	movq	%rax, %rcx	 # _14,
+	call	free	 #
+ # src\main.cpp:355: 		free(memoryfb);
+	.loc 12 355 7
+	movq	16(%rbp), %rax	 # this, tmp103
+	movq	(%rax), %rax	 # this_20(D)->memoryfb, _15
+	movq	%rax, %rcx	 # _15,
+	call	free	 #
+ # src\main.cpp:356: 	}
+	.loc 12 356 2
+	nop	
+	addq	$48, %rsp	 #,
+	popq	%rbp	 #
+.LCFI188:
+	ret	
+.LFE10175:
+	.seh_endproc
 	.section	.text$_ZN6CameraC1Ev,"x"
 	.linkonce discard
 	.align 2
@@ -4597,20 +4702,20 @@ _ZN6MATRIX18ReadCellAttributesENS_4cellE:
 	.seh_proc	_ZN6CameraC1Ev
 _ZN6CameraC1Ev:
 .LFB10178:
-	.loc 12 363 2
+	.loc 12 361 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI186:
+.LCFI189:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI187:
+.LCFI190:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB123:
- # src\main.cpp:363: 	Camera() : FOV(90.0f) {}
-	.loc 12 363 22
+.LBB124:
+ # src\main.cpp:361: 	Camera() : FOV(90.0f) {}
+	.loc 12 361 22
 	movq	16(%rbp), %rax	 # this, _1
 	pxor	%xmm3, %xmm3	 #
 	pxor	%xmm2, %xmm2	 #
@@ -4652,18 +4757,18 @@ _ZN6CameraC1Ev:
 	pxor	%xmm1, %xmm1	 #
 	movq	%rax, %rcx	 # _6,
 	call	_ZN5Vec3DC1Efff	 #
- # src\main.cpp:363: 	Camera() : FOV(90.0f) {}
-	.loc 12 363 13
+ # src\main.cpp:361: 	Camera() : FOV(90.0f) {}
+	.loc 12 361 13
 	movq	16(%rbp), %rax	 # this, tmp93
 	movss	.LC38(%rip), %xmm0	 #, tmp94
 	movss	%xmm0, 72(%rax)	 # tmp94, this_8(D)->FOV
-.LBE123:
- # src\main.cpp:363: 	Camera() : FOV(90.0f) {}
-	.loc 12 363 25
+.LBE124:
+ # src\main.cpp:361: 	Camera() : FOV(90.0f) {}
+	.loc 12 361 25
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI188:
+.LCFI191:
 	ret	
 .LFE10178:
 	.seh_endproc
@@ -4686,34 +4791,34 @@ _ZN6CameraC1Ev:
 	.seh_proc	_ZN21WINDOWGraphicsOverlay11ErrorHandleEl
 _ZN21WINDOWGraphicsOverlay11ErrorHandleEl:
 .LFB10184:
-	.loc 12 488 2
+	.loc 12 486 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI189:
+.LCFI192:
 	subq	$1056, %rsp	 #,
 	.seh_stackalloc	1056
-.LCFI190:
+.LCFI193:
 	leaq	128(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 128
-.LCFI191:
+.LCFI194:
 	.seh_endprologue
 	movl	%ecx, 944(%rbp)	 # hr, hr
-.LBB124:
- # src\main.cpp:489: 		if(FAILED(hr))
-	.loc 12 489 3
-	cmpl	$0, 944(%rbp)	 #, hr
-	jns	.L195	 #,
 .LBB125:
- # src\main.cpp:492:        		swprintf_s(errorMsg, L"D2D1CreateFactory failed with HRESULT: 0x%08X", hr);
-	.loc 12 492 20
+ # src\main.cpp:487: 		if(FAILED(hr))
+	.loc 12 487 3
+	cmpl	$0, 944(%rbp)	 #, hr
+	jns	.L198	 #,
+.LBB126:
+ # src\main.cpp:490:        		swprintf_s(errorMsg, L"D2D1CreateFactory failed with HRESULT: 0x%08X", hr);
+	.loc 12 490 20
 	movl	944(%rbp), %edx	 # hr, tmp82
 	leaq	-96(%rbp), %rax	 #, tmp83
 	movl	%edx, %r8d	 # tmp82,
 	leaq	.LC39(%rip), %rdx	 #, tmp84
 	movq	%rax, %rcx	 # tmp83,
 	call	_Z10swprintf_sILy512EEiRAT__wPKwz	 #
- # src\main.cpp:493:        		MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
-	.loc 12 493 21
+ # src\main.cpp:491:        		MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
+	.loc 12 491 21
 	leaq	-96(%rbp), %rax	 #, tmp85
 	movl	$16, %r9d	 #,
 	leaq	.LC40(%rip), %r8	 #,
@@ -4722,15 +4827,15 @@ _ZN21WINDOWGraphicsOverlay11ErrorHandleEl:
 	movq	__imp_MessageBoxW(%rip), %rax	 #, tmp86
 	call	*%rax	 # tmp86
 .LVL13:
-.L195:
+.L198:
+.LBE126:
 .LBE125:
-.LBE124:
- # src\main.cpp:495: 	}
-	.loc 12 495 2
+ # src\main.cpp:493: 	}
+	.loc 12 493 2
 	nop	
 	addq	$1056, %rsp	 #,
 	popq	%rbp	 #
-.LCFI192:
+.LCFI195:
 	ret	
 .LFE10184:
 	.seh_endproc
@@ -4740,73 +4845,73 @@ _ZN21WINDOWGraphicsOverlay11ErrorHandleEl:
 	.seh_proc	_ZN21WINDOWGraphicsOverlay16GetMaterialColorEN6MATRIX7elementE
 _ZN21WINDOWGraphicsOverlay16GetMaterialColorEN6MATRIX7elementE:
 .LFB10185:
-	.loc 12 497 2
+	.loc 12 495 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI193:
+.LCFI196:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI194:
+.LCFI197:
 	.seh_endprologue
 	movl	%ecx, 16(%rbp)	 # e, e
- # src\main.cpp:498: 		switch(e)
-	.loc 12 498 10
+ # src\main.cpp:496: 		switch(e)
+	.loc 12 496 10
 	movl	16(%rbp), %eax	 # e, e.0_1
- # src\main.cpp:498: 		switch(e)
-	.loc 12 498 3
+ # src\main.cpp:496: 		switch(e)
+	.loc 12 496 3
 	cmpl	$4, %eax	 #, e.0_1
-	ja	.L197	 #,
+	ja	.L200	 #,
 	movl	%eax, %eax	 # e.0_1, tmp85
 	leaq	0(,%rax,4), %rdx	 #, tmp86
-	leaq	.L199(%rip), %rax	 #, tmp87
+	leaq	.L202(%rip), %rax	 #, tmp87
 	movl	(%rdx,%rax), %eax	 #, tmp88
 	cltq
-	leaq	.L199(%rip), %rdx	 #, tmp91
+	leaq	.L202(%rip), %rdx	 #, tmp91
 	addq	%rdx, %rax	 # tmp91, tmp90
 	jmp	*%rax	 # tmp90
 	.section .rdata,"dr"
 	.align 4
-.L199:
-	.long	.L203-.L199
-	.long	.L202-.L199
-	.long	.L201-.L199
-	.long	.L200-.L199
-	.long	.L198-.L199
-	.text
-.L203:
- # src\main.cpp:500: 			case MATRIX::element::air:   return RGB(173, 216, 230); break;
-	.loc 12 500 40
-	movl	$15128749, %eax	 #, _2
-	jmp	.L204	 #
 .L202:
- # src\main.cpp:501: 			case MATRIX::element::water: return RGB(0, 0, 255);     break;
-	.loc 12 501 40
+	.long	.L206-.L202
+	.long	.L205-.L202
+	.long	.L204-.L202
+	.long	.L203-.L202
+	.long	.L201-.L202
+	.text
+.L206:
+ # src\main.cpp:498: 			case MATRIX::element::air:   return RGB(173, 216, 230); break;
+	.loc 12 498 40
+	movl	$15128749, %eax	 #, _2
+	jmp	.L207	 #
+.L205:
+ # src\main.cpp:499: 			case MATRIX::element::water: return RGB(0, 0, 255);     break;
+	.loc 12 499 40
 	movl	$16711680, %eax	 #, _2
-	jmp	.L204	 #
-.L201:
- # src\main.cpp:502: 			case MATRIX::element::wood:  return RGB(139, 69, 19);   break;
-	.loc 12 502 40
-	movl	$1262987, %eax	 #, _2
-	jmp	.L204	 #
-.L200:
- # src\main.cpp:503: 			case MATRIX::element::fire:  return RGB(255, 0, 0);     break;
-	.loc 12 503 40
-	movl	$255, %eax	 #, _2
-	jmp	.L204	 #
-.L198:
- # src\main.cpp:504: 			case MATRIX::element::metal: return RGB(169, 169, 169); break;
-	.loc 12 504 40
-	movl	$11119017, %eax	 #, _2
-	jmp	.L204	 #
-.L197:
- # src\main.cpp:505: 			default:                	 return RGB(0, 0, 0); break;
-	.loc 12 505 37
-	movl	$0, %eax	 #, _2
+	jmp	.L207	 #
 .L204:
- # src\main.cpp:507: 	}
-	.loc 12 507 2
+ # src\main.cpp:500: 			case MATRIX::element::wood:  return RGB(139, 69, 19);   break;
+	.loc 12 500 40
+	movl	$1262987, %eax	 #, _2
+	jmp	.L207	 #
+.L203:
+ # src\main.cpp:501: 			case MATRIX::element::fire:  return RGB(255, 0, 0);     break;
+	.loc 12 501 40
+	movl	$255, %eax	 #, _2
+	jmp	.L207	 #
+.L201:
+ # src\main.cpp:502: 			case MATRIX::element::metal: return RGB(169, 169, 169); break;
+	.loc 12 502 40
+	movl	$11119017, %eax	 #, _2
+	jmp	.L207	 #
+.L200:
+ # src\main.cpp:503: 			default:                	 return RGB(0, 0, 0); break;
+	.loc 12 503 37
+	movl	$0, %eax	 #, _2
+.L207:
+ # src\main.cpp:505: 	}
+	.loc 12 505 2
 	popq	%rbp	 #
-.LCFI195:
+.LCFI198:
 	ret	
 .LFE10185:
 	.seh_endproc
@@ -4817,197 +4922,197 @@ _ZN21WINDOWGraphicsOverlay16GetMaterialColorEN6MATRIX7elementE:
 	.seh_proc	_ZN21WINDOWGraphicsOverlay14AllocBrushPoolEP6HWND__
 _ZN21WINDOWGraphicsOverlay14AllocBrushPoolEP6HWND__:
 .LFB10186:
-	.loc 12 510 2
+	.loc 12 508 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI196:
+.LCFI199:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI197:
+.LCFI200:
 	subq	$96, %rsp	 #,
 	.seh_stackalloc	96
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # hwnd, hwnd
- # src\main.cpp:512: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 512 62
+ # src\main.cpp:510: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 510 62
 	movq	16(%rbp), %rax	 # hwnd, tmp114
 	movl	$-21, %edx	 #,
 	movq	%rax, %rcx	 # tmp114,
 	movq	__imp_GetWindowLongPtrW(%rip), %rax	 #, tmp115
 	call	*%rax	 # tmp115
 .LVL14:
- # src\main.cpp:512: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 512 83
+ # src\main.cpp:510: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 510 83
 	movq	%rax, -16(%rbp)	 # _1, matrix
- # src\main.cpp:514: 		uint32_t N = static_cast<uint32_t>(MATRIX::element::size);
-	.loc 12 514 12
+ # src\main.cpp:512: 		uint32_t N = static_cast<uint32_t>(MATRIX::element::size);
+	.loc 12 512 12
 	movl	$6, -20(%rbp)	 #, N
- # src\main.cpp:516: 		void** memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
-	.loc 12 516 78
+ # src\main.cpp:514: 		void** memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
+	.loc 12 514 78
 	movl	-20(%rbp), %eax	 # N, _2
- # src\main.cpp:516: 		void** memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
-	.loc 12 516 45
+ # src\main.cpp:514: 		void** memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
+	.loc 12 514 45
 	salq	$3, %rax	 #, _3
 	movq	%rax, %rcx	 # _3,
 	call	malloc	 #
 	movq	%rax, -32(%rbp)	 # tmp116, memory
- # src\main.cpp:517: 		brushPool 	  = reinterpret_cast<ID2D1SolidColorBrush**>(memory);
-	.loc 12 517 16
+ # src\main.cpp:515: 		brushPool 	  = reinterpret_cast<ID2D1SolidColorBrush**>(memory);
+	.loc 12 515 16
 	movq	-32(%rbp), %rax	 # memory, tmp117
 	movq	%rax, brushPool(%rip)	 # tmp117, brushPool
-.LBB126:
- # src\main.cpp:519: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 519 16
+.LBB127:
+ # src\main.cpp:517: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 517 16
 	movl	$0, -4(%rbp)	 #, i
- # src\main.cpp:519: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 519 3
-	jmp	.L206	 #
-.L207:
- # src\main.cpp:521: 			brushPool[i] = nullptr;
-	.loc 12 521 15 discriminator 3
+ # src\main.cpp:517: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 517 3
+	jmp	.L209	 #
+.L210:
+ # src\main.cpp:519: 			brushPool[i] = nullptr;
+	.loc 12 519 15 discriminator 3
 	movq	brushPool(%rip), %rax	 # brushPool, brushPool.112_4
- # src\main.cpp:521: 			brushPool[i] = nullptr;
-	.loc 12 521 14 discriminator 3
+ # src\main.cpp:519: 			brushPool[i] = nullptr;
+	.loc 12 519 14 discriminator 3
 	movl	-4(%rbp), %edx	 # i, _5
- # src\main.cpp:521: 			brushPool[i] = nullptr;
-	.loc 12 521 15 discriminator 3
+ # src\main.cpp:519: 			brushPool[i] = nullptr;
+	.loc 12 519 15 discriminator 3
 	salq	$3, %rdx	 #, _6
 	addq	%rdx, %rax	 # _6, _7
- # src\main.cpp:521: 			brushPool[i] = nullptr;
-	.loc 12 521 17 discriminator 3
+ # src\main.cpp:519: 			brushPool[i] = nullptr;
+	.loc 12 519 17 discriminator 3
 	movq	$0, (%rax)	 #, *_7
- # src\main.cpp:519: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 519 3 discriminator 3
+ # src\main.cpp:517: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 517 3 discriminator 3
 	addl	$1, -4(%rbp)	 #, i
-.L206:
- # src\main.cpp:519: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 519 26 discriminator 1
+.L209:
+ # src\main.cpp:517: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 517 26 discriminator 1
 	movl	-20(%rbp), %eax	 # N, tmp118
 	subl	$1, %eax	 #, _8
- # src\main.cpp:519: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 519 22 discriminator 1
+ # src\main.cpp:517: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 517 22 discriminator 1
 	cmpl	-4(%rbp), %eax	 # i, _8
-	jnb	.L207	 #,
-.LBE126:
-.LBB127:
- # src\main.cpp:524: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 524 16
-	movl	$0, -8(%rbp)	 #, i
- # src\main.cpp:524: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 524 3
-	jmp	.L208	 #
-.L210:
+	jnb	.L210	 #,
+.LBE127:
 .LBB128:
- # src\main.cpp:526: 			COLORREF Color 		  = WINDOWGraphicsOverlay::GetMaterialColor(static_cast<MATRIX::element>(i));
-	.loc 12 526 64
+ # src\main.cpp:522: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 522 16
+	movl	$0, -8(%rbp)	 #, i
+ # src\main.cpp:522: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 522 3
+	jmp	.L211	 #
+.L213:
+.LBB129:
+ # src\main.cpp:524: 			COLORREF Color 		  = WINDOWGraphicsOverlay::GetMaterialColor(static_cast<MATRIX::element>(i));
+	.loc 12 524 64
 	movl	-8(%rbp), %eax	 # i, tmp119
 	movl	%eax, %ecx	 # tmp119,
 	call	_ZN21WINDOWGraphicsOverlay16GetMaterialColorEN6MATRIX7elementE	 #
 	movl	%eax, -36(%rbp)	 # tmp120, Color
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 17
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 17
 	movq	$0, -64(%rbp)	 #, d2dcolor
 	movq	$0, -56(%rbp)	 #, d2dcolor
 	movss	.LC41(%rip), %xmm0	 #, tmp121
 	movss	%xmm0, -52(%rbp)	 # tmp121, d2dcolor.a
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 29
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 29
 	movl	-36(%rbp), %eax	 # Color, tmp122
 	movzbl	%al, %eax	 # _9, _10
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 46
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 46
 	pxor	%xmm0, %xmm0	 # _11
 	cvtsi2ssl	%eax, %xmm0	 # _10, _11
 	movss	.LC42(%rip), %xmm1	 #, tmp123
 	divss	%xmm1, %xmm0	 # tmp123, _12
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 114
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 114
 	movss	%xmm0, -64(%rbp)	 # _12, d2dcolor.r
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 56
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 56
 	movl	-36(%rbp), %eax	 # Color, tmp124
 	shrw	$8, %ax	 #, _14
 	movzbl	%al, %eax	 # _15, _16
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 73
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 73
 	pxor	%xmm0, %xmm0	 # _17
 	cvtsi2ssl	%eax, %xmm0	 # _16, _17
 	movss	.LC42(%rip), %xmm1	 #, tmp125
 	divss	%xmm1, %xmm0	 # tmp125, _18
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 114
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 114
 	movss	%xmm0, -60(%rbp)	 # _18, d2dcolor.g
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 83
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 83
 	movl	-36(%rbp), %eax	 # Color, tmp126
 	shrl	$16, %eax	 #, _19
 	movzbl	%al, %eax	 # _20, _21
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 100
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 100
 	pxor	%xmm0, %xmm0	 # _22
 	cvtsi2ssl	%eax, %xmm0	 # _21, _22
 	movss	.LC42(%rip), %xmm1	 #, tmp127
 	divss	%xmm1, %xmm0	 # tmp127, _23
- # src\main.cpp:527: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-	.loc 12 527 114
+ # src\main.cpp:525: 			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
+	.loc 12 525 114
 	movss	%xmm0, -56(%rbp)	 # _23, d2dcolor.b
-.LBB129:
- # src\main.cpp:528: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-	.loc 12 528 7
-	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.113_24
- # src\main.cpp:528: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-	.loc 12 528 4
-	testq	%rax, %rax	 # BitmapRT.113_24
-	je	.L209	 #,
 .LBB130:
- # src\main.cpp:528: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-	.loc 12 528 63 discriminator 1
+ # src\main.cpp:526: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+	.loc 12 526 7
+	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.113_24
+ # src\main.cpp:526: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+	.loc 12 526 4
+	testq	%rax, %rax	 # BitmapRT.113_24
+	je	.L212	 #,
+.LBB131:
+ # src\main.cpp:526: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+	.loc 12 526 63 discriminator 1
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.114_25
 	movq	%rax, %rcx	 # BitmapRT.114_25, _26
 	movq	brushPool(%rip), %rax	 # brushPool, brushPool.115_27
- # src\main.cpp:528: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-	.loc 12 528 85 discriminator 1
+ # src\main.cpp:526: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+	.loc 12 526 85 discriminator 1
 	movl	-8(%rbp), %edx	 # i, _28
- # src\main.cpp:528: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-	.loc 12 528 86 discriminator 1
+ # src\main.cpp:526: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+	.loc 12 526 86 discriminator 1
 	salq	$3, %rdx	 #, _29
- # src\main.cpp:528: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-	.loc 12 528 63 discriminator 1
+ # src\main.cpp:526: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+	.loc 12 526 63 discriminator 1
 	addq	%rax, %rdx	 # brushPool.115_27, _30
 	leaq	-64(%rbp), %rax	 #, tmp128
 	movq	%rdx, %r8	 # _30,
 	movq	%rax, %rdx	 # tmp128,
 	call	_ZN17ID2D1RenderTarget21CreateSolidColorBrushERK14_D3DCOLORVALUEPP20ID2D1SolidColorBrush	 #
 	movl	%eax, -40(%rbp)	 # _57, hr
- # src\main.cpp:528: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-	.loc 12 528 101 discriminator 1
+ # src\main.cpp:526: 			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
+	.loc 12 526 101 discriminator 1
 	movl	-40(%rbp), %eax	 # hr, tmp129
 	movl	%eax, %ecx	 # tmp129,
 	call	_ZN21WINDOWGraphicsOverlay11ErrorHandleEl	 #
-.L209:
+.L212:
+.LBE131:
 .LBE130:
 .LBE129:
-.LBE128:
- # src\main.cpp:524: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 524 3 discriminator 2
+ # src\main.cpp:522: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 522 3 discriminator 2
 	addl	$1, -8(%rbp)	 #, i
-.L208:
- # src\main.cpp:524: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 524 26 discriminator 1
+.L211:
+ # src\main.cpp:522: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 522 26 discriminator 1
 	movl	-20(%rbp), %eax	 # N, tmp130
 	subl	$1, %eax	 #, _31
- # src\main.cpp:524: 		for(uint32_t i=0; i<=N -1; ++i)
-	.loc 12 524 22 discriminator 1
+ # src\main.cpp:522: 		for(uint32_t i=0; i<=N -1; ++i)
+	.loc 12 522 22 discriminator 1
 	cmpl	-8(%rbp), %eax	 # i, _31
-	jnb	.L210	 #,
-.LBE127:
- # src\main.cpp:530: 	}
-	.loc 12 530 2
+	jnb	.L213	 #,
+.LBE128:
+ # src\main.cpp:528: 	}
+	.loc 12 528 2
 	nop	
 	nop	
 	addq	$96, %rsp	 #,
 	popq	%rbp	 #
-.LCFI198:
+.LCFI201:
 	ret	
 .LFE10186:
 	.seh_endproc
@@ -5020,63 +5125,63 @@ _ZN21WINDOWGraphicsOverlay14AllocBrushPoolEP6HWND__:
 	.seh_proc	_ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii
 _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 .LFB10187:
-	.loc 12 533 2
+	.loc 12 531 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI199:
+.LCFI202:
 	pushq	%r12	 #
 	.seh_pushreg	%r12
-.LCFI200:
+.LCFI203:
 	pushq	%rdi	 #
 	.seh_pushreg	%rdi
-.LCFI201:
+.LCFI204:
 	pushq	%rsi	 #
 	.seh_pushreg	%rsi
-.LCFI202:
+.LCFI205:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI203:
+.LCFI206:
 	subq	$144, %rsp	 #,
 	.seh_stackalloc	144
-.LCFI204:
+.LCFI207:
 	leaq	144(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 144
-.LCFI205:
+.LCFI208:
 	.seh_endprologue
 	movq	%rcx, 48(%rbp)	 # hwnd, hwnd
 	movl	%edx, 56(%rbp)	 # zLevel, zLevel
 	movl	%r8d, 64(%rbp)	 # cellWidth, cellWidth
 	movl	%r9d, 72(%rbp)	 # cellHeight, cellHeight
- # src\main.cpp:534: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 534 62
+ # src\main.cpp:532: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 532 62
 	movq	48(%rbp), %rax	 # hwnd, tmp168
 	movl	$-21, %edx	 #,
 	movq	%rax, %rcx	 # tmp168,
 	movq	__imp_GetWindowLongPtrW(%rip), %rax	 #, tmp169
 	call	*%rax	 # tmp169
 .LVL15:
- # src\main.cpp:534: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 534 83
+ # src\main.cpp:532: 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 532 83
 	movq	%rax, -16(%rbp)	 # _1, matrix
- # src\main.cpp:536: 		if(!BitmapRT)
-	.loc 12 536 6
+ # src\main.cpp:534: 		if(!BitmapRT)
+	.loc 12 534 6
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.1_2
- # src\main.cpp:536: 		if(!BitmapRT)
-	.loc 12 536 3
+ # src\main.cpp:534: 		if(!BitmapRT)
+	.loc 12 534 3
 	testq	%rax, %rax	 # BitmapRT.1_2
-	jne	.L212	 #,
- # src\main.cpp:538: 			printf("bad BitmapRT");
-	.loc 12 538 10
+	jne	.L215	 #,
+ # src\main.cpp:536: 			printf("bad BitmapRT");
+	.loc 12 536 10
 	leaq	.LC43(%rip), %rax	 #, tmp170
 	movq	%rax, %rcx	 # tmp170,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:539: 			return false;
-	.loc 12 539 11
+ # src\main.cpp:537: 			return false;
+	.loc 12 537 11
 	movl	$0, %eax	 #, _107
-	jmp	.L211	 #
-.L212:
- # src\main.cpp:542: 		BitmapRT->BeginDraw();
-	.loc 12 542 22
+	jmp	.L214	 #
+.L215:
+ # src\main.cpp:540: 		BitmapRT->BeginDraw();
+	.loc 12 540 22
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.3_5
 	movq	(%rax), %rax	 # BitmapRT.3_5->D.147501.D.146772.D.146000._vptr.IUnknown, _6
 	addq	$384, %rax	 #, _7
@@ -5085,8 +5190,8 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	movq	%rdx, %rcx	 # _10,
 	call	*%rax	 # _8
 .LVL16:
- # src\main.cpp:543: 		BitmapRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
-	.loc 12 543 18
+ # src\main.cpp:541: 		BitmapRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
+	.loc 12 541 18
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.5_11
 	movq	%rax, %rcx	 # BitmapRT.5_11, _12
 	movl	$0, -24(%rbp)	 #, knownColor
@@ -5098,11 +5203,11 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	movl	%eax, -44(%rbp)	 # tmp173, rgb
 	movss	-28(%rbp), %xmm0	 # _a, tmp174
 	movss	%xmm0, -48(%rbp)	 # tmp174, _a
-.LBB131:
 .LBB132:
 .LBB133:
 .LBB134:
 .LBB135:
+.LBB136:
  # C:/msys64/mingw64/include/d2d1helper.h:360:         r = static_cast<float>((rgb>>16)&0xff)/255.0f;
 	.file 14 "C:/msys64/mingw64/include/d2d1helper.h"
 	.loc 14 360 36
@@ -5115,11 +5220,11 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	.loc 14 360 13
 	movl	%eax, %eax	 # _114, tmp176
 	testq	%rax, %rax	 # tmp176
-	js	.L214	 #,
+	js	.L217	 #,
 	pxor	%xmm0, %xmm0	 # _115
 	cvtsi2ssq	%rax, %xmm0	 # tmp176, _115
-	jmp	.L215	 #
-.L214:
+	jmp	.L218	 #
+.L217:
 	movq	%rax, %rdx	 # tmp176, tmp178
 	shrq	%rdx	 # tmp178
 	andl	$1, %eax	 #, tmp179
@@ -5127,7 +5232,7 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	pxor	%xmm0, %xmm0	 # tmp177
 	cvtsi2ssq	%rdx, %xmm0	 # tmp178, tmp177
 	addss	%xmm0, %xmm0	 # tmp177, _115
-.L215:
+.L218:
  # C:/msys64/mingw64/include/d2d1helper.h:360:         r = static_cast<float>((rgb>>16)&0xff)/255.0f;
 	.loc 14 360 47
 	movss	.LC42(%rip), %xmm1	 #, tmp180
@@ -5147,11 +5252,11 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	.loc 14 361 13
 	movl	%eax, %eax	 # _118, tmp183
 	testq	%rax, %rax	 # tmp183
-	js	.L216	 #,
+	js	.L219	 #,
 	pxor	%xmm0, %xmm0	 # _119
 	cvtsi2ssq	%rax, %xmm0	 # tmp183, _119
-	jmp	.L217	 #
-.L216:
+	jmp	.L220	 #
+.L219:
 	movq	%rax, %rdx	 # tmp183, tmp185
 	shrq	%rdx	 # tmp185
 	andl	$1, %eax	 #, tmp186
@@ -5159,7 +5264,7 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	pxor	%xmm0, %xmm0	 # tmp184
 	cvtsi2ssq	%rdx, %xmm0	 # tmp185, tmp184
 	addss	%xmm0, %xmm0	 # tmp184, _119
-.L217:
+.L220:
  # C:/msys64/mingw64/include/d2d1helper.h:361:         g = static_cast<float>((rgb>>8)&0xff)/255.0f;
 	.loc 14 361 46
 	movss	.LC42(%rip), %xmm1	 #, tmp187
@@ -5176,11 +5281,11 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	.loc 14 362 13
 	movl	%eax, %eax	 # _121, tmp190
 	testq	%rax, %rax	 # tmp190
-	js	.L218	 #,
+	js	.L221	 #,
 	pxor	%xmm0, %xmm0	 # _122
 	cvtsi2ssq	%rax, %xmm0	 # tmp190, _122
-	jmp	.L219	 #
-.L218:
+	jmp	.L222	 #
+.L221:
 	movq	%rax, %rdx	 # tmp190, tmp192
 	shrq	%rdx	 # tmp192
 	andl	$1, %eax	 #, tmp193
@@ -5188,7 +5293,7 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	pxor	%xmm0, %xmm0	 # tmp191
 	cvtsi2ssq	%rdx, %xmm0	 # tmp192, tmp191
 	addss	%xmm0, %xmm0	 # tmp191, _122
-.L219:
+.L222:
  # C:/msys64/mingw64/include/d2d1helper.h:362:         b = static_cast<float>(rgb&0xff)/255.0f;
 	.loc 14 362 41
 	movss	.LC42(%rip), %xmm1	 #, tmp194
@@ -5205,73 +5310,73 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
  # C:/msys64/mingw64/include/d2d1helper.h:364:     }
 	.loc 14 364 5
 	nop	
+.LBE136:
 .LBE135:
 .LBE134:
-.LBE133:
  # C:/msys64/mingw64/include/d2d1helper.h:350:     }
 	.loc 14 350 5
 	nop	
+.LBE133:
 .LBE132:
-.LBE131:
- # src\main.cpp:543: 		BitmapRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
-	.loc 12 543 18
+ # src\main.cpp:541: 		BitmapRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
+	.loc 12 541 18
 	leaq	-96(%rbp), %rax	 #, tmp198
 	movq	%rax, %rdx	 # tmp198,
 	call	_ZN17ID2D1RenderTarget5ClearERK14_D3DCOLORVALUE	 #
-.LBB136:
- # src\main.cpp:545: 		for (int j = 0; j < matrix->h; ++j)
-	.loc 12 545 12
-	movl	$0, -4(%rbp)	 #, j
- # src\main.cpp:545: 		for (int j = 0; j < matrix->h; ++j)
-	.loc 12 545 3
-	jmp	.L220	 #
-.L225:
 .LBB137:
+ # src\main.cpp:543: 		for (int j = 0; j < matrix->h; ++j)
+	.loc 12 543 12
+	movl	$0, -4(%rbp)	 #, j
+ # src\main.cpp:543: 		for (int j = 0; j < matrix->h; ++j)
+	.loc 12 543 3
+	jmp	.L223	 #
+.L228:
 .LBB138:
- # src\main.cpp:547:     		for (int i = 0; i < matrix->w; ++i)
-	.loc 12 547 16
-	movl	$0, -8(%rbp)	 #, i
- # src\main.cpp:547:     		for (int i = 0; i < matrix->w; ++i)
-	.loc 12 547 7
-	jmp	.L221	 #
-.L224:
 .LBB139:
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 171
+ # src\main.cpp:545:     		for (int i = 0; i < matrix->w; ++i)
+	.loc 12 545 16
+	movl	$0, -8(%rbp)	 #, i
+ # src\main.cpp:545:     		for (int i = 0; i < matrix->w; ++i)
+	.loc 12 545 7
+	jmp	.L224	 #
+.L227:
+.LBB140:
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 171
 	movl	-4(%rbp), %eax	 # j, tmp199
 	addl	$1, %eax	 #, _13
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 176
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 176
 	imull	72(%rbp), %eax	 # cellHeight, _14
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 35
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 35
 	pxor	%xmm0, %xmm0	 # _15
 	cvtsi2ssl	%eax, %xmm0	 # _14, _15
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 130
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 130
 	movl	-8(%rbp), %eax	 # i, tmp200
 	addl	$1, %eax	 #, _16
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 135
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 135
 	imull	64(%rbp), %eax	 # cellWidth, _17
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 35
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 35
 	pxor	%xmm1, %xmm1	 # _18
 	cvtsi2ssl	%eax, %xmm1	 # _17, _18
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 93
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 93
 	movl	-4(%rbp), %eax	 # j, tmp201
 	imull	72(%rbp), %eax	 # cellHeight, _19
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 35
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 35
 	pxor	%xmm2, %xmm2	 # _20
 	cvtsi2ssl	%eax, %xmm2	 # _19, _20
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 58
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 58
 	movl	-8(%rbp), %eax	 # i, tmp202
 	imull	64(%rbp), %eax	 # cellWidth, _21
- # src\main.cpp:549: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-	.loc 12 549 35
+ # src\main.cpp:547: 				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+	.loc 12 547 35
 	pxor	%xmm3, %xmm3	 # _22
 	cvtsi2ssl	%eax, %xmm3	 # _21, _22
 	movss	%xmm3, -52(%rbp)	 # _22, left
@@ -5286,10 +5391,10 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	movss	%xmm0, -76(%rbp)	 # tmp205, right
 	movss	-64(%rbp), %xmm0	 # bottom, tmp206
 	movss	%xmm0, -80(%rbp)	 # tmp206, bottom
-.LBB140:
 .LBB141:
 .LBB142:
 .LBB143:
+.LBB144:
  # C:/msys64/mingw64/include/d2d1helper.h:58:     typename TypeTraits<T>::Rect r = {left, top, right, bottom};
 	.loc 14 58 34
 	movss	-68(%rbp), %xmm0	 # left, tmp207
@@ -5303,34 +5408,34 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
  # C:/msys64/mingw64/include/d2d1helper.h:59:     return r;
 	.loc 14 59 12
 	nop	
+.LBE144:
 .LBE143:
-.LBE142:
  # C:/msys64/mingw64/include/d2d1helper.h:63:     return Rect<FLOAT>(left, top, right, bottom);
 	.loc 14 63 48
 	nop	
+.LBE142:
 .LBE141:
-.LBE140:
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 31
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 31
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.7_25
 	movq	(%rax), %rax	 # BitmapRT.7_25->D.147501.D.146772.D.146000._vptr.IUnknown, _26
 	addq	$136, %rax	 #, _27
 	movq	(%rax), %rbx	 # *_27, _28
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.8_29
 	movq	%rax, %r12	 # BitmapRT.8_29, _30
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 39
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 39
 	movq	brushPool(%rip), %rsi	 # brushPool, brushPool.9_98
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 79
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 79
 	movq	-16(%rbp), %rax	 # matrix, tmp211
 	movq	8(%rax), %rdi	 # matrix_82->CELL_FRONT_BUFFER, _99
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 134
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 134
 	movq	-16(%rbp), %rax	 # matrix, tmp212
 	movzwl	56(%rax), %eax	 # matrix_82->_zLevel, _31
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 119
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 119
 	movzwl	%ax, %r8d	 # _31, _32
 	movl	-4(%rbp), %ecx	 # j, j.10_33
 	movl	-8(%rbp), %edx	 # i, i.11_34
@@ -5340,22 +5445,22 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	movq	%rax, %rcx	 # tmp213,
 	call	_ZN6MATRIX14FlattenedIndexEjjj	 #
 	movl	%eax, %eax	 # _35, _36
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 142
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 142
 	salq	$5, %rax	 #, _37
 	addq	%rdi, %rax	 # _99, _38
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 144
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 144
 	movl	28(%rax), %eax	 # _38->MaterialType, _39
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 49
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 49
 	movl	%eax, %eax	 # _39, _40
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 157
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 157
 	salq	$3, %rax	 #, _41
 	addq	%rsi, %rax	 # brushPool.9_98, _42
- # src\main.cpp:550:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
-	.loc 12 550 31
+ # src\main.cpp:548:     			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+	.loc 12 548 31
 	movq	(%rax), %rdx	 # *_42, _43
 	leaq	-112(%rbp), %rax	 #, tmp214
 	movq	%rdx, %r8	 # _43,
@@ -5363,42 +5468,42 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	movq	%r12, %rcx	 # _30,
 	call	*%rbx	 # _28
 .LVL17:
-.LBE139:
- # src\main.cpp:547:     		for (int i = 0; i < matrix->w; ++i)
-	.loc 12 547 7
+.LBE140:
+ # src\main.cpp:545:     		for (int i = 0; i < matrix->w; ++i)
+	.loc 12 545 7
 	addl	$1, -8(%rbp)	 #, i
-.L221:
- # src\main.cpp:547:     		for (int i = 0; i < matrix->w; ++i)
-	.loc 12 547 35 discriminator 1
+.L224:
+ # src\main.cpp:545:     		for (int i = 0; i < matrix->w; ++i)
+	.loc 12 545 35 discriminator 1
 	movq	-16(%rbp), %rax	 # matrix, tmp215
 	movl	40(%rax), %eax	 # matrix_82->w, _44
- # src\main.cpp:547:     		for (int i = 0; i < matrix->w; ++i)
-	.loc 12 547 23 discriminator 1
+ # src\main.cpp:545:     		for (int i = 0; i < matrix->w; ++i)
+	.loc 12 545 23 discriminator 1
 	movl	-8(%rbp), %edx	 # i, i.12_45
- # src\main.cpp:547:     		for (int i = 0; i < matrix->w; ++i)
-	.loc 12 547 25 discriminator 1
+ # src\main.cpp:545:     		for (int i = 0; i < matrix->w; ++i)
+	.loc 12 545 25 discriminator 1
 	cmpl	%eax, %edx	 # _44, i.12_45
-	jb	.L224	 #,
+	jb	.L227	 #,
+.LBE139:
 .LBE138:
-.LBE137:
- # src\main.cpp:545: 		for (int j = 0; j < matrix->h; ++j)
-	.loc 12 545 3 discriminator 2
+ # src\main.cpp:543: 		for (int j = 0; j < matrix->h; ++j)
+	.loc 12 543 3 discriminator 2
 	addl	$1, -4(%rbp)	 #, j
-.L220:
- # src\main.cpp:545: 		for (int j = 0; j < matrix->h; ++j)
-	.loc 12 545 31 discriminator 1
+.L223:
+ # src\main.cpp:543: 		for (int j = 0; j < matrix->h; ++j)
+	.loc 12 543 31 discriminator 1
 	movq	-16(%rbp), %rax	 # matrix, tmp216
 	movl	44(%rax), %eax	 # matrix_82->h, _46
- # src\main.cpp:545: 		for (int j = 0; j < matrix->h; ++j)
-	.loc 12 545 19 discriminator 1
+ # src\main.cpp:543: 		for (int j = 0; j < matrix->h; ++j)
+	.loc 12 543 19 discriminator 1
 	movl	-4(%rbp), %edx	 # j, j.13_47
- # src\main.cpp:545: 		for (int j = 0; j < matrix->h; ++j)
-	.loc 12 545 21 discriminator 1
+ # src\main.cpp:543: 		for (int j = 0; j < matrix->h; ++j)
+	.loc 12 543 21 discriminator 1
 	cmpl	%eax, %edx	 # _46, j.13_47
-	jb	.L225	 #,
-.LBE136:
- # src\main.cpp:553: 		BitmapRT->EndDraw();
-	.loc 12 553 20
+	jb	.L228	 #,
+.LBE137:
+ # src\main.cpp:551: 		BitmapRT->EndDraw();
+	.loc 12 551 20
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.15_50
 	movq	(%rax), %rax	 # BitmapRT.15_50->D.147501.D.146772.D.146000._vptr.IUnknown, _51
 	addq	$392, %rax	 #, _52
@@ -5409,15 +5514,15 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	movl	$0, %edx	 #,
 	call	*%rax	 # _53
 .LVL18:
- # src\main.cpp:554: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
-	.loc 12 554 6
+ # src\main.cpp:552: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
+	.loc 12 552 6
 	movq	Bitmap(%rip), %rax	 # Bitmap, Bitmap.17_56
- # src\main.cpp:554: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
-	.loc 12 554 3
+ # src\main.cpp:552: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
+	.loc 12 552 3
 	testq	%rax, %rax	 # Bitmap.17_56
-	je	.L226	 #,
- # src\main.cpp:554: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
-	.loc 12 554 31 discriminator 1
+	je	.L229	 #,
+ # src\main.cpp:552: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
+	.loc 12 552 31 discriminator 1
 	movq	Bitmap(%rip), %rax	 # Bitmap, Bitmap.19_59
 	movq	(%rax), %rax	 # Bitmap.19_59->D.146110.D.146059.D.146000._vptr.IUnknown, _60
 	addq	$16, %rax	 #, _61
@@ -5426,12 +5531,12 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	movq	%rdx, %rcx	 # _64,
 	call	*%rax	 # _62
 .LVL19:
- # src\main.cpp:554: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
-	.loc 12 554 42 discriminator 1
+ # src\main.cpp:552: 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
+	.loc 12 552 42 discriminator 1
 	movq	$0, Bitmap(%rip)	 #, Bitmap
-.L226:
- # src\main.cpp:555: 		HRESULT hr = BitmapRT->GetBitmap(&Bitmap);
-	.loc 12 555 35
+.L229:
+ # src\main.cpp:553: 		HRESULT hr = BitmapRT->GetBitmap(&Bitmap);
+	.loc 12 553 35
 	movq	BitmapRT(%rip), %rax	 # BitmapRT, BitmapRT.22_66
 	movq	(%rax), %rax	 # BitmapRT.22_66->D.147501.D.146772.D.146000._vptr.IUnknown, _67
 	addq	$456, %rax	 #, _68
@@ -5442,25 +5547,25 @@ _ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii:
 	call	*%r8	 # _69
 .LVL20:
 	movl	%eax, -20(%rbp)	 # _91, hr
- # src\main.cpp:556: 		ErrorHandle(hr);
-	.loc 12 556 14
+ # src\main.cpp:554: 		ErrorHandle(hr);
+	.loc 12 554 14
 	movl	-20(%rbp), %eax	 # hr, tmp218
 	movl	%eax, %ecx	 # tmp218,
 	call	_ZN21WINDOWGraphicsOverlay11ErrorHandleEl	 #
-.L211:
- # src\main.cpp:557: 	}
-	.loc 12 557 2
+.L214:
+ # src\main.cpp:555: 	}
+	.loc 12 555 2
 	addq	$144, %rsp	 #,
 	popq	%rbx	 #
-.LCFI206:
-	popq	%rsi	 #
-.LCFI207:
-	popq	%rdi	 #
-.LCFI208:
-	popq	%r12	 #
 .LCFI209:
-	popq	%rbp	 #
+	popq	%rsi	 #
 .LCFI210:
+	popq	%rdi	 #
+.LCFI211:
+	popq	%r12	 #
+.LCFI212:
+	popq	%rbp	 #
+.LCFI213:
 	ret	
 .LFE10187:
 	.seh_endproc
@@ -5475,26 +5580,26 @@ _ZN6MATRIXD1Ev:
 	.loc 12 83 8
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI211:
+.LCFI214:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI212:
+.LCFI215:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB144:
+.LBB145:
  # src\main.cpp:83: struct MATRIX
 	.loc 12 83 8
 	movq	16(%rbp), %rax	 # this, tmp83
 	addq	$32, %rax	 #, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EED1Ev	 #
-.LBE144:
+.LBE145:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI213:
+.LCFI216:
 	ret	
 .LFE10191:
 	.seh_endproc
@@ -5517,41 +5622,41 @@ _ZN6MATRIXD1Ev:
 	.seh_proc	_ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx
 _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 .LFB10188:
-	.loc 12 560 2
+	.loc 12 558 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI214:
+.LCFI217:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI215:
+.LCFI218:
 	subq	$1688, %rsp	 #,
 	.seh_stackalloc	1688
-.LCFI216:
+.LCFI219:
 	leaq	128(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 128
-.LCFI217:
+.LCFI220:
 	.seh_endprologue
 	movq	%rcx, 1584(%rbp)	 # hwnd, hwnd
 	movl	%edx, 1592(%rbp)	 # msg, msg
 	movq	%r8, 1600(%rbp)	 # wp, wp
 	movq	%r9, 1608(%rbp)	 # lp, lp
-.LBB145:
- # src\main.cpp:561: 		if (msg == WM_NCCREATE)
-	.loc 12 561 3
-	cmpl	$129, 1592(%rbp)	 #, msg
-	jne	.L229	 #,
 .LBB146:
- # src\main.cpp:563:     	    CREATESTRUCT* pcs = reinterpret_cast<CREATESTRUCT*>(lp);
-	.loc 12 563 24
+ # src\main.cpp:559: 		if (msg == WM_NCCREATE)
+	.loc 12 559 3
+	cmpl	$129, 1592(%rbp)	 #, msg
+	jne	.L232	 #,
+.LBB147:
+ # src\main.cpp:561:     	    CREATESTRUCT* pcs = reinterpret_cast<CREATESTRUCT*>(lp);
+	.loc 12 561 24
 	movq	1608(%rbp), %rax	 # lp, tmp218
 	movq	%rax, 1472(%rbp)	 # tmp218, pcs
- # src\main.cpp:564:     	    MATRIX* matrix = static_cast<MATRIX*>(pcs->lpCreateParams);
-	.loc 12 564 18
+ # src\main.cpp:562:     	    MATRIX* matrix = static_cast<MATRIX*>(pcs->lpCreateParams);
+	.loc 12 562 18
 	movq	1472(%rbp), %rax	 # pcs, tmp219
 	movq	(%rax), %rax	 # pcs_290->lpCreateParams, tmp220
 	movq	%rax, 1464(%rbp)	 # tmp220, matrix
- # src\main.cpp:565:     	   	SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(matrix));
-	.loc 12 565 26
+ # src\main.cpp:563:     	   	SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(matrix));
+	.loc 12 563 26
 	movq	1464(%rbp), %rdx	 # matrix, matrix.29_1
 	movq	1584(%rbp), %rax	 # hwnd, tmp221
 	movq	%rdx, %r8	 # matrix.29_1,
@@ -5561,50 +5666,50 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 .LEHB8:
 	call	*%rax	 # tmp222
 .LVL21:
- # src\main.cpp:567: 			return 1;
-	.loc 12 567 11
+ # src\main.cpp:565: 			return 1;
+	.loc 12 565 11
 	movl	$1, %eax	 #, _123
-	jmp	.L276	 #
-.L229:
+	jmp	.L279	 #
+.L232:
+.LBE147:
 .LBE146:
-.LBE145:
-.LBB147:
- # src\main.cpp:570: 		if(msg == WM_NCDESTROY)
-	.loc 12 570 3
-	cmpl	$130, 1592(%rbp)	 #, msg
-	jne	.L231	 #,
 .LBB148:
- # src\main.cpp:572: 			MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 572 63
+ # src\main.cpp:568: 		if(msg == WM_NCDESTROY)
+	.loc 12 568 3
+	cmpl	$130, 1592(%rbp)	 #, msg
+	jne	.L234	 #,
+.LBB149:
+ # src\main.cpp:570: 			MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 570 63
 	movq	1584(%rbp), %rax	 # hwnd, tmp223
 	movl	$-21, %edx	 #,
 	movq	%rax, %rcx	 # tmp223,
 	movq	__imp_GetWindowLongPtrW(%rip), %rax	 #, tmp224
 	call	*%rax	 # tmp224
 .LVL22:
- # src\main.cpp:572: 			MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 572 84
+ # src\main.cpp:570: 			MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 570 84
 	movq	%rax, 1536(%rbp)	 # _2, matrix
- # src\main.cpp:573: 			delete matrix;
-	.loc 12 573 11
+ # src\main.cpp:571: 			delete matrix;
+	.loc 12 571 11
 	movq	1536(%rbp), %rbx	 # matrix, matrix.30_156
- # src\main.cpp:573: 			delete matrix;
-	.loc 12 573 4
+ # src\main.cpp:571: 			delete matrix;
+	.loc 12 571 4
 	testq	%rbx, %rbx	 # matrix.30_156
-	je	.L232	 #,
- # src\main.cpp:573: 			delete matrix;
-	.loc 12 573 11 discriminator 1
+	je	.L235	 #,
+ # src\main.cpp:571: 			delete matrix;
+	.loc 12 571 11 discriminator 1
 	movq	%rbx, %rcx	 # matrix.30_156,
 	call	_ZN6MATRIXD1Ev	 #
 	movl	$64, %edx	 #,
 	movq	%rbx, %rcx	 # matrix.30_156,
 	call	_ZdlPvy	 #
-.L232:
- # src\main.cpp:574: 			matrix=nullptr;
-	.loc 12 574 10
+.L235:
+ # src\main.cpp:572: 			matrix=nullptr;
+	.loc 12 572 10
 	movq	$0, 1536(%rbp)	 #, matrix
- # src\main.cpp:575: 			SetWindowLongPtr(hwnd, GWLP_USERDATA, 0);
-	.loc 12 575 20
+ # src\main.cpp:573: 			SetWindowLongPtr(hwnd, GWLP_USERDATA, 0);
+	.loc 12 573 20
 	movq	1584(%rbp), %rax	 # hwnd, tmp225
 	movl	$0, %r8d	 #,
 	movl	$-21, %edx	 #,
@@ -5612,15 +5717,15 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	__imp_SetWindowLongPtrW(%rip), %rax	 #, tmp226
 	call	*%rax	 # tmp226
 .LVL23:
- # src\main.cpp:577: 			if(RenderTarget){RenderTarget->Release();}
-	.loc 12 577 7
+ # src\main.cpp:575: 			if(RenderTarget){RenderTarget->Release();}
+	.loc 12 575 7
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.31_3
- # src\main.cpp:577: 			if(RenderTarget){RenderTarget->Release();}
-	.loc 12 577 4
+ # src\main.cpp:575: 			if(RenderTarget){RenderTarget->Release();}
+	.loc 12 575 4
 	testq	%rax, %rax	 # RenderTarget.31_3
-	je	.L233	 #,
- # src\main.cpp:577: 			if(RenderTarget){RenderTarget->Release();}
-	.loc 12 577 42 discriminator 1
+	je	.L236	 #,
+ # src\main.cpp:575: 			if(RenderTarget){RenderTarget->Release();}
+	.loc 12 575 42 discriminator 1
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.33_6
 	movq	(%rax), %rax	 # RenderTarget.33_6->D.147975.D.146772.D.146000._vptr.IUnknown, _7
 	addq	$16, %rax	 #, _8
@@ -5629,16 +5734,16 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rdx, %rcx	 # _11,
 	call	*%rax	 # _9
 .LVL24:
-.L233:
- # src\main.cpp:578: 			if(Factory)     {Factory->Release();     }
-	.loc 12 578 7
+.L236:
+ # src\main.cpp:576: 			if(Factory)     {Factory->Release();     }
+	.loc 12 576 7
 	movq	Factory(%rip), %rax	 # Factory, Factory.35_12
- # src\main.cpp:578: 			if(Factory)     {Factory->Release();     }
-	.loc 12 578 4
+ # src\main.cpp:576: 			if(Factory)     {Factory->Release();     }
+	.loc 12 576 4
 	testq	%rax, %rax	 # Factory.35_12
-	je	.L234	 #,
- # src\main.cpp:578: 			if(Factory)     {Factory->Release();     }
-	.loc 12 578 37 discriminator 1
+	je	.L237	 #,
+ # src\main.cpp:576: 			if(Factory)     {Factory->Release();     }
+	.loc 12 576 37 discriminator 1
 	movq	Factory(%rip), %rax	 # Factory, Factory.37_15
 	movq	(%rax), %rax	 # Factory.37_15->D.147751._vptr.IUnknown, _16
 	addq	$16, %rax	 #, _17
@@ -5647,143 +5752,143 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rdx, %rcx	 # _20,
 	call	*%rax	 # _18
 .LVL25:
-.L234:
-.LBB149:
- # src\main.cpp:580: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
-	.loc 12 580 17
-	movl	$0, 1548(%rbp)	 #, i
- # src\main.cpp:580: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
-	.loc 12 580 4
-	jmp	.L235	 #
 .L237:
- # src\main.cpp:582: 				if(brushPool[i])
-	.loc 12 582 19
+.LBB150:
+ # src\main.cpp:578: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
+	.loc 12 578 17
+	movl	$0, 1548(%rbp)	 #, i
+ # src\main.cpp:578: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
+	.loc 12 578 4
+	jmp	.L238	 #
+.L240:
+ # src\main.cpp:580: 				if(brushPool[i])
+	.loc 12 580 19
 	movq	brushPool(%rip), %rax	 # brushPool, brushPool.39_21
- # src\main.cpp:582: 				if(brushPool[i])
-	.loc 12 582 18
+ # src\main.cpp:580: 				if(brushPool[i])
+	.loc 12 580 18
 	movl	1548(%rbp), %edx	 # i, _22
- # src\main.cpp:582: 				if(brushPool[i])
-	.loc 12 582 19
+ # src\main.cpp:580: 				if(brushPool[i])
+	.loc 12 580 19
 	salq	$3, %rdx	 #, _23
 	addq	%rdx, %rax	 # _23, _24
 	movq	(%rax), %rax	 # *_24, _25
- # src\main.cpp:582: 				if(brushPool[i])
-	.loc 12 582 5
+ # src\main.cpp:580: 				if(brushPool[i])
+	.loc 12 580 5
 	testq	%rax, %rax	 # _25
-	je	.L236	 #,
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 17
+	je	.L239	 #,
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 17
 	movq	brushPool(%rip), %rax	 # brushPool, brushPool.41_32
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 16
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 16
 	movl	1548(%rbp), %edx	 # i, _33
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 17
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 17
 	salq	$3, %rdx	 #, _34
 	addq	%rdx, %rax	 # _34, _35
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 27
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 27
 	movq	(%rax), %rax	 # *_35, _36
 	movq	(%rax), %rax	 # _36->D.148163.D.146026.D.146000._vptr.IUnknown, _37
 	addq	$16, %rax	 #, _38
 	movq	(%rax), %rax	 # *_38, _39
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 17
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 17
 	movq	brushPool(%rip), %rdx	 # brushPool, brushPool.42_40
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 16
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 16
 	movl	1548(%rbp), %ecx	 # i, _41
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 17
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 17
 	salq	$3, %rcx	 #, _42
 	addq	%rcx, %rdx	 # _42, _43
- # src\main.cpp:584: 					brushPool[i]->Release();
-	.loc 12 584 27
+ # src\main.cpp:582: 					brushPool[i]->Release();
+	.loc 12 582 27
 	movq	(%rdx), %rdx	 # *_43, _44
 	movq	%rdx, %rcx	 # _45,
 	call	*%rax	 # _39
 .LVL26:
- # src\main.cpp:585: 					brushPool[i] = nullptr;
-	.loc 12 585 17
+ # src\main.cpp:583: 					brushPool[i] = nullptr;
+	.loc 12 583 17
 	movq	brushPool(%rip), %rax	 # brushPool, brushPool.43_46
- # src\main.cpp:585: 					brushPool[i] = nullptr;
-	.loc 12 585 16
+ # src\main.cpp:583: 					brushPool[i] = nullptr;
+	.loc 12 583 16
 	movl	1548(%rbp), %edx	 # i, _47
- # src\main.cpp:585: 					brushPool[i] = nullptr;
-	.loc 12 585 17
+ # src\main.cpp:583: 					brushPool[i] = nullptr;
+	.loc 12 583 17
 	salq	$3, %rdx	 #, _48
 	addq	%rdx, %rax	 # _48, _49
- # src\main.cpp:585: 					brushPool[i] = nullptr;
-	.loc 12 585 19
+ # src\main.cpp:583: 					brushPool[i] = nullptr;
+	.loc 12 583 19
 	movq	$0, (%rax)	 #, *_49
-.L236:
- # src\main.cpp:588: 				free(brushPool);
-	.loc 12 588 9 discriminator 2
+.L239:
+ # src\main.cpp:586: 				free(brushPool);
+	.loc 12 586 9 discriminator 2
 	movq	brushPool(%rip), %rax	 # brushPool, brushPool.44_50
 	movq	%rax, %rcx	 # brushPool.44_50,
 	call	free	 #
- # src\main.cpp:580: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
-	.loc 12 580 4 discriminator 2
+ # src\main.cpp:578: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
+	.loc 12 578 4 discriminator 2
 	addl	$1, 1548(%rbp)	 #, i
-.L235:
- # src\main.cpp:580: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
-	.loc 12 580 23 discriminator 1
+.L238:
+ # src\main.cpp:578: 			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
+	.loc 12 578 23 discriminator 1
 	cmpl	$5, 1548(%rbp)	 #, i
-	jbe	.L237	 #,
-.L231:
+	jbe	.L240	 #,
+.L234:
+.LBE150:
 .LBE149:
 .LBE148:
-.LBE147:
-.LBB150:
- # src\main.cpp:592: 		switch(msg)
-	.loc 12 592 3
-	cmpl	$512, 1592(%rbp)	 #, msg
-	je	.L238	 #,
-	cmpl	$512, 1592(%rbp)	 #, msg
-	ja	.L239	 #,
-	cmpl	$256, 1592(%rbp)	 #, msg
-	je	.L240	 #,
-	cmpl	$256, 1592(%rbp)	 #, msg
-	ja	.L239	 #,
-	cmpl	$15, 1592(%rbp)	 #, msg
-	je	.L241	 #,
-	cmpl	$15, 1592(%rbp)	 #, msg
-	ja	.L239	 #,
-	cmpl	$5, 1592(%rbp)	 #, msg
-	je	.L242	 #,
-	cmpl	$5, 1592(%rbp)	 #, msg
-	ja	.L239	 #,
-	cmpl	$1, 1592(%rbp)	 #, msg
-	je	.L243	 #,
-	cmpl	$2, 1592(%rbp)	 #, msg
-	je	.L244	 #,
-	jmp	.L239	 #
-.L243:
 .LBB151:
+ # src\main.cpp:590: 		switch(msg)
+	.loc 12 590 3
+	cmpl	$512, 1592(%rbp)	 #, msg
+	je	.L241	 #,
+	cmpl	$512, 1592(%rbp)	 #, msg
+	ja	.L242	 #,
+	cmpl	$256, 1592(%rbp)	 #, msg
+	je	.L243	 #,
+	cmpl	$256, 1592(%rbp)	 #, msg
+	ja	.L242	 #,
+	cmpl	$15, 1592(%rbp)	 #, msg
+	je	.L244	 #,
+	cmpl	$15, 1592(%rbp)	 #, msg
+	ja	.L242	 #,
+	cmpl	$5, 1592(%rbp)	 #, msg
+	je	.L245	 #,
+	cmpl	$5, 1592(%rbp)	 #, msg
+	ja	.L242	 #,
+	cmpl	$1, 1592(%rbp)	 #, msg
+	je	.L246	 #,
+	cmpl	$2, 1592(%rbp)	 #, msg
+	je	.L247	 #,
+	jmp	.L242	 #
+.L246:
 .LBB152:
- # src\main.cpp:596: 				HRESULT hr = D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &Factory);
-	.loc 12 596 35
+.LBB153:
+ # src\main.cpp:594: 				HRESULT hr = D2D1CreateFactory(D2D1_FACTORY_TYPE_SINGLE_THREADED, &Factory);
+	.loc 12 594 35
 	leaq	Factory(%rip), %rax	 #, tmp227
 	movq	%rax, %rdx	 # tmp227,
 	movl	$0, %ecx	 #,
 	call	_Z17D2D1CreateFactoryI12ID2D1FactoryEl17D2D1_FACTORY_TYPEPPT_	 #
 	movl	%eax, 1544(%rbp)	 # _258, hr
-.LBB153:
- # src\main.cpp:597: 				if(FAILED(hr))
-	.loc 12 597 5
-	cmpl	$0, 1544(%rbp)	 #, hr
-	jns	.L245	 #,
 .LBB154:
- # src\main.cpp:600:         			swprintf_s(errorMsg, L"D2D1CreateFactory failed with HRESULT: 0x%08X", hr);
-	.loc 12 600 22
+ # src\main.cpp:595: 				if(FAILED(hr))
+	.loc 12 595 5
+	cmpl	$0, 1544(%rbp)	 #, hr
+	jns	.L248	 #,
+.LBB155:
+ # src\main.cpp:598:         			swprintf_s(errorMsg, L"D2D1CreateFactory failed with HRESULT: 0x%08X", hr);
+	.loc 12 598 22
 	movl	1544(%rbp), %edx	 # hr, tmp228
 	leaq	-80(%rbp), %rax	 #, tmp229
 	movl	%edx, %r8d	 # tmp228,
 	leaq	.LC39(%rip), %rdx	 #, tmp230
 	movq	%rax, %rcx	 # tmp229,
 	call	_Z10swprintf_sILy512EEiRAT__wPKwz	 #
- # src\main.cpp:601:         			MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
-	.loc 12 601 23
+ # src\main.cpp:599:         			MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
+	.loc 12 599 23
 	leaq	-80(%rbp), %rax	 #, tmp231
 	movl	$16, %r9d	 #,
 	leaq	.LC40(%rip), %r8	 #,
@@ -5792,48 +5897,48 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	__imp_MessageBoxW(%rip), %rax	 #, tmp232
 	call	*%rax	 # tmp232
 .LVL27:
-.L245:
+.L248:
+.LBE155:
 .LBE154:
-.LBE153:
- # src\main.cpp:604: 				FLOAT dpiX = 96.0f;
-	.loc 12 604 11
+ # src\main.cpp:602: 				FLOAT dpiX = 96.0f;
+	.loc 12 602 11
 	movss	.LC44(%rip), %xmm0	 #, tmp233
 	movss	%xmm0, 1484(%rbp)	 # tmp233, dpiX
- # src\main.cpp:605: 				FLOAT dpiY = 96.0f;
-	.loc 12 605 11
+ # src\main.cpp:603: 				FLOAT dpiY = 96.0f;
+	.loc 12 603 11
 	movss	.LC44(%rip), %xmm0	 #, tmp234
 	movss	%xmm0, 1480(%rbp)	 # tmp234, dpiY
- # src\main.cpp:609: 				GetClientRect(hwnd, &rc);
-	.loc 12 609 18
+ # src\main.cpp:607: 				GetClientRect(hwnd, &rc);
+	.loc 12 607 18
 	leaq	1056(%rbp), %rdx	 #, tmp235
 	movq	1584(%rbp), %rax	 # hwnd, tmp236
 	movq	%rax, %rcx	 # tmp236,
 	movq	__imp_GetClientRect(%rip), %rax	 #, tmp237
 	call	*%rax	 # tmp237
 .LVL28:
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 59
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 59
 	movl	1068(%rbp), %edx	 # rc.bottom, _51
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 71
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 71
 	movl	1060(%rbp), %eax	 # rc.top, _52
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 66
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 66
 	subl	%eax, %edx	 # _52, _53
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 35
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 35
 	movl	%edx, %ecx	 # _53, _54
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 39
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 39
 	movl	1064(%rbp), %edx	 # rc.right, _55
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 50
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 50
 	movl	1056(%rbp), %eax	 # rc.left, _56
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 45
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 45
 	subl	%eax, %edx	 # _56, _57
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 35
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 35
 	movl	%edx, %eax	 # _57, _58
 	movl	%eax, 1460(%rbp)	 # _58, width
 	movl	%ecx, 1456(%rbp)	 # _54, height
@@ -5841,10 +5946,10 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movl	%eax, 1452(%rbp)	 # tmp238, width
 	movl	1456(%rbp), %eax	 # height, tmp239
 	movl	%eax, 1448(%rbp)	 # tmp239, height
-.LBB155:
 .LBB156:
 .LBB157:
 .LBB158:
+.LBB159:
  # C:/msys64/mingw64/include/d2d1helper.h:45:     typename TypeTraits<T>::Size r = {width, height};
 	.loc 14 45 34
 	movl	1452(%rbp), %eax	 # width, tmp240
@@ -5853,21 +5958,21 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movl	%eax, 964(%rbp)	 # tmp241, r.height
  # C:/msys64/mingw64/include/d2d1helper.h:46:     return r;
 	.loc 14 46 12
-	movq	960(%rbp), %rax	 # r, D.209802
+	movq	960(%rbp), %rax	 # r, D.209803
+.LBE159:
 .LBE158:
-.LBE157:
  # C:/msys64/mingw64/include/d2d1helper.h:54:     return Size<UINT32>(width, height);
 	.loc 14 54 38
 	nop	
+.LBE157:
 .LBE156:
-.LBE155:
- # src\main.cpp:611: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
-	.loc 12 611 35
-	movq	%rax, 1048(%rbp)	 # D.209801, size
+ # src\main.cpp:609: 				D2D1_SIZE_U size = D2D1::SizeU(rc.right - rc.left, rc.bottom - rc.top);
+	.loc 12 609 35
+	movq	%rax, 1048(%rbp)	 # D.209802, size
 	movl	$87, 1424(%rbp)	 #, dxgiFormat
 	movl	$1, 1420(%rbp)	 #, alphaMode
-.LBB159:
 .LBB160:
+.LBB161:
  # C:/msys64/mingw64/include/d2d1helper.h:146:     D2D1_PIXEL_FORMAT r = {dxgiFormat, alphaMode};
 	.loc 14 146 49
 	movl	1424(%rbp), %eax	 # dxgiFormat, tmp242
@@ -5876,12 +5981,12 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movl	%eax, 972(%rbp)	 # tmp243, r.alphaMode
  # C:/msys64/mingw64/include/d2d1helper.h:147:     return r;
 	.loc 14 147 12
-	movq	968(%rbp), %rax	 # r, D.209819
+	movq	968(%rbp), %rax	 # r, D.209820
+.LBE161:
 .LBE160:
-.LBE159:
- # src\main.cpp:615:     				D2D1::PixelFormat(DXGI_FORMAT_B8G8R8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED),
-	.loc 12 615 26
-	movq	%rax, 1072(%rbp)	 # D.209818, D.186462
+ # src\main.cpp:613:     				D2D1::PixelFormat(DXGI_FORMAT_B8G8R8A8_UNORM, D2D1_ALPHA_MODE_PREMULTIPLIED),
+	.loc 12 613 26
+	movq	%rax, 1072(%rbp)	 # D.209819, D.186462
 	movl	$2, 1444(%rbp)	 #, type
 	movss	1484(%rbp), %xmm0	 # dpiX, tmp244
 	movss	%xmm0, 1440(%rbp)	 # tmp244, dpiX
@@ -5889,8 +5994,8 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movss	%xmm0, 1436(%rbp)	 # tmp245, dpiY
 	movl	$0, 1432(%rbp)	 #, usage
 	movl	$0, 1428(%rbp)	 #, minLevel
-.LBB161:
 .LBB162:
+.LBB163:
  # C:/msys64/mingw64/include/d2d1helper.h:164:     D2D1_RENDER_TARGET_PROPERTIES r = {type, pixelFormat, dpiX, dpiY, usage, minLevel};
 	.loc 14 164 86
 	movl	1444(%rbp), %eax	 # type, tmp246
@@ -5908,33 +6013,33 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
  # C:/msys64/mingw64/include/d2d1helper.h:165:     return r;
 	.loc 14 165 12
 	nop	
+.LBE163:
 .LBE162:
-.LBE161:
- # src\main.cpp:619: 				D2D1_HWND_RENDER_TARGET_PROPERTIES hwndProps = {};
-	.loc 12 619 40
+ # src\main.cpp:617: 				D2D1_HWND_RENDER_TARGET_PROPERTIES hwndProps = {};
+	.loc 12 617 40
 	pxor	%xmm0, %xmm0	 # tmp252
 	movups	%xmm0, 976(%rbp)	 # tmp252, hwndProps
 	movq	%xmm0, 992(%rbp)	 # tmp252, hwndProps
- # src\main.cpp:620: 				hwndProps.hwnd 			   = hwnd;
-	.loc 12 620 26
+ # src\main.cpp:618: 				hwndProps.hwnd 			   = hwnd;
+	.loc 12 618 26
 	movq	1584(%rbp), %rax	 # hwnd, tmp253
 	movq	%rax, 976(%rbp)	 # tmp253, hwndProps.hwnd
- # src\main.cpp:621: 				hwndProps.pixelSize		   = size;
-	.loc 12 621 29
+ # src\main.cpp:619: 				hwndProps.pixelSize		   = size;
+	.loc 12 619 29
 	movq	1048(%rbp), %rax	 # size, tmp254
 	movq	%rax, 984(%rbp)	 # tmp254, hwndProps.pixelSize
- # src\main.cpp:622: 				hwndProps.presentOptions   = D2D1_PRESENT_OPTIONS_NONE;
-	.loc 12 622 32
+ # src\main.cpp:620: 				hwndProps.presentOptions   = D2D1_PRESENT_OPTIONS_NONE;
+	.loc 12 620 32
 	movl	$0, 992(%rbp)	 #, hwndProps.presentOptions
- # src\main.cpp:624: 				if(Factory)
-	.loc 12 624 8
+ # src\main.cpp:622: 				if(Factory)
+	.loc 12 622 8
 	movq	Factory(%rip), %rax	 # Factory, Factory.45_59
- # src\main.cpp:624: 				if(Factory)
-	.loc 12 624 5
+ # src\main.cpp:622: 				if(Factory)
+	.loc 12 622 5
 	testq	%rax, %rax	 # Factory.45_59
-	je	.L250	 #,
- # src\main.cpp:626: 					hr = Factory->CreateHwndRenderTarget(props, hwndProps, &RenderTarget);
-	.loc 12 626 42
+	je	.L253	 #,
+ # src\main.cpp:624: 					hr = Factory->CreateHwndRenderTarget(props, hwndProps, &RenderTarget);
+	.loc 12 624 42
 	movq	Factory(%rip), %rax	 # Factory, Factory.46_60
 	leaq	976(%rbp), %rcx	 #, tmp255
 	leaq	1008(%rbp), %rdx	 #, tmp256
@@ -5943,69 +6048,69 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rax, %rcx	 # Factory.46_60,
 	call	_ZN12ID2D1Factory22CreateHwndRenderTargetERK29D2D1_RENDER_TARGET_PROPERTIESRK34D2D1_HWND_RENDER_TARGET_PROPERTIESPP21ID2D1HwndRenderTarget	 #
 	movl	%eax, 1544(%rbp)	 # _273, hr
-.L250:
- # src\main.cpp:628: 				ErrorHandle(hr);
-	.loc 12 628 16
+.L253:
+ # src\main.cpp:626: 				ErrorHandle(hr);
+	.loc 12 626 16
 	movl	1544(%rbp), %eax	 # hr, tmp257
 	movl	%eax, %ecx	 # tmp257,
 	call	_ZN21WINDOWGraphicsOverlay11ErrorHandleEl	 #
- # src\main.cpp:630: 				if(RenderTarget)
-	.loc 12 630 8
+ # src\main.cpp:628: 				if(RenderTarget)
+	.loc 12 628 8
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.47_61
- # src\main.cpp:630: 				if(RenderTarget)
-	.loc 12 630 5
+ # src\main.cpp:628: 				if(RenderTarget)
+	.loc 12 628 5
 	testq	%rax, %rax	 # RenderTarget.47_61
-	je	.L251	 #,
- # src\main.cpp:632: 					RenderTarget->CreateCompatibleRenderTarget(&BitmapRT);
-	.loc 12 632 48
+	je	.L254	 #,
+ # src\main.cpp:630: 					RenderTarget->CreateCompatibleRenderTarget(&BitmapRT);
+	.loc 12 630 48
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.48_62
 	movq	%rax, %rcx	 # RenderTarget.48_62, _63
 	leaq	BitmapRT(%rip), %rax	 #, tmp258
 	movq	%rax, %rdx	 # tmp258,
 	call	_ZN17ID2D1RenderTarget28CreateCompatibleRenderTargetEPP23ID2D1BitmapRenderTarget	 #
-.LBE152:
- # src\main.cpp:638: 			break;
-	.loc 12 638 4
-	jmp	.L253	 #
-.L251:
-.LBB163:
- # src\main.cpp:635: 					printf("RenderTarget->CreateCompatibleRenderTarget(&BitmapRT); RENDERTARGET = nullptr");
-	.loc 12 635 12
+.LBE153:
+ # src\main.cpp:636: 			break;
+	.loc 12 636 4
+	jmp	.L256	 #
+.L254:
+.LBB164:
+ # src\main.cpp:633: 					printf("RenderTarget->CreateCompatibleRenderTarget(&BitmapRT); RENDERTARGET = nullptr");
+	.loc 12 633 12
 	leaq	.LC45(%rip), %rax	 #, tmp259
 	movq	%rax, %rcx	 # tmp259,
 	call	_Z6printfPKcz	 #
-.LBE163:
- # src\main.cpp:638: 			break;
-	.loc 12 638 4
-	jmp	.L253	 #
-.L242:
-.LBB164:
+.LBE164:
+ # src\main.cpp:636: 			break;
+	.loc 12 636 4
+	jmp	.L256	 #
+.L245:
 .LBB165:
- # src\main.cpp:641: 			    if (RenderTarget)
-	.loc 12 641 12
-	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.49_64
- # src\main.cpp:641: 			    if (RenderTarget)
-	.loc 12 641 8
-	testq	%rax, %rax	 # RenderTarget.49_64
-	je	.L254	 #,
 .LBB166:
- # src\main.cpp:643: 			        UINT width  = LOWORD(lp);
-	.loc 12 643 26
+ # src\main.cpp:639: 			    if (RenderTarget)
+	.loc 12 639 12
+	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.49_64
+ # src\main.cpp:639: 			    if (RenderTarget)
+	.loc 12 639 8
+	testq	%rax, %rax	 # RenderTarget.49_64
+	je	.L257	 #,
+.LBB167:
+ # src\main.cpp:641: 			        UINT width  = LOWORD(lp);
+	.loc 12 641 26
 	movq	1608(%rbp), %rax	 # lp, tmp260
- # src\main.cpp:643: 			        UINT width  = LOWORD(lp);
-	.loc 12 643 17
+ # src\main.cpp:641: 			        UINT width  = LOWORD(lp);
+	.loc 12 641 17
 	movzwl	%ax, %eax	 # _65, tmp261
 	movl	%eax, 1492(%rbp)	 # tmp261, width
- # src\main.cpp:644: 			        UINT height = HIWORD(lp);
-	.loc 12 644 26
+ # src\main.cpp:642: 			        UINT height = HIWORD(lp);
+	.loc 12 642 26
 	movq	1608(%rbp), %rax	 # lp, lp.50_66
 	shrq	$16, %rax	 #, _67
- # src\main.cpp:644: 			        UINT height = HIWORD(lp);
-	.loc 12 644 17
+ # src\main.cpp:642: 			        UINT height = HIWORD(lp);
+	.loc 12 642 17
 	movzwl	%ax, %eax	 # _68, tmp262
 	movl	%eax, 1488(%rbp)	 # tmp262, height
- # src\main.cpp:645: 			        RenderTarget->Resize(D2D1::SizeU(width, height));
-	.loc 12 645 32
+ # src\main.cpp:643: 			        RenderTarget->Resize(D2D1::SizeU(width, height));
+	.loc 12 643 32
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.51_69
 	movl	1492(%rbp), %edx	 # width, tmp263
 	movl	%edx, 1416(%rbp)	 # tmp263, width
@@ -6015,10 +6120,10 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movl	%edx, 1408(%rbp)	 # tmp265, width
 	movl	1412(%rbp), %edx	 # height, tmp266
 	movl	%edx, 1404(%rbp)	 # tmp266, height
-.LBB167:
 .LBB168:
 .LBB169:
 .LBB170:
+.LBB171:
  # C:/msys64/mingw64/include/d2d1helper.h:45:     typename TypeTraits<T>::Size r = {width, height};
 	.loc 14 45 34
 	movl	1408(%rbp), %edx	 # width, tmp267
@@ -6027,60 +6132,60 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movl	%edx, 956(%rbp)	 # tmp268, r.height
  # C:/msys64/mingw64/include/d2d1helper.h:46:     return r;
 	.loc 14 46 12
-	movq	952(%rbp), %rdx	 # r, D.209827
+	movq	952(%rbp), %rdx	 # r, D.209828
+.LBE171:
 .LBE170:
-.LBE169:
  # C:/msys64/mingw64/include/d2d1helper.h:54:     return Size<UINT32>(width, height);
 	.loc 14 54 38
 	nop	
+.LBE169:
 .LBE168:
-.LBE167:
- # src\main.cpp:645: 			        RenderTarget->Resize(D2D1::SizeU(width, height));
-	.loc 12 645 44
-	movq	%rdx, 1080(%rbp)	 # D.209826, D.186474
- # src\main.cpp:645: 			        RenderTarget->Resize(D2D1::SizeU(width, height));
-	.loc 12 645 32
+ # src\main.cpp:643: 			        RenderTarget->Resize(D2D1::SizeU(width, height));
+	.loc 12 643 44
+	movq	%rdx, 1080(%rbp)	 # D.209827, D.186474
+ # src\main.cpp:643: 			        RenderTarget->Resize(D2D1::SizeU(width, height));
+	.loc 12 643 32
 	leaq	1080(%rbp), %rdx	 #, tmp269
 	movq	%rax, %rcx	 # RenderTarget.51_69,
 	call	_ZN21ID2D1HwndRenderTarget6ResizeERK10D2D_SIZE_U	 #
+.LBE167:
 .LBE166:
 .LBE165:
-.LBE164:
- # src\main.cpp:651: 			break;
-	.loc 12 651 4
-	jmp	.L253	 #
-.L254:
+ # src\main.cpp:649: 			break;
+	.loc 12 649 4
+	jmp	.L256	 #
+.L257:
+.LBB173:
 .LBB172:
-.LBB171:
- # src\main.cpp:648: 					printf("WM_SIZE: RENDERTARGET = nullptr");
-	.loc 12 648 12
+ # src\main.cpp:646: 					printf("WM_SIZE: RENDERTARGET = nullptr");
+	.loc 12 646 12
 	leaq	.LC46(%rip), %rax	 #, tmp270
 	movq	%rax, %rcx	 # tmp270,
 	call	_Z6printfPKcz	 #
-.LBE171:
 .LBE172:
- # src\main.cpp:651: 			break;
-	.loc 12 651 4
-	jmp	.L253	 #
-.L238:
-.LBB173:
- # src\main.cpp:654: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 654 64
+.LBE173:
+ # src\main.cpp:649: 			break;
+	.loc 12 649 4
+	jmp	.L256	 #
+.L241:
+.LBB174:
+ # src\main.cpp:652: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 652 64
 	movq	1584(%rbp), %rax	 # hwnd, tmp271
 	movl	$-21, %edx	 #,
 	movq	%rax, %rcx	 # tmp271,
 	movq	__imp_GetWindowLongPtrW(%rip), %rax	 #, tmp272
 	call	*%rax	 # tmp272
 .LVL29:
- # src\main.cpp:654: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 654 85
+ # src\main.cpp:652: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 652 85
 	movq	%rax, 1528(%rbp)	 # _70, matrix
- # src\main.cpp:655: 				CHECK_MATRIX_POPULATION();
-	.loc 12 655 5
+ # src\main.cpp:653: 				CHECK_MATRIX_POPULATION();
+	.loc 12 653 5
 	cmpq	$0, 1528(%rbp)	 #, matrix
-	jne	.L258	 #,
- # src\main.cpp:655: 				CHECK_MATRIX_POPULATION();
-	.loc 12 655 5 is_stmt 0 discriminator 1
+	jne	.L261	 #,
+ # src\main.cpp:653: 				CHECK_MATRIX_POPULATION();
+	.loc 12 653 5 is_stmt 0 discriminator 1
 	movq	1608(%rbp), %r8	 # lp, tmp273
 	movq	1600(%rbp), %rcx	 # wp, tmp274
 	movl	1592(%rbp), %edx	 # msg, tmp275
@@ -6092,76 +6197,76 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	call	*%rax	 # tmp277
 .LVL30:
 .LEHE8:
-	jmp	.L276	 #
-.L258:
- # src\main.cpp:657: 				uint32_t x = GET_X_LPARAM(lp);
-	.loc 12 657 18 is_stmt 1
+	jmp	.L279	 #
+.L261:
+ # src\main.cpp:655: 				uint32_t x = GET_X_LPARAM(lp);
+	.loc 12 655 18 is_stmt 1
 	movq	1608(%rbp), %rax	 # lp, tmp278
- # src\main.cpp:657: 				uint32_t x = GET_X_LPARAM(lp);
-	.loc 12 657 14
+ # src\main.cpp:655: 				uint32_t x = GET_X_LPARAM(lp);
+	.loc 12 655 14
 	cwtl
 	movl	%eax, 1524(%rbp)	 # tmp279, x
- # src\main.cpp:658: 				uint32_t y = GET_Y_LPARAM(lp);
-	.loc 12 658 18
+ # src\main.cpp:656: 				uint32_t y = GET_Y_LPARAM(lp);
+	.loc 12 656 18
 	movq	1608(%rbp), %rax	 # lp, lp.52_72
 	shrq	$16, %rax	 #, _73
- # src\main.cpp:658: 				uint32_t y = GET_Y_LPARAM(lp);
-	.loc 12 658 14
+ # src\main.cpp:656: 				uint32_t y = GET_Y_LPARAM(lp);
+	.loc 12 656 14
 	cwtl
 	movl	%eax, 1520(%rbp)	 # tmp280, y
- # src\main.cpp:660: 				uint32_t xCell = x / matrix->_pixelWidth;
-	.loc 12 660 34
+ # src\main.cpp:658: 				uint32_t xCell = x / matrix->_pixelWidth;
+	.loc 12 658 34
 	movq	1528(%rbp), %rax	 # matrix, tmp281
 	movzwl	52(%rax), %eax	 # matrix_170->_pixelWidth, _75
 	movzwl	%ax, %ebx	 # _75, _76
- # src\main.cpp:660: 				uint32_t xCell = x / matrix->_pixelWidth;
-	.loc 12 660 14
+ # src\main.cpp:658: 				uint32_t xCell = x / matrix->_pixelWidth;
+	.loc 12 658 14
 	movl	1524(%rbp), %eax	 # x, tmp284
 	movl	$0, %edx	 #, tmp283
 	divl	%ebx	 # _76
 	movl	%eax, 1516(%rbp)	 # tmp282, xCell
- # src\main.cpp:661: 				uint32_t yCell = y / matrix->_pixelHeight;
-	.loc 12 661 34
+ # src\main.cpp:659: 				uint32_t yCell = y / matrix->_pixelHeight;
+	.loc 12 659 34
 	movq	1528(%rbp), %rax	 # matrix, tmp285
 	movzwl	54(%rax), %eax	 # matrix_170->_pixelHeight, _77
 	movzwl	%ax, %ebx	 # _77, _78
- # src\main.cpp:661: 				uint32_t yCell = y / matrix->_pixelHeight;
-	.loc 12 661 14
+ # src\main.cpp:659: 				uint32_t yCell = y / matrix->_pixelHeight;
+	.loc 12 659 14
 	movl	1520(%rbp), %eax	 # y, tmp288
 	movl	$0, %edx	 #, tmp287
 	divl	%ebx	 # _78
 	movl	%eax, 1512(%rbp)	 # tmp286, yCell
- # src\main.cpp:663: 				MATRIX::cell readcell = MATRIX::cell();
-	.loc 12 663 42
+ # src\main.cpp:661: 				MATRIX::cell readcell = MATRIX::cell();
+	.loc 12 661 42
 	pxor	%xmm0, %xmm0	 # tmp289
 	movups	%xmm0, -80(%rbp)	 # tmp289, MEM[(struct cell *)_149]
 	movups	%xmm0, -64(%rbp)	 # tmp289, MEM[(struct cell *)_149]
 	leaq	-80(%rbp), %rax	 #, tmp290
 	movq	%rax, %rcx	 # tmp290,
 	call	_ZN6MATRIX4cellC1Ev	 #
- # src\main.cpp:665: 				if(wp & MK_LBUTTON)
-	.loc 12 665 11
+ # src\main.cpp:663: 				if(wp & MK_LBUTTON)
+	.loc 12 663 11
 	movq	1600(%rbp), %rax	 # wp, tmp291
 	andl	$1, %eax	 #, _79
- # src\main.cpp:665: 				if(wp & MK_LBUTTON)
-	.loc 12 665 5
+ # src\main.cpp:663: 				if(wp & MK_LBUTTON)
+	.loc 12 663 5
 	testq	%rax, %rax	 # _79
-	je	.L259	 #,
- # src\main.cpp:667: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-	.loc 12 667 36
+	je	.L262	 #,
+ # src\main.cpp:665: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+	.loc 12 665 36
 	movq	1528(%rbp), %rbx	 # matrix, matrix.53_80
- # src\main.cpp:667: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-	.loc 12 667 76
+ # src\main.cpp:665: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+	.loc 12 665 76
 	leaq	1120(%rbp), %rax	 #, tmp292
 	movl	$3, %edx	 #,
 	movq	%rax, %rcx	 # tmp292,
 	call	_ZN6MATRIX4cellC1ENS_7elementE	 #
- # src\main.cpp:667: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-	.loc 12 667 59
+ # src\main.cpp:665: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+	.loc 12 665 59
 	movq	1528(%rbp), %rax	 # matrix, tmp293
 	movzwl	56(%rax), %eax	 # matrix_170->_zLevel, _81
- # src\main.cpp:667: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-	.loc 12 667 36
+ # src\main.cpp:665: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+	.loc 12 665 36
 	movzwl	%ax, %edx	 # _81, _82
 	leaq	1088(%rbp), %rax	 #, tmp294
 	movl	1512(%rbp), %r9d	 # yCell, tmp295
@@ -6172,8 +6277,8 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rbx, %rdx	 # matrix.53_80,
 	movq	%rax, %rcx	 # tmp294,
 	call	_ZN6MATRIX11WriteDataToEjjjRKNS_4cellE	 #
- # src\main.cpp:667: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-	.loc 12 667 15
+ # src\main.cpp:665: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+	.loc 12 665 15
 	movq	1088(%rbp), %rax	 # D.186484, tmp298
 	movq	1096(%rbp), %rdx	 # D.186484,
 	movq	%rax, -80(%rbp)	 # tmp298, MEM[(struct cell *)_149]
@@ -6182,18 +6287,18 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	1112(%rbp), %rdx	 # D.186484,
 	movq	%rax, -64(%rbp)	 # tmp299, MEM[(struct cell *)_149]
 	movq	%rdx, -56(%rbp)	 #, MEM[(struct cell *)_149]
- # src\main.cpp:667: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-	.loc 12 667 36
+ # src\main.cpp:665: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+	.loc 12 665 36
 	leaq	1088(%rbp), %rax	 #, tmp300
 	movq	%rax, %rcx	 # tmp300,
 	call	_ZN6MATRIX4cellD1Ev	 #
- # src\main.cpp:667: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-	.loc 12 667 76
+ # src\main.cpp:665: 					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+	.loc 12 665 76
 	leaq	1120(%rbp), %rax	 #, tmp301
 	movq	%rax, %rcx	 # tmp301,
 	call	_ZN6MATRIX4cellD1Ev	 #
- # src\main.cpp:668: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 668 112
+ # src\main.cpp:666: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 666 112
 	movq	1528(%rbp), %rcx	 # matrix, matrix.54_83
 	movq	-80(%rbp), %rax	 # MEM[(struct cell *)_149], tmp302
 	movq	-72(%rbp), %rdx	 # MEM[(struct cell *)_149],
@@ -6210,15 +6315,15 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rax, %rcx	 # tmp304,
 .LEHB9:
 	call	_ZN6MATRIX18ReadCellAttributesENS_4cellE	 #
- # src\main.cpp:668: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 668 12 discriminator 2
+ # src\main.cpp:666: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 666 12 discriminator 2
 	movq	1184(%rbp), %rdx	 # D.186486.name, _84
- # src\main.cpp:668: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 668 77 discriminator 2
+ # src\main.cpp:666: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 666 77 discriminator 2
 	movq	1528(%rbp), %rax	 # matrix, tmp306
 	movzwl	56(%rax), %eax	 # matrix_170->_zLevel, _85
- # src\main.cpp:668: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 668 12 discriminator 2
+ # src\main.cpp:666: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 666 12 discriminator 2
 	movzwl	%ax, %r8d	 # _85, _86
 	movl	1512(%rbp), %ecx	 # yCell, tmp307
 	movl	1516(%rbp), %eax	 # xCell, tmp308
@@ -6230,26 +6335,26 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rax, %rcx	 # tmp309,
 	call	_Z6printfPKcz	 #
 .LEHE9:
- # src\main.cpp:668: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 668 112 discriminator 4
+ # src\main.cpp:666: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 666 112 discriminator 4
 	leaq	1200(%rbp), %rax	 #, tmp310
 	movq	%rax, %rcx	 # tmp310,
 	call	_ZN6MATRIX4cellD1Ev	 #
-.L259:
- # src\main.cpp:671: 				if(wp & MK_RBUTTON)
-	.loc 12 671 11
+.L262:
+ # src\main.cpp:669: 				if(wp & MK_RBUTTON)
+	.loc 12 669 11
 	movq	1600(%rbp), %rax	 # wp, tmp311
 	andl	$2, %eax	 #, _87
- # src\main.cpp:671: 				if(wp & MK_RBUTTON)
-	.loc 12 671 5
+ # src\main.cpp:669: 				if(wp & MK_RBUTTON)
+	.loc 12 669 5
 	testq	%rax, %rax	 # _87
-	je	.L260	 #,
- # src\main.cpp:673: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
-	.loc 12 673 60
+	je	.L263	 #,
+ # src\main.cpp:671: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
+	.loc 12 671 60
 	movq	1528(%rbp), %rax	 # matrix, tmp312
 	movzwl	56(%rax), %eax	 # matrix_170->_zLevel, _88
- # src\main.cpp:673: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
-	.loc 12 673 37
+ # src\main.cpp:671: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
+	.loc 12 671 37
 	movzwl	%ax, %ecx	 # _88, _89
 	leaq	1232(%rbp), %rax	 #, tmp313
 	movl	1512(%rbp), %r9d	 # yCell, tmp314
@@ -6258,8 +6363,8 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movl	%ecx, 32(%rsp)	 # _89,
 	movq	%rax, %rcx	 # tmp313,
 	call	_ZN6MATRIX12AccessDataAtEjjj	 #
- # src\main.cpp:673: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
-	.loc 12 673 15
+ # src\main.cpp:671: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
+	.loc 12 671 15
 	movq	1232(%rbp), %rax	 # D.186487, tmp317
 	movq	1240(%rbp), %rdx	 # D.186487,
 	movq	%rax, -80(%rbp)	 # tmp317, MEM[(struct cell *)_149]
@@ -6268,13 +6373,13 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	1256(%rbp), %rdx	 # D.186487,
 	movq	%rax, -64(%rbp)	 # tmp318, MEM[(struct cell *)_149]
 	movq	%rdx, -56(%rbp)	 #, MEM[(struct cell *)_149]
- # src\main.cpp:673: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
-	.loc 12 673 37
+ # src\main.cpp:671: 					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
+	.loc 12 671 37
 	leaq	1232(%rbp), %rax	 #, tmp319
 	movq	%rax, %rcx	 # tmp319,
 	call	_ZN6MATRIX4cellD1Ev	 #
- # src\main.cpp:674: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 674 112
+ # src\main.cpp:672: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 672 112
 	movq	1528(%rbp), %rcx	 # matrix, matrix.55_90
 	movq	-80(%rbp), %rax	 # MEM[(struct cell *)_149], tmp320
 	movq	-72(%rbp), %rdx	 # MEM[(struct cell *)_149],
@@ -6291,15 +6396,15 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rax, %rcx	 # tmp322,
 .LEHB10:
 	call	_ZN6MATRIX18ReadCellAttributesENS_4cellE	 #
- # src\main.cpp:674: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 674 12 discriminator 2
+ # src\main.cpp:672: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 672 12 discriminator 2
 	movq	1296(%rbp), %rdx	 # D.186489.name, _91
- # src\main.cpp:674: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 674 77 discriminator 2
+ # src\main.cpp:672: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 672 77 discriminator 2
 	movq	1528(%rbp), %rax	 # matrix, tmp324
 	movzwl	56(%rax), %eax	 # matrix_170->_zLevel, _92
- # src\main.cpp:674: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 674 12 discriminator 2
+ # src\main.cpp:672: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 672 12 discriminator 2
 	movzwl	%ax, %r8d	 # _92, _93
 	movl	1512(%rbp), %ecx	 # yCell, tmp325
 	movl	1516(%rbp), %eax	 # xCell, tmp326
@@ -6311,25 +6416,25 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rax, %rcx	 # tmp327,
 	call	_Z6printfPKcz	 #
 .LEHE10:
- # src\main.cpp:674: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 674 112 discriminator 4
+ # src\main.cpp:672: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 672 112 discriminator 4
 	leaq	1312(%rbp), %rax	 #, tmp328
 	movq	%rax, %rcx	 # tmp328,
 	call	_ZN6MATRIX4cellD1Ev	 #
-.L260:
- # src\main.cpp:676: 			}
-	.loc 12 676 4
+.L263:
+ # src\main.cpp:674: 			}
+	.loc 12 674 4
 	leaq	-80(%rbp), %rax	 #, tmp329
 	movq	%rax, %rcx	 # tmp329,
 	call	_ZN6MATRIX4cellD1Ev	 #
-.LBE173:
- # src\main.cpp:677: 			break;
-	.loc 12 677 4
-	jmp	.L253	 #
-.L240:
-.LBB174:
- # src\main.cpp:680: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 680 64
+.LBE174:
+ # src\main.cpp:675: 			break;
+	.loc 12 675 4
+	jmp	.L256	 #
+.L243:
+.LBB175:
+ # src\main.cpp:678: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 678 64
 	movq	1584(%rbp), %rax	 # hwnd, tmp330
 	movl	$-21, %edx	 #,
 	movq	%rax, %rcx	 # tmp330,
@@ -6337,15 +6442,15 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 .LEHB11:
 	call	*%rax	 # tmp331
 .LVL31:
- # src\main.cpp:680: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 680 85
+ # src\main.cpp:678: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 678 85
 	movq	%rax, 1504(%rbp)	 # _94, matrix
- # src\main.cpp:681: 				CHECK_MATRIX_POPULATION();
-	.loc 12 681 5
+ # src\main.cpp:679: 				CHECK_MATRIX_POPULATION();
+	.loc 12 679 5
 	cmpq	$0, 1504(%rbp)	 #, matrix
-	jne	.L261	 #,
- # src\main.cpp:681: 				CHECK_MATRIX_POPULATION();
-	.loc 12 681 5 is_stmt 0 discriminator 1
+	jne	.L264	 #,
+ # src\main.cpp:679: 				CHECK_MATRIX_POPULATION();
+	.loc 12 679 5 is_stmt 0 discriminator 1
 	movq	1608(%rbp), %r8	 # lp, tmp332
 	movq	1600(%rbp), %rcx	 # wp, tmp333
 	movl	1592(%rbp), %edx	 # msg, tmp334
@@ -6356,55 +6461,55 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	__imp_DefWindowProcW(%rip), %rax	 #, tmp336
 	call	*%rax	 # tmp336
 .LVL32:
-	jmp	.L276	 #
-.L261:
- # src\main.cpp:683: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
-	.loc 12 683 13 is_stmt 1
+	jmp	.L279	 #
+.L264:
+ # src\main.cpp:681: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
+	.loc 12 681 13 is_stmt 1
 	movq	1504(%rbp), %rax	 # matrix, tmp337
 	movzwl	56(%rax), %eax	 # matrix_222->_zLevel, _95
- # src\main.cpp:683: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
-	.loc 12 683 21
+ # src\main.cpp:681: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
+	.loc 12 681 21
 	cmpq	$38, 1600(%rbp)	 #, wp
-	jne	.L262	 #,
- # src\main.cpp:683: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
-	.loc 12 683 21 is_stmt 0 discriminator 1
+	jne	.L265	 #,
+ # src\main.cpp:681: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
+	.loc 12 681 21 is_stmt 0 discriminator 1
 	movl	$1, %edx	 #, iftmp.56_124
-	jmp	.L263	 #
-.L262:
- # src\main.cpp:683: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
-	.loc 12 683 21 discriminator 2
+	jmp	.L266	 #
+.L265:
+ # src\main.cpp:681: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
+	.loc 12 681 21 discriminator 2
 	movl	$0, %edx	 #, iftmp.56_124
-.L263:
- # src\main.cpp:683: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
-	.loc 12 683 21 discriminator 4
+.L266:
+ # src\main.cpp:681: 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
+	.loc 12 681 21 discriminator 4
 	addl	%eax, %edx	 # _95, _96
 	movq	1504(%rbp), %rax	 # matrix, tmp338
 	movw	%dx, 56(%rax)	 # _96, matrix_222->_zLevel
- # src\main.cpp:684: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
-	.loc 12 684 13 is_stmt 1 discriminator 4
+ # src\main.cpp:682: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
+	.loc 12 682 13 is_stmt 1 discriminator 4
 	movq	1504(%rbp), %rax	 # matrix, tmp339
 	movzwl	56(%rax), %eax	 # matrix_222->_zLevel, _97
- # src\main.cpp:684: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
-	.loc 12 684 21 discriminator 4
+ # src\main.cpp:682: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
+	.loc 12 682 21 discriminator 4
 	cmpq	$40, 1600(%rbp)	 #, wp
-	jne	.L264	 #,
- # src\main.cpp:684: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
-	.loc 12 684 21 is_stmt 0 discriminator 1
+	jne	.L267	 #,
+ # src\main.cpp:682: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
+	.loc 12 682 21 is_stmt 0 discriminator 1
 	movl	$1, %ecx	 #, iftmp.57_125
-	jmp	.L265	 #
-.L264:
- # src\main.cpp:684: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
-	.loc 12 684 21 discriminator 2
+	jmp	.L268	 #
+.L267:
+ # src\main.cpp:682: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
+	.loc 12 682 21 discriminator 2
 	movl	$0, %ecx	 #, iftmp.57_125
-.L265:
- # src\main.cpp:684: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
-	.loc 12 684 21 discriminator 4
+.L268:
+ # src\main.cpp:682: 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
+	.loc 12 682 21 discriminator 4
 	subl	%ecx, %eax	 # iftmp.57_125, _97
 	movl	%eax, %edx	 # _97, _98
 	movq	1504(%rbp), %rax	 # matrix, tmp340
 	movw	%dx, 56(%rax)	 # _98, matrix_222->_zLevel
- # src\main.cpp:686: 				InvalidateRect(hwnd, nullptr, FALSE);
-	.loc 12 686 19 is_stmt 1 discriminator 4
+ # src\main.cpp:684: 				InvalidateRect(hwnd, nullptr, FALSE);
+	.loc 12 684 19 is_stmt 1 discriminator 4
 	movq	1584(%rbp), %rax	 # hwnd, tmp341
 	movl	$0, %r8d	 #,
 	movl	$0, %edx	 #,
@@ -6412,29 +6517,29 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	__imp_InvalidateRect(%rip), %rax	 #, tmp342
 	call	*%rax	 # tmp342
 .LVL33:
-.LBE174:
- # src\main.cpp:688: 			break;
-	.loc 12 688 4 discriminator 4
-	jmp	.L253	 #
-.L241:
-.LBB175:
- # src\main.cpp:691: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 691 64
+.LBE175:
+ # src\main.cpp:686: 			break;
+	.loc 12 686 4 discriminator 4
+	jmp	.L256	 #
+.L244:
+.LBB176:
+ # src\main.cpp:689: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 689 64
 	movq	1584(%rbp), %rax	 # hwnd, tmp343
 	movl	$-21, %edx	 #,
 	movq	%rax, %rcx	 # tmp343,
 	movq	__imp_GetWindowLongPtrW(%rip), %rax	 #, tmp344
 	call	*%rax	 # tmp344
 .LVL34:
- # src\main.cpp:691: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-	.loc 12 691 85
+ # src\main.cpp:689: 				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+	.loc 12 689 85
 	movq	%rax, 1496(%rbp)	 # _99, matrix
- # src\main.cpp:692: 				CHECK_MATRIX_POPULATION();
-	.loc 12 692 5
+ # src\main.cpp:690: 				CHECK_MATRIX_POPULATION();
+	.loc 12 690 5
 	cmpq	$0, 1496(%rbp)	 #, matrix
-	jne	.L266	 #,
- # src\main.cpp:692: 				CHECK_MATRIX_POPULATION();
-	.loc 12 692 5 is_stmt 0 discriminator 1
+	jne	.L269	 #,
+ # src\main.cpp:690: 				CHECK_MATRIX_POPULATION();
+	.loc 12 690 5 is_stmt 0 discriminator 1
 	movq	1608(%rbp), %r8	 # lp, tmp345
 	movq	1600(%rbp), %rcx	 # wp, tmp346
 	movl	1592(%rbp), %edx	 # msg, tmp347
@@ -6445,37 +6550,37 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	__imp_DefWindowProcW(%rip), %rax	 #, tmp349
 	call	*%rax	 # tmp349
 .LVL35:
-	jmp	.L276	 #
-.L266:
- # src\main.cpp:694: 				ValidateRect(hwnd, nullptr);
-	.loc 12 694 17 is_stmt 1
+	jmp	.L279	 #
+.L269:
+ # src\main.cpp:692: 				ValidateRect(hwnd, nullptr);
+	.loc 12 692 17 is_stmt 1
 	movq	1584(%rbp), %rax	 # hwnd, tmp350
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # tmp350,
 	movq	__imp_ValidateRect(%rip), %rax	 #, tmp351
 	call	*%rax	 # tmp351
 .LVL36:
- # src\main.cpp:696: 				Camera cam;
-	.loc 12 696 12
+ # src\main.cpp:694: 				Camera cam;
+	.loc 12 694 12
 	leaq	-80(%rbp), %rax	 #, tmp352
 	movq	%rax, %rcx	 # tmp352,
 	call	_ZN6CameraC1Ev	 #
- # src\main.cpp:698: 				if(RenderTarget && Bitmap)
-	.loc 12 698 8
+ # src\main.cpp:696: 				if(RenderTarget && Bitmap)
+	.loc 12 696 8
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.58_100
- # src\main.cpp:698: 				if(RenderTarget && Bitmap)
-	.loc 12 698 5
+ # src\main.cpp:696: 				if(RenderTarget && Bitmap)
+	.loc 12 696 5
 	testq	%rax, %rax	 # RenderTarget.58_100
-	je	.L267	 #,
- # src\main.cpp:698: 				if(RenderTarget && Bitmap)
-	.loc 12 698 24 discriminator 1
+	je	.L270	 #,
+ # src\main.cpp:696: 				if(RenderTarget && Bitmap)
+	.loc 12 696 24 discriminator 1
 	movq	Bitmap(%rip), %rax	 # Bitmap, Bitmap.59_101
- # src\main.cpp:698: 				if(RenderTarget && Bitmap)
-	.loc 12 698 21 discriminator 1
+ # src\main.cpp:696: 				if(RenderTarget && Bitmap)
+	.loc 12 696 21 discriminator 1
 	testq	%rax, %rax	 # Bitmap.59_101
-	je	.L267	 #,
- # src\main.cpp:700: 					RenderTarget->BeginDraw();
-	.loc 12 700 29
+	je	.L270	 #,
+ # src\main.cpp:698: 					RenderTarget->BeginDraw();
+	.loc 12 698 29
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.61_104
 	movq	(%rax), %rax	 # RenderTarget.61_104->D.147975.D.146772.D.146000._vptr.IUnknown, _105
 	addq	$384, %rax	 #, _106
@@ -6484,8 +6589,8 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rdx, %rcx	 # _109,
 	call	*%rax	 # _107
 .LVL37:
- # src\main.cpp:701: 					RenderTarget->DrawBitmap(Bitmap, D2D1::RectF(0, 0, static_cast<float>(WIDTH), static_cast<float>(HEIGHT)));
-	.loc 12 701 30
+ # src\main.cpp:699: 					RenderTarget->DrawBitmap(Bitmap, D2D1::RectF(0, 0, static_cast<float>(WIDTH), static_cast<float>(HEIGHT)));
+	.loc 12 699 30
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.63_110
 	movq	%rax, %rcx	 # RenderTarget.63_110, _111
 	pxor	%xmm0, %xmm0	 # tmp353
@@ -6504,10 +6609,10 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movss	%xmm0, 1376(%rbp)	 # tmp359, right
 	movss	1388(%rbp), %xmm0	 # bottom, tmp360
 	movss	%xmm0, 1372(%rbp)	 # tmp360, bottom
-.LBB176:
 .LBB177:
 .LBB178:
 .LBB179:
+.LBB180:
  # C:/msys64/mingw64/include/d2d1helper.h:58:     typename TypeTraits<T>::Rect r = {left, top, right, bottom};
 	.loc 14 58 34
 	movss	1384(%rbp), %xmm0	 # left, tmp361
@@ -6521,15 +6626,15 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
  # C:/msys64/mingw64/include/d2d1helper.h:59:     return r;
 	.loc 14 59 12
 	nop	
+.LBE180:
 .LBE179:
-.LBE178:
  # C:/msys64/mingw64/include/d2d1helper.h:63:     return Rect<FLOAT>(left, top, right, bottom);
 	.loc 14 63 48
 	nop	
+.LBE178:
 .LBE177:
-.LBE176:
- # src\main.cpp:701: 					RenderTarget->DrawBitmap(Bitmap, D2D1::RectF(0, 0, static_cast<float>(WIDTH), static_cast<float>(HEIGHT)));
-	.loc 12 701 30
+ # src\main.cpp:699: 					RenderTarget->DrawBitmap(Bitmap, D2D1::RectF(0, 0, static_cast<float>(WIDTH), static_cast<float>(HEIGHT)));
+	.loc 12 699 30
 	movq	Bitmap(%rip), %rax	 # Bitmap, Bitmap.64_112
 	leaq	1344(%rbp), %rdx	 #, tmp365
 	movq	$0, 40(%rsp)	 #,
@@ -6538,8 +6643,8 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	%rdx, %r8	 # tmp365,
 	movq	%rax, %rdx	 # Bitmap.64_112,
 	call	_ZN17ID2D1RenderTarget10DrawBitmapEP11ID2D1BitmapRK10D2D_RECT_Ff30D2D1_BITMAP_INTERPOLATION_MODEPS3_	 #
- # src\main.cpp:702: 					RenderTarget->EndDraw();
-	.loc 12 702 27
+ # src\main.cpp:700: 					RenderTarget->EndDraw();
+	.loc 12 700 27
 	movq	RenderTarget(%rip), %rax	 # RenderTarget, RenderTarget.66_115
 	movq	(%rax), %rax	 # RenderTarget.66_115->D.147975.D.146772.D.146000._vptr.IUnknown, _116
 	addq	$392, %rax	 #, _117
@@ -6550,34 +6655,34 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movl	$0, %edx	 #,
 	call	*%rax	 # _118
 .LVL38:
-.LBE175:
- # src\main.cpp:708: 			break;
-	.loc 12 708 4
-	jmp	.L253	 #
-.L267:
-.LBB180:
- # src\main.cpp:705: 					printf("WM_PAINT: RENDERTARGET = nullptr\n");
-	.loc 12 705 12
+.LBE176:
+ # src\main.cpp:706: 			break;
+	.loc 12 706 4
+	jmp	.L256	 #
+.L270:
+.LBB181:
+ # src\main.cpp:703: 					printf("WM_PAINT: RENDERTARGET = nullptr\n");
+	.loc 12 703 12
 	leaq	.LC50(%rip), %rax	 #, tmp366
 	movq	%rax, %rcx	 # tmp366,
 	call	_Z6printfPKcz	 #
-.LBE180:
- # src\main.cpp:708: 			break;
-	.loc 12 708 4
-	jmp	.L253	 #
-.L244:
- # src\main.cpp:709: 			case WM_DESTROY: PostQuitMessage(0); break;
-	.loc 12 709 36
+.LBE181:
+ # src\main.cpp:706: 			break;
+	.loc 12 706 4
+	jmp	.L256	 #
+.L247:
+ # src\main.cpp:707: 			case WM_DESTROY: PostQuitMessage(0); break;
+	.loc 12 707 36
 	movl	$0, %ecx	 #,
 	movq	__imp_PostQuitMessage(%rip), %rax	 #, tmp367
 	call	*%rax	 # tmp367
 .LVL39:
- # src\main.cpp:709: 			case WM_DESTROY: PostQuitMessage(0); break;
-	.loc 12 709 41
-	jmp	.L253	 #
-.L239:
- # src\main.cpp:710: 			default: return DefWindowProc(hwnd, msg, wp, lp); break;
-	.loc 12 710 33
+ # src\main.cpp:707: 			case WM_DESTROY: PostQuitMessage(0); break;
+	.loc 12 707 41
+	jmp	.L256	 #
+.L242:
+ # src\main.cpp:708: 			default: return DefWindowProc(hwnd, msg, wp, lp); break;
+	.loc 12 708 33
 	movq	1608(%rbp), %r8	 # lp, tmp368
 	movq	1600(%rbp), %rcx	 # wp, tmp369
 	movl	1592(%rbp), %edx	 # msg, tmp370
@@ -6588,55 +6693,55 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	movq	__imp_DefWindowProcW(%rip), %rax	 #, tmp372
 	call	*%rax	 # tmp372
 .LVL40:
- # src\main.cpp:710: 			default: return DefWindowProc(hwnd, msg, wp, lp); break;
-	.loc 12 710 51
-	jmp	.L276	 #
-.L253:
+ # src\main.cpp:708: 			default: return DefWindowProc(hwnd, msg, wp, lp); break;
+	.loc 12 708 51
+	jmp	.L279	 #
+.L256:
+.LBE152:
 .LBE151:
-.LBE150:
- # src\main.cpp:713: 		return 0;
-	.loc 12 713 10
+ # src\main.cpp:711: 		return 0;
+	.loc 12 711 10
 	movl	$0, %eax	 #, _123
-	jmp	.L276	 #
-.L274:
+	jmp	.L279	 #
+.L277:
+.LBB184:
 .LBB183:
 .LBB182:
-.LBB181:
- # src\main.cpp:668: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 668 112
+ # src\main.cpp:666: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 666 112
 	movq	%rax, %rbx	 #, tmp376
 	leaq	1200(%rbp), %rax	 #, tmp374
 	movq	%rax, %rcx	 # tmp374,
 	call	_ZN6MATRIX4cellD1Ev	 #
-	jmp	.L272	 #
-.L275:
- # src\main.cpp:674: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-	.loc 12 674 112
+	jmp	.L275	 #
+.L278:
+ # src\main.cpp:672: 					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+	.loc 12 672 112
 	movq	%rax, %rbx	 #, tmp380
 	leaq	1312(%rbp), %rax	 #, tmp379
 	movq	%rax, %rcx	 # tmp379,
 	call	_ZN6MATRIX4cellD1Ev	 #
-.L272:
- # src\main.cpp:676: 			}
-	.loc 12 676 4
+.L275:
+ # src\main.cpp:674: 			}
+	.loc 12 674 4
 	leaq	-80(%rbp), %rax	 #, tmp382
 	movq	%rax, %rcx	 # tmp382,
 	call	_ZN6MATRIX4cellD1Ev	 #
-	movq	%rbx, %rax	 # tmp375, D.209882
-	movq	%rax, %rcx	 # D.209882,
+	movq	%rbx, %rax	 # tmp375, D.209883
+	movq	%rax, %rcx	 # D.209883,
 	call	_Unwind_Resume	 #
 .LEHE11:
-.L276:
-.LBE181:
+.L279:
 .LBE182:
 .LBE183:
- # src\main.cpp:714: 	}
-	.loc 12 714 2
+.LBE184:
+ # src\main.cpp:712: 	}
+	.loc 12 712 2
 	addq	$1688, %rsp	 #,
 	popq	%rbx	 #
-.LCFI218:
+.LCFI221:
 	popq	%rbp	 #
-.LCFI219:
+.LCFI222:
 	ret	
 .LFE10188:
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
@@ -6653,11 +6758,11 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	.uleb128 0
 	.uleb128 .LEHB9-.LFB10188
 	.uleb128 .LEHE9-.LEHB9
-	.uleb128 .L274-.LFB10188
+	.uleb128 .L277-.LFB10188
 	.uleb128 0
 	.uleb128 .LEHB10-.LFB10188
 	.uleb128 .LEHE10-.LEHB10
-	.uleb128 .L275-.LFB10188
+	.uleb128 .L278-.LFB10188
 	.uleb128 0
 	.uleb128 .LEHB11-.LFB10188
 	.uleb128 .LEHE11-.LEHB11
@@ -6671,19 +6776,19 @@ _ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx:
 	.seh_proc	_ZN21WINDOWGraphicsOverlay16ShowErrorMessageEPKc
 _ZN21WINDOWGraphicsOverlay16ShowErrorMessageEPKc:
 .LFB10192:
-	.loc 12 716 47
+	.loc 12 714 47
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI220:
+.LCFI223:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI221:
+.LCFI224:
 	subq	$64, %rsp	 #,
 	.seh_stackalloc	64
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # errorText, errorText
- # src\main.cpp:717: 		int len = MultiByteToWideChar(CP_ACP, 0, errorText, -1, NULL, 0);
-	.loc 12 717 32
+ # src\main.cpp:715: 		int len = MultiByteToWideChar(CP_ACP, 0, errorText, -1, NULL, 0);
+	.loc 12 715 32
 	movq	16(%rbp), %rax	 # errorText, tmp86
 	movl	$0, 40(%rsp)	 #,
 	movq	$0, 32(%rsp)	 #,
@@ -6695,23 +6800,23 @@ _ZN21WINDOWGraphicsOverlay16ShowErrorMessageEPKc:
 	call	*%rax	 # tmp87
 .LVL41:
 	movl	%eax, -4(%rbp)	 # _5, len
- # src\main.cpp:718: 		wchar_t* wideErrorText = new wchar_t[len];
-	.loc 12 718 40
+ # src\main.cpp:716: 		wchar_t* wideErrorText = new wchar_t[len];
+	.loc 12 716 40
 	movl	-4(%rbp), %eax	 # len, tmp88
 	cltq
- # src\main.cpp:718: 		wchar_t* wideErrorText = new wchar_t[len];
-	.loc 12 718 43
+ # src\main.cpp:716: 		wchar_t* wideErrorText = new wchar_t[len];
+	.loc 12 716 43
 	movabsq	$4611686018427387900, %rdx	 #, tmp89
 	cmpq	%rax, %rdx	 # _7, tmp89
-	jb	.L278	 #,
- # src\main.cpp:718: 		wchar_t* wideErrorText = new wchar_t[len];
-	.loc 12 718 43 is_stmt 0 discriminator 1
+	jb	.L281	 #,
+ # src\main.cpp:716: 		wchar_t* wideErrorText = new wchar_t[len];
+	.loc 12 716 43 is_stmt 0 discriminator 1
 	addq	%rax, %rax	 # iftmp.77_9
 	movq	%rax, %rcx	 # iftmp.77_9,
 	call	_Znay	 #
 	movq	%rax, -16(%rbp)	 # _11, wideErrorText
- # src\main.cpp:719: 		MultiByteToWideChar(CP_ACP, 0, errorText, -1, wideErrorText, len);
-	.loc 12 719 22 is_stmt 1 discriminator 1
+ # src\main.cpp:717: 		MultiByteToWideChar(CP_ACP, 0, errorText, -1, wideErrorText, len);
+	.loc 12 717 22 is_stmt 1 discriminator 1
 	movq	16(%rbp), %rdx	 # errorText, tmp91
 	movl	-4(%rbp), %eax	 # len, tmp92
 	movl	%eax, 40(%rsp)	 # tmp92,
@@ -6724,8 +6829,8 @@ _ZN21WINDOWGraphicsOverlay16ShowErrorMessageEPKc:
 	movq	__imp_MultiByteToWideChar(%rip), %rax	 #, tmp94
 	call	*%rax	 # tmp94
 .LVL42:
- # src\main.cpp:720: 		MessageBoxW(NULL, wideErrorText, L"Error", MB_ICONERROR | MB_OK);
-	.loc 12 720 14 discriminator 1
+ # src\main.cpp:718: 		MessageBoxW(NULL, wideErrorText, L"Error", MB_ICONERROR | MB_OK);
+	.loc 12 718 14 discriminator 1
 	movq	-16(%rbp), %rax	 # wideErrorText, tmp95
 	movl	$16, %r9d	 #,
 	leaq	.LC40(%rip), %r8	 #,
@@ -6734,28 +6839,28 @@ _ZN21WINDOWGraphicsOverlay16ShowErrorMessageEPKc:
 	movq	__imp_MessageBoxW(%rip), %rax	 #, tmp96
 	call	*%rax	 # tmp96
 .LVL43:
- # src\main.cpp:721: 		delete[] wideErrorText;
-	.loc 12 721 3 discriminator 1
+ # src\main.cpp:719: 		delete[] wideErrorText;
+	.loc 12 719 3 discriminator 1
 	cmpq	$0, -16(%rbp)	 #, wideErrorText
-	je	.L282	 #,
-	jmp	.L281	 #
-.L278:
- # src\main.cpp:718: 		wchar_t* wideErrorText = new wchar_t[len];
-	.loc 12 718 43 discriminator 2
-	call	__cxa_throw_bad_array_new_length	 #
+	je	.L285	 #,
+	jmp	.L284	 #
 .L281:
- # src\main.cpp:721: 		delete[] wideErrorText;
-	.loc 12 721 12 discriminator 1
+ # src\main.cpp:716: 		wchar_t* wideErrorText = new wchar_t[len];
+	.loc 12 716 43 discriminator 2
+	call	__cxa_throw_bad_array_new_length	 #
+.L284:
+ # src\main.cpp:719: 		delete[] wideErrorText;
+	.loc 12 719 12 discriminator 1
 	movq	-16(%rbp), %rax	 # wideErrorText, tmp97
 	movq	%rax, %rcx	 # tmp97,
 	call	_ZdaPv	 #
-.L282:
- # src\main.cpp:722: 	}
-	.loc 12 722 2
+.L285:
+ # src\main.cpp:720: 	}
+	.loc 12 720 2
 	nop	
 	addq	$64, %rsp	 #,
 	popq	%rbp	 #
-.LCFI222:
+.LCFI225:
 	ret	
 .LFE10192:
 	.seh_endproc
@@ -6779,86 +6884,86 @@ _ZN21WINDOWGraphicsOverlay16ShowErrorMessageEPKc:
 	.seh_proc	_ZN21WINDOWGraphicsOverlay19CreateWindowOverlayEP6MATRIXjj
 _ZN21WINDOWGraphicsOverlay19CreateWindowOverlayEP6MATRIXjj:
 .LFB10193:
-	.loc 12 725 2
+	.loc 12 723 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI223:
+.LCFI226:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI224:
+.LCFI227:
 	subq	$208, %rsp	 #,
 	.seh_stackalloc	208
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # matrix, matrix
 	movl	%edx, 24(%rbp)	 # width, width
 	movl	%r8d, 32(%rbp)	 # height, height
- # src\main.cpp:726: 		void* _handle = nullptr;
-	.loc 12 726 9
+ # src\main.cpp:724: 		void* _handle = nullptr;
+	.loc 12 724 9
 	movq	$0, -8(%rbp)	 #, _handle
- # src\main.cpp:728: 		WNDCLASSEX wc = { };
-	.loc 12 728 14
+ # src\main.cpp:726: 		WNDCLASSEX wc = { };
+	.loc 12 726 14
 	pxor	%xmm0, %xmm0	 # tmp94
 	movups	%xmm0, -96(%rbp)	 # tmp94, wc
 	movups	%xmm0, -80(%rbp)	 # tmp94, wc
 	movups	%xmm0, -64(%rbp)	 # tmp94, wc
 	movups	%xmm0, -48(%rbp)	 # tmp94, wc
 	movups	%xmm0, -32(%rbp)	 # tmp94, wc
- # src\main.cpp:729: 		wc.cbSize        = sizeof(WNDCLASSEX);
-	.loc 12 729 20
+ # src\main.cpp:727: 		wc.cbSize        = sizeof(WNDCLASSEX);
+	.loc 12 727 20
 	movl	$80, -96(%rbp)	 #, wc.cbSize
- # src\main.cpp:730: 		wc.lpfnWndProc   = WindowProc;
-	.loc 12 730 20
+ # src\main.cpp:728: 		wc.lpfnWndProc   = WindowProc;
+	.loc 12 728 20
 	leaq	_ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx(%rip), %rax	 #, tmp95
 	movq	%rax, -88(%rbp)	 # tmp95, wc.lpfnWndProc
- # src\main.cpp:731: 		wc.hInstance     = GetInstance();
-	.loc 12 731 22
+ # src\main.cpp:729: 		wc.hInstance     = GetInstance();
+	.loc 12 729 22
 	movl	$0, %ecx	 #,
 	movq	__imp_GetModuleHandleW(%rip), %rax	 #, tmp96
 	call	*%rax	 # tmp96
 .LVL44:
- # src\main.cpp:731: 		wc.hInstance     = GetInstance();
-	.loc 12 731 20
+ # src\main.cpp:729: 		wc.hInstance     = GetInstance();
+	.loc 12 729 20
 	movq	%rax, -72(%rbp)	 # _1, wc.hInstance
- # src\main.cpp:732: 		wc.hCursor       = LoadCursor(nullptr, IDC_ARROW);
-	.loc 12 732 32
+ # src\main.cpp:730: 		wc.hCursor       = LoadCursor(nullptr, IDC_ARROW);
+	.loc 12 730 32
 	movl	$32512, %edx	 #,
 	movl	$0, %ecx	 #,
 	movq	__imp_LoadCursorW(%rip), %rax	 #, tmp97
 	call	*%rax	 # tmp97
 .LVL45:
- # src\main.cpp:732: 		wc.hCursor       = LoadCursor(nullptr, IDC_ARROW);
-	.loc 12 732 20
+ # src\main.cpp:730: 		wc.hCursor       = LoadCursor(nullptr, IDC_ARROW);
+	.loc 12 730 20
 	movq	%rax, -56(%rbp)	 # _2, wc.hCursor
- # src\main.cpp:733: 		wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
-	.loc 12 733 20
+ # src\main.cpp:731: 		wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	.loc 12 731 20
 	movq	$6, -48(%rbp)	 #, wc.hbrBackground
- # src\main.cpp:734: 		wc.lpszClassName = L"3DSimulationOverlay";
-	.loc 12 734 20
+ # src\main.cpp:732: 		wc.lpszClassName = L"3DSimulationOverlay";
+	.loc 12 732 20
 	leaq	.LC51(%rip), %rax	 #, tmp98
 	movq	%rax, -32(%rbp)	 # tmp98, wc.lpszClassName
- # src\main.cpp:735: 		if(!RegisterClassEx(&wc))
-	.loc 12 735 22
+ # src\main.cpp:733: 		if(!RegisterClassEx(&wc))
+	.loc 12 733 22
 	leaq	-96(%rbp), %rax	 #, tmp99
 	movq	%rax, %rcx	 # tmp99,
 	movq	__imp_RegisterClassExW(%rip), %rax	 #, tmp100
 	call	*%rax	 # tmp100
 .LVL46:
- # src\main.cpp:735: 		if(!RegisterClassEx(&wc))
-	.loc 12 735 6
+ # src\main.cpp:733: 		if(!RegisterClassEx(&wc))
+	.loc 12 733 6
 	testw	%ax, %ax	 # _3
 	sete	%al	 #, retval.78_28
- # src\main.cpp:735: 		if(!RegisterClassEx(&wc))
-	.loc 12 735 3
+ # src\main.cpp:733: 		if(!RegisterClassEx(&wc))
+	.loc 12 733 3
 	testb	%al, %al	 # retval.78_28
-	je	.L284	 #,
- # src\main.cpp:737: 			printf("-> Window Class not initialized or registered\n");
-	.loc 12 737 10
+	je	.L287	 #,
+ # src\main.cpp:735: 			printf("-> Window Class not initialized or registered\n");
+	.loc 12 735 10
 	leaq	.LC52(%rip), %rax	 #, tmp101
 	movq	%rax, %rcx	 # tmp101,
 	call	_Z6printfPKcz	 #
-.L284:
- # src\main.cpp:740: 		_handle = CreateWindowEx(
-	.loc 12 740 27
+.L287:
+ # src\main.cpp:738: 		_handle = CreateWindowEx(
+	.loc 12 738 27
 	movl	$0, %ecx	 #,
 	movq	__imp_GetModuleHandleW(%rip), %rax	 #, tmp102
 	call	*%rax	 # tmp102
@@ -6882,23 +6987,23 @@ _ZN21WINDOWGraphicsOverlay19CreateWindowOverlayEP6MATRIXjj:
 	call	*%rax	 # tmp104
 .LVL48:
 	movq	%rax, -8(%rbp)	 # _34, _handle
-.LBB184:
- # src\main.cpp:749: 		if(_handle==nullptr)
-	.loc 12 749 3
-	cmpq	$0, -8(%rbp)	 #, _handle
-	jne	.L285	 #,
 .LBB185:
- # src\main.cpp:751: 			DWORD errorCode = GetLastError();
-	.loc 12 751 34
+ # src\main.cpp:747: 		if(_handle==nullptr)
+	.loc 12 747 3
+	cmpq	$0, -8(%rbp)	 #, _handle
+	jne	.L288	 #,
+.LBB186:
+ # src\main.cpp:749: 			DWORD errorCode = GetLastError();
+	.loc 12 749 34
 	movq	__imp_GetLastError(%rip), %rax	 #, tmp105
 	call	*%rax	 # tmp105
 .LVL49:
 	movl	%eax, -12(%rbp)	 # _41, errorCode
- # src\main.cpp:752:     		LPSTR errorText = NULL;
-	.loc 12 752 13
+ # src\main.cpp:750:     		LPSTR errorText = NULL;
+	.loc 12 750 13
 	movq	$0, -104(%rbp)	 #, errorText
- # src\main.cpp:753:     		FormatMessage(
-	.loc 12 753 20
+ # src\main.cpp:751:     		FormatMessage(
+	.loc 12 751 20
 	movl	-12(%rbp), %edx	 # errorCode, tmp106
 	movq	$0, 48(%rsp)	 #,
 	movl	$0, 40(%rsp)	 #,
@@ -6911,56 +7016,56 @@ _ZN21WINDOWGraphicsOverlay19CreateWindowOverlayEP6MATRIXjj:
 	movq	__imp_FormatMessageW(%rip), %rax	 #, tmp108
 	call	*%rax	 # tmp108
 .LVL50:
- # src\main.cpp:758:     		printf("Error creating window: %s\n", errorText);
-	.loc 12 758 13
+ # src\main.cpp:756:     		printf("Error creating window: %s\n", errorText);
+	.loc 12 756 13
 	movq	-104(%rbp), %rax	 # errorText, errorText.79_6
 	movq	%rax, %rdx	 # errorText.79_6,
 	leaq	.LC54(%rip), %rax	 #, tmp109
 	movq	%rax, %rcx	 # tmp109,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:759:     		LocalFree(errorText);
-	.loc 12 759 16
+ # src\main.cpp:757:     		LocalFree(errorText);
+	.loc 12 757 16
 	movq	-104(%rbp), %rax	 # errorText, errorText.80_7
 	movq	%rax, %rcx	 # errorText.80_7,
 	movq	__imp_LocalFree(%rip), %rax	 #, tmp110
 	call	*%rax	 # tmp110
 .LVL51:
- # src\main.cpp:760: 			return nullptr;
-	.loc 12 760 11
+ # src\main.cpp:758: 			return nullptr;
+	.loc 12 758 11
 	movl	$0, %eax	 #, _8
-	jmp	.L287	 #
-.L285:
-.LBE185:
- # src\main.cpp:764: 			printf("-> Window Created\n");
-	.loc 12 764 10
+	jmp	.L290	 #
+.L288:
+.LBE186:
+ # src\main.cpp:762: 			printf("-> Window Created\n");
+	.loc 12 762 10
 	leaq	.LC55(%rip), %rax	 #, tmp111
 	movq	%rax, %rcx	 # tmp111,
 	call	_Z6printfPKcz	 #
-.LBE184:
- # src\main.cpp:767: 		::ShowWindow((HWND)_handle, SW_SHOW);
-	.loc 12 767 15
+.LBE185:
+ # src\main.cpp:765: 		::ShowWindow((HWND)_handle, SW_SHOW);
+	.loc 12 765 15
 	movq	-8(%rbp), %rax	 # _handle, tmp112
 	movl	$5, %edx	 #,
 	movq	%rax, %rcx	 # tmp112,
 	movq	__imp_ShowWindow(%rip), %rax	 #, tmp113
 	call	*%rax	 # tmp113
 .LVL52:
- # src\main.cpp:768: 		::UpdateWindow((HWND)_handle);
-	.loc 12 768 17
+ # src\main.cpp:766: 		::UpdateWindow((HWND)_handle);
+	.loc 12 766 17
 	movq	-8(%rbp), %rax	 # _handle, tmp114
 	movq	%rax, %rcx	 # tmp114,
 	movq	__imp_UpdateWindow(%rip), %rax	 #, tmp115
 	call	*%rax	 # tmp115
 .LVL53:
- # src\main.cpp:770: 		return _handle;
-	.loc 12 770 10
+ # src\main.cpp:768: 		return _handle;
+	.loc 12 768 10
 	movq	-8(%rbp), %rax	 # _handle, _8
-.L287:
- # src\main.cpp:771: 	}
-	.loc 12 771 2 discriminator 2
+.L290:
+ # src\main.cpp:769: 	}
+	.loc 12 769 2 discriminator 2
 	addq	$208, %rsp	 #,
 	popq	%rbp	 #
-.LCFI225:
+.LCFI228:
 	ret	
 .LFE10193:
 	.seh_endproc
@@ -6975,15 +7080,15 @@ _ZN6MATRIXC1Ev:
 	.loc 12 83 8
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI226:
+.LCFI229:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI227:
+.LCFI230:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB186:
+.LBB187:
  # src\main.cpp:83: struct MATRIX
 	.loc 12 83 8
 	movq	16(%rbp), %rax	 # this, tmp84
@@ -7010,11 +7115,11 @@ _ZN6MATRIXC1Ev:
 	movw	$5, 54(%rax)	 #, this_4(D)->_pixelHeight
 	movq	16(%rbp), %rax	 # this, tmp94
 	movw	$0, 56(%rax)	 #, this_4(D)->_zLevel
-.LBE186:
+.LBE187:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI228:
+.LCFI231:
 	ret	
 .LFE10197:
 	.seh_endproc
@@ -7029,15 +7134,15 @@ _ZN10MatrixRainC1Ev:
 	.loc 12 47 8
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI229:
+.LCFI232:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI230:
+.LCFI233:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB187:
+.LBB188:
  # src\main.cpp:47: struct MatrixRain : public olcConsoleGameEngine
 	.loc 12 47 8
 	movq	16(%rbp), %rax	 # this, _1
@@ -7046,11 +7151,11 @@ _ZN10MatrixRainC1Ev:
 	leaq	16+_ZTV10MatrixRain(%rip), %rdx	 #, _2
 	movq	16(%rbp), %rax	 # this, tmp85
 	movq	%rdx, (%rax)	 # _2, this_4(D)->D.181952._vptr.olcConsoleGameEngine
-.LBE187:
+.LBE188:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI231:
+.LCFI234:
 	ret	
 .LFE10200:
 	.seh_endproc
@@ -7065,15 +7170,15 @@ _ZN10MatrixRainD1Ev:
 	.loc 12 47 8
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI232:
+.LCFI235:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI233:
+.LCFI236:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB188:
+.LBB189:
  # src\main.cpp:47: struct MatrixRain : public olcConsoleGameEngine
 	.loc 12 47 8
 	leaq	16+_ZTV10MatrixRain(%rip), %rdx	 #, _1
@@ -7082,11 +7187,11 @@ _ZN10MatrixRainD1Ev:
 	movq	16(%rbp), %rax	 # this, _2
 	movq	%rax, %rcx	 # _2,
 	call	_ZN20olcConsoleGameEngineD2Ev	 #
-.LBE188:
+.LBE189:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI234:
+.LCFI237:
 	ret	
 .LFE10203:
 	.seh_endproc
@@ -7101,25 +7206,25 @@ _ZNSt6threadC1Ev:
 	.loc 6 120 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI235:
+.LCFI238:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI236:
+.LCFI239:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB189:
+.LBB190:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:120:     thread() noexcept = default;
 	.loc 6 120 5
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt6thread2idC1Ev	 #
-.LBE189:
+.LBE190:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI237:
+.LCFI240:
 	ret	
 .LFE10214:
 	.seh_endproc
@@ -7129,42 +7234,42 @@ _ZNSt6threadC1Ev:
 	.seh_proc	_ZZ7WinMainENKUlvE_clEv
 _ZZ7WinMainENKUlvE_clEv:
 .LFB10215:
-	.loc 12 828 7
+	.loc 12 826 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI238:
+.LCFI241:
 	pushq	%r14	 #
 	.seh_pushreg	%r14
-.LCFI239:
+.LCFI242:
 	pushq	%r13	 #
 	.seh_pushreg	%r13
-.LCFI240:
+.LCFI243:
 	pushq	%r12	 #
 	.seh_pushreg	%r12
-.LCFI241:
+.LCFI244:
 	pushq	%rdi	 #
 	.seh_pushreg	%rdi
-.LCFI242:
+.LCFI245:
 	pushq	%rsi	 #
 	.seh_pushreg	%rsi
-.LCFI243:
+.LCFI246:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI244:
+.LCFI247:
 	subq	$112, %rsp	 #,
 	.seh_stackalloc	112
-.LCFI245:
+.LCFI248:
 	leaq	112(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 112
-.LCFI246:
+.LCFI249:
 	.seh_endprologue
 	movq	%rcx, 64(%rbp)	 # __closure, __closure
- # src\main.cpp:828: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
-	.loc 12 828 97
+ # src\main.cpp:826: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
+	.loc 12 826 97
 	movq	64(%rbp), %rax	 # __closure, tmp95
 	movq	64(%rax), %rax	 # __closure_15(D)->__matrix, _1
- # src\main.cpp:828: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
-	.loc 12 828 94
+ # src\main.cpp:826: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
+	.loc 12 826 94
 	movq	64(%rbp), %rdx	 # __closure, tmp96
 	movl	60(%rdx), %r12d	 # __closure_15(D)->__z2, _2
 	movq	64(%rbp), %rdx	 # __closure, tmp97
@@ -7187,12 +7292,12 @@ _ZZ7WinMainENKUlvE_clEv:
 	movq	8(%rdx), %r14	 # __closure_15(D)->__keyHeld, _11
 	movq	64(%rbp), %rdx	 # __closure, tmp106
 	movq	8(%rdx), %r13	 # __closure_15(D)->__keyHeld, _12
- # src\main.cpp:828: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
-	.loc 12 828 127
+ # src\main.cpp:826: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
+	.loc 12 826 127
 	movq	64(%rbp), %rdx	 # __closure, tmp107
 	movq	72(%rdx), %rdx	 # __closure_15(D)->___handle, _13
- # src\main.cpp:828: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
-	.loc 12 828 126
+ # src\main.cpp:826: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
+	.loc 12 826 126
 	movl	%r12d, 96(%rsp)	 # _2,
 	movl	%edi, 88(%rsp)	 # _3,
 	movl	%esi, 80(%rsp)	 # _4,
@@ -7206,24 +7311,24 @@ _ZZ7WinMainENKUlvE_clEv:
 	movq	%r13, %r8	 # _12,
 	movq	%rax, %rcx	 # _1,
 	call	_ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj	 #
- # src\main.cpp:828: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
-	.loc 12 828 208
+ # src\main.cpp:826: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
+	.loc 12 826 208
 	nop	
 	addq	$112, %rsp	 #,
 	popq	%rbx	 #
-.LCFI247:
-	popq	%rsi	 #
-.LCFI248:
-	popq	%rdi	 #
-.LCFI249:
-	popq	%r12	 #
 .LCFI250:
-	popq	%r13	 #
+	popq	%rsi	 #
 .LCFI251:
-	popq	%r14	 #
+	popq	%rdi	 #
 .LCFI252:
-	popq	%rbp	 #
+	popq	%r12	 #
 .LCFI253:
+	popq	%r13	 #
+.LCFI254:
+	popq	%r14	 #
+.LCFI255:
+	popq	%rbp	 #
+.LCFI256:
 	ret	
 .LFE10215:
 	.seh_endproc
@@ -7252,32 +7357,32 @@ _ZZ7WinMainENKUlvE_clEv:
 	.seh_proc	WinMain
 WinMain:
 .LFB10194:
-	.loc 12 775 1
+	.loc 12 773 1
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI254:
+.LCFI257:
 	pushq	%rdi	 #
 	.seh_pushreg	%rdi
-.LCFI255:
+.LCFI258:
 	pushq	%rsi	 #
 	.seh_pushreg	%rsi
-.LCFI256:
+.LCFI259:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI257:
+.LCFI260:
 	subq	$1512, %rsp	 #,
 	.seh_stackalloc	1512
-.LCFI258:
+.LCFI261:
 	leaq	128(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 128
-.LCFI259:
+.LCFI262:
 	.seh_endprologue
 	movq	%rcx, 1424(%rbp)	 # D.186583, D.186583
 	movq	%rdx, 1432(%rbp)	 # D.186584, D.186584
 	movq	%r8, 1440(%rbp)	 # D.186585, D.186585
 	movl	%r9d, 1448(%rbp)	 # D.186586, D.186586
- # src\main.cpp:776: 	MATRIX* matrix = new MATRIX();
-	.loc 12 776 30
+ # src\main.cpp:774: 	MATRIX* matrix = new MATRIX();
+	.loc 12 774 30
 	movl	$64, %ecx	 #,
 .LEHB12:
 	call	_Znwy	 #
@@ -7290,23 +7395,23 @@ WinMain:
 	movq	%rbx, %rcx	 # _105,
 	call	_ZN6MATRIXC1Ev	 #
 	movq	%rbx, 1336(%rbp)	 # _105, matrix
- # src\main.cpp:778: 	MatrixRain MR;
-	.loc 12 778 13
+ # src\main.cpp:776: 	MatrixRain MR;
+	.loc 12 776 13
 	leaq	1024(%rbp), %rax	 #, tmp182
 	movq	%rax, %rcx	 # tmp182,
 	call	_ZN10MatrixRainC1Ev	 #
 .LEHE12:
- # src\main.cpp:780: 	uint32_t width  = 200;
-	.loc 12 780 11
+ # src\main.cpp:778: 	uint32_t width  = 200;
+	.loc 12 778 11
 	movl	$200, 1332(%rbp)	 #, width
- # src\main.cpp:781: 	uint32_t height = 200;
-	.loc 12 781 11
+ # src\main.cpp:779: 	uint32_t height = 200;
+	.loc 12 779 11
 	movl	$200, 1328(%rbp)	 #, height
- # src\main.cpp:782: 	uint32_t depth  = 200;
-	.loc 12 782 11
+ # src\main.cpp:780: 	uint32_t depth  = 200;
+	.loc 12 780 11
 	movl	$200, 1324(%rbp)	 #, depth
- # src\main.cpp:784: 	std::atomic<bool> keyPressed[0xFF]   = { 0 };
-	.loc 12 784 20
+ # src\main.cpp:782: 	std::atomic<bool> keyPressed[0xFF]   = { 0 };
+	.loc 12 782 20
 	leaq	768(%rbp), %rdx	 #, tmp183
 	movl	$0, %eax	 #, tmp184
 	movl	$31, %ecx	 #, tmp185
@@ -7319,8 +7424,8 @@ WinMain:
 	addq	$2, %rdx	 #, tmp183
 	movb	%al, (%rdx)	 # tmp184, keyPressed
 	addq	$1, %rdx	 #, tmp183
- # src\main.cpp:785: 	std::atomic<bool> keyReleased[0xFF]  = { 0 };
-	.loc 12 785 20
+ # src\main.cpp:783: 	std::atomic<bool> keyReleased[0xFF]  = { 0 };
+	.loc 12 783 20
 	leaq	512(%rbp), %rdx	 #, tmp186
 	movl	$0, %eax	 #, tmp187
 	movl	$31, %ecx	 #, tmp188
@@ -7333,8 +7438,8 @@ WinMain:
 	addq	$2, %rdx	 #, tmp186
 	movb	%al, (%rdx)	 # tmp187, keyReleased
 	addq	$1, %rdx	 #, tmp186
- # src\main.cpp:786: 	std::atomic<bool> keyHeld[0xFF]      = { 0 };
-	.loc 12 786 20
+ # src\main.cpp:784: 	std::atomic<bool> keyHeld[0xFF]      = { 0 };
+	.loc 12 784 20
 	leaq	256(%rbp), %rdx	 #, tmp189
 	movl	$0, %eax	 #, tmp190
 	movl	$31, %ecx	 #, tmp191
@@ -7347,8 +7452,8 @@ WinMain:
 	addq	$2, %rdx	 #, tmp189
 	movb	%al, (%rdx)	 # tmp190, keyHeld
 	addq	$1, %rdx	 #, tmp189
- # src\main.cpp:787: 	std::atomic<bool> keyPrev[0xFF]      = { 0 };
-	.loc 12 787 20
+ # src\main.cpp:785: 	std::atomic<bool> keyPrev[0xFF]      = { 0 };
+	.loc 12 785 20
 	movq	%rbp, %rdx	 #, tmp192
 	movl	$0, %eax	 #, tmp193
 	movl	$31, %ecx	 #, tmp194
@@ -7361,8 +7466,8 @@ WinMain:
 	addq	$2, %rdx	 #, tmp192
 	movb	%al, (%rdx)	 # tmp193, keyPrev
 	addq	$1, %rdx	 #, tmp192
- # src\main.cpp:789: 	uint32_t SizeOfMatrix = matrix->InitMatrix(width, height, depth);
-	.loc 12 789 44
+ # src\main.cpp:787: 	uint32_t SizeOfMatrix = matrix->InitMatrix(width, height, depth);
+	.loc 12 787 44
 	movl	1324(%rbp), %r8d	 # depth, tmp195
 	movl	1328(%rbp), %ecx	 # height, tmp196
 	movl	1332(%rbp), %edx	 # width, tmp197
@@ -7373,246 +7478,246 @@ WinMain:
 .LEHB13:
 	call	_ZN6MATRIX10InitMatrixEjjj	 #
 	movl	%eax, 1320(%rbp)	 # _121, SizeOfMatrix
- # src\main.cpp:790: 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
-	.loc 12 790 65
+ # src\main.cpp:788: 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
+	.loc 12 788 65
 	movl	1328(%rbp), %ecx	 # height, tmp199
 	movl	1332(%rbp), %edx	 # width, tmp200
 	movq	1336(%rbp), %rax	 # matrix, tmp201
 	movl	%ecx, %r8d	 # tmp199,
 	movq	%rax, %rcx	 # tmp201,
 	call	_ZN21WINDOWGraphicsOverlay19CreateWindowOverlayEP6MATRIXjj	 #
- # src\main.cpp:790: 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
-	.loc 12 790 65 is_stmt 0 discriminator 1
+ # src\main.cpp:788: 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
+	.loc 12 788 65 is_stmt 0 discriminator 1
 	movq	%rax, 1312(%rbp)	 # _124, _handle
- # src\main.cpp:791: 	WINDOWGraphicsOverlay::AllocBrushPool(_handle);
-	.loc 12 791 39 is_stmt 1 discriminator 1
+ # src\main.cpp:789: 	WINDOWGraphicsOverlay::AllocBrushPool(_handle);
+	.loc 12 789 39 is_stmt 1 discriminator 1
 	movq	1312(%rbp), %rax	 # _handle, tmp202
 	movq	%rax, %rcx	 # tmp202,
 	call	_ZN21WINDOWGraphicsOverlay14AllocBrushPoolEP6HWND__	 #
- # src\main.cpp:793: 	std::atomic<bool> running = true;
-	.loc 12 793 20
+ # src\main.cpp:791: 	std::atomic<bool> running = true;
+	.loc 12 791 20
 	movb	$1, -1(%rbp)	 #, running._M_base._M_i
- # src\main.cpp:794: 	std::atomic<bool> ready   = false;
-	.loc 12 794 20
+ # src\main.cpp:792: 	std::atomic<bool> ready   = false;
+	.loc 12 792 20
 	movb	$0, -2(%rbp)	 #, ready._M_base._M_i
- # src\main.cpp:795: 	std::thread::id MainThreadID = std::this_thread::get_id();
-	.loc 12 795 57
+ # src\main.cpp:793: 	std::thread::id MainThreadID = std::this_thread::get_id();
+	.loc 12 793 57
 	call	_ZNSt11this_thread6get_idEv	 #
 	movq	%rax, -16(%rbp)	 # tmp204, MainThreadID
- # src\main.cpp:797: 	MSG msg = {NULL};
-	.loc 12 797 6
+ # src\main.cpp:795: 	MSG msg = {NULL};
+	.loc 12 795 6
 	pxor	%xmm0, %xmm0	 # tmp205
 	movups	%xmm0, -64(%rbp)	 # tmp205, msg
 	movups	%xmm0, -48(%rbp)	 # tmp205, msg
 	movups	%xmm0, -32(%rbp)	 # tmp205, msg
-.LBB190:
- # src\main.cpp:799: 	if(_handle)
-	.loc 12 799 2
-	cmpq	$0, 1312(%rbp)	 #, _handle
-	je	.L294	 #,
 .LBB191:
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 129
+ # src\main.cpp:797: 	if(_handle)
+	.loc 12 797 2
+	cmpq	$0, 1312(%rbp)	 #, _handle
+	je	.L297	 #,
+.LBB192:
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 129
 	call	_ZNSt6thread20hardware_concurrencyEv	 #
 	movl	%eax, %ebx	 # _1, _134
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 131
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 131
 	movabsq	$1152921504606846975, %rax	 #, tmp206
 	cmpq	%rbx, %rax	 # _134, tmp206
-	jb	.L295	 #,
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 131 is_stmt 0 discriminator 1
+	jb	.L298	 #,
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 131 is_stmt 0 discriminator 1
 	leaq	1(%rbx), %rax	 #, _2
 	salq	$3, %rax	 #, iftmp.81_76
-	jmp	.L296	 #
-.L295:
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 131 discriminator 2
+	jmp	.L299	 #
+.L298:
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 131 discriminator 2
 	movq	$-1, %rax	 #, iftmp.81_76
-.L296:
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 131 discriminator 4
+.L299:
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 131 discriminator 4
 	movq	%rax, %rcx	 # iftmp.81_76,
 	call	_Znay	 #
 .LEHE13:
 	movq	%rax, %rsi	 # tmp207, _138
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 132 is_stmt 1 discriminator 4
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 132 is_stmt 1 discriminator 4
 	movq	%rbx, (%rsi)	 # _134, MEM[(sizetype *)_139]
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 131 discriminator 4
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 131 discriminator 4
 	leaq	8(%rsi), %rax	 #, _142
 	leaq	-1(%rbx), %rdx	 #, _4
 	movq	%rdx, %rbx	 # _4, _66
 	movq	%rax, %rdi	 # _142, _65
-	jmp	.L297	 #
-.L298:
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 131 is_stmt 0 discriminator 8
+	jmp	.L300	 #
+.L301:
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 131 is_stmt 0 discriminator 8
 	movq	%rdi, %rcx	 # _65,
 	call	_ZNSt6threadC1Ev	 #
 	subq	$1, %rbx	 #, _66
 	addq	$8, %rdi	 #, _65
-.L297:
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 131 discriminator 6
+.L300:
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 131 discriminator 6
 	testq	%rbx, %rbx	 # _66
-	jns	.L298	 #,
- # src\main.cpp:802: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
-	.loc 12 802 132 is_stmt 1 discriminator 9
+	jns	.L301	 #,
+ # src\main.cpp:800: 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
+	.loc 12 800 132 is_stmt 1 discriminator 9
 	leaq	8(%rsi), %rdx	 #, _9
 	leaq	-72(%rbp), %rax	 #, tmp208
 	movq	%rax, %rcx	 # tmp208,
 	call	_ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEC1IPS0_S3_vbEET_	 #
- # src\main.cpp:804: 		uint32_t splitPerAxis = std::round(std::cbrt(std::thread::hardware_concurrency()));
-	.loc 12 804 37 discriminator 9
+ # src\main.cpp:802: 		uint32_t splitPerAxis = std::round(std::cbrt(std::thread::hardware_concurrency()));
+	.loc 12 802 37 discriminator 9
 	call	_ZNSt6thread20hardware_concurrencyEv	 #
 	movl	%eax, %ecx	 # _10,
 	call	_ZSt4cbrtIjEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES3_	 #
 	movq	%xmm0, %rax	 #, _11
 	movq	%rax, %xmm0	 # _11,
 	call	round	 #
- # src\main.cpp:804: 		uint32_t splitPerAxis = std::round(std::cbrt(std::thread::hardware_concurrency()));
-	.loc 12 804 84 discriminator 9
+ # src\main.cpp:802: 		uint32_t splitPerAxis = std::round(std::cbrt(std::thread::hardware_concurrency()));
+	.loc 12 802 84 discriminator 9
 	cvttsd2siq	%xmm0, %rax	 # _12, tmp209
 	movl	%eax, 1308(%rbp)	 # tmp209, splitPerAxis
- # src\main.cpp:806: 		uint32_t chunkSizeX = width  / splitPerAxis;
-	.loc 12 806 12 discriminator 9
+ # src\main.cpp:804: 		uint32_t chunkSizeX = width  / splitPerAxis;
+	.loc 12 804 12 discriminator 9
 	movl	1332(%rbp), %eax	 # width, tmp213
 	movl	$0, %edx	 #, tmp212
 	divl	1308(%rbp)	 # splitPerAxis
 	movl	%eax, 1304(%rbp)	 # tmp211, chunkSizeX
- # src\main.cpp:807: 		uint32_t chunkSizeY = height / splitPerAxis;
-	.loc 12 807 12 discriminator 9
+ # src\main.cpp:805: 		uint32_t chunkSizeY = height / splitPerAxis;
+	.loc 12 805 12 discriminator 9
 	movl	1328(%rbp), %eax	 # height, tmp217
 	movl	$0, %edx	 #, tmp216
 	divl	1308(%rbp)	 # splitPerAxis
 	movl	%eax, 1300(%rbp)	 # tmp215, chunkSizeY
- # src\main.cpp:808: 		uint32_t chunkSizeZ = depth  / splitPerAxis;
-	.loc 12 808 12 discriminator 9
+ # src\main.cpp:806: 		uint32_t chunkSizeZ = depth  / splitPerAxis;
+	.loc 12 806 12 discriminator 9
 	movl	1324(%rbp), %eax	 # depth, tmp221
 	movl	$0, %edx	 #, tmp220
 	divl	1308(%rbp)	 # splitPerAxis
 	movl	%eax, 1296(%rbp)	 # tmp219, chunkSizeZ
- # src\main.cpp:810: 		uint32_t threadIndex = 0;
-	.loc 12 810 12 discriminator 9
+ # src\main.cpp:808: 		uint32_t threadIndex = 0;
+	.loc 12 808 12 discriminator 9
 	movl	$0, 1372(%rbp)	 #, threadIndex
-.LBB192:
- # src\main.cpp:811: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
-	.loc 12 811 17 discriminator 9
-	movl	$0, 1368(%rbp)	 #, x
- # src\main.cpp:811: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
-	.loc 12 811 3 discriminator 9
-	jmp	.L299	 #
-.L310:
 .LBB193:
+ # src\main.cpp:809: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
+	.loc 12 809 17 discriminator 9
+	movl	$0, 1368(%rbp)	 #, x
+ # src\main.cpp:809: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
+	.loc 12 809 3 discriminator 9
+	jmp	.L302	 #
+.L313:
 .LBB194:
- # src\main.cpp:813: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
-	.loc 12 813 21
-	movl	$0, 1364(%rbp)	 #, y
- # src\main.cpp:813: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
-	.loc 12 813 7
-	jmp	.L300	 #
-.L309:
 .LBB195:
+ # src\main.cpp:811: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
+	.loc 12 811 21
+	movl	$0, 1364(%rbp)	 #, y
+ # src\main.cpp:811: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
+	.loc 12 811 7
+	jmp	.L303	 #
+.L312:
 .LBB196:
- # src\main.cpp:815: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
-	.loc 12 815 25
-	movl	$0, 1360(%rbp)	 #, z
- # src\main.cpp:815: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
-	.loc 12 815 11
-	jmp	.L301	 #
-.L308:
 .LBB197:
- # src\main.cpp:817: 		            uint32_t x1 = x * chunkSizeX;
-	.loc 12 817 24
+ # src\main.cpp:813: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
+	.loc 12 813 25
+	movl	$0, 1360(%rbp)	 #, z
+ # src\main.cpp:813: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
+	.loc 12 813 11
+	jmp	.L304	 #
+.L311:
+.LBB198:
+ # src\main.cpp:815: 		            uint32_t x1 = x * chunkSizeX;
+	.loc 12 815 24
 	movl	1368(%rbp), %eax	 # x, tmp223
 	imull	1304(%rbp), %eax	 # chunkSizeX, tmp222
 	movl	%eax, 1284(%rbp)	 # tmp222, x1
- # src\main.cpp:818: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
-	.loc 12 818 48
+ # src\main.cpp:816: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
+	.loc 12 816 48
 	movl	1308(%rbp), %eax	 # splitPerAxis, tmp224
 	subl	$1, %eax	 #, _13
- # src\main.cpp:818: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
-	.loc 12 818 53
+ # src\main.cpp:816: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
+	.loc 12 816 53
 	cmpl	%eax, 1368(%rbp)	 # _13, x
-	je	.L302	 #,
- # src\main.cpp:818: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
-	.loc 12 818 66 discriminator 1
+	je	.L305	 #,
+ # src\main.cpp:816: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
+	.loc 12 816 66 discriminator 1
 	movl	1368(%rbp), %eax	 # x, tmp225
 	addl	$1, %eax	 #, _14
- # src\main.cpp:818: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
-	.loc 12 818 53 discriminator 1
+ # src\main.cpp:816: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
+	.loc 12 816 53 discriminator 1
 	imull	1304(%rbp), %eax	 # chunkSizeX, iftmp.84_77
-	jmp	.L303	 #
-.L302:
- # src\main.cpp:818: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
-	.loc 12 818 53 is_stmt 0 discriminator 2
+	jmp	.L306	 #
+.L305:
+ # src\main.cpp:816: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
+	.loc 12 816 53 is_stmt 0 discriminator 2
 	movl	1332(%rbp), %eax	 # width, iftmp.84_77
-.L303:
- # src\main.cpp:818: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
-	.loc 12 818 24 is_stmt 1 discriminator 4
+.L306:
+ # src\main.cpp:816: 		            uint32_t x2 = (x == splitPerAxis - 1) ? width : (x + 1) * chunkSizeX;
+	.loc 12 816 24 is_stmt 1 discriminator 4
 	movl	%eax, 1280(%rbp)	 # iftmp.84_77, x2
- # src\main.cpp:820: 		            uint32_t y1 = y * chunkSizeY;
-	.loc 12 820 24 discriminator 4
+ # src\main.cpp:818: 		            uint32_t y1 = y * chunkSizeY;
+	.loc 12 818 24 discriminator 4
 	movl	1364(%rbp), %eax	 # y, tmp227
 	imull	1300(%rbp), %eax	 # chunkSizeY, tmp226
 	movl	%eax, 1276(%rbp)	 # tmp226, y1
- # src\main.cpp:821: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
-	.loc 12 821 48 discriminator 4
+ # src\main.cpp:819: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
+	.loc 12 819 48 discriminator 4
 	movl	1308(%rbp), %eax	 # splitPerAxis, tmp228
 	subl	$1, %eax	 #, _15
- # src\main.cpp:821: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
-	.loc 12 821 53 discriminator 4
+ # src\main.cpp:819: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
+	.loc 12 819 53 discriminator 4
 	cmpl	%eax, 1364(%rbp)	 # _15, y
-	je	.L304	 #,
- # src\main.cpp:821: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
-	.loc 12 821 67 discriminator 1
+	je	.L307	 #,
+ # src\main.cpp:819: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
+	.loc 12 819 67 discriminator 1
 	movl	1364(%rbp), %eax	 # y, tmp229
 	addl	$1, %eax	 #, _16
- # src\main.cpp:821: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
-	.loc 12 821 53 discriminator 1
+ # src\main.cpp:819: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
+	.loc 12 819 53 discriminator 1
 	imull	1300(%rbp), %eax	 # chunkSizeY, iftmp.85_78
-	jmp	.L305	 #
-.L304:
- # src\main.cpp:821: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
-	.loc 12 821 53 is_stmt 0 discriminator 2
+	jmp	.L308	 #
+.L307:
+ # src\main.cpp:819: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
+	.loc 12 819 53 is_stmt 0 discriminator 2
 	movl	1328(%rbp), %eax	 # height, iftmp.85_78
-.L305:
- # src\main.cpp:821: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
-	.loc 12 821 24 is_stmt 1 discriminator 4
+.L308:
+ # src\main.cpp:819: 		            uint32_t y2 = (y == splitPerAxis - 1) ? height : (y + 1) * chunkSizeY;
+	.loc 12 819 24 is_stmt 1 discriminator 4
 	movl	%eax, 1272(%rbp)	 # iftmp.85_78, y2
- # src\main.cpp:823: 		            uint32_t z1 = z * chunkSizeZ;
-	.loc 12 823 24 discriminator 4
+ # src\main.cpp:821: 		            uint32_t z1 = z * chunkSizeZ;
+	.loc 12 821 24 discriminator 4
 	movl	1360(%rbp), %eax	 # z, tmp231
 	imull	1296(%rbp), %eax	 # chunkSizeZ, tmp230
 	movl	%eax, 1268(%rbp)	 # tmp230, z1
- # src\main.cpp:824: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
-	.loc 12 824 48 discriminator 4
+ # src\main.cpp:822: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
+	.loc 12 822 48 discriminator 4
 	movl	1308(%rbp), %eax	 # splitPerAxis, tmp232
 	subl	$1, %eax	 #, _17
- # src\main.cpp:824: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
-	.loc 12 824 53 discriminator 4
+ # src\main.cpp:822: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
+	.loc 12 822 53 discriminator 4
 	cmpl	%eax, 1360(%rbp)	 # _17, z
-	je	.L306	 #,
- # src\main.cpp:824: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
-	.loc 12 824 66 discriminator 1
+	je	.L309	 #,
+ # src\main.cpp:822: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
+	.loc 12 822 66 discriminator 1
 	movl	1360(%rbp), %eax	 # z, tmp233
 	addl	$1, %eax	 #, _18
- # src\main.cpp:824: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
-	.loc 12 824 53 discriminator 1
+ # src\main.cpp:822: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
+	.loc 12 822 53 discriminator 1
 	imull	1296(%rbp), %eax	 # chunkSizeZ, iftmp.86_79
-	jmp	.L307	 #
-.L306:
- # src\main.cpp:824: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
-	.loc 12 824 53 is_stmt 0 discriminator 2
+	jmp	.L310	 #
+.L309:
+ # src\main.cpp:822: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
+	.loc 12 822 53 is_stmt 0 discriminator 2
 	movl	1324(%rbp), %eax	 # depth, iftmp.86_79
-.L307:
- # src\main.cpp:824: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
-	.loc 12 824 24 is_stmt 1 discriminator 4
+.L310:
+ # src\main.cpp:822: 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
+	.loc 12 822 24 is_stmt 1 discriminator 4
 	movl	%eax, 1264(%rbp)	 # iftmp.86_79, z2
- # src\main.cpp:828: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
-	.loc 12 828 7 discriminator 4
+ # src\main.cpp:826: 						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
+	.loc 12 826 7 discriminator 4
 	leaq	768(%rbp), %rax	 #, tmp234
 	movq	%rax, 1152(%rbp)	 # tmp234, D.190069.__keyPressed
 	leaq	256(%rbp), %rax	 #, tmp235
@@ -7639,239 +7744,239 @@ WinMain:
 	movq	%rax, 1216(%rbp)	 # tmp245, D.190069.__matrix
 	movq	1312(%rbp), %rax	 # _handle, tmp246
 	movq	%rax, 1224(%rbp)	 # tmp246, D.190069.___handle
- # src\main.cpp:826: 		            ChunkThreads[threadIndex++] = std::thread
-	.loc 12 826 50 discriminator 4
+ # src\main.cpp:824: 		            ChunkThreads[threadIndex++] = std::thread
+	.loc 12 824 50 discriminator 4
 	leaq	1152(%rbp), %rdx	 #, tmp247
 	leaq	1144(%rbp), %rax	 #, tmp248
 	movq	%rax, %rcx	 # tmp248,
 .LEHB14:
 	call	_ZNSt6threadC1IZ7WinMainEUlvE_JEvEEOT_DpOT0_	 #
- # src\main.cpp:826: 		            ChunkThreads[threadIndex++] = std::thread
-	.loc 12 826 39 discriminator 1
+ # src\main.cpp:824: 		            ChunkThreads[threadIndex++] = std::thread
+	.loc 12 824 39 discriminator 1
 	movl	1372(%rbp), %eax	 # threadIndex, threadIndex.87_19
 	leal	1(%rax), %edx	 #, tmp249
 	movl	%edx, 1372(%rbp)	 # tmp249, threadIndex
- # src\main.cpp:826: 		            ChunkThreads[threadIndex++] = std::thread
-	.loc 12 826 41 discriminator 1
+ # src\main.cpp:824: 		            ChunkThreads[threadIndex++] = std::thread
+	.loc 12 824 41 discriminator 1
 	movl	%eax, %edx	 # threadIndex.87_19, _20
 	leaq	-72(%rbp), %rax	 #, tmp250
 	movq	%rax, %rcx	 # tmp250,
 	call	_ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy	 #
 	movq	%rax, %rcx	 #, _21
- # src\main.cpp:829: 					);
-	.loc 12 829 6 discriminator 1
+ # src\main.cpp:827: 					);
+	.loc 12 827 6 discriminator 1
 	leaq	1144(%rbp), %rax	 #, tmp251
 	movq	%rax, %rdx	 # tmp251,
 	call	_ZNSt6threadaSEOS_	 #
- # src\main.cpp:826: 		            ChunkThreads[threadIndex++] = std::thread
-	.loc 12 826 50 discriminator 1
+ # src\main.cpp:824: 		            ChunkThreads[threadIndex++] = std::thread
+	.loc 12 824 50 discriminator 1
 	leaq	1144(%rbp), %rax	 #, tmp252
 	movq	%rax, %rcx	 # tmp252,
 	call	_ZNSt6threadD1Ev	 #
-.LBE197:
- # src\main.cpp:815: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
-	.loc 12 815 11 discriminator 1
+.LBE198:
+ # src\main.cpp:813: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
+	.loc 12 813 11 discriminator 1
 	addl	$1, 1360(%rbp)	 #, z
-.L301:
- # src\main.cpp:815: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
-	.loc 12 815 34 discriminator 2
+.L304:
+ # src\main.cpp:813: 		        for (uint32_t z = 0; z < splitPerAxis; ++z) 
+	.loc 12 813 34 discriminator 2
 	movl	1360(%rbp), %eax	 # z, tmp253
 	cmpl	1308(%rbp), %eax	 # splitPerAxis, tmp253
-	jb	.L308	 #,
+	jb	.L311	 #,
+.LBE197:
 .LBE196:
-.LBE195:
- # src\main.cpp:813: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
-	.loc 12 813 7 discriminator 2
+ # src\main.cpp:811: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
+	.loc 12 811 7 discriminator 2
 	addl	$1, 1364(%rbp)	 #, y
-.L300:
- # src\main.cpp:813: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
-	.loc 12 813 30 discriminator 1
+.L303:
+ # src\main.cpp:811: 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
+	.loc 12 811 30 discriminator 1
 	movl	1364(%rbp), %eax	 # y, tmp254
 	cmpl	1308(%rbp), %eax	 # splitPerAxis, tmp254
-	jb	.L309	 #,
+	jb	.L312	 #,
+.LBE195:
 .LBE194:
-.LBE193:
- # src\main.cpp:811: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
-	.loc 12 811 3 discriminator 2
+ # src\main.cpp:809: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
+	.loc 12 809 3 discriminator 2
 	addl	$1, 1368(%rbp)	 #, x
-.L299:
- # src\main.cpp:811: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
-	.loc 12 811 26 discriminator 1
+.L302:
+ # src\main.cpp:809: 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
+	.loc 12 809 26 discriminator 1
 	movl	1368(%rbp), %eax	 # x, tmp255
 	cmpl	1308(%rbp), %eax	 # splitPerAxis, tmp255
-	jb	.L310	 #,
-.LBE192:
-.LBB198:
- # src\main.cpp:834: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
-	.loc 12 834 16
-	movw	$0, 1358(%rbp)	 #, i
- # src\main.cpp:834: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
-	.loc 12 834 3
-	jmp	.L311	 #
-.L314:
+	jb	.L313	 #,
+.LBE193:
 .LBB199:
- # src\main.cpp:835: 			printf("UpdateThread[%d] -> ", ChunkThreads[i].get_id());
-	.loc 12 835 49
+ # src\main.cpp:832: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
+	.loc 12 832 16
+	movw	$0, 1358(%rbp)	 #, i
+ # src\main.cpp:832: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
+	.loc 12 832 3
+	jmp	.L314	 #
+.L317:
+.LBB200:
+ # src\main.cpp:833: 			printf("UpdateThread[%d] -> ", ChunkThreads[i].get_id());
+	.loc 12 833 49
 	movzwl	1358(%rbp), %edx	 # i, _22
 	leaq	-72(%rbp), %rax	 #, tmp256
 	movq	%rax, %rcx	 # tmp256,
 	call	_ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy	 #
- # src\main.cpp:835: 			printf("UpdateThread[%d] -> ", ChunkThreads[i].get_id());
-	.loc 12 835 10
+ # src\main.cpp:833: 			printf("UpdateThread[%d] -> ", ChunkThreads[i].get_id());
+	.loc 12 833 10
 	movq	%rax, %rcx	 # _23,
 	call	_ZNKSt6thread6get_idEv	 #
 	movq	%rax, %rdx	 # D.209034,
 	leaq	.LC56(%rip), %rax	 #, tmp257
 	movq	%rax, %rcx	 # tmp257,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:836: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
-	.loc 12 836 31
+ # src\main.cpp:834: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
+	.loc 12 834 31
 	movzwl	1358(%rbp), %edx	 # i, _24
 	leaq	-72(%rbp), %rax	 #, tmp258
 	movq	%rax, %rcx	 # tmp258,
 	call	_ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy	 #
- # src\main.cpp:836: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
-	.loc 12 836 42
+ # src\main.cpp:834: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
+	.loc 12 834 42
 	movq	%rax, %rcx	 # _25,
 	call	_ZNKSt6thread6get_idEv	 #
 	movq	%rax, %rcx	 #, D.209036
 	movq	-16(%rbp), %rax	 # MainThreadID, tmp259
 	movq	%rax, %rdx	 # tmp259,
 	call	_ZStneNSt6thread2idES0_	 #
- # src\main.cpp:836: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
-	.loc 12 836 58
+ # src\main.cpp:834: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
+	.loc 12 834 58
 	testb	%al, %al	 # _26
-	je	.L312	 #,
- # src\main.cpp:836: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
-	.loc 12 836 66 discriminator 1
+	je	.L315	 #,
+ # src\main.cpp:834: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
+	.loc 12 834 66 discriminator 1
 	leaq	.LC57(%rip), %rax	 #, tmp260
 	movq	%rax, %rcx	 # tmp260,
 	call	_Z6printfPKcz	 #
-	jmp	.L313	 #
-.L312:
- # src\main.cpp:836: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
-	.loc 12 836 90 discriminator 2
+	jmp	.L316	 #
+.L315:
+ # src\main.cpp:834: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
+	.loc 12 834 90 discriminator 2
 	leaq	.LC58(%rip), %rax	 #, tmp261
 	movq	%rax, %rcx	 # tmp261,
 	call	_Z6printfPKcz	 #
-.L313:
- # src\main.cpp:836: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
-	.loc 12 836 103 discriminator 6
+.L316:
+ # src\main.cpp:834: 			uint32_t n = ChunkThreads[i].get_id() != MainThreadID ? printf("NewThread\n") : printf("MainThread");
+	.loc 12 834 103 discriminator 6
 	movl	%eax, 1288(%rbp)	 # iftmp.88_80, n
-.LBE199:
- # src\main.cpp:834: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
-	.loc 12 834 3 discriminator 6
+.LBE200:
+ # src\main.cpp:832: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
+	.loc 12 832 3 discriminator 6
 	addw	$1, 1358(%rbp)	 #, i
-.L311:
- # src\main.cpp:834: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
-	.loc 12 834 21 discriminator 2
+.L314:
+ # src\main.cpp:832: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
+	.loc 12 832 21 discriminator 2
 	movzwl	1358(%rbp), %ebx	 # i, _29
- # src\main.cpp:834: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
-	.loc 12 834 57 discriminator 2
+ # src\main.cpp:832: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
+	.loc 12 832 57 discriminator 2
 	call	_ZNSt6thread20hardware_concurrencyEv	 #
- # src\main.cpp:834: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
-	.loc 12 834 60 discriminator 2
+ # src\main.cpp:832: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
+	.loc 12 832 60 discriminator 2
 	subl	$1, %eax	 #, _31
- # src\main.cpp:834: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
-	.loc 12 834 22 discriminator 2
+ # src\main.cpp:832: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
+	.loc 12 832 22 discriminator 2
 	cmpl	%ebx, %eax	 # _29, _31
 	setnb	%al	 #, retval.89_158
 	testb	%al, %al	 # retval.89_158
-	jne	.L314	 #,
-.LBE198:
- # src\main.cpp:842: 		printf("Starting...\n\n");
-	.loc 12 842 9
+	jne	.L317	 #,
+.LBE199:
+ # src\main.cpp:840: 		printf("Starting...\n\n");
+	.loc 12 840 9
 	leaq	.LC59(%rip), %rax	 #, tmp262
 	movq	%rax, %rcx	 # tmp262,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:844: 		while(running)
-	.loc 12 844 3
-	jmp	.L315	 #
-.L328:
-.LBB200:
- # src\main.cpp:846: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
-	.loc 12 846 94
+ # src\main.cpp:842: 		while(running)
+	.loc 12 842 3
+	jmp	.L318	 #
+.L331:
+.LBB201:
+ # src\main.cpp:844: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+	.loc 12 844 94
 	movq	1336(%rbp), %rax	 # matrix, tmp263
 	movzwl	54(%rax), %eax	 # matrix_111->_pixelHeight, _32
- # src\main.cpp:846: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
-	.loc 12 846 38
+ # src\main.cpp:844: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+	.loc 12 844 38
 	movzwl	%ax, %r8d	 # _32, _33
- # src\main.cpp:846: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
-	.loc 12 846 73
+ # src\main.cpp:844: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+	.loc 12 844 73
 	movq	1336(%rbp), %rax	 # matrix, tmp264
 	movzwl	52(%rax), %eax	 # matrix_111->_pixelWidth, _34
- # src\main.cpp:846: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
-	.loc 12 846 38
+ # src\main.cpp:844: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+	.loc 12 844 38
 	movzwl	%ax, %ecx	 # _34, _35
- # src\main.cpp:846: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
-	.loc 12 846 56
+ # src\main.cpp:844: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+	.loc 12 844 56
 	movq	1336(%rbp), %rax	 # matrix, tmp265
 	movzwl	56(%rax), %eax	 # matrix_111->_zLevel, _36
- # src\main.cpp:846: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
-	.loc 12 846 38
+ # src\main.cpp:844: 			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+	.loc 12 844 38
 	movzwl	%ax, %edx	 # _36, _37
 	movq	1312(%rbp), %rax	 # _handle, tmp266
 	movl	%r8d, %r9d	 # _33,
 	movl	%ecx, %r8d	 # _35,
 	movq	%rax, %rcx	 # tmp266,
 	call	_ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii	 #
- # src\main.cpp:848: 			while(PeekMessage(&msg, NULL, 0, 0,PM_REMOVE))
-	.loc 12 848 4
-	jmp	.L316	 #
-.L327:
-.LBB201:
+ # src\main.cpp:846: 			while(PeekMessage(&msg, NULL, 0, 0,PM_REMOVE))
+	.loc 12 846 4
+	jmp	.L319	 #
+.L330:
 .LBB202:
- # src\main.cpp:851: 				for (int i = 0; i <= 0xFF - 1; i++)
-	.loc 12 851 14
-	movl	$0, 1352(%rbp)	 #, i
- # src\main.cpp:851: 				for (int i = 0; i <= 0xFF - 1; i++)
-	.loc 12 851 5
-	jmp	.L317	 #
-.L324:
 .LBB203:
- # src\main.cpp:853: 					short KeyState = GetAsyncKeyState( i );
-	.loc 12 853 39
+ # src\main.cpp:849: 				for (int i = 0; i <= 0xFF - 1; i++)
+	.loc 12 849 14
+	movl	$0, 1352(%rbp)	 #, i
+ # src\main.cpp:849: 				for (int i = 0; i <= 0xFF - 1; i++)
+	.loc 12 849 5
+	jmp	.L320	 #
+.L327:
+.LBB204:
+ # src\main.cpp:851: 					short KeyState = GetAsyncKeyState( i );
+	.loc 12 851 39
 	movl	1352(%rbp), %eax	 # i, tmp267
 	movl	%eax, %ecx	 # tmp267,
 	movq	__imp_GetAsyncKeyState(%rip), %rax	 #, tmp268
 	call	*%rax	 # tmp268
 .LVL54:
-	movw	%ax, 1294(%rbp)	 # _201, KeyState
- # src\main.cpp:854: 					bool down      = (KeyState >> 15) & 0x1;
-	.loc 12 854 11
+	movw	%ax, 1294(%rbp)	 # _202, KeyState
+ # src\main.cpp:852: 					bool down      = (KeyState >> 15) & 0x1;
+	.loc 12 852 11
 	movzwl	1294(%rbp), %eax	 # KeyState, tmp270
 	shrw	$15, %ax	 #, tmp269
 	movb	%al, 1293(%rbp)	 # tmp269, down
- # src\main.cpp:856: 					keyPressed[i]  = !keyPrev[i] && down;
-	.loc 12 856 33
+ # src\main.cpp:854: 					keyPressed[i]  = !keyPrev[i] && down;
+	.loc 12 854 33
 	movq	%rbp, %rdx	 #, tmp271
 	movl	1352(%rbp), %eax	 # i, tmp273
 	cltq
 	addq	%rdx, %rax	 # tmp271, _38
 	movq	%rax, %rcx	 # _38,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:856: 					keyPressed[i]  = !keyPrev[i] && down;
-	.loc 12 856 23
+ # src\main.cpp:854: 					keyPressed[i]  = !keyPrev[i] && down;
+	.loc 12 854 23
 	xorl	$1, %eax	 #, _40
- # src\main.cpp:856: 					keyPressed[i]  = !keyPrev[i] && down;
-	.loc 12 856 35
+ # src\main.cpp:854: 					keyPressed[i]  = !keyPrev[i] && down;
+	.loc 12 854 35
 	testb	%al, %al	 # _40
-	je	.L318	 #,
- # src\main.cpp:856: 					keyPressed[i]  = !keyPrev[i] && down;
-	.loc 12 856 35 is_stmt 0 discriminator 1
+	je	.L321	 #,
+ # src\main.cpp:854: 					keyPressed[i]  = !keyPrev[i] && down;
+	.loc 12 854 35 is_stmt 0 discriminator 1
 	cmpb	$0, 1293(%rbp)	 #, down
-	je	.L318	 #,
- # src\main.cpp:856: 					keyPressed[i]  = !keyPrev[i] && down;
-	.loc 12 856 35 discriminator 3
+	je	.L321	 #,
+ # src\main.cpp:854: 					keyPressed[i]  = !keyPrev[i] && down;
+	.loc 12 854 35 discriminator 3
 	movl	$1, %eax	 #, iftmp.90_81
-	jmp	.L319	 #
-.L318:
- # src\main.cpp:856: 					keyPressed[i]  = !keyPrev[i] && down;
-	.loc 12 856 35 discriminator 4
+	jmp	.L322	 #
+.L321:
+ # src\main.cpp:854: 					keyPressed[i]  = !keyPrev[i] && down;
+	.loc 12 854 35 discriminator 4
 	movl	$0, %eax	 #, iftmp.90_81
-.L319:
- # src\main.cpp:856: 					keyPressed[i]  = !keyPrev[i] && down;
-	.loc 12 856 21 is_stmt 1 discriminator 6
+.L322:
+ # src\main.cpp:854: 					keyPressed[i]  = !keyPrev[i] && down;
+	.loc 12 854 21 is_stmt 1 discriminator 6
 	movzbl	%al, %eax	 # iftmp.90_81, _41
 	leaq	768(%rbp), %rcx	 #, tmp274
 	movl	1352(%rbp), %edx	 # i, tmp276
@@ -7879,33 +7984,33 @@ WinMain:
 	addq	%rdx, %rcx	 # tmp275, _42
 	movl	%eax, %edx	 # _41,
 	call	_ZNSt6atomicIbEaSEb	 #
- # src\main.cpp:857: 					keyHeld[i]     = keyPrev[i]  && down;
-	.loc 12 857 38 discriminator 6
+ # src\main.cpp:855: 					keyHeld[i]     = keyPrev[i]  && down;
+	.loc 12 855 38 discriminator 6
 	movq	%rbp, %rdx	 #, tmp277
 	movl	1352(%rbp), %eax	 # i, tmp279
 	cltq
 	addq	%rdx, %rax	 # tmp277, _43
 	movq	%rax, %rcx	 # _43,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:857: 					keyHeld[i]     = keyPrev[i]  && down;
-	.loc 12 857 35 discriminator 6
+ # src\main.cpp:855: 					keyHeld[i]     = keyPrev[i]  && down;
+	.loc 12 855 35 discriminator 6
 	testb	%al, %al	 # _44
-	je	.L320	 #,
- # src\main.cpp:857: 					keyHeld[i]     = keyPrev[i]  && down;
-	.loc 12 857 35 is_stmt 0 discriminator 1
+	je	.L323	 #,
+ # src\main.cpp:855: 					keyHeld[i]     = keyPrev[i]  && down;
+	.loc 12 855 35 is_stmt 0 discriminator 1
 	cmpb	$0, 1293(%rbp)	 #, down
-	je	.L320	 #,
- # src\main.cpp:857: 					keyHeld[i]     = keyPrev[i]  && down;
-	.loc 12 857 35 discriminator 3
+	je	.L323	 #,
+ # src\main.cpp:855: 					keyHeld[i]     = keyPrev[i]  && down;
+	.loc 12 855 35 discriminator 3
 	movl	$1, %eax	 #, iftmp.91_82
-	jmp	.L321	 #
-.L320:
- # src\main.cpp:857: 					keyHeld[i]     = keyPrev[i]  && down;
-	.loc 12 857 35 discriminator 4
+	jmp	.L324	 #
+.L323:
+ # src\main.cpp:855: 					keyHeld[i]     = keyPrev[i]  && down;
+	.loc 12 855 35 discriminator 4
 	movl	$0, %eax	 #, iftmp.91_82
-.L321:
- # src\main.cpp:857: 					keyHeld[i]     = keyPrev[i]  && down;
-	.loc 12 857 21 is_stmt 1 discriminator 6
+.L324:
+ # src\main.cpp:855: 					keyHeld[i]     = keyPrev[i]  && down;
+	.loc 12 855 21 is_stmt 1 discriminator 6
 	movzbl	%al, %eax	 # iftmp.91_82, _45
 	leaq	256(%rbp), %rcx	 #, tmp280
 	movl	1352(%rbp), %edx	 # i, tmp282
@@ -7913,37 +8018,37 @@ WinMain:
 	addq	%rdx, %rcx	 # tmp281, _46
 	movl	%eax, %edx	 # _45,
 	call	_ZNSt6atomicIbEaSEb	 #
- # src\main.cpp:858: 					keyReleased[i] = keyPrev[i]  && !down;
-	.loc 12 858 39 discriminator 6
+ # src\main.cpp:856: 					keyReleased[i] = keyPrev[i]  && !down;
+	.loc 12 856 39 discriminator 6
 	movq	%rbp, %rdx	 #, tmp283
 	movl	1352(%rbp), %eax	 # i, tmp285
 	cltq
 	addq	%rdx, %rax	 # tmp283, _47
 	movq	%rax, %rcx	 # _47,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:858: 					keyReleased[i] = keyPrev[i]  && !down;
-	.loc 12 858 35 discriminator 6
+ # src\main.cpp:856: 					keyReleased[i] = keyPrev[i]  && !down;
+	.loc 12 856 35 discriminator 6
 	testb	%al, %al	 # _48
-	je	.L322	 #,
- # src\main.cpp:858: 					keyReleased[i] = keyPrev[i]  && !down;
-	.loc 12 858 38 discriminator 1
+	je	.L325	 #,
+ # src\main.cpp:856: 					keyReleased[i] = keyPrev[i]  && !down;
+	.loc 12 856 38 discriminator 1
 	movzbl	1293(%rbp), %eax	 # down, tmp286
 	xorl	$1, %eax	 #, _49
- # src\main.cpp:858: 					keyReleased[i] = keyPrev[i]  && !down;
-	.loc 12 858 35 discriminator 1
+ # src\main.cpp:856: 					keyReleased[i] = keyPrev[i]  && !down;
+	.loc 12 856 35 discriminator 1
 	testb	%al, %al	 # _49
-	je	.L322	 #,
- # src\main.cpp:858: 					keyReleased[i] = keyPrev[i]  && !down;
-	.loc 12 858 35 is_stmt 0 discriminator 3
+	je	.L325	 #,
+ # src\main.cpp:856: 					keyReleased[i] = keyPrev[i]  && !down;
+	.loc 12 856 35 is_stmt 0 discriminator 3
 	movl	$1, %eax	 #, iftmp.92_83
-	jmp	.L323	 #
-.L322:
- # src\main.cpp:858: 					keyReleased[i] = keyPrev[i]  && !down;
-	.loc 12 858 35 discriminator 4
+	jmp	.L326	 #
+.L325:
+ # src\main.cpp:856: 					keyReleased[i] = keyPrev[i]  && !down;
+	.loc 12 856 35 discriminator 4
 	movl	$0, %eax	 #, iftmp.92_83
-.L323:
- # src\main.cpp:858: 					keyReleased[i] = keyPrev[i]  && !down;
-	.loc 12 858 21 is_stmt 1 discriminator 6
+.L326:
+ # src\main.cpp:856: 					keyReleased[i] = keyPrev[i]  && !down;
+	.loc 12 856 21 is_stmt 1 discriminator 6
 	movzbl	%al, %eax	 # iftmp.92_83, _50
 	leaq	512(%rbp), %rcx	 #, tmp287
 	movl	1352(%rbp), %edx	 # i, tmp289
@@ -7951,8 +8056,8 @@ WinMain:
 	addq	%rdx, %rcx	 # tmp288, _51
 	movl	%eax, %edx	 # _50,
 	call	_ZNSt6atomicIbEaSEb	 #
- # src\main.cpp:860: 					keyPrev[i] = down;
-	.loc 12 860 17 discriminator 6
+ # src\main.cpp:858: 					keyPrev[i] = down;
+	.loc 12 858 17 discriminator 6
 	movzbl	1293(%rbp), %eax	 # down, _52
 	movq	%rbp, %rcx	 #, tmp290
 	movl	1352(%rbp), %edx	 # i, tmp292
@@ -7960,59 +8065,59 @@ WinMain:
 	addq	%rdx, %rcx	 # tmp291, _53
 	movl	%eax, %edx	 # _52,
 	call	_ZNSt6atomicIbEaSEb	 #
-.LBE203:
- # src\main.cpp:851: 				for (int i = 0; i <= 0xFF - 1; i++)
-	.loc 12 851 5 discriminator 6
+.LBE204:
+ # src\main.cpp:849: 				for (int i = 0; i <= 0xFF - 1; i++)
+	.loc 12 849 5 discriminator 6
 	addl	$1, 1352(%rbp)	 #, i
-.L317:
- # src\main.cpp:851: 				for (int i = 0; i <= 0xFF - 1; i++)
-	.loc 12 851 23 discriminator 2
+.L320:
+ # src\main.cpp:849: 				for (int i = 0; i <= 0xFF - 1; i++)
+	.loc 12 849 23 discriminator 2
 	cmpl	$254, 1352(%rbp)	 #, i
-	jle	.L324	 #,
-.LBE202:
- # src\main.cpp:863: 				if(keyReleased[VK_INSERT])
-	.loc 12 863 29
+	jle	.L327	 #,
+.LBE203:
+ # src\main.cpp:861: 				if(keyReleased[VK_INSERT])
+	.loc 12 861 29
 	leaq	512(%rbp), %rax	 #, tmp293
 	addq	$45, %rax	 #, tmp294
 	movq	%rax, %rcx	 # tmp294,
 	call	_ZNKSt6atomicIbEcvbEv	 #
- # src\main.cpp:863: 				if(keyReleased[VK_INSERT])
-	.loc 12 863 5
-	testb	%al, %al	 # retval.93_195
-	je	.L325	 #,
- # src\main.cpp:865: 					running = false;
-	.loc 12 865 14
+ # src\main.cpp:861: 				if(keyReleased[VK_INSERT])
+	.loc 12 861 5
+	testb	%al, %al	 # retval.93_196
+	je	.L328	 #,
+ # src\main.cpp:863: 					running = false;
+	.loc 12 863 14
 	leaq	-1(%rbp), %rax	 #, tmp295
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # tmp295,
 	call	_ZNSt6atomicIbEaSEb	 #
- # src\main.cpp:866: 					printf("Goodbye!\n\n");
-	.loc 12 866 12
+ # src\main.cpp:864: 					printf("Goodbye!\n\n");
+	.loc 12 864 12
 	leaq	.LC60(%rip), %rax	 #, tmp296
 	movq	%rax, %rcx	 # tmp296,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:867: 					break;
-	.loc 12 867 6
-	jmp	.L326	 #
-.L325:
- # src\main.cpp:870: 				::TranslateMessage(&msg);
-	.loc 12 870 23
+ # src\main.cpp:865: 					break;
+	.loc 12 865 6
+	jmp	.L329	 #
+.L328:
+ # src\main.cpp:868: 				::TranslateMessage(&msg);
+	.loc 12 868 23
 	leaq	-64(%rbp), %rax	 #, tmp297
 	movq	%rax, %rcx	 # tmp297,
 	movq	__imp_TranslateMessage(%rip), %rax	 #, tmp298
 	call	*%rax	 # tmp298
 .LVL55:
- # src\main.cpp:871: 				::DispatchMessage(&msg);
-	.loc 12 871 22
+ # src\main.cpp:869: 				::DispatchMessage(&msg);
+	.loc 12 869 22
 	leaq	-64(%rbp), %rax	 #, tmp299
 	movq	%rax, %rcx	 # tmp299,
 	movq	__imp_DispatchMessageW(%rip), %rax	 #, tmp300
 	call	*%rax	 # tmp300
 .LVL56:
-.L316:
-.LBE201:
- # src\main.cpp:848: 			while(PeekMessage(&msg, NULL, 0, 0,PM_REMOVE))
-	.loc 12 848 21
+.L319:
+.LBE202:
+ # src\main.cpp:846: 			while(PeekMessage(&msg, NULL, 0, 0,PM_REMOVE))
+	.loc 12 846 21
 	leaq	-64(%rbp), %rax	 #, tmp301
 	movl	$1, 32(%rsp)	 #,
 	movl	$0, %r9d	 #,
@@ -8023,148 +8128,153 @@ WinMain:
 	call	*%rax	 # tmp302
 .LVL57:
 	testl	%eax, %eax	 # _54
-	setne	%al	 #, retval.94_192
-	testb	%al, %al	 # retval.94_192
-	jne	.L327	 #,
-.L326:
- # src\main.cpp:874: 			matrix->UpdateWorldView(_handle, running);
-	.loc 12 874 27
+	setne	%al	 #, retval.94_193
+	testb	%al, %al	 # retval.94_193
+	jne	.L330	 #,
+.L329:
+ # src\main.cpp:872: 			matrix->UpdateWorldView(_handle, running);
+	.loc 12 872 27
 	leaq	-1(%rbp), %rcx	 #, tmp303
 	movq	1312(%rbp), %rdx	 # _handle, tmp304
 	movq	1336(%rbp), %rax	 # matrix, tmp305
 	movq	%rcx, %r8	 # tmp303,
 	movq	%rax, %rcx	 # tmp305,
 	call	_ZN6MATRIX15UpdateWorldViewEP6HWND__RSt6atomicIbE	 #
- # src\main.cpp:876: 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
-	.loc 12 876 58
+ # src\main.cpp:874: 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
+	.loc 12 874 58
 	movl	$50, 1244(%rbp)	 #, D.190133
- # src\main.cpp:876: 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
-	.loc 12 876 45
+ # src\main.cpp:874: 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
+	.loc 12 874 45
 	leaq	1244(%rbp), %rdx	 #, tmp306
 	leaq	1232(%rbp), %rax	 #, tmp307
 	movq	%rax, %rcx	 # tmp307,
 	call	_ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IivEERKT_	 #
- # src\main.cpp:876: 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
-	.loc 12 876 31
+ # src\main.cpp:874: 			std::this_thread::sleep_for(std::chrono::milliseconds(50));
+	.loc 12 874 31
 	leaq	1232(%rbp), %rax	 #, tmp308
 	movq	%rax, %rcx	 # tmp308,
 	call	_ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0_EE	 #
-.L315:
-.LBE200:
- # src\main.cpp:844: 		while(running)
-	.loc 12 844 9
+.L318:
+.LBE201:
+ # src\main.cpp:842: 		while(running)
+	.loc 12 842 9
 	leaq	-1(%rbp), %rax	 #, tmp309
 	movq	%rax, %rcx	 # tmp309,
 	call	_ZNKSt6atomicIbEcvbEv	 #
 	testb	%al, %al	 # retval.95_161
-	jne	.L328	 #,
- # src\main.cpp:879: 		running = false;
-	.loc 12 879 11
+	jne	.L331	 #,
+ # src\main.cpp:877: 		running = false;
+	.loc 12 877 11
 	leaq	-1(%rbp), %rax	 #, tmp310
 	movl	$0, %edx	 #,
 	movq	%rax, %rcx	 # tmp310,
 	call	_ZNSt6atomicIbEaSEb	 #
- # src\main.cpp:881: 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-	.loc 12 881 57
+ # src\main.cpp:879: 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	.loc 12 879 57
 	movl	$1000, 1260(%rbp)	 #, D.190135
- # src\main.cpp:881: 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-	.loc 12 881 44
+ # src\main.cpp:879: 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	.loc 12 879 44
 	leaq	1260(%rbp), %rdx	 #, tmp311
 	leaq	1248(%rbp), %rax	 #, tmp312
 	movq	%rax, %rcx	 # tmp312,
 	call	_ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IivEERKT_	 #
- # src\main.cpp:881: 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-	.loc 12 881 30
+ # src\main.cpp:879: 		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	.loc 12 879 30
 	leaq	1248(%rbp), %rax	 #, tmp313
 	movq	%rax, %rcx	 # tmp313,
 	call	_ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0_EE	 #
-.LBB204:
- # src\main.cpp:883: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
-	.loc 12 883 16 discriminator 2
+.LBB205:
+ # src\main.cpp:881: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
+	.loc 12 881 16 discriminator 2
 	movw	$0, 1350(%rbp)	 #, i
- # src\main.cpp:883: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
-	.loc 12 883 3 discriminator 2
-	jmp	.L329	 #
-.L331:
- # src\main.cpp:885: 			if(ChunkThreads[i].joinable())
-	.loc 12 885 21
+ # src\main.cpp:881: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
+	.loc 12 881 3 discriminator 2
+	jmp	.L332	 #
+.L334:
+ # src\main.cpp:883: 			if(ChunkThreads[i].joinable())
+	.loc 12 883 21
 	movzwl	1350(%rbp), %edx	 # i, _55
 	leaq	-72(%rbp), %rax	 #, tmp314
 	movq	%rax, %rcx	 # tmp314,
 	call	_ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy	 #
- # src\main.cpp:885: 			if(ChunkThreads[i].joinable())
-	.loc 12 885 31
+ # src\main.cpp:883: 			if(ChunkThreads[i].joinable())
+	.loc 12 883 31
 	movq	%rax, %rcx	 # _56,
 	call	_ZNKSt6thread8joinableEv	 #
- # src\main.cpp:885: 			if(ChunkThreads[i].joinable())
-	.loc 12 885 4
-	testb	%al, %al	 # retval.96_180
-	je	.L330	 #,
- # src\main.cpp:887: 				printf("Thread[%d] -> closing\n", ChunkThreads[i].get_id());
-	.loc 12 887 53
+ # src\main.cpp:883: 			if(ChunkThreads[i].joinable())
+	.loc 12 883 4
+	testb	%al, %al	 # retval.96_181
+	je	.L333	 #,
+ # src\main.cpp:885: 				printf("Thread[%d] -> closing\n", ChunkThreads[i].get_id());
+	.loc 12 885 53
 	movzwl	1350(%rbp), %edx	 # i, _57
 	leaq	-72(%rbp), %rax	 #, tmp315
 	movq	%rax, %rcx	 # tmp315,
 	call	_ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy	 #
- # src\main.cpp:887: 				printf("Thread[%d] -> closing\n", ChunkThreads[i].get_id());
-	.loc 12 887 11
+ # src\main.cpp:885: 				printf("Thread[%d] -> closing\n", ChunkThreads[i].get_id());
+	.loc 12 885 11
 	movq	%rax, %rcx	 # _58,
 	call	_ZNKSt6thread6get_idEv	 #
 	movq	%rax, %rdx	 # D.209064,
 	leaq	.LC61(%rip), %rax	 #, tmp316
 	movq	%rax, %rcx	 # tmp316,
 	call	_Z6printfPKcz	 #
- # src\main.cpp:888: 				ChunkThreads[i].join();
-	.loc 12 888 19
+ # src\main.cpp:886: 				ChunkThreads[i].join();
+	.loc 12 886 19
 	movzwl	1350(%rbp), %edx	 # i, _59
 	leaq	-72(%rbp), %rax	 #, tmp317
 	movq	%rax, %rcx	 # tmp317,
 	call	_ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy	 #
- # src\main.cpp:888: 				ChunkThreads[i].join();
-	.loc 12 888 25
+ # src\main.cpp:886: 				ChunkThreads[i].join();
+	.loc 12 886 25
 	movq	%rax, %rcx	 # _60,
 	call	_ZNSt6thread4joinEv	 #
 .LEHE14:
-.L330:
- # src\main.cpp:883: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
-	.loc 12 883 3 discriminator 2
+.L333:
+ # src\main.cpp:881: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
+	.loc 12 881 3 discriminator 2
 	addw	$1, 1350(%rbp)	 #, i
-.L329:
- # src\main.cpp:883: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
-	.loc 12 883 21 discriminator 1
+.L332:
+ # src\main.cpp:881: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
+	.loc 12 881 21 discriminator 1
 	movzwl	1350(%rbp), %ebx	 # i, _61
- # src\main.cpp:883: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
-	.loc 12 883 57 discriminator 1
+ # src\main.cpp:881: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
+	.loc 12 881 57 discriminator 1
 	call	_ZNSt6thread20hardware_concurrencyEv	 #
- # src\main.cpp:883: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
-	.loc 12 883 60 discriminator 1
+ # src\main.cpp:881: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
+	.loc 12 881 60 discriminator 1
 	subl	$1, %eax	 #, _63
- # src\main.cpp:883: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
-	.loc 12 883 22 discriminator 1
+ # src\main.cpp:881: 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i)
+	.loc 12 881 22 discriminator 1
 	cmpl	%ebx, %eax	 # _61, _63
 	setnb	%al	 #, retval.97_170
 	testb	%al, %al	 # retval.97_170
-	jne	.L331	 #,
-.LBE204:
- # src\main.cpp:891: 	}
-	.loc 12 891 2
+	jne	.L334	 #,
+.LBE205:
+ # src\main.cpp:889: 	}
+	.loc 12 889 2
 	leaq	-72(%rbp), %rax	 #, tmp318
 	movq	%rax, %rcx	 # tmp318,
 	call	_ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EED1Ev	 #
+.LBE192:
 .LBE191:
-.LBE190:
+ # src\main.cpp:896: 	matrix->DestroyMatrix();
+	.loc 12 896 23
+	movq	1336(%rbp), %rax	 # matrix, tmp321
+	movq	%rax, %rcx	 # tmp321,
+	call	_ZN6MATRIX13DestroyMatrixEv	 #
  # src\main.cpp:898: 	delete matrix;
 	.loc 12 898 9
-	movq	1336(%rbp), %rbx	 # matrix, matrix.98_173
+	movq	1336(%rbp), %rbx	 # matrix, matrix.98_174
  # src\main.cpp:898: 	delete matrix;
 	.loc 12 898 2
-	testq	%rbx, %rbx	 # matrix.98_173
-	je	.L334	 #,
-	jmp	.L340	 #
-.L294:
-.LBB206:
- # src\main.cpp:894: 		MessageBoxW(nullptr, L"WINDOW HANDLE IS EMPTY", L"ERROR", MB_ICONERROR | MB_OK);
-	.loc 12 894 14
+	testq	%rbx, %rbx	 # matrix.98_174
+	je	.L337	 #,
+	jmp	.L343	 #
+.L297:
+.LBB207:
+ # src\main.cpp:892: 		MessageBoxW(nullptr, L"WINDOW HANDLE IS EMPTY", L"ERROR", MB_ICONERROR | MB_OK);
+	.loc 12 892 14
 	movl	$16, %r9d	 #,
 	leaq	.LC62(%rip), %r8	 #,
 	leaq	.LC63(%rip), %rax	 #, tmp319
@@ -8175,70 +8285,70 @@ WinMain:
 	call	*%rax	 # tmp320
 .LVL58:
 .LEHE15:
- # src\main.cpp:895: 		return msg.wParam;
-	.loc 12 895 14
+ # src\main.cpp:893: 		return msg.wParam;
+	.loc 12 893 14
 	movq	-48(%rbp), %rax	 # msg.wParam, _64
 	movl	%eax, %ebx	 # _64, _84
-	jmp	.L333	 #
-.L340:
-.LBE206:
+	jmp	.L336	 #
+.L343:
+.LBE207:
  # src\main.cpp:898: 	delete matrix;
 	.loc 12 898 9 discriminator 1
-	movq	%rbx, %rcx	 # matrix.98_173,
+	movq	%rbx, %rcx	 # matrix.98_174,
 	call	_ZN6MATRIXD1Ev	 #
 	movl	$64, %edx	 #,
-	movq	%rbx, %rcx	 # matrix.98_173,
+	movq	%rbx, %rcx	 # matrix.98_174,
 	call	_ZdlPvy	 #
-.L334:
+.L337:
  # src\main.cpp:899: 	matrix=nullptr;
 	.loc 12 899 8
 	movq	$0, 1336(%rbp)	 #, matrix
  # src\main.cpp:900: 	return EXIT_SUCCESS;
 	.loc 12 900 9
 	movl	$0, %ebx	 #, _84
-.L333:
+.L336:
  # src\main.cpp:901: }
 	.loc 12 901 1
-	leaq	1024(%rbp), %rax	 #, tmp321
-	movq	%rax, %rcx	 # tmp321,
+	leaq	1024(%rbp), %rax	 #, tmp322
+	movq	%rax, %rcx	 # tmp322,
 	call	_ZN10MatrixRainD1Ev	 #
 	movl	%ebx, %eax	 # _84, <retval>
-	jmp	.L341	 #
-.L339:
-.LBB207:
-.LBB205:
- # src\main.cpp:891: 	}
-	.loc 12 891 2
-	movq	%rax, %rbx	 #, tmp325
-	leaq	-72(%rbp), %rax	 #, tmp323
-	movq	%rax, %rcx	 # tmp323,
+	jmp	.L344	 #
+.L342:
+.LBB208:
+.LBB206:
+ # src\main.cpp:889: 	}
+	.loc 12 889 2
+	movq	%rax, %rbx	 #, tmp326
+	leaq	-72(%rbp), %rax	 #, tmp324
+	movq	%rax, %rcx	 # tmp324,
 	call	_ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EED1Ev	 #
-	jmp	.L337	 #
-.L338:
-.LBE205:
-.LBE207:
+	jmp	.L340	 #
+.L341:
+.LBE206:
+.LBE208:
  # src\main.cpp:901: }
 	.loc 12 901 1
-	movq	%rax, %rbx	 #, tmp324
-.L337:
-	leaq	1024(%rbp), %rax	 #, tmp328
-	movq	%rax, %rcx	 # tmp328,
+	movq	%rax, %rbx	 #, tmp325
+.L340:
+	leaq	1024(%rbp), %rax	 #, tmp329
+	movq	%rax, %rcx	 # tmp329,
 	call	_ZN10MatrixRainD1Ev	 #
-	movq	%rbx, %rax	 # tmp324, D.209912
-	movq	%rax, %rcx	 # D.209912,
+	movq	%rbx, %rax	 # tmp325, D.209913
+	movq	%rax, %rcx	 # D.209913,
 .LEHB16:
 	call	_Unwind_Resume	 #
 .LEHE16:
-.L341:
+.L344:
 	addq	$1512, %rsp	 #,
 	popq	%rbx	 #
-.LCFI260:
-	popq	%rsi	 #
-.LCFI261:
-	popq	%rdi	 #
-.LCFI262:
-	popq	%rbp	 #
 .LCFI263:
+	popq	%rsi	 #
+.LCFI264:
+	popq	%rdi	 #
+.LCFI265:
+	popq	%rbp	 #
+.LCFI266:
 	ret	
 .LFE10194:
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
@@ -8255,15 +8365,15 @@ WinMain:
 	.uleb128 0
 	.uleb128 .LEHB13-.LFB10194
 	.uleb128 .LEHE13-.LEHB13
-	.uleb128 .L338-.LFB10194
+	.uleb128 .L341-.LFB10194
 	.uleb128 0
 	.uleb128 .LEHB14-.LFB10194
 	.uleb128 .LEHE14-.LEHB14
-	.uleb128 .L339-.LFB10194
+	.uleb128 .L342-.LFB10194
 	.uleb128 0
 	.uleb128 .LEHB15-.LFB10194
 	.uleb128 .LEHE15-.LEHB15
-	.uleb128 .L338-.LFB10194
+	.uleb128 .L341-.LFB10194
 	.uleb128 0
 	.uleb128 .LEHB16-.LFB10194
 	.uleb128 .LEHE16-.LEHB16
@@ -8283,10 +8393,10 @@ _ZSt4swapINSt6thread2idEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_li
 	.loc 15 196 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI264:
+.LCFI267:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI265:
+.LCFI268:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -8326,7 +8436,7 @@ _ZSt4swapINSt6thread2idEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_li
 	nop	
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI266:
+.LCFI269:
 	ret	
 .LFE10274:
 	.seh_endproc
@@ -8341,10 +8451,10 @@ _ZNKSt6chrono8durationIxSt5ratioILx1ELx1EEE5countEv:
 	.loc 7 521 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI267:
+.LCFI270:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI268:
+.LCFI271:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:522: 	{ return __r; }
@@ -8354,7 +8464,7 @@ _ZNKSt6chrono8durationIxSt5ratioILx1ELx1EEE5countEv:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:522: 	{ return __r; }
 	.loc 7 522 16
 	popq	%rbp	 #
-.LCFI269:
+.LCFI272:
 	ret	
 .LFE10278:
 	.seh_endproc
@@ -8369,10 +8479,10 @@ _ZNSt13__atomic_baseIbEaSEb:
 	.loc 5 354 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI270:
+.LCFI273:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI271:
+.LCFI274:
 	subq	$64, %rsp	 #,
 	.seh_stackalloc	64
 	.seh_endprologue
@@ -8387,8 +8497,8 @@ _ZNSt13__atomic_baseIbEaSEb:
 	movb	%al, -9(%rbp)	 # _1, __i
 	andb	$1, -9(%rbp)	 #, __i
 	movl	$5, -16(%rbp)	 #, __m
-.LBB208:
 .LBB209:
+.LBB210:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:459: 	  = __m & __memory_order_mask;
 	.loc 5 459 10
 	movl	-16(%rbp), %eax	 # __m, tmp97
@@ -8400,40 +8510,40 @@ _ZNSt13__atomic_baseIbEaSEb:
 	.loc 5 460 2
 	call	__is_constant_evaluated	 #
 	testb	%al, %al	 # _10
-	je	.L346	 #,
+	je	.L349	 #,
 	cmpl	$2, -20(%rbp)	 #, __b
-	jne	.L346	 #,
+	jne	.L349	 #,
 	movl	$1, %eax	 #, iftmp.136_11
-	jmp	.L347	 #
-.L346:
+	jmp	.L350	 #
+.L349:
 	movl	$0, %eax	 #, iftmp.136_11
-.L347:
+.L350:
 	testb	%al, %al	 # iftmp.136_11
  # C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:461: 	__glibcxx_assert(__b != memory_order_acq_rel);
 	.loc 5 461 2
 	call	__is_constant_evaluated	 #
 	testb	%al, %al	 # _15
-	je	.L349	 #,
+	je	.L352	 #,
 	cmpl	$4, -20(%rbp)	 #, __b
-	jne	.L349	 #,
+	jne	.L352	 #,
 	movl	$1, %eax	 #, iftmp.138_16
-	jmp	.L350	 #
-.L349:
+	jmp	.L353	 #
+.L352:
 	movl	$0, %eax	 #, iftmp.138_16
-.L350:
+.L353:
 	testb	%al, %al	 # iftmp.138_16
  # C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:462: 	__glibcxx_assert(__b != memory_order_consume);
 	.loc 5 462 2
 	call	__is_constant_evaluated	 #
 	testb	%al, %al	 # _20
-	je	.L352	 #,
+	je	.L355	 #,
 	cmpl	$1, -20(%rbp)	 #, __b
-	jne	.L352	 #,
+	jne	.L355	 #,
 	movl	$1, %eax	 #, iftmp.140_21
-	jmp	.L353	 #
-.L352:
+	jmp	.L356	 #
+.L355:
 	movl	$0, %eax	 #, iftmp.140_21
-.L353:
+.L356:
 	testb	%al, %al	 # iftmp.140_21
  # C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:464: 	__atomic_store_n(&_M_i, __i, int(__m));
 	.loc 5 464 18
@@ -8447,8 +8557,8 @@ _ZNSt13__atomic_baseIbEaSEb:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:465:       }
 	.loc 5 465 7
 	nop	
+.LBE210:
 .LBE209:
-.LBE208:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:357: 	return __i;
 	.loc 5 357 9
 	movzbl	24(%rbp), %eax	 # __i, _5
@@ -8456,7 +8566,7 @@ _ZNSt13__atomic_baseIbEaSEb:
 	.loc 5 358 7
 	addq	$64, %rsp	 #,
 	popq	%rbp	 #
-.LCFI272:
+.LCFI275:
 	ret	
 .LFE10303:
 	.seh_endproc
@@ -8471,14 +8581,14 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IivEERKT_:
 	.loc 7 505 23
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI273:
+.LCFI276:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI274:
+.LCFI277:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # __rep, __rep
-.LBB210:
+.LBB211:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:506: 	  : __r(static_cast<rep>(__rep)) { }
 	.loc 7 506 10
 	movq	24(%rbp), %rax	 # __rep, tmp84
@@ -8488,12 +8598,12 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IivEERKT_:
 	.loc 7 506 6
 	movq	16(%rbp), %rax	 # this, tmp85
 	movq	%rdx, (%rax)	 # _2, this_4(D)->__r
-.LBE210:
+.LBE211:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:506: 	  : __r(static_cast<rep>(__rep)) { }
 	.loc 7 506 37
 	nop	
 	popq	%rbp	 #
-.LCFI275:
+.LCFI278:
 	ret	
 .LFE10665:
 	.seh_endproc
@@ -8508,10 +8618,10 @@ _ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0
 	.loc 16 68 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI276:
+.LCFI279:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI277:
+.LCFI280:
 	subq	$80, %rsp	 #,
 	.seh_stackalloc	80
 	.seh_endprologue
@@ -8529,7 +8639,7 @@ _ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:70: 	if (__rtime <= __rtime.zero())
 	.loc 16 70 2
 	testb	%al, %al	 # _18
-	jne	.L363	 #,
+	jne	.L366	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:72: 	auto __s = chrono::duration_cast<chrono::seconds>(__rtime);
 	.loc 16 72 51
 	movq	16(%rbp), %rax	 # __rtime, tmp94
@@ -8568,7 +8678,7 @@ _ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 2
 	nop	
-.L362:
+.L365:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 20 discriminator 9
 	leaq	-48(%rbp), %rdx	 #, tmp106
@@ -8578,7 +8688,7 @@ _ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 41 discriminator 9
 	cmpl	$-1, %eax	 #, _4
-	jne	.L360	 #,
+	jne	.L363	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 44 discriminator 2
 	movq	__imp__errno(%rip), %rax	 #, tmp108
@@ -8590,31 +8700,31 @@ _ZNSt11this_thread9sleep_forIxSt5ratioILx1ELx1000EEEEvRKNSt6chrono8durationIT_T0
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 41 discriminator 2
 	cmpl	$4, %eax	 #, _6
-	jne	.L360	 #,
+	jne	.L363	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 41 is_stmt 0 discriminator 5
 	movl	$1, %eax	 #, iftmp.144_7
-	jmp	.L361	 #
-.L360:
+	jmp	.L364	 #
+.L363:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 41 discriminator 6
 	movl	$0, %eax	 #, iftmp.144_7
-.L361:
+.L364:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:80: 	while (::nanosleep(&__ts, &__ts) == -1 && errno == EINTR)
 	.loc 16 80 41 discriminator 8
 	testb	%al, %al	 # iftmp.144_7
-	jne	.L362	 #,
-	jmp	.L357	 #
-.L363:
+	jne	.L365	 #,
+	jmp	.L360	 #
+.L366:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:71: 	  return;
 	.loc 16 71 4 is_stmt 1
 	nop	
-.L357:
+.L360:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/this_thread_sleep.h:85:       }
 	.loc 16 85 7
 	addq	$80, %rsp	 #,
 	popq	%rbp	 #
-.LCFI278:
+.LCFI281:
 	ret	
 .LFE10666:
 	.seh_endproc
@@ -8629,27 +8739,27 @@ _ZNSt15__uniq_ptr_dataIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_ELb1
 	.loc 13 233 40
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI279:
+.LCFI282:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI280:
+.LCFI283:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # D.185235, D.185235
-.LBB211:
+.LBB212:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:       using __uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl;
 	.loc 13 233 40
 	movq	16(%rbp), %rax	 # this, _1
 	movq	24(%rbp), %rdx	 # D.185235, _2
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEC2EPS1_	 #
-.LBE211:
+.LBE212:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI281:
+.LCFI284:
 	ret	
 .LFE10670:
 	.seh_endproc
@@ -8664,29 +8774,29 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEC1IPS1_
 	.loc 13 598 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI282:
+.LCFI285:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI283:
+.LCFI286:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # __p, __p
-.LBB212:
+.LBB213:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:599: 	: _M_t(__p)
 	.loc 13 599 4
 	movq	16(%rbp), %rax	 # this, _1
 	movq	24(%rbp), %rdx	 # __p, tmp83
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_dataIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_ELb1ELb1EECI1St15__uniq_ptr_implIS1_S4_EEPS1_	 #
-.LBE212:
+.LBE213:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:600:         { }
 	.loc 13 600 11
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI284:
+.LCFI287:
 	ret	
 .LFE10672:
 	.seh_endproc
@@ -8701,16 +8811,16 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EED1Ev:
 	.loc 13 665 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI285:
+.LCFI288:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI286:
+.LCFI289:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB213:
 .LBB214:
+.LBB215:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:667: 	auto& __ptr = _M_t._M_ptr();
 	.loc 13 667 27
 	movq	16(%rbp), %rax	 # this, _1
@@ -8724,7 +8834,7 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EED1Ev:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:668: 	if (__ptr != nullptr)
 	.loc 13 668 2
 	testq	%rax, %rax	 # _2
-	je	.L367	 #,
+	je	.L370	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:669: 	  get_deleter()(__ptr);
 	.loc 13 669 15
 	movq	16(%rbp), %rax	 # this, tmp88
@@ -8737,19 +8847,19 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EED1Ev:
 	movq	(%rax), %rax	 # *__ptr_9, _4
 	movq	%rax, %rdx	 # _4,
 	call	_ZNKSt14default_deleteIA_N6MATRIX18MaterialAttributesEEclIS1_EENSt9enable_ifIXsrSt14is_convertibleIPA_T_PS2_E5valueEvE4typeEPS7_	 #
-.L367:
+.L370:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:670: 	__ptr = pointer();
 	.loc 13 670 8
 	movq	-8(%rbp), %rax	 # __ptr, tmp90
 	movq	$0, (%rax)	 #, *__ptr_9
+.LBE215:
 .LBE214:
-.LBE213:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:671:       }
 	.loc 13 671 7
 	nop	
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI287:
+.LCFI290:
 	ret	
 .LFE10675:
 	.seh_endproc
@@ -8764,10 +8874,10 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEaS
 	.loc 13 181 24
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI288:
+.LCFI291:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI289:
+.LCFI292:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -8803,7 +8913,7 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEaS
 	.loc 13 186 7
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI290:
+.LCFI293:
 	ret	
 .LFE10676:
 	.seh_endproc
@@ -8818,10 +8928,10 @@ _ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy:
 	.loc 13 717 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI291:
+.LCFI294:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI292:
+.LCFI295:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -8831,23 +8941,23 @@ _ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy:
 	.loc 13 719 2
 	call	__is_constant_evaluated	 #
 	testb	%al, %al	 # _1
-	je	.L371	 #,
+	je	.L374	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 is_stmt 0 discriminator 1
 	movq	16(%rbp), %rax	 # this, tmp89
 	movq	%rax, %rcx	 # tmp89,
 	call	_ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EE3getEv	 #
 	testq	%rax, %rax	 # _2
-	jne	.L371	 #,
+	jne	.L374	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 discriminator 3
 	movl	$1, %eax	 #, iftmp.76_5
-	jmp	.L372	 #
-.L371:
+	jmp	.L375	 #
+.L374:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 discriminator 4
 	movl	$0, %eax	 #, iftmp.76_5
-.L372:
+.L375:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 discriminator 6
 	testb	%al, %al	 # iftmp.76_5
@@ -8871,7 +8981,7 @@ _ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEixEy:
 	.loc 13 721 7 discriminator 6
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI293:
+.LCFI296:
 	ret	
 .LFE10677:
 	.seh_endproc
@@ -8885,10 +8995,10 @@ _ZSt4swapIPN6MATRIX4cellEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_l
 	.loc 15 196 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI294:
+.LCFI297:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI295:
+.LCFI298:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -8928,7 +9038,7 @@ _ZSt4swapIPN6MATRIX4cellEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_l
 	nop	
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI296:
+.LCFI299:
 	ret	
 .LFE10678:
 	.seh_endproc
@@ -8943,10 +9053,10 @@ _Z10swprintf_sILy512EEiRAT__wPKwz:
 	.loc 17 821 3
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI297:
+.LCFI300:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI298:
+.LCFI301:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -8970,7 +9080,7 @@ _Z10swprintf_sILy512EEiRAT__wPKwz:
 	movl	-4(%rbp), %eax	 # __retval, _10
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI299:
+.LCFI302:
 	ret	
 .LFE10679:
 	.seh_endproc
@@ -8984,10 +9094,10 @@ _Z17D2D1CreateFactoryI12ID2D1FactoryEl17D2D1_FACTORY_TYPEPPT_:
 	.loc 10 2520 9
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI300:
+.LCFI303:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI301:
+.LCFI304:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -9008,7 +9118,7 @@ _Z17D2D1CreateFactoryI12ID2D1FactoryEl17D2D1_FACTORY_TYPEPPT_:
 	.loc 10 2522 1
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI302:
+.LCFI305:
 	ret	
 .LFE10680:
 	.seh_endproc
@@ -9023,25 +9133,25 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEC2
 	.loc 13 166 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI303:
+.LCFI306:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI304:
+.LCFI307:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB215:
+.LBB216:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:166:       __uniq_ptr_impl() = default;
 	.loc 13 166 7
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt5tupleIJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEEC1ILb1ELb1EEEv	 #
-.LBE215:
+.LBE216:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI305:
+.LCFI308:
 	ret	
 .LFE10685:
 	.seh_endproc
@@ -9056,25 +9166,25 @@ _ZNSt15__uniq_ptr_dataIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_ELb1
 	.loc 13 233 40
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI306:
+.LCFI309:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI307:
+.LCFI310:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB216:
+.LBB217:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:       using __uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl;
 	.loc 13 233 40
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEC2Ev	 #
-.LBE216:
+.LBE217:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI308:
+.LCFI311:
 	ret	
 .LFE10688:
 	.seh_endproc
@@ -9089,15 +9199,15 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEC1IS4_v
 	.loc 13 580 12
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI309:
+.LCFI312:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI310:
+.LCFI313:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB217:
+.LBB218:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:581: 	: _M_t()
 	.loc 13 581 4
 	movq	16(%rbp), %rax	 # this, tmp83
@@ -9105,13 +9215,13 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EEC1IS4_v
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_dataIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_ELb1ELb1EECI1St15__uniq_ptr_implIS1_S4_EEv	 #
-.LBE217:
+.LBE218:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:582: 	{ }
 	.loc 13 582 4
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI311:
+.LCFI314:
 	ret	
 .LFE10690:
 	.seh_endproc
@@ -9126,27 +9236,27 @@ _ZNSt15__uniq_ptr_dataISt6threadSt14default_deleteIA_S0_ELb1ELb1EECI1St15__uniq_
 	.loc 13 233 40
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI312:
+.LCFI315:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI313:
+.LCFI316:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # D.189593, D.189593
-.LBB218:
+.LBB219:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:       using __uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl;
 	.loc 13 233 40
 	movq	16(%rbp), %rax	 # this, _1
 	movq	24(%rbp), %rdx	 # D.189593, _2
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EEC2EPS0_	 #
-.LBE218:
+.LBE219:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI314:
+.LCFI317:
 	ret	
 .LFE10694:
 	.seh_endproc
@@ -9161,29 +9271,29 @@ _ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEC1IPS0_S3_vbEET_:
 	.loc 13 598 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI315:
+.LCFI318:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI316:
+.LCFI319:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # __p, __p
-.LBB219:
+.LBB220:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:599: 	: _M_t(__p)
 	.loc 13 599 4
 	movq	16(%rbp), %rax	 # this, _1
 	movq	24(%rbp), %rdx	 # __p, tmp83
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_dataISt6threadSt14default_deleteIA_S0_ELb1ELb1EECI1St15__uniq_ptr_implIS0_S3_EEPS0_	 #
-.LBE219:
+.LBE220:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:600:         { }
 	.loc 13 600 11
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI317:
+.LCFI320:
 	ret	
 .LFE10696:
 	.seh_endproc
@@ -9198,16 +9308,16 @@ _ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EED1Ev:
 	.loc 13 665 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI318:
+.LCFI321:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI319:
+.LCFI322:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB220:
 .LBB221:
+.LBB222:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:667: 	auto& __ptr = _M_t._M_ptr();
 	.loc 13 667 27
 	movq	16(%rbp), %rax	 # this, _1
@@ -9221,7 +9331,7 @@ _ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EED1Ev:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:668: 	if (__ptr != nullptr)
 	.loc 13 668 2
 	testq	%rax, %rax	 # _2
-	je	.L386	 #,
+	je	.L389	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:669: 	  get_deleter()(__ptr);
 	.loc 13 669 15
 	movq	16(%rbp), %rax	 # this, tmp88
@@ -9234,19 +9344,19 @@ _ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EED1Ev:
 	movq	(%rax), %rax	 # *__ptr_9, _4
 	movq	%rax, %rdx	 # _4,
 	call	_ZNKSt14default_deleteIA_St6threadEclIS0_EENSt9enable_ifIXsrSt14is_convertibleIPA_T_PS1_E5valueEvE4typeEPS6_	 #
-.L386:
+.L389:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:670: 	__ptr = pointer();
 	.loc 13 670 8
 	movq	-8(%rbp), %rax	 # __ptr, tmp90
 	movq	$0, (%rax)	 #, *__ptr_9
+.LBE222:
 .LBE221:
-.LBE220:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:671:       }
 	.loc 13 671 7
 	nop	
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI320:
+.LCFI323:
 	ret	
 .LFE10699:
 	.seh_endproc
@@ -9261,10 +9371,10 @@ _ZSt4cbrtIjEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES
 	.loc 18 1280 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI321:
+.LCFI324:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI322:
+.LCFI325:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -9273,12 +9383,12 @@ _ZSt4cbrtIjEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES
 	.loc 18 1281 28
 	movl	16(%rbp), %eax	 # __x, tmp85
 	testq	%rax, %rax	 # tmp85
-	js	.L388	 #,
+	js	.L391	 #,
 	pxor	%xmm1, %xmm1	 # _1
 	cvtsi2sdq	%rax, %xmm1	 # tmp85, _1
 	movq	%xmm1, %rax	 # _1, _1
-	jmp	.L389	 #
-.L388:
+	jmp	.L392	 #
+.L391:
 	movq	%rax, %rdx	 # tmp85, tmp87
 	shrq	%rdx	 # tmp87
 	andl	$1, %eax	 #, tmp88
@@ -9287,7 +9397,7 @@ _ZSt4cbrtIjEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES
 	cvtsi2sdq	%rdx, %xmm0	 # tmp87, tmp86
 	addsd	%xmm0, %xmm0	 # tmp86, tmp86
 	movq	%xmm0, %rax	 # tmp86, _1
-.L389:
+.L392:
 	movq	%rax, %xmm0	 # _1,
 	call	cbrt	 #
 	movq	%xmm0, %rax	 #, _3
@@ -9296,7 +9406,7 @@ _ZSt4cbrtIjEN9__gnu_cxx11__enable_ifIXsrSt12__is_integerIT_E7__valueEdE6__typeES
 	movq	%rax, %xmm0	 # <retval>,
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI323:
+.LCFI326:
 	ret	
 .LFE10700:
 	.seh_endproc
@@ -9311,10 +9421,10 @@ _ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy:
 	.loc 13 717 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI324:
+.LCFI327:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI325:
+.LCFI328:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -9324,23 +9434,23 @@ _ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy:
 	.loc 13 719 2
 	call	__is_constant_evaluated	 #
 	testb	%al, %al	 # _1
-	je	.L392	 #,
+	je	.L395	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 is_stmt 0 discriminator 1
 	movq	16(%rbp), %rax	 # this, tmp89
 	movq	%rax, %rcx	 # tmp89,
 	call	_ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EE3getEv	 #
 	testq	%rax, %rax	 # _2
-	jne	.L392	 #,
+	jne	.L395	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 discriminator 3
 	movl	$1, %eax	 #, iftmp.146_5
-	jmp	.L393	 #
-.L392:
+	jmp	.L396	 #
+.L395:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 discriminator 4
 	movl	$0, %eax	 #, iftmp.146_5
-.L393:
+.L396:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:719: 	__glibcxx_assert(get() != pointer());
 	.loc 13 719 2 discriminator 6
 	testb	%al, %al	 # iftmp.146_5
@@ -9360,7 +9470,7 @@ _ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EEixEy:
 	.loc 13 721 7 discriminator 6
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI326:
+.LCFI329:
 	ret	
 .LFE10701:
 	.seh_endproc
@@ -9373,32 +9483,32 @@ _ZNSt6threadC2IZ7WinMainEUlvE_JEvEEOT_DpOT0_:
 	.loc 6 126 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI327:
+.LCFI330:
 	pushq	%rdi	 #
 	.seh_pushreg	%rdi
-.LCFI328:
+.LCFI331:
 	pushq	%rsi	 #
 	.seh_pushreg	%rsi
-.LCFI329:
+.LCFI332:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI330:
+.LCFI333:
 	subq	$56, %rsp	 #,
 	.seh_stackalloc	56
-.LCFI331:
+.LCFI334:
 	leaq	48(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 48
-.LCFI332:
+.LCFI335:
 	.seh_endprologue
 	movq	%rcx, 48(%rbp)	 # this, this
 	movq	%rdx, 56(%rbp)	 # __f, __f
-.LBB222:
+.LBB223:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:127:       {
 	.loc 6 127 7
 	movq	48(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt6thread2idC1Ev	 #
-.LBB223:
+.LBB224:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:137: 	auto __depend = nullptr;
 	.loc 6 137 7
 	movq	$0, -8(%rbp)	 #, __depend
@@ -9443,54 +9553,54 @@ _ZNSt6threadC2IZ7WinMainEUlvE_JEvEEOT_DpOT0_:
 	leaq	-16(%rbp), %rax	 #, tmp92
 	movq	%rax, %rcx	 # tmp92,
 	call	_ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EED1Ev	 #
+.LBE224:
 .LBE223:
-.LBE222:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:145:       }
 	.loc 6 145 7 discriminator 6
-	jmp	.L402	 #
-.L401:
+	jmp	.L405	 #
+.L404:
+.LBB226:
 .LBB225:
-.LBB224:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:142: 	_M_start_thread(_State_ptr(new _State_impl<_Wrapper>(
 	.loc 6 142 18
 	movq	%rax, %rsi	 #, tmp95
 	leaq	-16(%rbp), %rax	 #, tmp93
 	movq	%rax, %rcx	 # tmp93,
 	call	_ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EED1Ev	 #
-	jmp	.L398	 #
-.L400:
+	jmp	.L401	 #
+.L403:
 	movq	%rax, %rsi	 #, tmp94
-.L398:
+.L401:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:142: 	_M_start_thread(_State_ptr(new _State_impl<_Wrapper>(
 	.loc 6 142 18 is_stmt 0 discriminator 3
 	testb	%dil, %dil	 # _4
-	je	.L399	 #,
+	je	.L402	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:142: 	_M_start_thread(_State_ptr(new _State_impl<_Wrapper>(
 	.loc 6 142 29 is_stmt 1 discriminator 7
 	movl	$88, %edx	 #,
 	movq	%rbx, %rcx	 # _14,
 	call	_ZdlPvy	 #
-.L399:
-	movq	%rsi, %rax	 # tmp94, D.209926
-	movq	%rax, %rcx	 # D.209926,
+.L402:
+	movq	%rsi, %rax	 # tmp94, D.209927
+	movq	%rax, %rcx	 # D.209927,
 .LEHB20:
 	call	_Unwind_Resume	 #
 	nop	
 .LEHE20:
-.L402:
-.LBE224:
+.L405:
 .LBE225:
+.LBE226:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:145:       }
 	.loc 6 145 7
 	addq	$56, %rsp	 #,
 	popq	%rbx	 #
-.LCFI333:
-	popq	%rsi	 #
-.LCFI334:
-	popq	%rdi	 #
-.LCFI335:
-	popq	%rbp	 #
 .LCFI336:
+	popq	%rsi	 #
+.LCFI337:
+	popq	%rdi	 #
+.LCFI338:
+	popq	%rbp	 #
+.LCFI339:
 	ret	
 .LFE10709:
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
@@ -9507,11 +9617,11 @@ _ZNSt6threadC2IZ7WinMainEUlvE_JEvEEOT_DpOT0_:
 	.uleb128 0
 	.uleb128 .LEHB18-.LFB10709
 	.uleb128 .LEHE18-.LEHB18
-	.uleb128 .L400-.LFB10709
+	.uleb128 .L403-.LFB10709
 	.uleb128 0
 	.uleb128 .LEHB19-.LFB10709
 	.uleb128 .LEHE19-.LEHB19
-	.uleb128 .L401-.LFB10709
+	.uleb128 .L404-.LFB10709
 	.uleb128 0
 	.uleb128 .LEHB20-.LFB10709
 	.uleb128 .LEHE20-.LEHB20
@@ -9532,10 +9642,10 @@ _ZSt4moveIRNSt6thread2idEEONSt16remove_referenceIT_E4typeEOS4_:
 	.loc 15 104 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI337:
+.LCFI340:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI338:
+.LCFI341:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __t, __t
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
@@ -9544,7 +9654,7 @@ _ZSt4moveIRNSt6thread2idEEONSt16remove_referenceIT_E4typeEOS4_:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
 	.loc 15 105 77
 	popq	%rbp	 #
-.LCFI339:
+.LCFI342:
 	ret	
 .LFE10771:
 	.seh_endproc
@@ -9559,23 +9669,23 @@ _ZNSt6thread6_StateC2Ev:
 	.loc 6 67 12
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI340:
+.LCFI343:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI341:
+.LCFI344:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB226:
+.LBB227:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:67:     struct _State
 	.loc 6 67 12
 	movq	.refptr._ZTVNSt6thread6_StateE(%rip), %rax	 #, tmp83
 	leaq	16(%rax), %rdx	 #, _1
 	movq	16(%rbp), %rax	 # this, tmp84
 	movq	%rdx, (%rax)	 # _1, this_3(D)->_vptr._State
-.LBE226:
+.LBE227:
 	nop	
 	popq	%rbp	 #
-.LCFI342:
+.LCFI345:
 	ret	
 .LFE10899:
 	.seh_endproc
@@ -9590,27 +9700,27 @@ _ZNSt15__uniq_ptr_dataINSt6thread6_StateESt14default_deleteIS1_ELb1ELb1EECI1St15
 	.loc 13 233 40
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI343:
+.LCFI346:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI344:
+.LCFI347:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # D.198978, D.198978
-.LBB227:
+.LBB228:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:233:       using __uniq_ptr_impl<_Tp, _Dp>::__uniq_ptr_impl;
 	.loc 13 233 40
 	movq	16(%rbp), %rax	 # this, _1
 	movq	24(%rbp), %rdx	 # D.198978, _2
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EEC2EPS1_	 #
-.LBE227:
+.LBE228:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI345:
+.LCFI348:
 	ret	
 .LFE10912:
 	.seh_endproc
@@ -9625,29 +9735,29 @@ _ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EEC1IS3_vEEPS1_:
 	.loc 13 309 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI346:
+.LCFI349:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI347:
+.LCFI350:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # __p, __p
-.LBB228:
+.LBB229:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:310: 	: _M_t(__p)
 	.loc 13 310 4
 	movq	16(%rbp), %rax	 # this, _1
 	movq	24(%rbp), %rdx	 # __p, tmp83
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt15__uniq_ptr_dataINSt6thread6_StateESt14default_deleteIS1_ELb1ELb1EECI1St15__uniq_ptr_implIS1_S3_EEPS1_	 #
-.LBE228:
+.LBE229:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:311:         { }
 	.loc 13 311 11
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI348:
+.LCFI351:
 	ret	
 .LFE10914:
 	.seh_endproc
@@ -9662,20 +9772,20 @@ _ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EED1Ev:
 	.loc 13 390 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI349:
+.LCFI352:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI350:
+.LCFI353:
 	subq	$56, %rsp	 #,
 	.seh_stackalloc	56
-.LCFI351:
+.LCFI354:
 	leaq	48(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 48
-.LCFI352:
+.LCFI355:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
-.LBB229:
 .LBB230:
+.LBB231:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:394: 	auto& __ptr = _M_t._M_ptr();
 	.loc 13 394 27
 	movq	32(%rbp), %rax	 # this, _1
@@ -9689,7 +9799,7 @@ _ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EED1Ev:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:395: 	if (__ptr != nullptr)
 	.loc 13 395 2
 	testq	%rax, %rax	 # _2
-	je	.L409	 #,
+	je	.L412	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:396: 	  get_deleter()(std::move(__ptr));
 	.loc 13 396 15
 	movq	32(%rbp), %rax	 # this, tmp89
@@ -9707,21 +9817,21 @@ _ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EED1Ev:
 	movq	%rax, %rdx	 # _5,
 	movq	%rbx, %rcx	 # _3,
 	call	_ZNKSt14default_deleteINSt6thread6_StateEEclEPS1_	 #
-.L409:
+.L412:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:397: 	__ptr = pointer();
 	.loc 13 397 8
 	movq	-8(%rbp), %rax	 # __ptr, tmp91
 	movq	$0, (%rax)	 #, *__ptr_10
+.LBE231:
 .LBE230:
-.LBE229:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:398:       }
 	.loc 13 398 7
 	nop	
 	addq	$56, %rsp	 #,
 	popq	%rbx	 #
-.LCFI353:
+.LCFI356:
 	popq	%rbp	 #
-.LCFI354:
+.LCFI357:
 	ret	
 .LFE10917:
 	.seh_endproc
@@ -9735,10 +9845,10 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEE4zeroEv:
 	.loc 7 607 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI355:
+.LCFI358:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI356:
+.LCFI359:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -9759,7 +9869,7 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEE4zeroEv:
 	.loc 7 608 51
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI357:
+.LCFI360:
 	ret	
 .LFE10918:
 	.seh_endproc
@@ -9773,10 +9883,10 @@ _ZNSt6chronoleIxSt5ratioILx1ELx1000EExS2_EEbRKNS_8durationIT_T0_EERKNS3_IT1_T2_E
 	.loc 7 789 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI358:
+.LCFI361:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI359:
+.LCFI362:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -9795,7 +9905,7 @@ _ZNSt6chronoleIxSt5ratioILx1ELx1000EExS2_EEbRKNS_8durationIT_T0_EERKNS3_IT1_T2_E
 	.loc 7 791 34
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI360:
+.LCFI363:
 	ret	
 .LFE10919:
 	.seh_endproc
@@ -9809,10 +9919,10 @@ _ZNSt6chrono13duration_castINS_8durationIxSt5ratioILx1ELx1EEEExS2_ILx1ELx1000EEE
 	.loc 7 252 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI361:
+.LCFI364:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI362:
+.LCFI365:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -9826,7 +9936,7 @@ _ZNSt6chrono13duration_castINS_8durationIxSt5ratioILx1ELx1EEEExS2_ILx1ELx1000EEE
 	.loc 7 261 7
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI363:
+.LCFI366:
 	ret	
 .LFE10920:
 	.seh_endproc
@@ -9840,16 +9950,16 @@ _ZNSt6chronomiIxSt5ratioILx1ELx1000EExS1_ILx1ELx1EEEENSt11common_typeIJNS_8durat
 	.loc 7 644 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI364:
+.LCFI367:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI365:
+.LCFI368:
 	subq	$72, %rsp	 #,
 	.seh_stackalloc	72
-.LCFI366:
+.LCFI369:
 	leaq	64(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 64
-.LCFI367:
+.LCFI370:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # __lhs, __lhs
 	movq	%rdx, 40(%rbp)	 # __rhs, __rhs
@@ -9893,9 +10003,9 @@ _ZNSt6chronomiIxSt5ratioILx1ELx1000EExS1_ILx1ELx1EEEENSt11common_typeIJNS_8durat
 	.loc 7 651 7
 	addq	$72, %rsp	 #,
 	popq	%rbx	 #
-.LCFI368:
+.LCFI371:
 	popq	%rbp	 #
-.LCFI369:
+.LCFI372:
 	ret	
 .LFE10921:
 	.seh_endproc
@@ -9909,10 +10019,10 @@ _ZNSt6chrono13duration_castINS_8durationIxSt5ratioILx1ELx1000000000EEEExS2_ILx1E
 	.loc 7 252 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI370:
+.LCFI373:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI371:
+.LCFI374:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -9926,7 +10036,7 @@ _ZNSt6chrono13duration_castINS_8durationIxSt5ratioILx1ELx1000000000EEEExS2_ILx1E
 	.loc 7 261 7
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI372:
+.LCFI375:
 	ret	
 .LFE10923:
 	.seh_endproc
@@ -9941,20 +10051,20 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEC2
 	.loc 13 168 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI373:
+.LCFI376:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI374:
+.LCFI377:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI375:
+.LCFI378:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI376:
+.LCFI379:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __p, __p
-.LBB231:
+.LBB232:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 38
 	movq	32(%rbp), %rax	 # this, _1
@@ -9971,15 +10081,15 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEC2
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 56
 	movq	%rbx, (%rax)	 # __p.110_2, *_3
-.LBE231:
+.LBE232:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 63
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI377:
+.LCFI380:
 	popq	%rbp	 #
-.LCFI378:
+.LCFI381:
 	ret	
 .LFE10925:
 	.seh_endproc
@@ -9994,10 +10104,10 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE6_
 	.loc 13 189 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI379:
+.LCFI382:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI380:
+.LCFI383:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10013,7 +10123,7 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE6_
 	.loc 13 189 64
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI381:
+.LCFI384:
 	ret	
 .LFE10927:
 	.seh_endproc
@@ -10028,10 +10138,10 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EE11get_d
 	.loc 13 732 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI382:
+.LCFI385:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI383:
+.LCFI386:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10045,7 +10155,7 @@ _ZNSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EE11get_d
 	.loc 13 733 35
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI384:
+.LCFI387:
 	ret	
 .LFE10928:
 	.seh_endproc
@@ -10060,10 +10170,10 @@ _ZNKSt14default_deleteIA_N6MATRIX18MaterialAttributesEEclIS1_EENSt9enable_ifIXsr
 	.loc 13 128 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI385:
+.LCFI388:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI386:
+.LCFI389:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10072,19 +10182,19 @@ _ZNKSt14default_deleteIA_N6MATRIX18MaterialAttributesEEclIS1_EENSt9enable_ifIXsr
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:132: 	  delete [] __ptr;
 	.loc 13 132 4
 	cmpq	$0, 24(%rbp)	 #, __ptr
-	je	.L427	 #,
+	je	.L430	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:132: 	  delete [] __ptr;
 	.loc 13 132 4 is_stmt 0 discriminator 1
 	movq	24(%rbp), %rax	 # __ptr, tmp82
 	movq	%rax, %rcx	 # tmp82,
 	call	_ZdaPv	 #
-.L427:
+.L430:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:133: 	}
 	.loc 13 133 2 is_stmt 1
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI387:
+.LCFI390:
 	ret	
 .LFE10929:
 	.seh_endproc
@@ -10099,16 +10209,16 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE5r
 	.loc 13 198 12
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI388:
+.LCFI391:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI389:
+.LCFI392:
 	subq	$56, %rsp	 #,
 	.seh_stackalloc	56
-.LCFI390:
+.LCFI393:
 	leaq	48(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 48
-.LCFI391:
+.LCFI394:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __p, __p
@@ -10135,7 +10245,7 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE5r
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:202: 	if (__old_p)
 	.loc 13 202 2
 	cmpq	$0, -8(%rbp)	 #, __old_p
-	je	.L430	 #,
+	je	.L433	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:203: 	  _M_deleter()(__old_p);
 	.loc 13 203 14
 	movq	32(%rbp), %rax	 # this, tmp89
@@ -10147,15 +10257,15 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE5r
 	movq	-8(%rbp), %rax	 # __old_p, tmp90
 	movq	%rax, %rdx	 # tmp90,
 	call	_ZNKSt14default_deleteIA_N6MATRIX18MaterialAttributesEEclIS1_EENSt9enable_ifIXsrSt14is_convertibleIPA_T_PS2_E5valueEvE4typeEPS7_	 #
-.L430:
+.L433:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:204:       }
 	.loc 13 204 7
 	nop	
 	addq	$56, %rsp	 #,
 	popq	%rbx	 #
-.LCFI392:
+.LCFI395:
 	popq	%rbp	 #
-.LCFI393:
+.LCFI396:
 	ret	
 .LFE10930:
 	.seh_endproc
@@ -10170,10 +10280,10 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE7r
 	.loc 13 207 15
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI394:
+.LCFI397:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI395:
+.LCFI398:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -10202,7 +10312,7 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE7r
 	.loc 13 212 7
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI396:
+.LCFI399:
 	ret	
 .LFE10931:
 	.seh_endproc
@@ -10217,10 +10327,10 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE10
 	.loc 13 193 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI397:
+.LCFI400:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI398:
+.LCFI401:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10236,7 +10346,7 @@ _ZNSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE10
 	.loc 13 193 68
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI399:
+.LCFI402:
 	ret	
 .LFE10932:
 	.seh_endproc
@@ -10250,10 +10360,10 @@ _ZSt7forwardISt14default_deleteIA_N6MATRIX18MaterialAttributesEEEOT_RNSt16remove
 	.loc 15 77 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI400:
+.LCFI403:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI401:
+.LCFI404:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __t, __t
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:78:     { return static_cast<_Tp&&>(__t); }
@@ -10262,7 +10372,7 @@ _ZSt7forwardISt14default_deleteIA_N6MATRIX18MaterialAttributesEEEOT_RNSt16remove
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:78:     { return static_cast<_Tp&&>(__t); }
 	.loc 15 78 39
 	popq	%rbp	 #
-.LCFI402:
+.LCFI405:
 	ret	
 .LFE10933:
 	.seh_endproc
@@ -10277,10 +10387,10 @@ _ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EE3getEv
 	.loc 13 726 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI403:
+.LCFI406:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI404:
+.LCFI407:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10294,7 +10404,7 @@ _ZNKSt10unique_ptrIA_N6MATRIX18MaterialAttributesESt14default_deleteIS2_EE3getEv
 	.loc 13 727 31
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI405:
+.LCFI408:
 	ret	
 .LFE10934:
 	.seh_endproc
@@ -10308,10 +10418,10 @@ _ZSt4moveIRPN6MATRIX4cellEEONSt16remove_referenceIT_E4typeEOS5_:
 	.loc 15 104 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI406:
+.LCFI409:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI407:
+.LCFI410:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __t, __t
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
@@ -10320,7 +10430,7 @@ _ZSt4moveIRPN6MATRIX4cellEEONSt16remove_referenceIT_E4typeEOS5_:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
 	.loc 15 105 77
 	popq	%rbp	 #
-.LCFI408:
+.LCFI411:
 	ret	
 .LFE10935:
 	.seh_endproc
@@ -10336,27 +10446,27 @@ _ZNSt5tupleIJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEEC1ILb1ELb1
 	.loc 19 1049 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI409:
+.LCFI412:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI410:
+.LCFI413:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB232:
+.LBB233:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:1051: 	: _Inherited() { }
 	.loc 19 1051 15
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEEC2Ev	 #
-.LBE232:
+.LBE233:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:1051: 	: _Inherited() { }
 	.loc 19 1051 19
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI411:
+.LCFI414:
 	ret	
 .LFE10938:
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
@@ -10382,20 +10492,20 @@ _ZNSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EEC2EPS0_:
 	.loc 13 168 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI412:
+.LCFI415:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI413:
+.LCFI416:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI414:
+.LCFI417:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI415:
+.LCFI418:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __p, __p
-.LBB233:
+.LBB234:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 38
 	movq	32(%rbp), %rax	 # this, _1
@@ -10412,15 +10522,15 @@ _ZNSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EEC2EPS0_:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 56
 	movq	%rbx, (%rax)	 # __p.116_2, *_3
-.LBE233:
+.LBE234:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 63
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI416:
+.LCFI419:
 	popq	%rbp	 #
-.LCFI417:
+.LCFI420:
 	ret	
 .LFE10941:
 	.seh_endproc
@@ -10435,10 +10545,10 @@ _ZNSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EE6_M_ptrEv:
 	.loc 13 189 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI418:
+.LCFI421:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI419:
+.LCFI422:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10454,7 +10564,7 @@ _ZNSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EE6_M_ptrEv:
 	.loc 13 189 64
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI420:
+.LCFI423:
 	ret	
 .LFE10943:
 	.seh_endproc
@@ -10469,10 +10579,10 @@ _ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EE11get_deleterEv:
 	.loc 13 732 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI421:
+.LCFI424:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI422:
+.LCFI425:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10486,7 +10596,7 @@ _ZNSt10unique_ptrIA_St6threadSt14default_deleteIS1_EE11get_deleterEv:
 	.loc 13 733 35
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI423:
+.LCFI426:
 	ret	
 .LFE10944:
 	.seh_endproc
@@ -10501,23 +10611,23 @@ _ZNKSt14default_deleteIA_St6threadEclIS0_EENSt9enable_ifIXsrSt14is_convertibleIP
 	.loc 13 128 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI424:
+.LCFI427:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI425:
+.LCFI428:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI426:
+.LCFI429:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI427:
+.LCFI430:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __ptr, __ptr
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:132: 	  delete [] __ptr;
 	.loc 13 132 4
 	cmpq	$0, 40(%rbp)	 #, __ptr
-	je	.L451	 #,
+	je	.L454	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:132: 	  delete [] __ptr;
 	.loc 13 132 4 is_stmt 0 discriminator 1
 	movq	40(%rbp), %rax	 # __ptr, tmp91
@@ -10526,16 +10636,16 @@ _ZNKSt14default_deleteIA_St6threadEclIS0_EENSt9enable_ifIXsrSt14is_convertibleIP
 	leaq	0(,%rax,8), %rdx	 #, _3
 	movq	40(%rbp), %rax	 # __ptr, tmp92
 	leaq	(%rdx,%rax), %rbx	 #, _9
-.L450:
+.L453:
 	cmpq	40(%rbp), %rbx	 # __ptr, _9
-	je	.L449	 #,
+	je	.L452	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:132: 	  delete [] __ptr;
 	.loc 13 132 4
 	subq	$8, %rbx	 #, _9
 	movq	%rbx, %rcx	 # _9,
 	call	_ZNSt6threadD1Ev	 #
-	jmp	.L450	 #
-.L449:
+	jmp	.L453	 #
+.L452:
 	movq	40(%rbp), %rax	 # __ptr, tmp93
 	subq	$8, %rax	 #, _4
 	movq	(%rax), %rax	 # *_4, _5
@@ -10545,15 +10655,15 @@ _ZNKSt14default_deleteIA_St6threadEclIS0_EENSt9enable_ifIXsrSt14is_convertibleIP
 	subq	$8, %rax	 #, _8
 	movq	%rax, %rcx	 # _8,
 	call	_ZdaPvy	 #
-.L451:
+.L454:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:133: 	}
 	.loc 13 133 2 is_stmt 1
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI428:
+.LCFI431:
 	popq	%rbp	 #
-.LCFI429:
+.LCFI432:
 	ret	
 .LFE10945:
 	.seh_endproc
@@ -10568,10 +10678,10 @@ _ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EE3getEv:
 	.loc 13 726 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI430:
+.LCFI433:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI431:
+.LCFI434:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10585,7 +10695,7 @@ _ZNKSt10unique_ptrIA_St6threadSt14default_deleteIS1_EE3getEv:
 	.loc 13 727 31
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI432:
+.LCFI435:
 	ret	
 .LFE10946:
 	.seh_endproc
@@ -10597,10 +10707,10 @@ _ZSt7forwardIZ7WinMainEUlvE_EOT_RNSt16remove_referenceIS1_E4typeE:
 	.loc 15 77 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI433:
+.LCFI436:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI434:
+.LCFI437:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __t, __t
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:78:     { return static_cast<_Tp&&>(__t); }
@@ -10609,7 +10719,7 @@ _ZSt7forwardIZ7WinMainEUlvE_EOT_RNSt16remove_referenceIS1_E4typeE:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:78:     { return static_cast<_Tp&&>(__t); }
 	.loc 15 78 39
 	popq	%rbp	 #
-.LCFI435:
+.LCFI438:
 	ret	
 .LFE10947:
 	.seh_endproc
@@ -10621,20 +10731,20 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEEC2IJS3_EEED
 	.loc 6 205 4
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI436:
+.LCFI439:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI437:
+.LCFI440:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI438:
+.LCFI441:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI439:
+.LCFI442:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __args#0, __args#0
-.LBB234:
+.LBB235:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:206: 	  : _M_func{{std::forward<_Args>(__args)...}}
 	.loc 6 206 46
 	movq	32(%rbp), %rax	 # this, _1
@@ -10653,15 +10763,15 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEEC2IJS3_EEED
 	movq	%rax, %rdx	 # _4,
 	movq	%rbx, %rcx	 # _3,
 	call	_ZNSt5tupleIJZ7WinMainEUlvE_EEC1IJS0_ELb1ELb1EEEDpOT_	 #
-.LBE234:
+.LBE235:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:207: 	  { }
 	.loc 6 207 6
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI440:
+.LCFI443:
 	popq	%rbp	 #
-.LCFI441:
+.LCFI444:
 	ret	
 .LFE10955:
 	.seh_endproc
@@ -10678,20 +10788,20 @@ _ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EEC2EPS1_:
 	.loc 13 168 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI442:
+.LCFI445:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI443:
+.LCFI446:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI444:
+.LCFI447:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI445:
+.LCFI448:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __p, __p
-.LBB235:
+.LBB236:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 38
 	movq	32(%rbp), %rax	 # this, _1
@@ -10708,15 +10818,15 @@ _ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EEC2EPS1_:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 56
 	movq	%rbx, (%rax)	 # __p.122_2, *_3
-.LBE235:
+.LBE236:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:168:       __uniq_ptr_impl(pointer __p) : _M_t() { _M_ptr() = __p; }
 	.loc 13 168 63
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI446:
+.LCFI449:
 	popq	%rbp	 #
-.LCFI447:
+.LCFI450:
 	ret	
 .LFE11074:
 	.seh_endproc
@@ -10731,10 +10841,10 @@ _ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE6_M_ptrEv:
 	.loc 13 189 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI448:
+.LCFI451:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI449:
+.LCFI452:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10750,7 +10860,7 @@ _ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE6_M_ptrEv:
 	.loc 13 189 64
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI450:
+.LCFI453:
 	ret	
 .LFE11076:
 	.seh_endproc
@@ -10765,10 +10875,10 @@ _ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EE11get_deleterEv:
 	.loc 13 467 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI451:
+.LCFI454:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI452:
+.LCFI455:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10782,7 +10892,7 @@ _ZNSt10unique_ptrINSt6thread6_StateESt14default_deleteIS1_EE11get_deleterEv:
 	.loc 13 468 35
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI453:
+.LCFI456:
 	ret	
 .LFE11077:
 	.seh_endproc
@@ -10796,10 +10906,10 @@ _ZSt4moveIRPNSt6thread6_StateEEONSt16remove_referenceIT_E4typeEOS5_:
 	.loc 15 104 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI454:
+.LCFI457:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI455:
+.LCFI458:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __t, __t
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
@@ -10808,7 +10918,7 @@ _ZSt4moveIRPNSt6thread6_StateEEONSt16remove_referenceIT_E4typeEOS5_:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
 	.loc 15 105 77
 	popq	%rbp	 #
-.LCFI456:
+.LCFI459:
 	ret	
 .LFE11078:
 	.seh_endproc
@@ -10823,10 +10933,10 @@ _ZNKSt14default_deleteINSt6thread6_StateEEclEPS1_:
 	.loc 13 89 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI457:
+.LCFI460:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI458:
+.LCFI461:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -10838,7 +10948,7 @@ _ZNKSt14default_deleteINSt6thread6_StateEEclEPS1_:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:95: 	delete __ptr;
 	.loc 13 95 2
 	testq	%rax, %rax	 # __ptr.123_6
-	je	.L466	 #,
+	je	.L469	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:95: 	delete __ptr;
 	.loc 13 95 2 is_stmt 0 discriminator 1
 	movq	(%rax), %rdx	 # __ptr.123_6->_vptr._State, _1
@@ -10847,13 +10957,13 @@ _ZNKSt14default_deleteINSt6thread6_StateEEclEPS1_:
 	movq	%rax, %rcx	 # __ptr.123_6,
 	call	*%rdx	 # _3
 .LVL60:
-.L466:
+.L469:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:96:       }
 	.loc 13 96 7 is_stmt 1
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI459:
+.LCFI462:
 	ret	
 .LFE11079:
 	.seh_endproc
@@ -10868,14 +10978,14 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IxvEERKT_:
 	.loc 7 505 23
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI460:
+.LCFI463:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI461:
+.LCFI464:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # __rep, __rep
-.LBB236:
+.LBB237:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:506: 	  : __r(static_cast<rep>(__rep)) { }
 	.loc 7 506 10
 	movq	24(%rbp), %rax	 # __rep, tmp83
@@ -10884,12 +10994,12 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IxvEERKT_:
 	.loc 7 506 6
 	movq	16(%rbp), %rax	 # this, tmp84
 	movq	%rdx, (%rax)	 # _1, this_3(D)->__r
-.LBE236:
+.LBE237:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:506: 	  : __r(static_cast<rep>(__rep)) { }
 	.loc 7 506 37
 	nop	
 	popq	%rbp	 #
-.LCFI462:
+.LCFI465:
 	ret	
 .LFE11082:
 	.seh_endproc
@@ -10903,16 +11013,16 @@ _ZNSt6chronoltIxSt5ratioILx1ELx1000EExS2_EEbRKNS_8durationIT_T0_EERKNS3_IT1_T2_E
 	.loc 7 756 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI463:
+.LCFI466:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI464:
+.LCFI467:
 	subq	$56, %rsp	 #,
 	.seh_stackalloc	56
-.LCFI465:
+.LCFI468:
 	leaq	48(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 48
-.LCFI466:
+.LCFI469:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # __lhs, __lhs
 	movq	%rdx, 40(%rbp)	 # __rhs, __rhs
@@ -10945,9 +11055,9 @@ _ZNSt6chronoltIxSt5ratioILx1ELx1000EExS2_EEbRKNS_8durationIT_T0_EERKNS3_IT1_T2_E
 	.loc 7 763 7
 	addq	$56, %rsp	 #,
 	popq	%rbx	 #
-.LCFI467:
+.LCFI470:
 	popq	%rbp	 #
-.LCFI468:
+.LCFI471:
 	ret	
 .LFE11083:
 	.seh_endproc
@@ -10961,10 +11071,10 @@ _ZNSt6chrono20__duration_cast_implINS_8durationIxSt5ratioILx1ELx1EEEES2_ILx1ELx1
 	.loc 7 208 4
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI469:
+.LCFI472:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI470:
+.LCFI473:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -11001,7 +11111,7 @@ _ZNSt6chrono20__duration_cast_implINS_8durationIxSt5ratioILx1ELx1EEEES2_ILx1ELx1
 	.loc 7 213 4
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI471:
+.LCFI474:
 	ret	
 .LFE11084:
 	.seh_endproc
@@ -11016,10 +11126,10 @@ _ZNKSt6chrono8durationIxSt5ratioILx1ELx1000EEE5countEv:
 	.loc 7 521 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI472:
+.LCFI475:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI473:
+.LCFI476:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:522: 	{ return __r; }
@@ -11029,7 +11139,7 @@ _ZNKSt6chrono8durationIxSt5ratioILx1ELx1000EEE5countEv:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:522: 	{ return __r; }
 	.loc 7 522 16
 	popq	%rbp	 #
-.LCFI474:
+.LCFI477:
 	ret	
 .LFE11085:
 	.seh_endproc
@@ -11044,16 +11154,16 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IxS1_ILx1ELx1EEvEERKNS0_IT_T0_EE:
 	.loc 7 513 14
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI475:
+.LCFI478:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI476:
+.LCFI479:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
 	movq	%rdx, 24(%rbp)	 # __d, __d
-.LBB237:
+.LBB238:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:514: 	  : __r(duration_cast<duration>(__d).count()) { }
 	.loc 7 514 33
 	movq	24(%rbp), %rax	 # __d, tmp83
@@ -11069,13 +11179,13 @@ _ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IxS1_ILx1ELx1EEvEERKNS0_IT_T0_EE:
 	.loc 7 514 6
 	movq	16(%rbp), %rdx	 # this, tmp87
 	movq	%rax, (%rdx)	 # _1, this_3(D)->__r
-.LBE237:
+.LBE238:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:514: 	  : __r(duration_cast<duration>(__d).count()) { }
 	.loc 7 514 50
 	nop	
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI477:
+.LCFI480:
 	ret	
 .LFE11088:
 	.seh_endproc
@@ -11089,10 +11199,10 @@ _ZNSt6chrono20__duration_cast_implINS_8durationIxSt5ratioILx1ELx1000000000EEEES2
 	.loc 7 221 4
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI478:
+.LCFI481:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI479:
+.LCFI482:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -11121,7 +11231,7 @@ _ZNSt6chrono20__duration_cast_implINS_8durationIxSt5ratioILx1ELx1000000000EEEES2
 	.loc 7 226 4
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI480:
+.LCFI483:
 	ret	
 .LFE11089:
 	.seh_endproc
@@ -11135,10 +11245,10 @@ _ZSt3getILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEERNSt13tup
 	.loc 19 1380 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI481:
+.LCFI484:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI482:
+.LCFI485:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11152,7 +11262,7 @@ _ZSt3getILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEERNSt13tup
 	.loc 19 1381 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI483:
+.LCFI486:
 	ret	
 .LFE11090:
 	.seh_endproc
@@ -11166,10 +11276,10 @@ _ZSt3getILy1EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEERNSt13tup
 	.loc 19 1380 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI484:
+.LCFI487:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI485:
+.LCFI488:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11183,7 +11293,7 @@ _ZSt3getILy1EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEERNSt13tup
 	.loc 19 1381 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI486:
+.LCFI489:
 	ret	
 .LFE11091:
 	.seh_endproc
@@ -11198,10 +11308,10 @@ _ZNKSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE6
 	.loc 13 191 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI487:
+.LCFI490:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI488:
+.LCFI491:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11220,7 +11330,7 @@ _ZNKSt15__uniq_ptr_implIN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE6
 	.loc 13 191 70
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI489:
+.LCFI492:
 	ret	
 .LFE11092:
 	.seh_endproc
@@ -11235,15 +11345,15 @@ _ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE
 	.loc 19 279 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI490:
+.LCFI493:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI491:
+.LCFI494:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB238:
+.LBB239:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:280:       : _Inherited(), _Base() { }
 	.loc 19 280 29
 	movq	16(%rbp), %rax	 # this, tmp83
@@ -11252,13 +11362,13 @@ _ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt10_Head_baseILy0EPN6MATRIX18MaterialAttributesELb0EEC2Ev	 #
-.LBE238:
+.LBE239:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:280:       : _Inherited(), _Base() { }
 	.loc 19 280 33
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI492:
+.LCFI495:
 	ret	
 .LFE11094:
 	.seh_endproc
@@ -11273,27 +11383,27 @@ _ZNSt5tupleIJPSt6threadSt14default_deleteIA_S0_EEEC1ILb1ELb1EEEv:
 	.loc 19 1049 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI493:
+.LCFI496:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI494:
+.LCFI497:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB239:
+.LBB240:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:1051: 	: _Inherited() { }
 	.loc 19 1051 15
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt11_Tuple_implILy0EJPSt6threadSt14default_deleteIA_S0_EEEC2Ev	 #
-.LBE239:
+.LBE240:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:1051: 	: _Inherited() { }
 	.loc 19 1051 19
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI495:
+.LCFI498:
 	ret	
 .LFE11098:
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
@@ -11318,10 +11428,10 @@ _ZSt3getILy0EJPSt6threadSt14default_deleteIA_S0_EEERNSt13tuple_elementIXT_ESt5tu
 	.loc 19 1380 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI496:
+.LCFI499:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI497:
+.LCFI500:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11335,7 +11445,7 @@ _ZSt3getILy0EJPSt6threadSt14default_deleteIA_S0_EEERNSt13tuple_elementIXT_ESt5tu
 	.loc 19 1381 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI498:
+.LCFI501:
 	ret	
 .LFE11099:
 	.seh_endproc
@@ -11350,10 +11460,10 @@ _ZNSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EE10_M_deleterEv:
 	.loc 13 193 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI499:
+.LCFI502:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI500:
+.LCFI503:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11369,7 +11479,7 @@ _ZNSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EE10_M_deleterEv:
 	.loc 13 193 68
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI501:
+.LCFI504:
 	ret	
 .LFE11100:
 	.seh_endproc
@@ -11384,10 +11494,10 @@ _ZNKSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EE6_M_ptrEv:
 	.loc 13 191 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI502:
+.LCFI505:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI503:
+.LCFI506:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11406,7 +11516,7 @@ _ZNKSt15__uniq_ptr_implISt6threadSt14default_deleteIA_S0_EE6_M_ptrEv:
 	.loc 13 191 70
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI504:
+.LCFI507:
 	ret	
 .LFE11101:
 	.seh_endproc
@@ -11419,20 +11529,20 @@ _ZNSt5tupleIJZ7WinMainEUlvE_EEC2IJS0_ELb1ELb1EEEDpOT_:
 	.loc 19 742 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI505:
+.LCFI508:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI506:
+.LCFI509:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI507:
+.LCFI510:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI508:
+.LCFI511:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __elements#0, __elements#0
-.LBB240:
+.LBB241:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:744: 	: _Inherited(std::forward<_UElements>(__elements)...) { }
 	.loc 19 744 54
 	movq	32(%rbp), %rbx	 # this, _1
@@ -11442,15 +11552,15 @@ _ZNSt5tupleIJZ7WinMainEUlvE_EEC2IJS0_ELb1ELb1EEEDpOT_:
 	movq	%rax, %rdx	 # _2,
 	movq	%rbx, %rcx	 # _1,
 	call	_ZNSt11_Tuple_implILy0EJZ7WinMainEUlvE_EEC2IS0_EEOT_	 #
-.LBE240:
+.LBE241:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:744: 	: _Inherited(std::forward<_UElements>(__elements)...) { }
 	.loc 19 744 58
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI509:
+.LCFI512:
 	popq	%rbp	 #
-.LCFI510:
+.LCFI513:
 	ret	
 .LFE11103:
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
@@ -11477,27 +11587,27 @@ _ZNSt5tupleIJPNSt6thread6_StateESt14default_deleteIS1_EEEC1ILb1ELb1EEEv:
 	.loc 19 1049 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI511:
+.LCFI514:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI512:
+.LCFI515:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB241:
+.LBB242:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:1051: 	: _Inherited() { }
 	.loc 19 1051 15
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt11_Tuple_implILy0EJPNSt6thread6_StateESt14default_deleteIS1_EEEC2Ev	 #
-.LBE241:
+.LBE242:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:1051: 	: _Inherited() { }
 	.loc 19 1051 19
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI513:
+.LCFI516:
 	ret	
 .LFE11184:
 	.seh_handler	__gxx_personality_seh0, @unwind, @except
@@ -11522,10 +11632,10 @@ _ZSt3getILy0EJPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT
 	.loc 19 1380 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI514:
+.LCFI517:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI515:
+.LCFI518:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11539,7 +11649,7 @@ _ZSt3getILy0EJPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT
 	.loc 19 1381 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI516:
+.LCFI519:
 	ret	
 .LFE11185:
 	.seh_endproc
@@ -11554,10 +11664,10 @@ _ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE10_M_deleterEv:
 	.loc 13 193 18
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI517:
+.LCFI520:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI518:
+.LCFI521:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11573,7 +11683,7 @@ _ZNSt15__uniq_ptr_implINSt6thread6_StateESt14default_deleteIS1_EE10_M_deleterEv:
 	.loc 13 193 68
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI519:
+.LCFI522:
 	ret	
 .LFE11186:
 	.seh_endproc
@@ -11587,10 +11697,10 @@ _ZNSt6chrono13duration_castINS_8durationIxSt5ratioILx1ELx1000EEEExS2_ILx1ELx1EEE
 	.loc 7 252 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI520:
+.LCFI523:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI521:
+.LCFI524:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11604,7 +11714,7 @@ _ZNSt6chrono13duration_castINS_8durationIxSt5ratioILx1ELx1000EEEExS2_ILx1ELx1EEE
 	.loc 7 261 7
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI522:
+.LCFI525:
 	ret	
 .LFE11187:
 	.seh_endproc
@@ -11615,37 +11725,6 @@ _ZNSt6chrono13duration_castINS_8durationIxSt5ratioILx1ELx1000EEEExS2_ILx1ELx1EEE
 	.seh_proc	_ZSt12__get_helperILy0EPN6MATRIX18MaterialAttributesEJSt14default_deleteIA_S1_EEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE
 _ZSt12__get_helperILy0EPN6MATRIX18MaterialAttributesEJSt14default_deleteIA_S1_EEERT0_RSt11_Tuple_implIXT_EJS6_DpT1_EE:
 .LFB11188:
-	.loc 19 1364 5
-	pushq	%rbp	 #
-	.seh_pushreg	%rbp
-.LCFI523:
-	movq	%rsp, %rbp	 #,
-	.seh_setframe	%rbp, 0
-.LCFI524:
-	subq	$32, %rsp	 #,
-	.seh_stackalloc	32
-	.seh_endprologue
-	movq	%rcx, 16(%rbp)	 # __t, __t
- # C:/msys64/mingw64/include/c++/12.2.0/tuple:1365:     { return _Tuple_impl<__i, _Head, _Tail...>::_M_head(__t); }
-	.loc 19 1365 56
-	movq	16(%rbp), %rax	 # __t, tmp84
-	movq	%rax, %rcx	 # tmp84,
-	call	_ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEE7_M_headERS6_	 #
- # C:/msys64/mingw64/include/c++/12.2.0/tuple:1365:     { return _Tuple_impl<__i, _Head, _Tail...>::_M_head(__t); }
-	.loc 19 1365 63
-	addq	$32, %rsp	 #,
-	popq	%rbp	 #
-.LCFI525:
-	ret	
-.LFE11188:
-	.seh_endproc
-	.section	.text$_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE,"x"
-	.linkonce discard
-	.globl	_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE
-	.def	_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE;	.scl	2;	.type	32;	.endef
-	.seh_proc	_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE
-_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE:
-.LFB11189:
 	.loc 19 1364 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
@@ -11661,12 +11740,43 @@ _ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0
 	.loc 19 1365 56
 	movq	16(%rbp), %rax	 # __t, tmp84
 	movq	%rax, %rcx	 # tmp84,
-	call	_ZNSt11_Tuple_implILy1EJSt14default_deleteIA_N6MATRIX18MaterialAttributesEEEE7_M_headERS5_	 #
+	call	_ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEE7_M_headERS6_	 #
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:1365:     { return _Tuple_impl<__i, _Head, _Tail...>::_M_head(__t); }
 	.loc 19 1365 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
 .LCFI528:
+	ret	
+.LFE11188:
+	.seh_endproc
+	.section	.text$_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE,"x"
+	.linkonce discard
+	.globl	_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE
+	.def	_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE
+_ZSt12__get_helperILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEEJEERT0_RSt11_Tuple_implIXT_EJS5_DpT1_EE:
+.LFB11189:
+	.loc 19 1364 5
+	pushq	%rbp	 #
+	.seh_pushreg	%rbp
+.LCFI529:
+	movq	%rsp, %rbp	 #,
+	.seh_setframe	%rbp, 0
+.LCFI530:
+	subq	$32, %rsp	 #,
+	.seh_stackalloc	32
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)	 # __t, __t
+ # C:/msys64/mingw64/include/c++/12.2.0/tuple:1365:     { return _Tuple_impl<__i, _Head, _Tail...>::_M_head(__t); }
+	.loc 19 1365 56
+	movq	16(%rbp), %rax	 # __t, tmp84
+	movq	%rax, %rcx	 # tmp84,
+	call	_ZNSt11_Tuple_implILy1EJSt14default_deleteIA_N6MATRIX18MaterialAttributesEEEE7_M_headERS5_	 #
+ # C:/msys64/mingw64/include/c++/12.2.0/tuple:1365:     { return _Tuple_impl<__i, _Head, _Tail...>::_M_head(__t); }
+	.loc 19 1365 63
+	addq	$32, %rsp	 #,
+	popq	%rbp	 #
+.LCFI531:
 	ret	
 .LFE11189:
 	.seh_endproc
@@ -11680,10 +11790,10 @@ _ZSt3getILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEERKNSt13tu
 	.loc 19 1386 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI529:
+.LCFI532:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI530:
+.LCFI533:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11697,7 +11807,7 @@ _ZSt3getILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EEERKNSt13tu
 	.loc 19 1387 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI531:
+.LCFI534:
 	ret	
 .LFE11190:
 	.seh_endproc
@@ -11712,27 +11822,27 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteIA_N6MATRIX18MaterialAttributesEEEEC2E
 	.loc 19 430 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI532:
+.LCFI535:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI533:
+.LCFI536:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB242:
+.LBB243:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:431:       : _Base() { }
 	.loc 19 431 15
 	movq	16(%rbp), %rax	 # this, tmp82
 	movq	%rax, %rcx	 # tmp82,
 	call	_ZNSt10_Head_baseILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEELb1EEC2Ev	 #
-.LBE242:
+.LBE243:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:431:       : _Base() { }
 	.loc 19 431 19
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI534:
+.LCFI537:
 	ret	
 .LFE11192:
 	.seh_endproc
@@ -11747,23 +11857,23 @@ _ZNSt10_Head_baseILy0EPN6MATRIX18MaterialAttributesELb0EEC2Ev:
 	.loc 19 189 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI535:
+.LCFI538:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI536:
+.LCFI539:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB243:
+.LBB244:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:190:       : _M_head_impl() { }
 	.loc 19 190 9
 	movq	16(%rbp), %rax	 # this, tmp82
 	movq	$0, (%rax)	 #, this_2(D)->_M_head_impl
-.LBE243:
+.LBE244:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:190:       : _M_head_impl() { }
 	.loc 19 190 26
 	nop	
 	popq	%rbp	 #
-.LCFI537:
+.LCFI540:
 	ret	
 .LFE11195:
 	.seh_endproc
@@ -11778,15 +11888,15 @@ _ZNSt11_Tuple_implILy0EJPSt6threadSt14default_deleteIA_S0_EEEC2Ev:
 	.loc 19 279 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI538:
+.LCFI541:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI539:
+.LCFI542:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB244:
+.LBB245:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:280:       : _Inherited(), _Base() { }
 	.loc 19 280 29
 	movq	16(%rbp), %rax	 # this, tmp83
@@ -11795,13 +11905,13 @@ _ZNSt11_Tuple_implILy0EJPSt6threadSt14default_deleteIA_S0_EEEC2Ev:
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt10_Head_baseILy0EPSt6threadLb0EEC2Ev	 #
-.LBE244:
+.LBE245:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:280:       : _Inherited(), _Base() { }
 	.loc 19 280 33
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI540:
+.LCFI543:
 	ret	
 .LFE11198:
 	.seh_endproc
@@ -11815,10 +11925,10 @@ _ZSt12__get_helperILy0EPSt6threadJSt14default_deleteIA_S0_EEERT0_RSt11_Tuple_imp
 	.loc 19 1364 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI541:
+.LCFI544:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI542:
+.LCFI545:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11832,7 +11942,7 @@ _ZSt12__get_helperILy0EPSt6threadJSt14default_deleteIA_S0_EEERT0_RSt11_Tuple_imp
 	.loc 19 1365 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI543:
+.LCFI546:
 	ret	
 .LFE11200:
 	.seh_endproc
@@ -11846,10 +11956,10 @@ _ZSt3getILy1EJPSt6threadSt14default_deleteIA_S0_EEERNSt13tuple_elementIXT_ESt5tu
 	.loc 19 1380 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI544:
+.LCFI547:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI545:
+.LCFI548:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11863,7 +11973,7 @@ _ZSt3getILy1EJPSt6threadSt14default_deleteIA_S0_EEERNSt13tuple_elementIXT_ESt5tu
 	.loc 19 1381 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI546:
+.LCFI549:
 	ret	
 .LFE11201:
 	.seh_endproc
@@ -11877,10 +11987,10 @@ _ZSt3getILy0EJPSt6threadSt14default_deleteIA_S0_EEERKNSt13tuple_elementIXT_ESt5t
 	.loc 19 1386 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI547:
+.LCFI550:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI548:
+.LCFI551:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -11894,7 +12004,7 @@ _ZSt3getILy0EJPSt6threadSt14default_deleteIA_S0_EEERKNSt13tuple_elementIXT_ESt5t
 	.loc 19 1387 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI549:
+.LCFI552:
 	ret	
 .LFE11202:
 	.seh_endproc
@@ -11907,20 +12017,20 @@ _ZNSt11_Tuple_implILy0EJZ7WinMainEUlvE_EEC2IS0_EEOT_:
 	.loc 19 440 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI550:
+.LCFI553:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI551:
+.LCFI554:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI552:
+.LCFI555:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI553:
+.LCFI556:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __head, __head
-.LBB245:
+.LBB246:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:441: 	: _Base(std::forward<_UHead>(__head))
 	.loc 19 441 38
 	movq	32(%rbp), %rbx	 # this, _1
@@ -11930,15 +12040,15 @@ _ZNSt11_Tuple_implILy0EJZ7WinMainEUlvE_EEC2IS0_EEOT_:
 	movq	%rax, %rdx	 # _2,
 	movq	%rbx, %rcx	 # _1,
 	call	_ZNSt10_Head_baseILy0EZ7WinMainEUlvE_Lb0EEC2IS0_EEOT_	 #
-.LBE245:
+.LBE246:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:442: 	{ }
 	.loc 19 442 4
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI554:
+.LCFI557:
 	popq	%rbp	 #
-.LCFI555:
+.LCFI558:
 	ret	
 .LFE11204:
 	.seh_endproc
@@ -11953,15 +12063,15 @@ _ZNSt11_Tuple_implILy0EJPNSt6thread6_StateESt14default_deleteIS1_EEEC2Ev:
 	.loc 19 279 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI556:
+.LCFI559:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI557:
+.LCFI560:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB246:
+.LBB247:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:280:       : _Inherited(), _Base() { }
 	.loc 19 280 29
 	movq	16(%rbp), %rax	 # this, tmp83
@@ -11970,13 +12080,13 @@ _ZNSt11_Tuple_implILy0EJPNSt6thread6_StateESt14default_deleteIS1_EEEC2Ev:
 	movq	16(%rbp), %rax	 # this, _1
 	movq	%rax, %rcx	 # _1,
 	call	_ZNSt10_Head_baseILy0EPNSt6thread6_StateELb0EEC2Ev	 #
-.LBE246:
+.LBE247:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:280:       : _Inherited(), _Base() { }
 	.loc 19 280 33
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI558:
+.LCFI561:
 	ret	
 .LFE11252:
 	.seh_endproc
@@ -11990,10 +12100,10 @@ _ZSt12__get_helperILy0EPNSt6thread6_StateEJSt14default_deleteIS1_EEERT0_RSt11_Tu
 	.loc 19 1364 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI559:
+.LCFI562:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI560:
+.LCFI563:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12007,7 +12117,7 @@ _ZSt12__get_helperILy0EPNSt6thread6_StateEJSt14default_deleteIS1_EEERT0_RSt11_Tu
 	.loc 19 1365 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI561:
+.LCFI564:
 	ret	
 .LFE11254:
 	.seh_endproc
@@ -12021,10 +12131,10 @@ _ZSt3getILy1EJPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT
 	.loc 19 1380 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI562:
+.LCFI565:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI563:
+.LCFI566:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12038,7 +12148,7 @@ _ZSt3getILy1EJPNSt6thread6_StateESt14default_deleteIS1_EEERNSt13tuple_elementIXT
 	.loc 19 1381 43
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI564:
+.LCFI567:
 	ret	
 .LFE11255:
 	.seh_endproc
@@ -12052,10 +12162,10 @@ _ZNSt6chrono20__duration_cast_implINS_8durationIxSt5ratioILx1ELx1000EEEES2_ILx10
 	.loc 7 221 4
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI565:
+.LCFI568:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI566:
+.LCFI569:
 	subq	$48, %rsp	 #,
 	.seh_stackalloc	48
 	.seh_endprologue
@@ -12084,7 +12194,7 @@ _ZNSt6chrono20__duration_cast_implINS_8durationIxSt5ratioILx1ELx1000EEEES2_ILx10
 	.loc 7 226 4
 	addq	$48, %rsp	 #,
 	popq	%rbp	 #
-.LCFI567:
+.LCFI570:
 	ret	
 .LFE11256:
 	.seh_endproc
@@ -12098,10 +12208,10 @@ _ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE
 	.loc 19 268 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI568:
+.LCFI571:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI569:
+.LCFI572:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12115,7 +12225,7 @@ _ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE
 	.loc 19 268 72
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI570:
+.LCFI573:
 	ret	
 .LFE11257:
 	.seh_endproc
@@ -12129,10 +12239,10 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteIA_N6MATRIX18MaterialAttributesEEEE7_M
 	.loc 19 424 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI571:
+.LCFI574:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI572:
+.LCFI575:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12146,7 +12256,7 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteIA_N6MATRIX18MaterialAttributesEEEE7_M
 	.loc 19 424 72
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI573:
+.LCFI576:
 	ret	
 .LFE11258:
 	.seh_endproc
@@ -12160,10 +12270,10 @@ _ZSt12__get_helperILy0EPN6MATRIX18MaterialAttributesEJSt14default_deleteIA_S1_EE
 	.loc 19 1369 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI574:
+.LCFI577:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI575:
+.LCFI578:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12177,7 +12287,7 @@ _ZSt12__get_helperILy0EPN6MATRIX18MaterialAttributesEJSt14default_deleteIA_S1_EE
 	.loc 19 1370 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI576:
+.LCFI579:
 	ret	
 .LFE11259:
 	.seh_endproc
@@ -12192,17 +12302,17 @@ _ZNSt10_Head_baseILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEELb1EEC2
 	.loc 19 80 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI577:
+.LCFI580:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI578:
+.LCFI581:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:81:       : _M_head_impl() { }
 	.loc 19 81 26
 	nop	
 	popq	%rbp	 #
-.LCFI579:
+.LCFI582:
 	ret	
 .LFE11261:
 	.seh_endproc
@@ -12217,27 +12327,27 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteIA_St6threadEEEC2Ev:
 	.loc 19 430 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI580:
+.LCFI583:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI581:
+.LCFI584:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB247:
+.LBB248:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:431:       : _Base() { }
 	.loc 19 431 15
 	movq	16(%rbp), %rax	 # this, tmp82
 	movq	%rax, %rcx	 # tmp82,
 	call	_ZNSt10_Head_baseILy1ESt14default_deleteIA_St6threadELb1EEC2Ev	 #
-.LBE247:
+.LBE248:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:431:       : _Base() { }
 	.loc 19 431 19
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI582:
+.LCFI585:
 	ret	
 .LFE11264:
 	.seh_endproc
@@ -12252,23 +12362,23 @@ _ZNSt10_Head_baseILy0EPSt6threadLb0EEC2Ev:
 	.loc 19 189 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI583:
+.LCFI586:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI584:
+.LCFI587:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB248:
+.LBB249:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:190:       : _M_head_impl() { }
 	.loc 19 190 9
 	movq	16(%rbp), %rax	 # this, tmp82
 	movq	$0, (%rax)	 #, this_2(D)->_M_head_impl
-.LBE248:
+.LBE249:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:190:       : _M_head_impl() { }
 	.loc 19 190 26
 	nop	
 	popq	%rbp	 #
-.LCFI585:
+.LCFI588:
 	ret	
 .LFE11267:
 	.seh_endproc
@@ -12282,10 +12392,10 @@ _ZNSt11_Tuple_implILy0EJPSt6threadSt14default_deleteIA_S0_EEE7_M_headERS5_:
 	.loc 19 268 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI586:
+.LCFI589:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI587:
+.LCFI590:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12299,7 +12409,7 @@ _ZNSt11_Tuple_implILy0EJPSt6threadSt14default_deleteIA_S0_EEE7_M_headERS5_:
 	.loc 19 268 72
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI588:
+.LCFI591:
 	ret	
 .LFE11269:
 	.seh_endproc
@@ -12313,10 +12423,10 @@ _ZSt12__get_helperILy1ESt14default_deleteIA_St6threadEJEERT0_RSt11_Tuple_implIXT
 	.loc 19 1364 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI589:
+.LCFI592:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI590:
+.LCFI593:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12330,7 +12440,7 @@ _ZSt12__get_helperILy1ESt14default_deleteIA_St6threadEJEERT0_RSt11_Tuple_implIXT
 	.loc 19 1365 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI591:
+.LCFI594:
 	ret	
 .LFE11270:
 	.seh_endproc
@@ -12344,10 +12454,10 @@ _ZSt12__get_helperILy0EPSt6threadJSt14default_deleteIA_S0_EEERKT0_RKSt11_Tuple_i
 	.loc 19 1369 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI592:
+.LCFI595:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI593:
+.LCFI596:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12361,7 +12471,7 @@ _ZSt12__get_helperILy0EPSt6threadJSt14default_deleteIA_S0_EEERKT0_RKSt11_Tuple_i
 	.loc 19 1370 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI594:
+.LCFI597:
 	ret	
 .LFE11271:
 	.seh_endproc
@@ -12374,20 +12484,20 @@ _ZNSt10_Head_baseILy0EZ7WinMainEUlvE_Lb0EEC2IS0_EEOT_:
 	.loc 19 199 19
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI595:
+.LCFI598:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI596:
+.LCFI599:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI597:
+.LCFI600:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI598:
+.LCFI601:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # this, this
 	movq	%rdx, 40(%rbp)	 # __h, __h
-.LBB249:
+.LBB250:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:200: 	: _M_head_impl(std::forward<_UHead>(__h)) { }
 	.loc 19 200 37
 	movq	40(%rbp), %rax	 # __h, tmp83
@@ -12416,15 +12526,15 @@ _ZNSt10_Head_baseILy0EZ7WinMainEUlvE_Lb0EEC2IS0_EEOT_:
 	movq	72(%rax), %rbx	 # *_1,
 	movq	%rcx, 64(%rdx)	 # tmp89, this_3(D)->_M_head_impl
 	movq	%rbx, 72(%rdx)	 #, this_3(D)->_M_head_impl
-.LBE249:
+.LBE250:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:200: 	: _M_head_impl(std::forward<_UHead>(__h)) { }
 	.loc 19 200 46
 	nop	
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI599:
+.LCFI602:
 	popq	%rbp	 #
-.LCFI600:
+.LCFI603:
 	ret	
 .LFE11273:
 	.seh_endproc
@@ -12439,27 +12549,27 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteINSt6thread6_StateEEEEC2Ev:
 	.loc 19 430 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI601:
+.LCFI604:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI602:
+.LCFI605:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB250:
+.LBB251:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:431:       : _Base() { }
 	.loc 19 431 15
 	movq	16(%rbp), %rax	 # this, tmp82
 	movq	%rax, %rcx	 # tmp82,
 	call	_ZNSt10_Head_baseILy1ESt14default_deleteINSt6thread6_StateEELb1EEC2Ev	 #
-.LBE250:
+.LBE251:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:431:       : _Base() { }
 	.loc 19 431 19
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI603:
+.LCFI606:
 	ret	
 .LFE11307:
 	.seh_endproc
@@ -12474,23 +12584,23 @@ _ZNSt10_Head_baseILy0EPNSt6thread6_StateELb0EEC2Ev:
 	.loc 19 189 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI604:
+.LCFI607:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI605:
+.LCFI608:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB251:
+.LBB252:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:190:       : _M_head_impl() { }
 	.loc 19 190 9
 	movq	16(%rbp), %rax	 # this, tmp82
 	movq	$0, (%rax)	 #, this_2(D)->_M_head_impl
-.LBE251:
+.LBE252:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:190:       : _M_head_impl() { }
 	.loc 19 190 26
 	nop	
 	popq	%rbp	 #
-.LCFI606:
+.LCFI609:
 	ret	
 .LFE11310:
 	.seh_endproc
@@ -12504,10 +12614,10 @@ _ZNSt11_Tuple_implILy0EJPNSt6thread6_StateESt14default_deleteIS1_EEE7_M_headERS5
 	.loc 19 268 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI607:
+.LCFI610:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI608:
+.LCFI611:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12521,7 +12631,7 @@ _ZNSt11_Tuple_implILy0EJPNSt6thread6_StateESt14default_deleteIS1_EEE7_M_headERS5
 	.loc 19 268 72
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI609:
+.LCFI612:
 	ret	
 .LFE11312:
 	.seh_endproc
@@ -12535,10 +12645,10 @@ _ZSt12__get_helperILy1ESt14default_deleteINSt6thread6_StateEEJEERT0_RSt11_Tuple_
 	.loc 19 1364 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI610:
+.LCFI613:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI611:
+.LCFI614:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12552,7 +12662,7 @@ _ZSt12__get_helperILy1ESt14default_deleteINSt6thread6_StateEEJEERT0_RSt11_Tuple_
 	.loc 19 1365 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI612:
+.LCFI615:
 	ret	
 .LFE11313:
 	.seh_endproc
@@ -12566,10 +12676,10 @@ _ZNSt10_Head_baseILy0EPN6MATRIX18MaterialAttributesELb0EE7_M_headERS3_:
 	.loc 19 233 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI613:
+.LCFI616:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI614:
+.LCFI617:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12578,7 +12688,7 @@ _ZNSt10_Head_baseILy0EPN6MATRIX18MaterialAttributesELb0EE7_M_headERS3_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 233 68
 	popq	%rbp	 #
-.LCFI615:
+.LCFI618:
 	ret	
 .LFE11314:
 	.seh_endproc
@@ -12592,10 +12702,10 @@ _ZNSt10_Head_baseILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEELb1EE7_
 	.loc 19 124 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI616:
+.LCFI619:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI617:
+.LCFI620:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:124:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12604,7 +12714,7 @@ _ZNSt10_Head_baseILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEELb1EE7_
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:124:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 124 68
 	popq	%rbp	 #
-.LCFI618:
+.LCFI621:
 	ret	
 .LFE11315:
 	.seh_endproc
@@ -12618,10 +12728,10 @@ _ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE
 	.loc 19 271 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI619:
+.LCFI622:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI620:
+.LCFI623:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12635,7 +12745,7 @@ _ZNSt11_Tuple_implILy0EJPN6MATRIX18MaterialAttributesESt14default_deleteIA_S1_EE
 	.loc 19 271 78
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI621:
+.LCFI624:
 	ret	
 .LFE11316:
 	.seh_endproc
@@ -12650,17 +12760,17 @@ _ZNSt10_Head_baseILy1ESt14default_deleteIA_St6threadELb1EEC2Ev:
 	.loc 19 80 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI622:
+.LCFI625:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI623:
+.LCFI626:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:81:       : _M_head_impl() { }
 	.loc 19 81 26
 	nop	
 	popq	%rbp	 #
-.LCFI624:
+.LCFI627:
 	ret	
 .LFE11318:
 	.seh_endproc
@@ -12674,10 +12784,10 @@ _ZNSt10_Head_baseILy0EPSt6threadLb0EE7_M_headERS2_:
 	.loc 19 233 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI625:
+.LCFI628:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI626:
+.LCFI629:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12686,7 +12796,7 @@ _ZNSt10_Head_baseILy0EPSt6threadLb0EE7_M_headERS2_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 233 68
 	popq	%rbp	 #
-.LCFI627:
+.LCFI630:
 	ret	
 .LFE11320:
 	.seh_endproc
@@ -12700,10 +12810,10 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteIA_St6threadEEE7_M_headERS4_:
 	.loc 19 424 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI628:
+.LCFI631:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI629:
+.LCFI632:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12717,7 +12827,7 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteIA_St6threadEEE7_M_headERS4_:
 	.loc 19 424 72
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI630:
+.LCFI633:
 	ret	
 .LFE11321:
 	.seh_endproc
@@ -12731,10 +12841,10 @@ _ZNSt11_Tuple_implILy0EJPSt6threadSt14default_deleteIA_S0_EEE7_M_headERKS5_:
 	.loc 19 271 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI631:
+.LCFI634:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI632:
+.LCFI635:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12748,7 +12858,7 @@ _ZNSt11_Tuple_implILy0EJPSt6threadSt14default_deleteIA_S0_EEE7_M_headERKS5_:
 	.loc 19 271 78
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI633:
+.LCFI636:
 	ret	
 .LFE11322:
 	.seh_endproc
@@ -12763,17 +12873,17 @@ _ZNSt10_Head_baseILy1ESt14default_deleteINSt6thread6_StateEELb1EEC2Ev:
 	.loc 19 80 17
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI634:
+.LCFI637:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI635:
+.LCFI638:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:81:       : _M_head_impl() { }
 	.loc 19 81 26
 	nop	
 	popq	%rbp	 #
-.LCFI636:
+.LCFI639:
 	ret	
 .LFE11339:
 	.seh_endproc
@@ -12787,10 +12897,10 @@ _ZNSt10_Head_baseILy0EPNSt6thread6_StateELb0EE7_M_headERS3_:
 	.loc 19 233 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI637:
+.LCFI640:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI638:
+.LCFI641:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12799,7 +12909,7 @@ _ZNSt10_Head_baseILy0EPNSt6thread6_StateELb0EE7_M_headERS3_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 233 68
 	popq	%rbp	 #
-.LCFI639:
+.LCFI642:
 	ret	
 .LFE11341:
 	.seh_endproc
@@ -12813,10 +12923,10 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteINSt6thread6_StateEEEE7_M_headERS4_:
 	.loc 19 424 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI640:
+.LCFI643:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI641:
+.LCFI644:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -12830,7 +12940,7 @@ _ZNSt11_Tuple_implILy1EJSt14default_deleteINSt6thread6_StateEEEE7_M_headERS4_:
 	.loc 19 424 72
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI642:
+.LCFI645:
 	ret	
 .LFE11342:
 	.seh_endproc
@@ -12844,10 +12954,10 @@ _ZNSt10_Head_baseILy0EPN6MATRIX18MaterialAttributesELb0EE7_M_headERKS3_:
 	.loc 19 236 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI643:
+.LCFI646:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI644:
+.LCFI647:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:236:       _M_head(const _Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12856,7 +12966,7 @@ _ZNSt10_Head_baseILy0EPN6MATRIX18MaterialAttributesELb0EE7_M_headERKS3_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:236:       _M_head(const _Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 236 74
 	popq	%rbp	 #
-.LCFI645:
+.LCFI648:
 	ret	
 .LFE11343:
 	.seh_endproc
@@ -12870,10 +12980,10 @@ _ZNSt10_Head_baseILy1ESt14default_deleteIA_St6threadELb1EE7_M_headERS4_:
 	.loc 19 124 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI646:
+.LCFI649:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI647:
+.LCFI650:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:124:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12882,7 +12992,7 @@ _ZNSt10_Head_baseILy1ESt14default_deleteIA_St6threadELb1EE7_M_headERS4_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:124:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 124 68
 	popq	%rbp	 #
-.LCFI648:
+.LCFI651:
 	ret	
 .LFE11344:
 	.seh_endproc
@@ -12896,10 +13006,10 @@ _ZNSt10_Head_baseILy0EPSt6threadLb0EE7_M_headERKS2_:
 	.loc 19 236 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI649:
+.LCFI652:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI650:
+.LCFI653:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:236:       _M_head(const _Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12908,7 +13018,7 @@ _ZNSt10_Head_baseILy0EPSt6threadLb0EE7_M_headERKS2_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:236:       _M_head(const _Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 236 74
 	popq	%rbp	 #
-.LCFI651:
+.LCFI654:
 	ret	
 .LFE11345:
 	.seh_endproc
@@ -12922,10 +13032,10 @@ _ZNSt10_Head_baseILy1ESt14default_deleteINSt6thread6_StateEELb1EE7_M_headERS4_:
 	.loc 19 124 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI652:
+.LCFI655:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI653:
+.LCFI656:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:124:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -12934,7 +13044,7 @@ _ZNSt10_Head_baseILy1ESt14default_deleteINSt6thread6_StateEELb1EE7_M_headERS4_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:124:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 124 68
 	popq	%rbp	 #
-.LCFI654:
+.LCFI657:
 	ret	
 .LFE11347:
 	.seh_endproc
@@ -12955,15 +13065,15 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEED2Ev:
 	.loc 6 200 14
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI655:
+.LCFI658:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI656:
+.LCFI659:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # this, this
-.LBB252:
+.LBB253:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:200:       struct _State_impl : public _State
 	.loc 6 200 14
 	leaq	16+_ZTVNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEEE(%rip), %rdx	 #, _1
@@ -12972,11 +13082,11 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEED2Ev:
 	movq	16(%rbp), %rax	 # this, _2
 	movq	%rax, %rcx	 # _2,
 	call	_ZNSt6thread6_StateD2Ev	 #
-.LBE252:
+.LBE253:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI657:
+.LCFI660:
 	ret	
 .LFE11349:
 	.seh_endproc
@@ -12990,10 +13100,10 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEED0Ev:
 	.loc 6 200 14
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI658:
+.LCFI661:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI659:
+.LCFI662:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13010,7 +13120,7 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEED0Ev:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI660:
+.LCFI663:
 	ret	
 .LFE11351:
 	.seh_endproc
@@ -13104,10 +13214,10 @@ __tcf_0:
 	.loc 20 74 25
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI661:
+.LCFI664:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI662:
+.LCFI665:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13119,7 +13229,7 @@ __tcf_0:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI663:
+.LCFI666:
 	ret	
 .LFE11373:
 	.seh_endproc
@@ -13130,10 +13240,10 @@ _Z41__static_initialization_and_destruction_0ii:
 	.loc 12 901 1
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI664:
+.LCFI667:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI665:
+.LCFI668:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13142,11 +13252,11 @@ _Z41__static_initialization_and_destruction_0ii:
  # src\main.cpp:901: }
 	.loc 12 901 1
 	cmpl	$1, 16(%rbp)	 #, __initialize_p
-	jne	.L575	 #,
+	jne	.L578	 #,
  # src\main.cpp:901: }
 	.loc 12 901 1 is_stmt 0 discriminator 1
 	cmpl	$65535, 24(%rbp)	 #, __priority
-	jne	.L575	 #,
+	jne	.L578	 #,
  # C:/msys64/mingw64/include/c++/12.2.0/iostream:74:   static ios_base::Init __ioinit;
 	.loc 20 74 25 is_stmt 1
 	leaq	_ZStL8__ioinit(%rip), %rax	 #, tmp82
@@ -13155,13 +13265,13 @@ _Z41__static_initialization_and_destruction_0ii:
 	leaq	__tcf_0(%rip), %rax	 #, tmp83
 	movq	%rax, %rcx	 # tmp83,
 	call	atexit	 #
-.L575:
+.L578:
  # src\main.cpp:901: }
 	.loc 12 901 1
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI666:
+.LCFI669:
 	ret	
 .LFE11372:
 	.seh_endproc
@@ -13173,10 +13283,10 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEE6_M_runEv:
 	.loc 6 210 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI667:
+.LCFI670:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI668:
+.LCFI671:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13192,7 +13302,7 @@ _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEEE6_M_runEv:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI669:
+.LCFI672:
 	ret	
 .LFE11381:
 	.seh_endproc
@@ -13204,10 +13314,10 @@ _ZNSt6thread8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEclEv:
 	.loc 6 255 2
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI670:
+.LCFI673:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI671:
+.LCFI674:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13224,7 +13334,7 @@ _ZNSt6thread8_InvokerISt5tupleIJZ7WinMainEUlvE_EEEclEv:
 	.loc 6 260 2
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI672:
+.LCFI675:
 	ret	
 .LFE11385:
 	.seh_endproc
@@ -13236,10 +13346,10 @@ _ZNSt6thread8_InvokerISt5tupleIJZ7WinMainEUlvE_EEE9_M_invokeIJLy0EEEEvSt12_Index
 	.loc 6 251 4
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI673:
+.LCFI676:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI674:
+.LCFI677:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13266,7 +13376,7 @@ _ZNSt6thread8_InvokerISt5tupleIJZ7WinMainEUlvE_EEE9_M_invokeIJLy0EEEEvSt12_Index
 	.loc 6 252 64
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI675:
+.LCFI678:
 	ret	
 .LFE11392:
 	.seh_endproc
@@ -13277,10 +13387,10 @@ _ZSt4moveIRSt5tupleIJZ7WinMainEUlvE_EEEONSt16remove_referenceIT_E4typeEOS5_:
 	.loc 15 104 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI676:
+.LCFI679:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI677:
+.LCFI680:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __t, __t
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
@@ -13289,7 +13399,7 @@ _ZSt4moveIRSt5tupleIJZ7WinMainEUlvE_EEEONSt16remove_referenceIT_E4typeEOS5_:
  # C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:105:     { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
 	.loc 15 105 77
 	popq	%rbp	 #
-.LCFI678:
+.LCFI681:
 	ret	
 .LFE11396:
 	.seh_endproc
@@ -13300,10 +13410,10 @@ _ZSt3getILy0EJZ7WinMainEUlvE_EEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEO
 	.loc 19 1392 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI679:
+.LCFI682:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI680:
+.LCFI683:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13321,7 +13431,7 @@ _ZSt3getILy0EJZ7WinMainEUlvE_EEONSt13tuple_elementIXT_ESt5tupleIJDpT0_EEE4typeEO
 	.loc 19 1396 5
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI681:
+.LCFI684:
 	ret	
 .LFE11397:
 	.seh_endproc
@@ -13333,16 +13443,16 @@ _ZSt8__invokeIZ7WinMainEUlvE_JEENSt15__invoke_resultIT_JDpT0_EE4typeEOS2_DpOS3_:
 	.loc 21 90 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI682:
+.LCFI685:
 	pushq	%rbx	 #
 	.seh_pushreg	%rbx
-.LCFI683:
+.LCFI686:
 	subq	$40, %rsp	 #,
 	.seh_stackalloc	40
-.LCFI684:
+.LCFI687:
 	leaq	32(%rsp), %rbp	 #,
 	.seh_setframe	%rbp, 32
-.LCFI685:
+.LCFI688:
 	.seh_endprologue
 	movq	%rcx, 32(%rbp)	 # __fn, __fn
  # C:/msys64/mingw64/include/c++/12.2.0/bits/invoke.h:96:       return std::__invoke_impl<__type>(__tag{}, std::forward<_Callable>(__fn),
@@ -13360,9 +13470,9 @@ _ZSt8__invokeIZ7WinMainEUlvE_JEENSt15__invoke_resultIT_JDpT0_EE4typeEOS2_DpOS3_:
 	.loc 21 98 5
 	addq	$40, %rsp	 #,
 	popq	%rbx	 #
-.LCFI686:
+.LCFI689:
 	popq	%rbp	 #
-.LCFI687:
+.LCFI690:
 	ret	
 .LFE11398:
 	.seh_endproc
@@ -13373,10 +13483,10 @@ _ZSt12__get_helperILy0EZ7WinMainEUlvE_JEERT0_RSt11_Tuple_implIXT_EJS1_DpT1_EE:
 	.loc 19 1364 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI688:
+.LCFI691:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI689:
+.LCFI692:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13390,7 +13500,7 @@ _ZSt12__get_helperILy0EZ7WinMainEUlvE_JEERT0_RSt11_Tuple_implIXT_EJS1_DpT1_EE:
 	.loc 19 1365 63
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI690:
+.LCFI693:
 	ret	
 .LFE11402:
 	.seh_endproc
@@ -13401,10 +13511,10 @@ _ZSt13__invoke_implIvZ7WinMainEUlvE_JEET_St14__invoke_otherOT0_DpOT1_:
 	.loc 21 60 5
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI691:
+.LCFI694:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI692:
+.LCFI695:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13425,7 +13535,7 @@ _ZSt13__invoke_implIvZ7WinMainEUlvE_JEET_St14__invoke_otherOT0_DpOT1_:
 	.loc 21 61 70
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI693:
+.LCFI696:
 	ret	
 .LFE11403:
 	.seh_endproc
@@ -13436,10 +13546,10 @@ _ZNSt11_Tuple_implILy0EJZ7WinMainEUlvE_EE7_M_headERS1_:
 	.loc 19 424 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI694:
+.LCFI697:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI695:
+.LCFI698:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13453,7 +13563,7 @@ _ZNSt11_Tuple_implILy0EJZ7WinMainEUlvE_EE7_M_headERS1_:
 	.loc 19 424 72
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI696:
+.LCFI699:
 	ret	
 .LFE11406:
 	.seh_endproc
@@ -13464,10 +13574,10 @@ _ZNSt10_Head_baseILy0EZ7WinMainEUlvE_Lb0EE7_M_headERS1_:
 	.loc 19 233 7
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI697:
+.LCFI700:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI698:
+.LCFI701:
 	.seh_endprologue
 	movq	%rcx, 16(%rbp)	 # __b, __b
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
@@ -13476,7 +13586,7 @@ _ZNSt10_Head_baseILy0EZ7WinMainEUlvE_Lb0EE7_M_headERS1_:
  # C:/msys64/mingw64/include/c++/12.2.0/tuple:233:       _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 	.loc 19 233 68
 	popq	%rbp	 #
-.LCFI699:
+.LCFI702:
 	ret	
 .LFE11408:
 	.seh_endproc
@@ -13487,10 +13597,10 @@ _GLOBAL__sub_I_Factory:
 	.loc 12 901 1
 	pushq	%rbp	 #
 	.seh_pushreg	%rbp
-.LCFI700:
+.LCFI703:
 	movq	%rsp, %rbp	 #,
 	.seh_setframe	%rbp, 0
-.LCFI701:
+.LCFI704:
 	subq	$32, %rsp	 #,
 	.seh_stackalloc	32
 	.seh_endprologue
@@ -13502,7 +13612,7 @@ _GLOBAL__sub_I_Factory:
 	nop	
 	addq	$32, %rsp	 #,
 	popq	%rbp	 #
-.LCFI702:
+.LCFI705:
 	ret	
 .LFE11410:
 	.seh_endproc
@@ -14991,10 +15101,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE104-.LASFDE104
 .LASFDE104:
 	.secrel32	.Lframe0
-	.quad	.LFB10178
-	.quad	.LFE10178-.LFB10178
+	.quad	.LFB10175
+	.quad	.LFE10175-.LFB10175
 	.byte	0x4
-	.long	.LCFI186-.LFB10178
+	.long	.LCFI186-.LFB10175
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15015,63 +15125,63 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE106-.LASFDE106
 .LASFDE106:
 	.secrel32	.Lframe0
-	.quad	.LFB10184
-	.quad	.LFE10184-.LFB10184
+	.quad	.LFB10178
+	.quad	.LFE10178-.LFB10178
 	.byte	0x4
-	.long	.LCFI189-.LFB10184
+	.long	.LCFI189-.LFB10178
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI190-.LCFI189
-	.byte	0xe
-	.uleb128 0x430
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI191-.LCFI190
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x3b0
-	.byte	0x4
-	.long	.LCFI192-.LCFI191
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 131
+	.uleb128 0x8
 	.align 8
 .LEFDE106:
 .LSFDE108:
 	.long	.LEFDE108-.LASFDE108
 .LASFDE108:
 	.secrel32	.Lframe0
-	.quad	.LFB10185
-	.quad	.LFE10185-.LFB10185
+	.quad	.LFB10184
+	.quad	.LFE10184-.LFB10184
 	.byte	0x4
-	.long	.LCFI193-.LFB10185
+	.long	.LCFI192-.LFB10184
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
+	.long	.LCFI193-.LCFI192
+	.byte	0xe
+	.uleb128 0x430
+	.byte	0x4
 	.long	.LCFI194-.LCFI193
-	.byte	0xd
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x3b0
 	.byte	0x4
 	.long	.LCFI195-.LCFI194
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 131
 	.align 8
 .LEFDE108:
 .LSFDE110:
 	.long	.LEFDE110-.LASFDE110
 .LASFDE110:
 	.secrel32	.Lframe0
-	.quad	.LFB10186
-	.quad	.LFE10186-.LFB10186
+	.quad	.LFB10185
+	.quad	.LFE10185-.LFB10185
 	.byte	0x4
-	.long	.LCFI196-.LFB10186
+	.long	.LCFI196-.LFB10185
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15092,161 +15202,161 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE112-.LASFDE112
 .LASFDE112:
 	.secrel32	.Lframe0
-	.quad	.LFB10187
-	.quad	.LFE10187-.LFB10187
+	.quad	.LFB10186
+	.quad	.LFE10186-.LFB10186
 	.byte	0x4
-	.long	.LCFI199-.LFB10187
+	.long	.LCFI199-.LFB10186
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI200-.LCFI199
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x8c
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI201-.LCFI200
-	.byte	0xe
-	.uleb128 0x20
-	.byte	0x85
-	.uleb128 0x4
-	.byte	0x4
-	.long	.LCFI202-.LCFI201
-	.byte	0xe
-	.uleb128 0x28
-	.byte	0x84
-	.uleb128 0x5
-	.byte	0x4
-	.long	.LCFI203-.LCFI202
-	.byte	0xe
-	.uleb128 0x30
-	.byte	0x83
-	.uleb128 0x6
-	.byte	0x4
-	.long	.LCFI204-.LCFI203
-	.byte	0xe
-	.uleb128 0xc0
-	.byte	0x4
-	.long	.LCFI205-.LCFI204
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x30
-	.byte	0x4
-	.long	.LCFI206-.LCFI205
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI207-.LCFI206
-	.byte	0xc4
-	.byte	0x4
-	.long	.LCFI208-.LCFI207
-	.byte	0xc5
-	.byte	0x4
-	.long	.LCFI209-.LCFI208
-	.byte	0xcc
-	.byte	0x4
-	.long	.LCFI210-.LCFI209
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 13
+	.uleb128 0x8
 	.align 8
 .LEFDE112:
 .LSFDE114:
 	.long	.LEFDE114-.LASFDE114
 .LASFDE114:
 	.secrel32	.Lframe0
-	.quad	.LFB10191
-	.quad	.LFE10191-.LFB10191
+	.quad	.LFB10187
+	.quad	.LFE10187-.LFB10187
 	.byte	0x4
-	.long	.LCFI211-.LFB10191
+	.long	.LCFI202-.LFB10187
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI212-.LCFI211
-	.byte	0xd
+	.long	.LCFI203-.LCFI202
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x8c
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI204-.LCFI203
+	.byte	0xe
+	.uleb128 0x20
+	.byte	0x85
+	.uleb128 0x4
+	.byte	0x4
+	.long	.LCFI205-.LCFI204
+	.byte	0xe
+	.uleb128 0x28
+	.byte	0x84
+	.uleb128 0x5
+	.byte	0x4
+	.long	.LCFI206-.LCFI205
+	.byte	0xe
+	.uleb128 0x30
+	.byte	0x83
 	.uleb128 0x6
+	.byte	0x4
+	.long	.LCFI207-.LCFI206
+	.byte	0xe
+	.uleb128 0xc0
+	.byte	0x4
+	.long	.LCFI208-.LCFI207
+	.byte	0xc
+	.uleb128 0x6
+	.uleb128 0x30
+	.byte	0x4
+	.long	.LCFI209-.LCFI208
+	.byte	0xc3
+	.byte	0x4
+	.long	.LCFI210-.LCFI209
+	.byte	0xc4
+	.byte	0x4
+	.long	.LCFI211-.LCFI210
+	.byte	0xc5
+	.byte	0x4
+	.long	.LCFI212-.LCFI211
+	.byte	0xcc
 	.byte	0x4
 	.long	.LCFI213-.LCFI212
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 13
 	.align 8
 .LEFDE114:
 .LSFDE116:
 	.long	.LEFDE116-.LASFDE116
 .LASFDE116:
 	.secrel32	.Lframe0
-	.quad	.LFB10188
-	.quad	.LFE10188-.LFB10188
+	.quad	.LFB10191
+	.quad	.LFE10191-.LFB10191
 	.byte	0x4
-	.long	.LCFI214-.LFB10188
+	.long	.LCFI214-.LFB10191
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI215-.LCFI214
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI216-.LCFI215
-	.byte	0xe
-	.uleb128 0x6b0
-	.byte	0x4
-	.long	.LCFI217-.LCFI216
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x630
-	.byte	0x4
-	.long	.LCFI218-.LCFI217
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI219-.LCFI218
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 209
+	.uleb128 0x8
 	.align 8
 .LEFDE116:
 .LSFDE118:
 	.long	.LEFDE118-.LASFDE118
 .LASFDE118:
 	.secrel32	.Lframe0
-	.quad	.LFB10192
-	.quad	.LFE10192-.LFB10192
+	.quad	.LFB10188
+	.quad	.LFE10188-.LFB10188
 	.byte	0x4
-	.long	.LCFI220-.LFB10192
+	.long	.LCFI217-.LFB10188
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI221-.LCFI220
-	.byte	0xd
+	.long	.LCFI218-.LCFI217
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI219-.LCFI218
+	.byte	0xe
+	.uleb128 0x6b0
+	.byte	0x4
+	.long	.LCFI220-.LCFI219
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x630
+	.byte	0x4
+	.long	.LCFI221-.LCFI220
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI222-.LCFI221
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 209
 	.align 8
 .LEFDE118:
 .LSFDE120:
 	.long	.LEFDE120-.LASFDE120
 .LASFDE120:
 	.secrel32	.Lframe0
-	.quad	.LFB10193
-	.quad	.LFE10193-.LFB10193
+	.quad	.LFB10192
+	.quad	.LFE10192-.LFB10192
 	.byte	0x4
-	.long	.LCFI223-.LFB10193
+	.long	.LCFI223-.LFB10192
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15267,10 +15377,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE122-.LASFDE122
 .LASFDE122:
 	.secrel32	.Lframe0
-	.quad	.LFB10197
-	.quad	.LFE10197-.LFB10197
+	.quad	.LFB10193
+	.quad	.LFE10193-.LFB10193
 	.byte	0x4
-	.long	.LCFI226-.LFB10197
+	.long	.LCFI226-.LFB10193
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15291,10 +15401,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE124-.LASFDE124
 .LASFDE124:
 	.secrel32	.Lframe0
-	.quad	.LFB10200
-	.quad	.LFE10200-.LFB10200
+	.quad	.LFB10197
+	.quad	.LFE10197-.LFB10197
 	.byte	0x4
-	.long	.LCFI229-.LFB10200
+	.long	.LCFI229-.LFB10197
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15315,10 +15425,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE126-.LASFDE126
 .LASFDE126:
 	.secrel32	.Lframe0
-	.quad	.LFB10203
-	.quad	.LFE10203-.LFB10203
+	.quad	.LFB10200
+	.quad	.LFE10200-.LFB10200
 	.byte	0x4
-	.long	.LCFI232-.LFB10203
+	.long	.LCFI232-.LFB10200
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15339,10 +15449,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE128-.LASFDE128
 .LASFDE128:
 	.secrel32	.Lframe0
-	.quad	.LFB10214
-	.quad	.LFE10214-.LFB10214
+	.quad	.LFB10203
+	.quad	.LFE10203-.LFB10203
 	.byte	0x4
-	.long	.LCFI235-.LFB10214
+	.long	.LCFI235-.LFB10203
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15363,173 +15473,173 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE130-.LASFDE130
 .LASFDE130:
 	.secrel32	.Lframe0
-	.quad	.LFB10215
-	.quad	.LFE10215-.LFB10215
+	.quad	.LFB10214
+	.quad	.LFE10214-.LFB10214
 	.byte	0x4
-	.long	.LCFI238-.LFB10215
+	.long	.LCFI238-.LFB10214
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI239-.LCFI238
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x8e
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI240-.LCFI239
-	.byte	0xe
-	.uleb128 0x20
-	.byte	0x8d
-	.uleb128 0x4
-	.byte	0x4
-	.long	.LCFI241-.LCFI240
-	.byte	0xe
-	.uleb128 0x28
-	.byte	0x8c
-	.uleb128 0x5
-	.byte	0x4
-	.long	.LCFI242-.LCFI241
-	.byte	0xe
-	.uleb128 0x30
-	.byte	0x85
-	.uleb128 0x6
-	.byte	0x4
-	.long	.LCFI243-.LCFI242
-	.byte	0xe
-	.uleb128 0x38
-	.byte	0x84
-	.uleb128 0x7
-	.byte	0x4
-	.long	.LCFI244-.LCFI243
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x83
-	.uleb128 0x8
-	.byte	0x4
-	.long	.LCFI245-.LCFI244
-	.byte	0xe
-	.uleb128 0xb0
-	.byte	0x4
-	.long	.LCFI246-.LCFI245
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI247-.LCFI246
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI248-.LCFI247
-	.byte	0xc4
-	.byte	0x4
-	.long	.LCFI249-.LCFI248
-	.byte	0xc5
-	.byte	0x4
-	.long	.LCFI250-.LCFI249
-	.byte	0xcc
-	.byte	0x4
-	.long	.LCFI251-.LCFI250
-	.byte	0xcd
-	.byte	0x4
-	.long	.LCFI252-.LCFI251
-	.byte	0xce
-	.byte	0x4
-	.long	.LCFI253-.LCFI252
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 7
+	.uleb128 0x8
 	.align 8
 .LEFDE130:
 .LSFDE132:
 	.long	.LEFDE132-.LASFDE132
 .LASFDE132:
 	.secrel32	.Lframe0
-	.quad	.LFB10194
-	.quad	.LFE10194-.LFB10194
+	.quad	.LFB10215
+	.quad	.LFE10215-.LFB10215
 	.byte	0x4
-	.long	.LCFI254-.LFB10194
+	.long	.LCFI241-.LFB10215
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI255-.LCFI254
+	.long	.LCFI242-.LCFI241
 	.byte	0xe
 	.uleb128 0x18
-	.byte	0x85
+	.byte	0x8e
 	.uleb128 0x3
 	.byte	0x4
-	.long	.LCFI256-.LCFI255
+	.long	.LCFI243-.LCFI242
 	.byte	0xe
 	.uleb128 0x20
-	.byte	0x84
+	.byte	0x8d
 	.uleb128 0x4
 	.byte	0x4
-	.long	.LCFI257-.LCFI256
+	.long	.LCFI244-.LCFI243
 	.byte	0xe
 	.uleb128 0x28
-	.byte	0x83
+	.byte	0x8c
 	.uleb128 0x5
 	.byte	0x4
-	.long	.LCFI258-.LCFI257
+	.long	.LCFI245-.LCFI244
 	.byte	0xe
-	.uleb128 0x610
+	.uleb128 0x30
+	.byte	0x85
+	.uleb128 0x6
 	.byte	0x4
-	.long	.LCFI259-.LCFI258
+	.long	.LCFI246-.LCFI245
+	.byte	0xe
+	.uleb128 0x38
+	.byte	0x84
+	.uleb128 0x7
+	.byte	0x4
+	.long	.LCFI247-.LCFI246
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x83
+	.uleb128 0x8
+	.byte	0x4
+	.long	.LCFI248-.LCFI247
+	.byte	0xe
+	.uleb128 0xb0
+	.byte	0x4
+	.long	.LCFI249-.LCFI248
 	.byte	0xc
 	.uleb128 0x6
-	.uleb128 0x590
+	.uleb128 0x40
 	.byte	0x4
-	.long	.LCFI260-.LCFI259
+	.long	.LCFI250-.LCFI249
 	.byte	0xc3
 	.byte	0x4
-	.long	.LCFI261-.LCFI260
+	.long	.LCFI251-.LCFI250
 	.byte	0xc4
 	.byte	0x4
-	.long	.LCFI262-.LCFI261
+	.long	.LCFI252-.LCFI251
 	.byte	0xc5
 	.byte	0x4
-	.long	.LCFI263-.LCFI262
+	.long	.LCFI253-.LCFI252
+	.byte	0xcc
+	.byte	0x4
+	.long	.LCFI254-.LCFI253
+	.byte	0xcd
+	.byte	0x4
+	.long	.LCFI255-.LCFI254
+	.byte	0xce
+	.byte	0x4
+	.long	.LCFI256-.LCFI255
 	.byte	0xc6
 	.byte	0x12
 	.uleb128 0x7
-	.sleb128 185
+	.sleb128 7
 	.align 8
 .LEFDE132:
 .LSFDE134:
 	.long	.LEFDE134-.LASFDE134
 .LASFDE134:
 	.secrel32	.Lframe0
-	.quad	.LFB10274
-	.quad	.LFE10274-.LFB10274
+	.quad	.LFB10194
+	.quad	.LFE10194-.LFB10194
 	.byte	0x4
-	.long	.LCFI264-.LFB10274
+	.long	.LCFI257-.LFB10194
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI265-.LCFI264
-	.byte	0xd
+	.long	.LCFI258-.LCFI257
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x85
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI259-.LCFI258
+	.byte	0xe
+	.uleb128 0x20
+	.byte	0x84
+	.uleb128 0x4
+	.byte	0x4
+	.long	.LCFI260-.LCFI259
+	.byte	0xe
+	.uleb128 0x28
+	.byte	0x83
+	.uleb128 0x5
+	.byte	0x4
+	.long	.LCFI261-.LCFI260
+	.byte	0xe
+	.uleb128 0x610
+	.byte	0x4
+	.long	.LCFI262-.LCFI261
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x590
+	.byte	0x4
+	.long	.LCFI263-.LCFI262
+	.byte	0xc3
+	.byte	0x4
+	.long	.LCFI264-.LCFI263
+	.byte	0xc4
+	.byte	0x4
+	.long	.LCFI265-.LCFI264
+	.byte	0xc5
 	.byte	0x4
 	.long	.LCFI266-.LCFI265
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 185
 	.align 8
 .LEFDE134:
 .LSFDE136:
 	.long	.LEFDE136-.LASFDE136
 .LASFDE136:
 	.secrel32	.Lframe0
-	.quad	.LFB10278
-	.quad	.LFE10278-.LFB10278
+	.quad	.LFB10274
+	.quad	.LFE10274-.LFB10274
 	.byte	0x4
-	.long	.LCFI267-.LFB10278
+	.long	.LCFI267-.LFB10274
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15550,10 +15660,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE138-.LASFDE138
 .LASFDE138:
 	.secrel32	.Lframe0
-	.quad	.LFB10303
-	.quad	.LFE10303-.LFB10303
+	.quad	.LFB10278
+	.quad	.LFE10278-.LFB10278
 	.byte	0x4
-	.long	.LCFI270-.LFB10303
+	.long	.LCFI270-.LFB10278
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15574,10 +15684,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE140-.LASFDE140
 .LASFDE140:
 	.secrel32	.Lframe0
-	.quad	.LFB10665
-	.quad	.LFE10665-.LFB10665
+	.quad	.LFB10303
+	.quad	.LFE10303-.LFB10303
 	.byte	0x4
-	.long	.LCFI273-.LFB10665
+	.long	.LCFI273-.LFB10303
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15598,10 +15708,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE142-.LASFDE142
 .LASFDE142:
 	.secrel32	.Lframe0
-	.quad	.LFB10666
-	.quad	.LFE10666-.LFB10666
+	.quad	.LFB10665
+	.quad	.LFE10665-.LFB10665
 	.byte	0x4
-	.long	.LCFI276-.LFB10666
+	.long	.LCFI276-.LFB10665
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15622,10 +15732,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE144-.LASFDE144
 .LASFDE144:
 	.secrel32	.Lframe0
-	.quad	.LFB10670
-	.quad	.LFE10670-.LFB10670
+	.quad	.LFB10666
+	.quad	.LFE10666-.LFB10666
 	.byte	0x4
-	.long	.LCFI279-.LFB10670
+	.long	.LCFI279-.LFB10666
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15646,10 +15756,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE146-.LASFDE146
 .LASFDE146:
 	.secrel32	.Lframe0
-	.quad	.LFB10672
-	.quad	.LFE10672-.LFB10672
+	.quad	.LFB10670
+	.quad	.LFE10670-.LFB10670
 	.byte	0x4
-	.long	.LCFI282-.LFB10672
+	.long	.LCFI282-.LFB10670
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15670,10 +15780,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE148-.LASFDE148
 .LASFDE148:
 	.secrel32	.Lframe0
-	.quad	.LFB10675
-	.quad	.LFE10675-.LFB10675
+	.quad	.LFB10672
+	.quad	.LFE10672-.LFB10672
 	.byte	0x4
-	.long	.LCFI285-.LFB10675
+	.long	.LCFI285-.LFB10672
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15694,10 +15804,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE150-.LASFDE150
 .LASFDE150:
 	.secrel32	.Lframe0
-	.quad	.LFB10676
-	.quad	.LFE10676-.LFB10676
+	.quad	.LFB10675
+	.quad	.LFE10675-.LFB10675
 	.byte	0x4
-	.long	.LCFI288-.LFB10676
+	.long	.LCFI288-.LFB10675
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15718,10 +15828,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE152-.LASFDE152
 .LASFDE152:
 	.secrel32	.Lframe0
-	.quad	.LFB10677
-	.quad	.LFE10677-.LFB10677
+	.quad	.LFB10676
+	.quad	.LFE10676-.LFB10676
 	.byte	0x4
-	.long	.LCFI291-.LFB10677
+	.long	.LCFI291-.LFB10676
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15742,10 +15852,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE154-.LASFDE154
 .LASFDE154:
 	.secrel32	.Lframe0
-	.quad	.LFB10678
-	.quad	.LFE10678-.LFB10678
+	.quad	.LFB10677
+	.quad	.LFE10677-.LFB10677
 	.byte	0x4
-	.long	.LCFI294-.LFB10678
+	.long	.LCFI294-.LFB10677
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15766,10 +15876,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE156-.LASFDE156
 .LASFDE156:
 	.secrel32	.Lframe0
-	.quad	.LFB10679
-	.quad	.LFE10679-.LFB10679
+	.quad	.LFB10678
+	.quad	.LFE10678-.LFB10678
 	.byte	0x4
-	.long	.LCFI297-.LFB10679
+	.long	.LCFI297-.LFB10678
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15790,10 +15900,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE158-.LASFDE158
 .LASFDE158:
 	.secrel32	.Lframe0
-	.quad	.LFB10680
-	.quad	.LFE10680-.LFB10680
+	.quad	.LFB10679
+	.quad	.LFE10679-.LFB10679
 	.byte	0x4
-	.long	.LCFI300-.LFB10680
+	.long	.LCFI300-.LFB10679
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15814,10 +15924,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE160-.LASFDE160
 .LASFDE160:
 	.secrel32	.Lframe0
-	.quad	.LFB10685
-	.quad	.LFE10685-.LFB10685
+	.quad	.LFB10680
+	.quad	.LFE10680-.LFB10680
 	.byte	0x4
-	.long	.LCFI303-.LFB10685
+	.long	.LCFI303-.LFB10680
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15838,10 +15948,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE162-.LASFDE162
 .LASFDE162:
 	.secrel32	.Lframe0
-	.quad	.LFB10688
-	.quad	.LFE10688-.LFB10688
+	.quad	.LFB10685
+	.quad	.LFE10685-.LFB10685
 	.byte	0x4
-	.long	.LCFI306-.LFB10688
+	.long	.LCFI306-.LFB10685
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15862,10 +15972,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE164-.LASFDE164
 .LASFDE164:
 	.secrel32	.Lframe0
-	.quad	.LFB10690
-	.quad	.LFE10690-.LFB10690
+	.quad	.LFB10688
+	.quad	.LFE10688-.LFB10688
 	.byte	0x4
-	.long	.LCFI309-.LFB10690
+	.long	.LCFI309-.LFB10688
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15886,10 +15996,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE166-.LASFDE166
 .LASFDE166:
 	.secrel32	.Lframe0
-	.quad	.LFB10694
-	.quad	.LFE10694-.LFB10694
+	.quad	.LFB10690
+	.quad	.LFE10690-.LFB10690
 	.byte	0x4
-	.long	.LCFI312-.LFB10694
+	.long	.LCFI312-.LFB10690
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15910,10 +16020,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE168-.LASFDE168
 .LASFDE168:
 	.secrel32	.Lframe0
-	.quad	.LFB10696
-	.quad	.LFE10696-.LFB10696
+	.quad	.LFB10694
+	.quad	.LFE10694-.LFB10694
 	.byte	0x4
-	.long	.LCFI315-.LFB10696
+	.long	.LCFI315-.LFB10694
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15934,10 +16044,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE170-.LASFDE170
 .LASFDE170:
 	.secrel32	.Lframe0
-	.quad	.LFB10699
-	.quad	.LFE10699-.LFB10699
+	.quad	.LFB10696
+	.quad	.LFE10696-.LFB10696
 	.byte	0x4
-	.long	.LCFI318-.LFB10699
+	.long	.LCFI318-.LFB10696
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15958,10 +16068,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE172-.LASFDE172
 .LASFDE172:
 	.secrel32	.Lframe0
-	.quad	.LFB10700
-	.quad	.LFE10700-.LFB10700
+	.quad	.LFB10699
+	.quad	.LFE10699-.LFB10699
 	.byte	0x4
-	.long	.LCFI321-.LFB10700
+	.long	.LCFI321-.LFB10699
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -15982,10 +16092,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE174-.LASFDE174
 .LASFDE174:
 	.secrel32	.Lframe0
-	.quad	.LFB10701
-	.quad	.LFE10701-.LFB10701
+	.quad	.LFB10700
+	.quad	.LFE10700-.LFB10700
 	.byte	0x4
-	.long	.LCFI324-.LFB10701
+	.long	.LCFI324-.LFB10700
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16006,90 +16116,90 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE176-.LASFDE176
 .LASFDE176:
 	.secrel32	.Lframe0
-	.quad	.LFB10709
-	.quad	.LFE10709-.LFB10709
+	.quad	.LFB10701
+	.quad	.LFE10701-.LFB10701
 	.byte	0x4
-	.long	.LCFI327-.LFB10709
+	.long	.LCFI327-.LFB10701
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI328-.LCFI327
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x85
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI329-.LCFI328
-	.byte	0xe
-	.uleb128 0x20
-	.byte	0x84
-	.uleb128 0x4
-	.byte	0x4
-	.long	.LCFI330-.LCFI329
-	.byte	0xe
-	.uleb128 0x28
-	.byte	0x83
-	.uleb128 0x5
-	.byte	0x4
-	.long	.LCFI331-.LCFI330
-	.byte	0xe
-	.uleb128 0x60
-	.byte	0x4
-	.long	.LCFI332-.LCFI331
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x30
-	.byte	0x4
-	.long	.LCFI333-.LCFI332
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI334-.LCFI333
-	.byte	0xc4
-	.byte	0x4
-	.long	.LCFI335-.LCFI334
-	.byte	0xc5
-	.byte	0x4
-	.long	.LCFI336-.LCFI335
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE176:
 .LSFDE178:
 	.long	.LEFDE178-.LASFDE178
 .LASFDE178:
 	.secrel32	.Lframe0
-	.quad	.LFB10771
-	.quad	.LFE10771-.LFB10771
+	.quad	.LFB10709
+	.quad	.LFE10709-.LFB10709
 	.byte	0x4
-	.long	.LCFI337-.LFB10771
+	.long	.LCFI330-.LFB10709
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI338-.LCFI337
-	.byte	0xd
+	.long	.LCFI331-.LCFI330
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x85
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI332-.LCFI331
+	.byte	0xe
+	.uleb128 0x20
+	.byte	0x84
+	.uleb128 0x4
+	.byte	0x4
+	.long	.LCFI333-.LCFI332
+	.byte	0xe
+	.uleb128 0x28
+	.byte	0x83
+	.uleb128 0x5
+	.byte	0x4
+	.long	.LCFI334-.LCFI333
+	.byte	0xe
+	.uleb128 0x60
+	.byte	0x4
+	.long	.LCFI335-.LCFI334
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x30
+	.byte	0x4
+	.long	.LCFI336-.LCFI335
+	.byte	0xc3
+	.byte	0x4
+	.long	.LCFI337-.LCFI336
+	.byte	0xc4
+	.byte	0x4
+	.long	.LCFI338-.LCFI337
+	.byte	0xc5
 	.byte	0x4
 	.long	.LCFI339-.LCFI338
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE178:
 .LSFDE180:
 	.long	.LEFDE180-.LASFDE180
 .LASFDE180:
 	.secrel32	.Lframe0
-	.quad	.LFB10899
-	.quad	.LFE10899-.LFB10899
+	.quad	.LFB10771
+	.quad	.LFE10771-.LFB10771
 	.byte	0x4
-	.long	.LCFI340-.LFB10899
+	.long	.LCFI340-.LFB10771
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16110,10 +16220,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE182-.LASFDE182
 .LASFDE182:
 	.secrel32	.Lframe0
-	.quad	.LFB10912
-	.quad	.LFE10912-.LFB10912
+	.quad	.LFB10899
+	.quad	.LFE10899-.LFB10899
 	.byte	0x4
-	.long	.LCFI343-.LFB10912
+	.long	.LCFI343-.LFB10899
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16134,10 +16244,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE184-.LASFDE184
 .LASFDE184:
 	.secrel32	.Lframe0
-	.quad	.LFB10914
-	.quad	.LFE10914-.LFB10914
+	.quad	.LFB10912
+	.quad	.LFE10912-.LFB10912
 	.byte	0x4
-	.long	.LCFI346-.LFB10914
+	.long	.LCFI346-.LFB10912
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16158,72 +16268,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE186-.LASFDE186
 .LASFDE186:
 	.secrel32	.Lframe0
-	.quad	.LFB10917
-	.quad	.LFE10917-.LFB10917
+	.quad	.LFB10914
+	.quad	.LFE10914-.LFB10914
 	.byte	0x4
-	.long	.LCFI349-.LFB10917
+	.long	.LCFI349-.LFB10914
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI350-.LCFI349
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI351-.LCFI350
-	.byte	0xe
-	.uleb128 0x50
-	.byte	0x4
-	.long	.LCFI352-.LCFI351
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI353-.LCFI352
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI354-.LCFI353
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 5
+	.uleb128 0x8
 	.align 8
 .LEFDE186:
 .LSFDE188:
 	.long	.LEFDE188-.LASFDE188
 .LASFDE188:
 	.secrel32	.Lframe0
-	.quad	.LFB10918
-	.quad	.LFE10918-.LFB10918
+	.quad	.LFB10917
+	.quad	.LFE10917-.LFB10917
 	.byte	0x4
-	.long	.LCFI355-.LFB10918
+	.long	.LCFI352-.LFB10917
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI356-.LCFI355
-	.byte	0xd
+	.long	.LCFI353-.LCFI352
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI354-.LCFI353
+	.byte	0xe
+	.uleb128 0x50
+	.byte	0x4
+	.long	.LCFI355-.LCFI354
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI356-.LCFI355
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI357-.LCFI356
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 5
 	.align 8
 .LEFDE188:
 .LSFDE190:
 	.long	.LEFDE190-.LASFDE190
 .LASFDE190:
 	.secrel32	.Lframe0
-	.quad	.LFB10919
-	.quad	.LFE10919-.LFB10919
+	.quad	.LFB10918
+	.quad	.LFE10918-.LFB10918
 	.byte	0x4
-	.long	.LCFI358-.LFB10919
+	.long	.LCFI358-.LFB10918
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16244,10 +16354,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE192-.LASFDE192
 .LASFDE192:
 	.secrel32	.Lframe0
-	.quad	.LFB10920
-	.quad	.LFE10920-.LFB10920
+	.quad	.LFB10919
+	.quad	.LFE10919-.LFB10919
 	.byte	0x4
-	.long	.LCFI361-.LFB10920
+	.long	.LCFI361-.LFB10919
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16268,134 +16378,134 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE194-.LASFDE194
 .LASFDE194:
 	.secrel32	.Lframe0
-	.quad	.LFB10921
-	.quad	.LFE10921-.LFB10921
+	.quad	.LFB10920
+	.quad	.LFE10920-.LFB10920
 	.byte	0x4
-	.long	.LCFI364-.LFB10921
+	.long	.LCFI364-.LFB10920
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI365-.LCFI364
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI366-.LCFI365
-	.byte	0xe
-	.uleb128 0x60
-	.byte	0x4
-	.long	.LCFI367-.LCFI366
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI368-.LCFI367
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI369-.LCFI368
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 7
+	.uleb128 0x8
 	.align 8
 .LEFDE194:
 .LSFDE196:
 	.long	.LEFDE196-.LASFDE196
 .LASFDE196:
 	.secrel32	.Lframe0
-	.quad	.LFB10923
-	.quad	.LFE10923-.LFB10923
+	.quad	.LFB10921
+	.quad	.LFE10921-.LFB10921
 	.byte	0x4
-	.long	.LCFI370-.LFB10923
+	.long	.LCFI367-.LFB10921
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI371-.LCFI370
-	.byte	0xd
+	.long	.LCFI368-.LCFI367
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI369-.LCFI368
+	.byte	0xe
+	.uleb128 0x60
+	.byte	0x4
+	.long	.LCFI370-.LCFI369
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI371-.LCFI370
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI372-.LCFI371
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 7
 	.align 8
 .LEFDE196:
 .LSFDE198:
 	.long	.LEFDE198-.LASFDE198
 .LASFDE198:
 	.secrel32	.Lframe0
-	.quad	.LFB10925
-	.quad	.LFE10925-.LFB10925
+	.quad	.LFB10923
+	.quad	.LFE10923-.LFB10923
 	.byte	0x4
-	.long	.LCFI373-.LFB10925
+	.long	.LCFI373-.LFB10923
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI374-.LCFI373
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI375-.LCFI374
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI376-.LCFI375
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI377-.LCFI376
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI378-.LCFI377
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE198:
 .LSFDE200:
 	.long	.LEFDE200-.LASFDE200
 .LASFDE200:
 	.secrel32	.Lframe0
-	.quad	.LFB10927
-	.quad	.LFE10927-.LFB10927
+	.quad	.LFB10925
+	.quad	.LFE10925-.LFB10925
 	.byte	0x4
-	.long	.LCFI379-.LFB10927
+	.long	.LCFI376-.LFB10925
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI380-.LCFI379
-	.byte	0xd
+	.long	.LCFI377-.LCFI376
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI378-.LCFI377
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI379-.LCFI378
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI380-.LCFI379
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI381-.LCFI380
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE200:
 .LSFDE202:
 	.long	.LEFDE202-.LASFDE202
 .LASFDE202:
 	.secrel32	.Lframe0
-	.quad	.LFB10928
-	.quad	.LFE10928-.LFB10928
+	.quad	.LFB10927
+	.quad	.LFE10927-.LFB10927
 	.byte	0x4
-	.long	.LCFI382-.LFB10928
+	.long	.LCFI382-.LFB10927
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16416,10 +16526,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE204-.LASFDE204
 .LASFDE204:
 	.secrel32	.Lframe0
-	.quad	.LFB10929
-	.quad	.LFE10929-.LFB10929
+	.quad	.LFB10928
+	.quad	.LFE10928-.LFB10928
 	.byte	0x4
-	.long	.LCFI385-.LFB10929
+	.long	.LCFI385-.LFB10928
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16440,72 +16550,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE206-.LASFDE206
 .LASFDE206:
 	.secrel32	.Lframe0
-	.quad	.LFB10930
-	.quad	.LFE10930-.LFB10930
+	.quad	.LFB10929
+	.quad	.LFE10929-.LFB10929
 	.byte	0x4
-	.long	.LCFI388-.LFB10930
+	.long	.LCFI388-.LFB10929
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI389-.LCFI388
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI390-.LCFI389
-	.byte	0xe
-	.uleb128 0x50
-	.byte	0x4
-	.long	.LCFI391-.LCFI390
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI392-.LCFI391
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI393-.LCFI392
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 5
+	.uleb128 0x8
 	.align 8
 .LEFDE206:
 .LSFDE208:
 	.long	.LEFDE208-.LASFDE208
 .LASFDE208:
 	.secrel32	.Lframe0
-	.quad	.LFB10931
-	.quad	.LFE10931-.LFB10931
+	.quad	.LFB10930
+	.quad	.LFE10930-.LFB10930
 	.byte	0x4
-	.long	.LCFI394-.LFB10931
+	.long	.LCFI391-.LFB10930
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI395-.LCFI394
-	.byte	0xd
+	.long	.LCFI392-.LCFI391
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI393-.LCFI392
+	.byte	0xe
+	.uleb128 0x50
+	.byte	0x4
+	.long	.LCFI394-.LCFI393
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI395-.LCFI394
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI396-.LCFI395
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 5
 	.align 8
 .LEFDE208:
 .LSFDE210:
 	.long	.LEFDE210-.LASFDE210
 .LASFDE210:
 	.secrel32	.Lframe0
-	.quad	.LFB10932
-	.quad	.LFE10932-.LFB10932
+	.quad	.LFB10931
+	.quad	.LFE10931-.LFB10931
 	.byte	0x4
-	.long	.LCFI397-.LFB10932
+	.long	.LCFI397-.LFB10931
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16526,10 +16636,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE212-.LASFDE212
 .LASFDE212:
 	.secrel32	.Lframe0
-	.quad	.LFB10933
-	.quad	.LFE10933-.LFB10933
+	.quad	.LFB10932
+	.quad	.LFE10932-.LFB10932
 	.byte	0x4
-	.long	.LCFI400-.LFB10933
+	.long	.LCFI400-.LFB10932
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16550,10 +16660,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE214-.LASFDE214
 .LASFDE214:
 	.secrel32	.Lframe0
-	.quad	.LFB10934
-	.quad	.LFE10934-.LFB10934
+	.quad	.LFB10933
+	.quad	.LFE10933-.LFB10933
 	.byte	0x4
-	.long	.LCFI403-.LFB10934
+	.long	.LCFI403-.LFB10933
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16574,10 +16684,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE216-.LASFDE216
 .LASFDE216:
 	.secrel32	.Lframe0
-	.quad	.LFB10935
-	.quad	.LFE10935-.LFB10935
+	.quad	.LFB10934
+	.quad	.LFE10934-.LFB10934
 	.byte	0x4
-	.long	.LCFI406-.LFB10935
+	.long	.LCFI406-.LFB10934
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16598,10 +16708,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE218-.LASFDE218
 .LASFDE218:
 	.secrel32	.Lframe0
-	.quad	.LFB10938
-	.quad	.LFE10938-.LFB10938
+	.quad	.LFB10935
+	.quad	.LFE10935-.LFB10935
 	.byte	0x4
-	.long	.LCFI409-.LFB10938
+	.long	.LCFI409-.LFB10935
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16622,72 +16732,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE220-.LASFDE220
 .LASFDE220:
 	.secrel32	.Lframe0
-	.quad	.LFB10941
-	.quad	.LFE10941-.LFB10941
+	.quad	.LFB10938
+	.quad	.LFE10938-.LFB10938
 	.byte	0x4
-	.long	.LCFI412-.LFB10941
+	.long	.LCFI412-.LFB10938
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI413-.LCFI412
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI414-.LCFI413
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI415-.LCFI414
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI416-.LCFI415
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI417-.LCFI416
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE220:
 .LSFDE222:
 	.long	.LEFDE222-.LASFDE222
 .LASFDE222:
 	.secrel32	.Lframe0
-	.quad	.LFB10943
-	.quad	.LFE10943-.LFB10943
+	.quad	.LFB10941
+	.quad	.LFE10941-.LFB10941
 	.byte	0x4
-	.long	.LCFI418-.LFB10943
+	.long	.LCFI415-.LFB10941
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI419-.LCFI418
-	.byte	0xd
+	.long	.LCFI416-.LCFI415
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI417-.LCFI416
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI418-.LCFI417
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI419-.LCFI418
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI420-.LCFI419
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE222:
 .LSFDE224:
 	.long	.LEFDE224-.LASFDE224
 .LASFDE224:
 	.secrel32	.Lframe0
-	.quad	.LFB10944
-	.quad	.LFE10944-.LFB10944
+	.quad	.LFB10943
+	.quad	.LFE10943-.LFB10943
 	.byte	0x4
-	.long	.LCFI421-.LFB10944
+	.long	.LCFI421-.LFB10943
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16708,72 +16818,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE226-.LASFDE226
 .LASFDE226:
 	.secrel32	.Lframe0
-	.quad	.LFB10945
-	.quad	.LFE10945-.LFB10945
+	.quad	.LFB10944
+	.quad	.LFE10944-.LFB10944
 	.byte	0x4
-	.long	.LCFI424-.LFB10945
+	.long	.LCFI424-.LFB10944
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI425-.LCFI424
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI426-.LCFI425
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI427-.LCFI426
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI428-.LCFI427
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI429-.LCFI428
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE226:
 .LSFDE228:
 	.long	.LEFDE228-.LASFDE228
 .LASFDE228:
 	.secrel32	.Lframe0
-	.quad	.LFB10946
-	.quad	.LFE10946-.LFB10946
+	.quad	.LFB10945
+	.quad	.LFE10945-.LFB10945
 	.byte	0x4
-	.long	.LCFI430-.LFB10946
+	.long	.LCFI427-.LFB10945
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI431-.LCFI430
-	.byte	0xd
+	.long	.LCFI428-.LCFI427
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI429-.LCFI428
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI430-.LCFI429
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI431-.LCFI430
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI432-.LCFI431
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE228:
 .LSFDE230:
 	.long	.LEFDE230-.LASFDE230
 .LASFDE230:
 	.secrel32	.Lframe0
-	.quad	.LFB10947
-	.quad	.LFE10947-.LFB10947
+	.quad	.LFB10946
+	.quad	.LFE10946-.LFB10946
 	.byte	0x4
-	.long	.LCFI433-.LFB10947
+	.long	.LCFI433-.LFB10946
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16794,72 +16904,58 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE232-.LASFDE232
 .LASFDE232:
 	.secrel32	.Lframe0
-	.quad	.LFB10955
-	.quad	.LFE10955-.LFB10955
+	.quad	.LFB10947
+	.quad	.LFE10947-.LFB10947
 	.byte	0x4
-	.long	.LCFI436-.LFB10955
+	.long	.LCFI436-.LFB10947
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI437-.LCFI436
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI438-.LCFI437
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI439-.LCFI438
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI440-.LCFI439
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI441-.LCFI440
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE232:
 .LSFDE234:
 	.long	.LEFDE234-.LASFDE234
 .LASFDE234:
 	.secrel32	.Lframe0
-	.quad	.LFB11074
-	.quad	.LFE11074-.LFB11074
+	.quad	.LFB10955
+	.quad	.LFE10955-.LFB10955
 	.byte	0x4
-	.long	.LCFI442-.LFB11074
+	.long	.LCFI439-.LFB10955
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI443-.LCFI442
+	.long	.LCFI440-.LCFI439
 	.byte	0xe
 	.uleb128 0x18
 	.byte	0x83
 	.uleb128 0x3
 	.byte	0x4
-	.long	.LCFI444-.LCFI443
+	.long	.LCFI441-.LCFI440
 	.byte	0xe
 	.uleb128 0x40
 	.byte	0x4
-	.long	.LCFI445-.LCFI444
+	.long	.LCFI442-.LCFI441
 	.byte	0xc
 	.uleb128 0x6
 	.uleb128 0x20
 	.byte	0x4
-	.long	.LCFI446-.LCFI445
+	.long	.LCFI443-.LCFI442
 	.byte	0xc3
 	.byte	0x4
-	.long	.LCFI447-.LCFI446
+	.long	.LCFI444-.LCFI443
 	.byte	0xc6
 	.byte	0x12
 	.uleb128 0x7
@@ -16870,34 +16966,48 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE236-.LASFDE236
 .LASFDE236:
 	.secrel32	.Lframe0
-	.quad	.LFB11076
-	.quad	.LFE11076-.LFB11076
+	.quad	.LFB11074
+	.quad	.LFE11074-.LFB11074
 	.byte	0x4
-	.long	.LCFI448-.LFB11076
+	.long	.LCFI445-.LFB11074
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI449-.LCFI448
-	.byte	0xd
+	.long	.LCFI446-.LCFI445
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI447-.LCFI446
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI448-.LCFI447
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI449-.LCFI448
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI450-.LCFI449
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE236:
 .LSFDE238:
 	.long	.LEFDE238-.LASFDE238
 .LASFDE238:
 	.secrel32	.Lframe0
-	.quad	.LFB11077
-	.quad	.LFE11077-.LFB11077
+	.quad	.LFB11076
+	.quad	.LFE11076-.LFB11076
 	.byte	0x4
-	.long	.LCFI451-.LFB11077
+	.long	.LCFI451-.LFB11076
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16918,10 +17028,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE240-.LASFDE240
 .LASFDE240:
 	.secrel32	.Lframe0
-	.quad	.LFB11078
-	.quad	.LFE11078-.LFB11078
+	.quad	.LFB11077
+	.quad	.LFE11077-.LFB11077
 	.byte	0x4
-	.long	.LCFI454-.LFB11078
+	.long	.LCFI454-.LFB11077
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16942,10 +17052,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE242-.LASFDE242
 .LASFDE242:
 	.secrel32	.Lframe0
-	.quad	.LFB11079
-	.quad	.LFE11079-.LFB11079
+	.quad	.LFB11078
+	.quad	.LFE11078-.LFB11078
 	.byte	0x4
-	.long	.LCFI457-.LFB11079
+	.long	.LCFI457-.LFB11078
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16966,10 +17076,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE244-.LASFDE244
 .LASFDE244:
 	.secrel32	.Lframe0
-	.quad	.LFB11082
-	.quad	.LFE11082-.LFB11082
+	.quad	.LFB11079
+	.quad	.LFE11079-.LFB11079
 	.byte	0x4
-	.long	.LCFI460-.LFB11082
+	.long	.LCFI460-.LFB11079
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -16990,72 +17100,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE246-.LASFDE246
 .LASFDE246:
 	.secrel32	.Lframe0
-	.quad	.LFB11083
-	.quad	.LFE11083-.LFB11083
+	.quad	.LFB11082
+	.quad	.LFE11082-.LFB11082
 	.byte	0x4
-	.long	.LCFI463-.LFB11083
+	.long	.LCFI463-.LFB11082
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI464-.LCFI463
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI465-.LCFI464
-	.byte	0xe
-	.uleb128 0x50
-	.byte	0x4
-	.long	.LCFI466-.LCFI465
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI467-.LCFI466
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI468-.LCFI467
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 5
+	.uleb128 0x8
 	.align 8
 .LEFDE246:
 .LSFDE248:
 	.long	.LEFDE248-.LASFDE248
 .LASFDE248:
 	.secrel32	.Lframe0
-	.quad	.LFB11084
-	.quad	.LFE11084-.LFB11084
+	.quad	.LFB11083
+	.quad	.LFE11083-.LFB11083
 	.byte	0x4
-	.long	.LCFI469-.LFB11084
+	.long	.LCFI466-.LFB11083
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI470-.LCFI469
-	.byte	0xd
+	.long	.LCFI467-.LCFI466
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI468-.LCFI467
+	.byte	0xe
+	.uleb128 0x50
+	.byte	0x4
+	.long	.LCFI469-.LCFI468
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI470-.LCFI469
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI471-.LCFI470
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 5
 	.align 8
 .LEFDE248:
 .LSFDE250:
 	.long	.LEFDE250-.LASFDE250
 .LASFDE250:
 	.secrel32	.Lframe0
-	.quad	.LFB11085
-	.quad	.LFE11085-.LFB11085
+	.quad	.LFB11084
+	.quad	.LFE11084-.LFB11084
 	.byte	0x4
-	.long	.LCFI472-.LFB11085
+	.long	.LCFI472-.LFB11084
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17076,10 +17186,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE252-.LASFDE252
 .LASFDE252:
 	.secrel32	.Lframe0
-	.quad	.LFB11088
-	.quad	.LFE11088-.LFB11088
+	.quad	.LFB11085
+	.quad	.LFE11085-.LFB11085
 	.byte	0x4
-	.long	.LCFI475-.LFB11088
+	.long	.LCFI475-.LFB11085
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17100,10 +17210,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE254-.LASFDE254
 .LASFDE254:
 	.secrel32	.Lframe0
-	.quad	.LFB11089
-	.quad	.LFE11089-.LFB11089
+	.quad	.LFB11088
+	.quad	.LFE11088-.LFB11088
 	.byte	0x4
-	.long	.LCFI478-.LFB11089
+	.long	.LCFI478-.LFB11088
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17124,10 +17234,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE256-.LASFDE256
 .LASFDE256:
 	.secrel32	.Lframe0
-	.quad	.LFB11090
-	.quad	.LFE11090-.LFB11090
+	.quad	.LFB11089
+	.quad	.LFE11089-.LFB11089
 	.byte	0x4
-	.long	.LCFI481-.LFB11090
+	.long	.LCFI481-.LFB11089
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17148,10 +17258,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE258-.LASFDE258
 .LASFDE258:
 	.secrel32	.Lframe0
-	.quad	.LFB11091
-	.quad	.LFE11091-.LFB11091
+	.quad	.LFB11090
+	.quad	.LFE11090-.LFB11090
 	.byte	0x4
-	.long	.LCFI484-.LFB11091
+	.long	.LCFI484-.LFB11090
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17172,10 +17282,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE260-.LASFDE260
 .LASFDE260:
 	.secrel32	.Lframe0
-	.quad	.LFB11092
-	.quad	.LFE11092-.LFB11092
+	.quad	.LFB11091
+	.quad	.LFE11091-.LFB11091
 	.byte	0x4
-	.long	.LCFI487-.LFB11092
+	.long	.LCFI487-.LFB11091
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17196,10 +17306,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE262-.LASFDE262
 .LASFDE262:
 	.secrel32	.Lframe0
-	.quad	.LFB11094
-	.quad	.LFE11094-.LFB11094
+	.quad	.LFB11092
+	.quad	.LFE11092-.LFB11092
 	.byte	0x4
-	.long	.LCFI490-.LFB11094
+	.long	.LCFI490-.LFB11092
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17220,10 +17330,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE264-.LASFDE264
 .LASFDE264:
 	.secrel32	.Lframe0
-	.quad	.LFB11098
-	.quad	.LFE11098-.LFB11098
+	.quad	.LFB11094
+	.quad	.LFE11094-.LFB11094
 	.byte	0x4
-	.long	.LCFI493-.LFB11098
+	.long	.LCFI493-.LFB11094
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17244,10 +17354,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE266-.LASFDE266
 .LASFDE266:
 	.secrel32	.Lframe0
-	.quad	.LFB11099
-	.quad	.LFE11099-.LFB11099
+	.quad	.LFB11098
+	.quad	.LFE11098-.LFB11098
 	.byte	0x4
-	.long	.LCFI496-.LFB11099
+	.long	.LCFI496-.LFB11098
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17268,10 +17378,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE268-.LASFDE268
 .LASFDE268:
 	.secrel32	.Lframe0
-	.quad	.LFB11100
-	.quad	.LFE11100-.LFB11100
+	.quad	.LFB11099
+	.quad	.LFE11099-.LFB11099
 	.byte	0x4
-	.long	.LCFI499-.LFB11100
+	.long	.LCFI499-.LFB11099
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17292,10 +17402,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE270-.LASFDE270
 .LASFDE270:
 	.secrel32	.Lframe0
-	.quad	.LFB11101
-	.quad	.LFE11101-.LFB11101
+	.quad	.LFB11100
+	.quad	.LFE11100-.LFB11100
 	.byte	0x4
-	.long	.LCFI502-.LFB11101
+	.long	.LCFI502-.LFB11100
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17316,72 +17426,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE272-.LASFDE272
 .LASFDE272:
 	.secrel32	.Lframe0
-	.quad	.LFB11103
-	.quad	.LFE11103-.LFB11103
+	.quad	.LFB11101
+	.quad	.LFE11101-.LFB11101
 	.byte	0x4
-	.long	.LCFI505-.LFB11103
+	.long	.LCFI505-.LFB11101
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI506-.LCFI505
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI507-.LCFI506
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI508-.LCFI507
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI509-.LCFI508
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI510-.LCFI509
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE272:
 .LSFDE274:
 	.long	.LEFDE274-.LASFDE274
 .LASFDE274:
 	.secrel32	.Lframe0
-	.quad	.LFB11184
-	.quad	.LFE11184-.LFB11184
+	.quad	.LFB11103
+	.quad	.LFE11103-.LFB11103
 	.byte	0x4
-	.long	.LCFI511-.LFB11184
+	.long	.LCFI508-.LFB11103
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI512-.LCFI511
-	.byte	0xd
+	.long	.LCFI509-.LCFI508
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI510-.LCFI509
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI511-.LCFI510
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI512-.LCFI511
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI513-.LCFI512
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE274:
 .LSFDE276:
 	.long	.LEFDE276-.LASFDE276
 .LASFDE276:
 	.secrel32	.Lframe0
-	.quad	.LFB11185
-	.quad	.LFE11185-.LFB11185
+	.quad	.LFB11184
+	.quad	.LFE11184-.LFB11184
 	.byte	0x4
-	.long	.LCFI514-.LFB11185
+	.long	.LCFI514-.LFB11184
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17402,10 +17512,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE278-.LASFDE278
 .LASFDE278:
 	.secrel32	.Lframe0
-	.quad	.LFB11186
-	.quad	.LFE11186-.LFB11186
+	.quad	.LFB11185
+	.quad	.LFE11185-.LFB11185
 	.byte	0x4
-	.long	.LCFI517-.LFB11186
+	.long	.LCFI517-.LFB11185
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17426,10 +17536,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE280-.LASFDE280
 .LASFDE280:
 	.secrel32	.Lframe0
-	.quad	.LFB11187
-	.quad	.LFE11187-.LFB11187
+	.quad	.LFB11186
+	.quad	.LFE11186-.LFB11186
 	.byte	0x4
-	.long	.LCFI520-.LFB11187
+	.long	.LCFI520-.LFB11186
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17450,10 +17560,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE282-.LASFDE282
 .LASFDE282:
 	.secrel32	.Lframe0
-	.quad	.LFB11188
-	.quad	.LFE11188-.LFB11188
+	.quad	.LFB11187
+	.quad	.LFE11187-.LFB11187
 	.byte	0x4
-	.long	.LCFI523-.LFB11188
+	.long	.LCFI523-.LFB11187
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17474,10 +17584,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE284-.LASFDE284
 .LASFDE284:
 	.secrel32	.Lframe0
-	.quad	.LFB11189
-	.quad	.LFE11189-.LFB11189
+	.quad	.LFB11188
+	.quad	.LFE11188-.LFB11188
 	.byte	0x4
-	.long	.LCFI526-.LFB11189
+	.long	.LCFI526-.LFB11188
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17498,10 +17608,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE286-.LASFDE286
 .LASFDE286:
 	.secrel32	.Lframe0
-	.quad	.LFB11190
-	.quad	.LFE11190-.LFB11190
+	.quad	.LFB11189
+	.quad	.LFE11189-.LFB11189
 	.byte	0x4
-	.long	.LCFI529-.LFB11190
+	.long	.LCFI529-.LFB11189
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17522,10 +17632,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE288-.LASFDE288
 .LASFDE288:
 	.secrel32	.Lframe0
-	.quad	.LFB11192
-	.quad	.LFE11192-.LFB11192
+	.quad	.LFB11190
+	.quad	.LFE11190-.LFB11190
 	.byte	0x4
-	.long	.LCFI532-.LFB11192
+	.long	.LCFI532-.LFB11190
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17546,10 +17656,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE290-.LASFDE290
 .LASFDE290:
 	.secrel32	.Lframe0
-	.quad	.LFB11195
-	.quad	.LFE11195-.LFB11195
+	.quad	.LFB11192
+	.quad	.LFE11192-.LFB11192
 	.byte	0x4
-	.long	.LCFI535-.LFB11195
+	.long	.LCFI535-.LFB11192
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17570,10 +17680,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE292-.LASFDE292
 .LASFDE292:
 	.secrel32	.Lframe0
-	.quad	.LFB11198
-	.quad	.LFE11198-.LFB11198
+	.quad	.LFB11195
+	.quad	.LFE11195-.LFB11195
 	.byte	0x4
-	.long	.LCFI538-.LFB11198
+	.long	.LCFI538-.LFB11195
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17594,10 +17704,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE294-.LASFDE294
 .LASFDE294:
 	.secrel32	.Lframe0
-	.quad	.LFB11200
-	.quad	.LFE11200-.LFB11200
+	.quad	.LFB11198
+	.quad	.LFE11198-.LFB11198
 	.byte	0x4
-	.long	.LCFI541-.LFB11200
+	.long	.LCFI541-.LFB11198
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17618,10 +17728,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE296-.LASFDE296
 .LASFDE296:
 	.secrel32	.Lframe0
-	.quad	.LFB11201
-	.quad	.LFE11201-.LFB11201
+	.quad	.LFB11200
+	.quad	.LFE11200-.LFB11200
 	.byte	0x4
-	.long	.LCFI544-.LFB11201
+	.long	.LCFI544-.LFB11200
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17642,10 +17752,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE298-.LASFDE298
 .LASFDE298:
 	.secrel32	.Lframe0
-	.quad	.LFB11202
-	.quad	.LFE11202-.LFB11202
+	.quad	.LFB11201
+	.quad	.LFE11201-.LFB11201
 	.byte	0x4
-	.long	.LCFI547-.LFB11202
+	.long	.LCFI547-.LFB11201
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17666,72 +17776,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE300-.LASFDE300
 .LASFDE300:
 	.secrel32	.Lframe0
-	.quad	.LFB11204
-	.quad	.LFE11204-.LFB11204
+	.quad	.LFB11202
+	.quad	.LFE11202-.LFB11202
 	.byte	0x4
-	.long	.LCFI550-.LFB11204
+	.long	.LCFI550-.LFB11202
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI551-.LCFI550
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI552-.LCFI551
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI553-.LCFI552
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI554-.LCFI553
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI555-.LCFI554
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE300:
 .LSFDE302:
 	.long	.LEFDE302-.LASFDE302
 .LASFDE302:
 	.secrel32	.Lframe0
-	.quad	.LFB11252
-	.quad	.LFE11252-.LFB11252
+	.quad	.LFB11204
+	.quad	.LFE11204-.LFB11204
 	.byte	0x4
-	.long	.LCFI556-.LFB11252
+	.long	.LCFI553-.LFB11204
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI557-.LCFI556
-	.byte	0xd
+	.long	.LCFI554-.LCFI553
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI555-.LCFI554
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI556-.LCFI555
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI557-.LCFI556
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI558-.LCFI557
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE302:
 .LSFDE304:
 	.long	.LEFDE304-.LASFDE304
 .LASFDE304:
 	.secrel32	.Lframe0
-	.quad	.LFB11254
-	.quad	.LFE11254-.LFB11254
+	.quad	.LFB11252
+	.quad	.LFE11252-.LFB11252
 	.byte	0x4
-	.long	.LCFI559-.LFB11254
+	.long	.LCFI559-.LFB11252
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17752,10 +17862,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE306-.LASFDE306
 .LASFDE306:
 	.secrel32	.Lframe0
-	.quad	.LFB11255
-	.quad	.LFE11255-.LFB11255
+	.quad	.LFB11254
+	.quad	.LFE11254-.LFB11254
 	.byte	0x4
-	.long	.LCFI562-.LFB11255
+	.long	.LCFI562-.LFB11254
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17776,10 +17886,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE308-.LASFDE308
 .LASFDE308:
 	.secrel32	.Lframe0
-	.quad	.LFB11256
-	.quad	.LFE11256-.LFB11256
+	.quad	.LFB11255
+	.quad	.LFE11255-.LFB11255
 	.byte	0x4
-	.long	.LCFI565-.LFB11256
+	.long	.LCFI565-.LFB11255
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17800,10 +17910,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE310-.LASFDE310
 .LASFDE310:
 	.secrel32	.Lframe0
-	.quad	.LFB11257
-	.quad	.LFE11257-.LFB11257
+	.quad	.LFB11256
+	.quad	.LFE11256-.LFB11256
 	.byte	0x4
-	.long	.LCFI568-.LFB11257
+	.long	.LCFI568-.LFB11256
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17824,10 +17934,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE312-.LASFDE312
 .LASFDE312:
 	.secrel32	.Lframe0
-	.quad	.LFB11258
-	.quad	.LFE11258-.LFB11258
+	.quad	.LFB11257
+	.quad	.LFE11257-.LFB11257
 	.byte	0x4
-	.long	.LCFI571-.LFB11258
+	.long	.LCFI571-.LFB11257
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17848,10 +17958,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE314-.LASFDE314
 .LASFDE314:
 	.secrel32	.Lframe0
-	.quad	.LFB11259
-	.quad	.LFE11259-.LFB11259
+	.quad	.LFB11258
+	.quad	.LFE11258-.LFB11258
 	.byte	0x4
-	.long	.LCFI574-.LFB11259
+	.long	.LCFI574-.LFB11258
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17872,10 +17982,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE316-.LASFDE316
 .LASFDE316:
 	.secrel32	.Lframe0
-	.quad	.LFB11261
-	.quad	.LFE11261-.LFB11261
+	.quad	.LFB11259
+	.quad	.LFE11259-.LFB11259
 	.byte	0x4
-	.long	.LCFI577-.LFB11261
+	.long	.LCFI577-.LFB11259
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17896,10 +18006,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE318-.LASFDE318
 .LASFDE318:
 	.secrel32	.Lframe0
-	.quad	.LFB11264
-	.quad	.LFE11264-.LFB11264
+	.quad	.LFB11261
+	.quad	.LFE11261-.LFB11261
 	.byte	0x4
-	.long	.LCFI580-.LFB11264
+	.long	.LCFI580-.LFB11261
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17920,10 +18030,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE320-.LASFDE320
 .LASFDE320:
 	.secrel32	.Lframe0
-	.quad	.LFB11267
-	.quad	.LFE11267-.LFB11267
+	.quad	.LFB11264
+	.quad	.LFE11264-.LFB11264
 	.byte	0x4
-	.long	.LCFI583-.LFB11267
+	.long	.LCFI583-.LFB11264
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17944,10 +18054,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE322-.LASFDE322
 .LASFDE322:
 	.secrel32	.Lframe0
-	.quad	.LFB11269
-	.quad	.LFE11269-.LFB11269
+	.quad	.LFB11267
+	.quad	.LFE11267-.LFB11267
 	.byte	0x4
-	.long	.LCFI586-.LFB11269
+	.long	.LCFI586-.LFB11267
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17968,10 +18078,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE324-.LASFDE324
 .LASFDE324:
 	.secrel32	.Lframe0
-	.quad	.LFB11270
-	.quad	.LFE11270-.LFB11270
+	.quad	.LFB11269
+	.quad	.LFE11269-.LFB11269
 	.byte	0x4
-	.long	.LCFI589-.LFB11270
+	.long	.LCFI589-.LFB11269
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -17992,10 +18102,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE326-.LASFDE326
 .LASFDE326:
 	.secrel32	.Lframe0
-	.quad	.LFB11271
-	.quad	.LFE11271-.LFB11271
+	.quad	.LFB11270
+	.quad	.LFE11270-.LFB11270
 	.byte	0x4
-	.long	.LCFI592-.LFB11271
+	.long	.LCFI592-.LFB11270
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18016,72 +18126,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE328-.LASFDE328
 .LASFDE328:
 	.secrel32	.Lframe0
-	.quad	.LFB11273
-	.quad	.LFE11273-.LFB11273
+	.quad	.LFB11271
+	.quad	.LFE11271-.LFB11271
 	.byte	0x4
-	.long	.LCFI595-.LFB11273
+	.long	.LCFI595-.LFB11271
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI596-.LCFI595
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI597-.LCFI596
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI598-.LCFI597
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI599-.LCFI598
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI600-.LCFI599
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE328:
 .LSFDE330:
 	.long	.LEFDE330-.LASFDE330
 .LASFDE330:
 	.secrel32	.Lframe0
-	.quad	.LFB11307
-	.quad	.LFE11307-.LFB11307
+	.quad	.LFB11273
+	.quad	.LFE11273-.LFB11273
 	.byte	0x4
-	.long	.LCFI601-.LFB11307
+	.long	.LCFI598-.LFB11273
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI602-.LCFI601
-	.byte	0xd
+	.long	.LCFI599-.LCFI598
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI600-.LCFI599
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI601-.LCFI600
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI602-.LCFI601
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI603-.LCFI602
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE330:
 .LSFDE332:
 	.long	.LEFDE332-.LASFDE332
 .LASFDE332:
 	.secrel32	.Lframe0
-	.quad	.LFB11310
-	.quad	.LFE11310-.LFB11310
+	.quad	.LFB11307
+	.quad	.LFE11307-.LFB11307
 	.byte	0x4
-	.long	.LCFI604-.LFB11310
+	.long	.LCFI604-.LFB11307
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18102,10 +18212,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE334-.LASFDE334
 .LASFDE334:
 	.secrel32	.Lframe0
-	.quad	.LFB11312
-	.quad	.LFE11312-.LFB11312
+	.quad	.LFB11310
+	.quad	.LFE11310-.LFB11310
 	.byte	0x4
-	.long	.LCFI607-.LFB11312
+	.long	.LCFI607-.LFB11310
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18126,10 +18236,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE336-.LASFDE336
 .LASFDE336:
 	.secrel32	.Lframe0
-	.quad	.LFB11313
-	.quad	.LFE11313-.LFB11313
+	.quad	.LFB11312
+	.quad	.LFE11312-.LFB11312
 	.byte	0x4
-	.long	.LCFI610-.LFB11313
+	.long	.LCFI610-.LFB11312
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18150,10 +18260,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE338-.LASFDE338
 .LASFDE338:
 	.secrel32	.Lframe0
-	.quad	.LFB11314
-	.quad	.LFE11314-.LFB11314
+	.quad	.LFB11313
+	.quad	.LFE11313-.LFB11313
 	.byte	0x4
-	.long	.LCFI613-.LFB11314
+	.long	.LCFI613-.LFB11313
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18174,10 +18284,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE340-.LASFDE340
 .LASFDE340:
 	.secrel32	.Lframe0
-	.quad	.LFB11315
-	.quad	.LFE11315-.LFB11315
+	.quad	.LFB11314
+	.quad	.LFE11314-.LFB11314
 	.byte	0x4
-	.long	.LCFI616-.LFB11315
+	.long	.LCFI616-.LFB11314
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18198,10 +18308,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE342-.LASFDE342
 .LASFDE342:
 	.secrel32	.Lframe0
-	.quad	.LFB11316
-	.quad	.LFE11316-.LFB11316
+	.quad	.LFB11315
+	.quad	.LFE11315-.LFB11315
 	.byte	0x4
-	.long	.LCFI619-.LFB11316
+	.long	.LCFI619-.LFB11315
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18222,10 +18332,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE344-.LASFDE344
 .LASFDE344:
 	.secrel32	.Lframe0
-	.quad	.LFB11318
-	.quad	.LFE11318-.LFB11318
+	.quad	.LFB11316
+	.quad	.LFE11316-.LFB11316
 	.byte	0x4
-	.long	.LCFI622-.LFB11318
+	.long	.LCFI622-.LFB11316
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18246,10 +18356,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE346-.LASFDE346
 .LASFDE346:
 	.secrel32	.Lframe0
-	.quad	.LFB11320
-	.quad	.LFE11320-.LFB11320
+	.quad	.LFB11318
+	.quad	.LFE11318-.LFB11318
 	.byte	0x4
-	.long	.LCFI625-.LFB11320
+	.long	.LCFI625-.LFB11318
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18270,10 +18380,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE348-.LASFDE348
 .LASFDE348:
 	.secrel32	.Lframe0
-	.quad	.LFB11321
-	.quad	.LFE11321-.LFB11321
+	.quad	.LFB11320
+	.quad	.LFE11320-.LFB11320
 	.byte	0x4
-	.long	.LCFI628-.LFB11321
+	.long	.LCFI628-.LFB11320
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18294,10 +18404,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE350-.LASFDE350
 .LASFDE350:
 	.secrel32	.Lframe0
-	.quad	.LFB11322
-	.quad	.LFE11322-.LFB11322
+	.quad	.LFB11321
+	.quad	.LFE11321-.LFB11321
 	.byte	0x4
-	.long	.LCFI631-.LFB11322
+	.long	.LCFI631-.LFB11321
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18318,10 +18428,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE352-.LASFDE352
 .LASFDE352:
 	.secrel32	.Lframe0
-	.quad	.LFB11339
-	.quad	.LFE11339-.LFB11339
+	.quad	.LFB11322
+	.quad	.LFE11322-.LFB11322
 	.byte	0x4
-	.long	.LCFI634-.LFB11339
+	.long	.LCFI634-.LFB11322
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18342,10 +18452,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE354-.LASFDE354
 .LASFDE354:
 	.secrel32	.Lframe0
-	.quad	.LFB11341
-	.quad	.LFE11341-.LFB11341
+	.quad	.LFB11339
+	.quad	.LFE11339-.LFB11339
 	.byte	0x4
-	.long	.LCFI637-.LFB11341
+	.long	.LCFI637-.LFB11339
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18366,10 +18476,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE356-.LASFDE356
 .LASFDE356:
 	.secrel32	.Lframe0
-	.quad	.LFB11342
-	.quad	.LFE11342-.LFB11342
+	.quad	.LFB11341
+	.quad	.LFE11341-.LFB11341
 	.byte	0x4
-	.long	.LCFI640-.LFB11342
+	.long	.LCFI640-.LFB11341
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18390,10 +18500,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE358-.LASFDE358
 .LASFDE358:
 	.secrel32	.Lframe0
-	.quad	.LFB11343
-	.quad	.LFE11343-.LFB11343
+	.quad	.LFB11342
+	.quad	.LFE11342-.LFB11342
 	.byte	0x4
-	.long	.LCFI643-.LFB11343
+	.long	.LCFI643-.LFB11342
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18414,10 +18524,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE360-.LASFDE360
 .LASFDE360:
 	.secrel32	.Lframe0
-	.quad	.LFB11344
-	.quad	.LFE11344-.LFB11344
+	.quad	.LFB11343
+	.quad	.LFE11343-.LFB11343
 	.byte	0x4
-	.long	.LCFI646-.LFB11344
+	.long	.LCFI646-.LFB11343
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18438,10 +18548,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE362-.LASFDE362
 .LASFDE362:
 	.secrel32	.Lframe0
-	.quad	.LFB11345
-	.quad	.LFE11345-.LFB11345
+	.quad	.LFB11344
+	.quad	.LFE11344-.LFB11344
 	.byte	0x4
-	.long	.LCFI649-.LFB11345
+	.long	.LCFI649-.LFB11344
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18462,10 +18572,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE364-.LASFDE364
 .LASFDE364:
 	.secrel32	.Lframe0
-	.quad	.LFB11347
-	.quad	.LFE11347-.LFB11347
+	.quad	.LFB11345
+	.quad	.LFE11345-.LFB11345
 	.byte	0x4
-	.long	.LCFI652-.LFB11347
+	.long	.LCFI652-.LFB11345
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18486,10 +18596,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE366-.LASFDE366
 .LASFDE366:
 	.secrel32	.Lframe0
-	.quad	.LFB11349
-	.quad	.LFE11349-.LFB11349
+	.quad	.LFB11347
+	.quad	.LFE11347-.LFB11347
 	.byte	0x4
-	.long	.LCFI655-.LFB11349
+	.long	.LCFI655-.LFB11347
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18510,10 +18620,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE368-.LASFDE368
 .LASFDE368:
 	.secrel32	.Lframe0
-	.quad	.LFB11351
-	.quad	.LFE11351-.LFB11351
+	.quad	.LFB11349
+	.quad	.LFE11349-.LFB11349
 	.byte	0x4
-	.long	.LCFI658-.LFB11351
+	.long	.LCFI658-.LFB11349
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18534,10 +18644,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE370-.LASFDE370
 .LASFDE370:
 	.secrel32	.Lframe0
-	.quad	.LFB11373
-	.quad	.LFE11373-.LFB11373
+	.quad	.LFB11351
+	.quad	.LFE11351-.LFB11351
 	.byte	0x4
-	.long	.LCFI661-.LFB11373
+	.long	.LCFI661-.LFB11351
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18558,10 +18668,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE372-.LASFDE372
 .LASFDE372:
 	.secrel32	.Lframe0
-	.quad	.LFB11372
-	.quad	.LFE11372-.LFB11372
+	.quad	.LFB11373
+	.quad	.LFE11373-.LFB11373
 	.byte	0x4
-	.long	.LCFI664-.LFB11372
+	.long	.LCFI664-.LFB11373
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18582,10 +18692,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE374-.LASFDE374
 .LASFDE374:
 	.secrel32	.Lframe0
-	.quad	.LFB11381
-	.quad	.LFE11381-.LFB11381
+	.quad	.LFB11372
+	.quad	.LFE11372-.LFB11372
 	.byte	0x4
-	.long	.LCFI667-.LFB11381
+	.long	.LCFI667-.LFB11372
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18606,10 +18716,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE376-.LASFDE376
 .LASFDE376:
 	.secrel32	.Lframe0
-	.quad	.LFB11385
-	.quad	.LFE11385-.LFB11385
+	.quad	.LFB11381
+	.quad	.LFE11381-.LFB11381
 	.byte	0x4
-	.long	.LCFI670-.LFB11385
+	.long	.LCFI670-.LFB11381
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18630,10 +18740,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE378-.LASFDE378
 .LASFDE378:
 	.secrel32	.Lframe0
-	.quad	.LFB11392
-	.quad	.LFE11392-.LFB11392
+	.quad	.LFB11385
+	.quad	.LFE11385-.LFB11385
 	.byte	0x4
-	.long	.LCFI673-.LFB11392
+	.long	.LCFI673-.LFB11385
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18654,10 +18764,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE380-.LASFDE380
 .LASFDE380:
 	.secrel32	.Lframe0
-	.quad	.LFB11396
-	.quad	.LFE11396-.LFB11396
+	.quad	.LFB11392
+	.quad	.LFE11392-.LFB11392
 	.byte	0x4
-	.long	.LCFI676-.LFB11396
+	.long	.LCFI676-.LFB11392
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18678,10 +18788,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE382-.LASFDE382
 .LASFDE382:
 	.secrel32	.Lframe0
-	.quad	.LFB11397
-	.quad	.LFE11397-.LFB11397
+	.quad	.LFB11396
+	.quad	.LFE11396-.LFB11396
 	.byte	0x4
-	.long	.LCFI679-.LFB11397
+	.long	.LCFI679-.LFB11396
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18702,72 +18812,72 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE384-.LASFDE384
 .LASFDE384:
 	.secrel32	.Lframe0
-	.quad	.LFB11398
-	.quad	.LFE11398-.LFB11398
+	.quad	.LFB11397
+	.quad	.LFE11397-.LFB11397
 	.byte	0x4
-	.long	.LCFI682-.LFB11398
+	.long	.LCFI682-.LFB11397
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
 	.long	.LCFI683-.LCFI682
-	.byte	0xe
-	.uleb128 0x18
-	.byte	0x83
-	.uleb128 0x3
+	.byte	0xd
+	.uleb128 0x6
 	.byte	0x4
 	.long	.LCFI684-.LCFI683
-	.byte	0xe
-	.uleb128 0x40
-	.byte	0x4
-	.long	.LCFI685-.LCFI684
-	.byte	0xc
-	.uleb128 0x6
-	.uleb128 0x20
-	.byte	0x4
-	.long	.LCFI686-.LCFI685
-	.byte	0xc3
-	.byte	0x4
-	.long	.LCFI687-.LCFI686
 	.byte	0xc6
-	.byte	0x12
+	.byte	0xc
 	.uleb128 0x7
-	.sleb128 3
+	.uleb128 0x8
 	.align 8
 .LEFDE384:
 .LSFDE386:
 	.long	.LEFDE386-.LASFDE386
 .LASFDE386:
 	.secrel32	.Lframe0
-	.quad	.LFB11402
-	.quad	.LFE11402-.LFB11402
+	.quad	.LFB11398
+	.quad	.LFE11398-.LFB11398
 	.byte	0x4
-	.long	.LCFI688-.LFB11402
+	.long	.LCFI685-.LFB11398
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
 	.uleb128 0x2
 	.byte	0x4
-	.long	.LCFI689-.LCFI688
-	.byte	0xd
+	.long	.LCFI686-.LCFI685
+	.byte	0xe
+	.uleb128 0x18
+	.byte	0x83
+	.uleb128 0x3
+	.byte	0x4
+	.long	.LCFI687-.LCFI686
+	.byte	0xe
+	.uleb128 0x40
+	.byte	0x4
+	.long	.LCFI688-.LCFI687
+	.byte	0xc
 	.uleb128 0x6
+	.uleb128 0x20
+	.byte	0x4
+	.long	.LCFI689-.LCFI688
+	.byte	0xc3
 	.byte	0x4
 	.long	.LCFI690-.LCFI689
 	.byte	0xc6
-	.byte	0xc
+	.byte	0x12
 	.uleb128 0x7
-	.uleb128 0x8
+	.sleb128 3
 	.align 8
 .LEFDE386:
 .LSFDE388:
 	.long	.LEFDE388-.LASFDE388
 .LASFDE388:
 	.secrel32	.Lframe0
-	.quad	.LFB11403
-	.quad	.LFE11403-.LFB11403
+	.quad	.LFB11402
+	.quad	.LFE11402-.LFB11402
 	.byte	0x4
-	.long	.LCFI691-.LFB11403
+	.long	.LCFI691-.LFB11402
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18788,10 +18898,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE390-.LASFDE390
 .LASFDE390:
 	.secrel32	.Lframe0
-	.quad	.LFB11406
-	.quad	.LFE11406-.LFB11406
+	.quad	.LFB11403
+	.quad	.LFE11403-.LFB11403
 	.byte	0x4
-	.long	.LCFI694-.LFB11406
+	.long	.LCFI694-.LFB11403
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18812,10 +18922,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE392-.LASFDE392
 .LASFDE392:
 	.secrel32	.Lframe0
-	.quad	.LFB11408
-	.quad	.LFE11408-.LFB11408
+	.quad	.LFB11406
+	.quad	.LFE11406-.LFB11406
 	.byte	0x4
-	.long	.LCFI697-.LFB11408
+	.long	.LCFI697-.LFB11406
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18836,10 +18946,10 @@ _GLOBAL__sub_I_Factory:
 	.long	.LEFDE394-.LASFDE394
 .LASFDE394:
 	.secrel32	.Lframe0
-	.quad	.LFB11410
-	.quad	.LFE11410-.LFB11410
+	.quad	.LFB11408
+	.quad	.LFE11408-.LFB11408
 	.byte	0x4
-	.long	.LCFI700-.LFB11410
+	.long	.LCFI700-.LFB11408
 	.byte	0xe
 	.uleb128 0x10
 	.byte	0x86
@@ -18856,6 +18966,30 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x8
 	.align 8
 .LEFDE394:
+.LSFDE396:
+	.long	.LEFDE396-.LASFDE396
+.LASFDE396:
+	.secrel32	.Lframe0
+	.quad	.LFB11410
+	.quad	.LFE11410-.LFB11410
+	.byte	0x4
+	.long	.LCFI703-.LFB11410
+	.byte	0xe
+	.uleb128 0x10
+	.byte	0x86
+	.uleb128 0x2
+	.byte	0x4
+	.long	.LCFI704-.LCFI703
+	.byte	0xd
+	.uleb128 0x6
+	.byte	0x4
+	.long	.LCFI705-.LCFI704
+	.byte	0xc6
+	.byte	0xc
+	.uleb128 0x7
+	.uleb128 0x8
+	.align 8
+.LEFDE396:
 	.text
 .Letext0:
 	.file 22 "C:/msys64/mingw64/include/vadefs.h"
@@ -18927,7 +19061,7 @@ _GLOBAL__sub_I_Factory:
 	.file 88 "C:/msys64/mingw64/include/stringapiset.h"
 	.section	.debug_info,"dr"
 .Ldebug_info0:
-	.long	0x23b2e
+	.long	0x23b7a
 	.word	0x5
 	.byte	0x1
 	.byte	0x8
@@ -21760,7 +21894,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF25
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF127
 	.uleb128 0x2
 	.long	0x18f5b
@@ -23037,7 +23171,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xcc
 	.byte	0xe
 	.long	0x436b
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF52
 	.byte	0x7
 	.byte	0xd0
@@ -23079,7 +23213,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xd9
 	.byte	0xe
 	.long	0x44ef
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF52
 	.byte	0x7
 	.byte	0xdd
@@ -29253,7 +29387,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x13a3
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0x7c
@@ -29264,7 +29398,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x1cf54
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0x7f
@@ -29486,7 +29620,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x13a3
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0xe9
@@ -29497,7 +29631,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x1cf90
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0xec
@@ -30411,7 +30545,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x13a3
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0x7c
@@ -30422,7 +30556,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x1d2e2
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0x7f
@@ -30644,7 +30778,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x13a3
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0xe9
@@ -30655,7 +30789,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x1d31e
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0xec
@@ -31620,7 +31754,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x13a3
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0x7c
@@ -31631,7 +31765,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x1d426
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0x7f
@@ -31853,7 +31987,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x13a3
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0xe9
@@ -31864,7 +31998,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x1d462
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF109
 	.byte	0x13
 	.byte	0xec
@@ -33124,7 +33258,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xd
 	.ascii "_Fn\0"
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF127
 	.uleb128 0x1
 	.long	0xe55
@@ -33147,7 +33281,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x1
 	.long	0x1d53d
@@ -33159,7 +33293,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF25
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF127
 	.uleb128 0x1
 	.long	0x142f5
@@ -33216,7 +33350,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0x1189a
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x1
 	.long	0x1d42b
@@ -33260,7 +33394,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0xf8e3
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x1
 	.long	0x1d2e7
@@ -33472,7 +33606,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0xd296
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x1
 	.long	0x1cf59
@@ -38777,11 +38911,11 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x2
 	.long	0x20826
 	.uleb128 0x1
-	.long	0x23349
+	.long	0x23395
 	.uleb128 0x1
-	.long	0x2334e
+	.long	0x2339a
 	.uleb128 0x1
-	.long	0x23353
+	.long	0x2339f
 	.byte	0
 	.byte	0
 	.uleb128 0x24
@@ -38800,9 +38934,9 @@ _GLOBAL__sub_I_Factory:
 	.long	0x63f
 	.long	0x1ab16
 	.uleb128 0x2
-	.long	0x232fe
+	.long	0x2334a
 	.uleb128 0x1
-	.long	0x23308
+	.long	0x23354
 	.byte	0
 	.byte	0
 	.uleb128 0xac
@@ -38817,9 +38951,9 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1ab7d
 	.long	0x1ab88
 	.uleb128 0x2
-	.long	0x233eb
+	.long	0x23437
 	.uleb128 0x1
-	.long	0x233f5
+	.long	0x23441
 	.byte	0
 	.uleb128 0x3a
 	.ascii "DrawBitmap\0"
@@ -38830,17 +38964,17 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1ac05
 	.long	0x1ac24
 	.uleb128 0x2
-	.long	0x233eb
+	.long	0x23437
 	.uleb128 0x1
 	.long	0x1bb7d
 	.uleb128 0x1
-	.long	0x2343d
+	.long	0x23489
 	.uleb128 0x1
 	.long	0x4c1
 	.uleb128 0x1
 	.long	0x1a0f5
 	.uleb128 0x1
-	.long	0x23442
+	.long	0x2348e
 	.byte	0
 	.uleb128 0x39
 	.ascii "CreateCompatibleRenderTarget\0"
@@ -38852,9 +38986,9 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1aca3
 	.long	0x1acae
 	.uleb128 0x2
-	.long	0x233eb
+	.long	0x23437
 	.uleb128 0x1
-	.long	0x234f5
+	.long	0x23541
 	.byte	0
 	.uleb128 0xa5
 	.ascii "CreateSolidColorBrush\0"
@@ -38863,9 +38997,9 @@ _GLOBAL__sub_I_Factory:
 	.long	0x63f
 	.long	0x1ad29
 	.uleb128 0x2
-	.long	0x233eb
+	.long	0x23437
 	.uleb128 0x1
-	.long	0x233f5
+	.long	0x23441
 	.uleb128 0x1
 	.long	0x1bb9d
 	.byte	0
@@ -39645,7 +39779,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x1a803
 	.uleb128 0x1
-	.long	0x2319b
+	.long	0x231e7
 	.uleb128 0x1
 	.long	0x4c1
 	.uleb128 0x1
@@ -40799,7 +40933,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x59
 	.ascii "AccessDataAt\0"
 	.byte	0xc
-	.byte	0xe2
+	.byte	0xe0
 	.byte	0x7
 	.ascii "_ZN6MATRIX12AccessDataAtEjjj\0"
 	.long	0x1c8b9
@@ -40817,7 +40951,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x59
 	.ascii "WriteDataTo\0"
 	.byte	0xc
-	.byte	0xe8
+	.byte	0xe6
 	.byte	0x7
 	.ascii "_ZN6MATRIX11WriteDataToEjjjRKNS_4cellE\0"
 	.long	0x1c8b9
@@ -40837,7 +40971,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x5a
 	.ascii "UpdateWorldView\0"
 	.byte	0xc
-	.byte	0xef
+	.byte	0xed
 	.byte	0xe
 	.ascii "_ZN6MATRIX15UpdateWorldViewEP6HWND__RSt6atomicIbE\0"
 	.long	0x1cb97
@@ -40852,7 +40986,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x3a
 	.ascii "FlushMatrix\0"
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0xe
 	.ascii "_ZN6MATRIX11FlushMatrixERSt6atomicIbEjjjjjj\0"
 	.long	0x1cbec
@@ -40877,7 +41011,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x3a
 	.ascii "UpdateSimulationState\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0xe
 	.ascii "_ZN6MATRIX21UpdateSimulationStateEP6HWND__PSt6atomicIbES4_S4_RS3_S5_jjjjjj\0"
 	.long	0x1cc83
@@ -40912,7 +41046,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x39
 	.ascii "ExGetElement\0"
 	.byte	0xc
-	.word	0x13d
+	.word	0x13b
 	.byte	0xa
 	.ascii "_ZN6MATRIX12ExGetElementENS_4cellE\0"
 	.long	0x1c794
@@ -40926,7 +41060,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x39
 	.ascii "FlattenedIndex\0"
 	.byte	0xc
-	.word	0x13f
+	.word	0x13d
 	.byte	0xb
 	.ascii "_ZN6MATRIX14FlattenedIndexEjjj\0"
 	.long	0x17eda
@@ -40944,21 +41078,21 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x15
 	.ascii "memoryfb\0"
 	.byte	0xc
-	.word	0x145
+	.word	0x143
 	.byte	0x8
 	.long	0x479
 	.byte	0
 	.uleb128 0x15
 	.ascii "CELL_FRONT_BUFFER\0"
 	.byte	0xc
-	.word	0x146
+	.word	0x144
 	.byte	0x8
 	.long	0x1cf1d
 	.byte	0x8
 	.uleb128 0x32
 	.ascii "memorybb\0"
 	.byte	0xc
-	.word	0x149
+	.word	0x147
 	.byte	0x8
 	.long	0x479
 	.byte	0x10
@@ -40966,7 +41100,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x32
 	.ascii "CELL_BACK_BUFFER\0"
 	.byte	0xc
-	.word	0x14a
+	.word	0x148
 	.byte	0x8
 	.long	0x1cf1d
 	.byte	0x18
@@ -40974,7 +41108,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x32
 	.ascii "matAtt\0"
 	.byte	0xc
-	.word	0x14b
+	.word	0x149
 	.byte	0x28
 	.long	0xf104
 	.byte	0x20
@@ -40982,49 +41116,49 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x15
 	.ascii "w\0"
 	.byte	0xc
-	.word	0x14e
+	.word	0x14c
 	.byte	0xb
 	.long	0x17eda
 	.byte	0x28
 	.uleb128 0x15
 	.ascii "h\0"
 	.byte	0xc
-	.word	0x14f
+	.word	0x14d
 	.byte	0xb
 	.long	0x17eda
 	.byte	0x2c
 	.uleb128 0x15
 	.ascii "d\0"
 	.byte	0xc
-	.word	0x150
+	.word	0x14e
 	.byte	0xb
 	.long	0x17eda
 	.byte	0x30
 	.uleb128 0x15
 	.ascii "_pixelWidth\0"
 	.byte	0xc
-	.word	0x152
+	.word	0x150
 	.byte	0xb
 	.long	0x17eb9
 	.byte	0x34
 	.uleb128 0x15
 	.ascii "_pixelHeight\0"
 	.byte	0xc
-	.word	0x153
+	.word	0x151
 	.byte	0xb
 	.long	0x17eb9
 	.byte	0x36
 	.uleb128 0x15
 	.ascii "_zLevel\0"
 	.byte	0xc
-	.word	0x155
+	.word	0x153
 	.byte	0xb
 	.long	0x17eb9
 	.byte	0x38
 	.uleb128 0x39
 	.ascii "ReadCellAttributes\0"
 	.byte	0xc
-	.word	0x157
+	.word	0x155
 	.byte	0x15
 	.ascii "_ZN6MATRIX18ReadCellAttributesENS_4cellE\0"
 	.long	0x1c7dd
@@ -41038,7 +41172,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x3a
 	.ascii "DestroyMatrix\0"
 	.byte	0xc
-	.word	0x15d
+	.word	0x15b
 	.byte	0x18
 	.ascii "_ZN6MATRIX13DestroyMatrixEv\0"
 	.long	0x1cec8
@@ -41188,13 +41322,13 @@ _GLOBAL__sub_I_Factory:
 	.ascii "Camera\0"
 	.byte	0x4c
 	.byte	0xc
-	.word	0x169
+	.word	0x167
 	.byte	0x8
 	.long	0x1d297
 	.uleb128 0x3a
 	.ascii "Camera\0"
 	.byte	0xc
-	.word	0x16b
+	.word	0x169
 	.byte	0x2
 	.ascii "_ZN6CameraC4Ev\0"
 	.long	0x1d07d
@@ -41205,7 +41339,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x39
 	.ascii "TraceRayThroughMatrix\0"
 	.byte	0xc
-	.word	0x16d
+	.word	0x16b
 	.byte	0x7
 	.ascii "_ZN6Camera21TraceRayThroughMatrixE5Vec3DS0_fPFbiiiE\0"
 	.long	0x18095
@@ -41225,7 +41359,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x3a
 	.ascii "SetViewPosition\0"
 	.byte	0xc
-	.word	0x1a2
+	.word	0x1a0
 	.byte	0xe
 	.ascii "_ZN6Camera15SetViewPositionEf5Vec3DS0_\0"
 	.long	0x1d13c
@@ -41242,7 +41376,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x3a
 	.ascii "CastRay\0"
 	.byte	0xc
-	.word	0x1ab
+	.word	0x1a9
 	.byte	0xe
 	.ascii "_ZN6Camera7CastRayEjjPFbiiiE\0"
 	.long	0x1d183
@@ -41259,7 +41393,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1f
 	.ascii "normalize\0"
 	.byte	0xc
-	.word	0x1cd
+	.word	0x1cb
 	.byte	0x8
 	.ascii "_ZN6Camera9normalizeE5Vec3D\0"
 	.long	0x1c63f
@@ -41274,7 +41408,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1f
 	.ascii "Cross\0"
 	.byte	0xc
-	.word	0x1d2
+	.word	0x1d0
 	.byte	0x8
 	.ascii "_ZN6Camera5CrossE5Vec3DS0_\0"
 	.long	0x1c63f
@@ -41291,7 +41425,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x32
 	.ascii "forward\0"
 	.byte	0xc
-	.word	0x1dc
+	.word	0x1da
 	.byte	0x8
 	.long	0x1c63f
 	.byte	0
@@ -41299,7 +41433,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x32
 	.ascii "worldUp\0"
 	.byte	0xc
-	.word	0x1dd
+	.word	0x1db
 	.byte	0x8
 	.long	0x1c63f
 	.byte	0xc
@@ -41307,14 +41441,14 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa2
 	.secrel32	.LASF143
 	.byte	0xc
-	.word	0x1de
+	.word	0x1dc
 	.byte	0x8
 	.long	0x1c63f
 	.byte	0x18
 	.uleb128 0x32
 	.ascii "up\0"
 	.byte	0xc
-	.word	0x1df
+	.word	0x1dd
 	.byte	0x8
 	.long	0x1c63f
 	.byte	0x24
@@ -41322,7 +41456,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x32
 	.ascii "position\0"
 	.byte	0xc
-	.word	0x1e0
+	.word	0x1de
 	.byte	0x8
 	.long	0x1c63f
 	.byte	0x30
@@ -41330,7 +41464,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x32
 	.ascii "lookAt\0"
 	.byte	0xc
-	.word	0x1e1
+	.word	0x1df
 	.byte	0x8
 	.long	0x1c63f
 	.byte	0x3c
@@ -41338,7 +41472,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x32
 	.ascii "FOV\0"
 	.byte	0xc
-	.word	0x1e2
+	.word	0x1e0
 	.byte	0x8
 	.long	0x4cf
 	.byte	0x48
@@ -42046,7 +42180,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x1
 	.long	0x5e6
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.secrel32	.LASF186
 	.byte	0x3
 	.byte	0x80
@@ -42324,7 +42458,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xd
 	.ascii "_Fn\0"
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF127
 	.uleb128 0x5e
 	.long	0xe55
@@ -42359,7 +42493,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x11
 	.ascii "__t\0"
@@ -42381,7 +42515,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF25
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF127
 	.uleb128 0x19
 	.ascii "__fn\0"
@@ -42690,7 +42824,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF184
 	.long	0x1d40d
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1e221
 	.ascii "_ZNSt10_Head_baseILy1ESt14default_deleteINSt6thread6_StateEELb1EEC2Ev\0"
 	.long	0x1e29e
@@ -42765,7 +42899,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF184
 	.long	0x1d2c9
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1e32a
 	.ascii "_ZNSt10_Head_baseILy1ESt14default_deleteIA_St6threadELb1EEC2Ev\0"
 	.long	0x1e3a0
@@ -42845,7 +42979,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0x1189a
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x11
 	.ascii "__t\0"
@@ -42883,7 +43017,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF184
 	.long	0x1d449
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1e49b
 	.ascii "_ZNSt10_Head_baseILy0EPNSt6thread6_StateELb0EEC2Ev\0"
 	.long	0x1e505
@@ -43006,7 +43140,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0xf8e3
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x11
 	.ascii "__t\0"
@@ -43044,7 +43178,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF184
 	.long	0x1d305
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1e6b7
 	.ascii "_ZNSt10_Head_baseILy0EPSt6threadLb0EEC2Ev\0"
 	.long	0x1e718
@@ -43092,7 +43226,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF184
 	.long	0x1cf3b
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1e79f
 	.ascii "_ZNSt10_Head_baseILy1ESt14default_deleteIA_N6MATRIX18MaterialAttributesEELb1EEC2Ev\0"
 	.long	0x1e829
@@ -43450,7 +43584,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF184
 	.long	0x1cf77
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1ec1f
 	.ascii "_ZNSt10_Head_baseILy0EPN6MATRIX18MaterialAttributesELb0EEC2Ev\0"
 	.long	0x1ec94
@@ -43534,7 +43668,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF112
 	.long	0xd296
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF132
 	.uleb128 0x11
 	.ascii "__t\0"
@@ -44101,7 +44235,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF190
 	.long	0x1907c
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1f481
 	.ascii "_ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IxvEERKT_\0"
 	.long	0x1f50d
@@ -44883,8 +45017,8 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0xa7
 	.long	0x1fdd7
-	.quad	.LBB230
-	.quad	.LBE230-.LBB230
+	.quad	.LBB231
+	.quad	.LBE231-.LBB231
 	.uleb128 0x60
 	.long	0x1fdd9
 	.uleb128 0x2
@@ -44977,7 +45111,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF184
 	.long	0x1d403
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x1ffec
 	.ascii "_ZNSt6thread6_StateC2Ev\0"
 	.long	0x2003d
@@ -45041,11 +45175,11 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEE12_Alloc_hiderC2EPwOS3_\0"
 	.long	0x2010f
 	.long	0x2011f
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20091
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x2009a
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x200a8
 	.byte	0
 	.uleb128 0x8e
@@ -45073,7 +45207,7 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSt15__new_allocatorIwED2Ev\0"
 	.long	0x20183
 	.long	0x20189
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20145
 	.byte	0
 	.uleb128 0x18
@@ -45090,7 +45224,7 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSt15__new_allocatorIwEC2Ev\0"
 	.long	0x201cc
 	.long	0x201d2
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20197
 	.byte	0
 	.uleb128 0x8e
@@ -45133,7 +45267,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF25
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF127
 	.uleb128 0x10
 	.secrel32	.LASF184
@@ -45168,7 +45302,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0xa
 	.secrel32	.LASF25
 	.long	0x213ed
-	.uleb128 0x3f
+	.uleb128 0x40
 	.secrel32	.LASF127
 	.uleb128 0xb
 	.long	0x20244
@@ -45284,8 +45418,8 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0xa7
 	.long	0x2036a
-	.quad	.LBB221
-	.quad	.LBE221-.LBB221
+	.quad	.LBB222
+	.quad	.LBE222-.LBB222
 	.uleb128 0x60
 	.long	0x2036c
 	.uleb128 0x2
@@ -45682,8 +45816,8 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0xa7
 	.long	0x209df
-	.quad	.LBB214
-	.quad	.LBE214-.LBB214
+	.quad	.LBB215
+	.quad	.LBE215-.LBB215
 	.uleb128 0x60
 	.long	0x209e1
 	.uleb128 0x2
@@ -45839,7 +45973,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF190
 	.long	0x1bd1d
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.long	0x20cad
 	.ascii "_ZNSt6chrono8durationIxSt5ratioILx1ELx1000EEEC1IivEERKT_\0"
 	.long	0x20d39
@@ -45890,7 +46024,7 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEC2Ev\0"
 	.long	0x20dce
 	.long	0x20dd4
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20d7d
 	.byte	0
 	.uleb128 0x18
@@ -45910,7 +46044,7 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSaIwED2Ev\0"
 	.long	0x20e0f
 	.long	0x20e15
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20de2
 	.byte	0
 	.uleb128 0x18
@@ -45927,7 +46061,7 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSaIwEC2Ev\0"
 	.long	0x20e47
 	.long	0x20e4d
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20e23
 	.byte	0
 	.uleb128 0x18
@@ -45947,7 +46081,7 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEED2Ev\0"
 	.long	0x20eb5
 	.long	0x20ebb
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20e5b
 	.byte	0
 	.uleb128 0x54
@@ -45969,7 +46103,7 @@ _GLOBAL__sub_I_Factory:
 	.ascii "_ZNSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEE12_Alloc_hiderD1Ev\0"
 	.long	0x20f33
 	.long	0x20f39
-	.uleb128 0x42
+	.uleb128 0x43
 	.long	0x20ecb
 	.byte	0
 	.uleb128 0x72
@@ -46099,8 +46233,8 @@ _GLOBAL__sub_I_Factory:
 	.sleb128 8
 	.uleb128 0x8f
 	.long	0x20fb4
-	.quad	.LBB208
-	.quad	.LBE208-.LBB208
+	.quad	.LBB209
+	.quad	.LBE209-.LBB209
 	.byte	0x5
 	.word	0x164
 	.byte	0x7
@@ -46182,7 +46316,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x123
 	.ascii "WinMain\0"
 	.byte	0xc
-	.word	0x306
+	.word	0x304
 	.byte	0xc
 	.long	0x4fe
 	.quad	.LFB10194
@@ -46213,7 +46347,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x308
+	.word	0x306
 	.byte	0xa
 	.long	0x1d03a
 	.uleb128 0x3
@@ -46222,7 +46356,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "MR\0"
 	.byte	0xc
-	.word	0x30a
+	.word	0x308
 	.byte	0xd
 	.long	0x1d5b0
 	.uleb128 0x3
@@ -46231,7 +46365,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF157
 	.byte	0xc
-	.word	0x30c
+	.word	0x30a
 	.byte	0xb
 	.long	0x17eda
 	.uleb128 0x3
@@ -46240,7 +46374,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF158
 	.byte	0xc
-	.word	0x30d
+	.word	0x30b
 	.byte	0xb
 	.long	0x17eda
 	.uleb128 0x3
@@ -46249,7 +46383,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "depth\0"
 	.byte	0xc
-	.word	0x30e
+	.word	0x30c
 	.byte	0xb
 	.long	0x17eda
 	.uleb128 0x3
@@ -46258,7 +46392,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF194
 	.byte	0xc
-	.word	0x310
+	.word	0x30e
 	.byte	0x14
 	.long	0x1d3c8
 	.uleb128 0x3
@@ -46267,7 +46401,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF195
 	.byte	0xc
-	.word	0x311
+	.word	0x30f
 	.byte	0x14
 	.long	0x1d3c8
 	.uleb128 0x3
@@ -46276,7 +46410,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "keyHeld\0"
 	.byte	0xc
-	.word	0x312
+	.word	0x310
 	.byte	0x14
 	.long	0x1d3c8
 	.uleb128 0x3
@@ -46285,7 +46419,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "keyPrev\0"
 	.byte	0xc
-	.word	0x313
+	.word	0x311
 	.byte	0x14
 	.long	0x1d3c8
 	.uleb128 0x3
@@ -46294,7 +46428,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "SizeOfMatrix\0"
 	.byte	0xc
-	.word	0x315
+	.word	0x313
 	.byte	0xb
 	.long	0x17eda
 	.uleb128 0x3
@@ -46303,7 +46437,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF196
 	.byte	0xc
-	.word	0x316
+	.word	0x314
 	.byte	0x7
 	.long	0x17143
 	.uleb128 0x3
@@ -46312,7 +46446,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF197
 	.byte	0xc
-	.word	0x319
+	.word	0x317
 	.byte	0x14
 	.long	0x5fdb
 	.uleb128 0x3
@@ -46321,7 +46455,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "ready\0"
 	.byte	0xc
-	.word	0x31a
+	.word	0x318
 	.byte	0x14
 	.long	0x5fdb
 	.uleb128 0x3
@@ -46330,7 +46464,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "MainThreadID\0"
 	.byte	0xc
-	.word	0x31b
+	.word	0x319
 	.byte	0x12
 	.long	0x1cd5
 	.uleb128 0x3
@@ -46339,7 +46473,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "msg\0"
 	.byte	0xc
-	.word	0x31d
+	.word	0x31b
 	.byte	0x6
 	.long	0x17576
 	.uleb128 0x3
@@ -46351,7 +46485,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "ChunkThreads\0"
 	.byte	0xc
-	.word	0x322
+	.word	0x320
 	.byte	0x22
 	.long	0x1111f
 	.uleb128 0x3
@@ -46360,7 +46494,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "splitPerAxis\0"
 	.byte	0xc
-	.word	0x324
+	.word	0x322
 	.byte	0xc
 	.long	0x17eda
 	.uleb128 0x3
@@ -46369,7 +46503,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "chunkSizeX\0"
 	.byte	0xc
-	.word	0x326
+	.word	0x324
 	.byte	0xc
 	.long	0x17eda
 	.uleb128 0x3
@@ -46378,7 +46512,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "chunkSizeY\0"
 	.byte	0xc
-	.word	0x327
+	.word	0x325
 	.byte	0xc
 	.long	0x17eda
 	.uleb128 0x3
@@ -46387,7 +46521,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "chunkSizeZ\0"
 	.byte	0xc
-	.word	0x328
+	.word	0x326
 	.byte	0xc
 	.long	0x17eda
 	.uleb128 0x3
@@ -46396,56 +46530,56 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "threadIndex\0"
 	.byte	0xc
-	.word	0x32a
+	.word	0x328
 	.byte	0xc
 	.long	0x17eda
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -52
 	.uleb128 0x49
-	.quad	.LBB192
-	.quad	.LBE192-.LBB192
+	.quad	.LBB193
+	.quad	.LBE193-.LBB193
 	.long	0x21601
 	.uleb128 0x14
 	.ascii "x\0"
 	.byte	0xc
-	.word	0x32b
+	.word	0x329
 	.byte	0x11
 	.long	0x17eda
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -56
-	.uleb128 0x43
-	.quad	.LBB194
-	.quad	.LBE194-.LBB194
+	.uleb128 0x3f
+	.quad	.LBB195
+	.quad	.LBE195-.LBB195
 	.uleb128 0x14
 	.ascii "y\0"
 	.byte	0xc
-	.word	0x32d
+	.word	0x32b
 	.byte	0x15
 	.long	0x17eda
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -60
-	.uleb128 0x43
-	.quad	.LBB196
-	.quad	.LBE196-.LBB196
+	.uleb128 0x3f
+	.quad	.LBB197
+	.quad	.LBE197-.LBB197
 	.uleb128 0x14
 	.ascii "z\0"
 	.byte	0xc
-	.word	0x32f
+	.word	0x32d
 	.byte	0x19
 	.long	0x17eda
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -64
-	.uleb128 0x43
-	.quad	.LBB197
-	.quad	.LBE197-.LBB197
+	.uleb128 0x3f
+	.quad	.LBB198
+	.quad	.LBE198-.LBB198
 	.uleb128 0x14
 	.ascii "x1\0"
 	.byte	0xc
-	.word	0x331
+	.word	0x32f
 	.byte	0x18
 	.long	0x17eda
 	.uleb128 0x3
@@ -46454,7 +46588,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "x2\0"
 	.byte	0xc
-	.word	0x332
+	.word	0x330
 	.byte	0x18
 	.long	0x17eda
 	.uleb128 0x3
@@ -46463,7 +46597,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "y1\0"
 	.byte	0xc
-	.word	0x334
+	.word	0x332
 	.byte	0x18
 	.long	0x17eda
 	.uleb128 0x3
@@ -46472,7 +46606,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "y2\0"
 	.byte	0xc
-	.word	0x335
+	.word	0x333
 	.byte	0x18
 	.long	0x17eda
 	.uleb128 0x3
@@ -46481,7 +46615,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "z1\0"
 	.byte	0xc
-	.word	0x337
+	.word	0x335
 	.byte	0x18
 	.long	0x17eda
 	.uleb128 0x3
@@ -46490,7 +46624,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "z2\0"
 	.byte	0xc
-	.word	0x338
+	.word	0x336
 	.byte	0x18
 	.long	0x17eda
 	.uleb128 0x3
@@ -46499,7 +46633,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x124
 	.byte	0x50
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x5c
 	.uleb128 0x125
 	.ascii "~<lambda>\0"
@@ -46513,77 +46647,77 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x15
 	.ascii "__keyPressed\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0xc
 	.long	0x1d3db
 	.byte	0
 	.uleb128 0x15
 	.ascii "__keyHeld\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x19
 	.long	0x1d3db
 	.byte	0x8
 	.uleb128 0x15
 	.ascii "__keyReleased\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x23
 	.long	0x1d3db
 	.byte	0x10
 	.uleb128 0x15
 	.ascii "__running\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x31
 	.long	0x19103
 	.byte	0x18
 	.uleb128 0x15
 	.ascii "__ready\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x3b
 	.long	0x19103
 	.byte	0x20
 	.uleb128 0x15
 	.ascii "__x1\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x42
 	.long	0x17eda
 	.byte	0x28
 	.uleb128 0x15
 	.ascii "__x2\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x47
 	.long	0x17eda
 	.byte	0x2c
 	.uleb128 0x15
 	.ascii "__y1\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x4c
 	.long	0x17eda
 	.byte	0x30
 	.uleb128 0x15
 	.ascii "__y2\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x51
 	.long	0x17eda
 	.byte	0x34
 	.uleb128 0x15
 	.ascii "__z1\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x56
 	.long	0x17eda
 	.byte	0x38
 	.uleb128 0x15
 	.ascii "__z2\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x5a
 	.long	0x17eda
 	.byte	0x3c
@@ -46724,14 +46858,14 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x15
 	.ascii "__matrix\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x61
 	.long	0x1d03a
 	.byte	0x40
 	.uleb128 0x15
 	.ascii "___handle\0"
 	.byte	0xc
-	.word	0x33c
+	.word	0x33a
 	.byte	0x7f
 	.long	0x17143
 	.byte	0x48
@@ -46741,25 +46875,25 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.byte	0
 	.uleb128 0x49
-	.quad	.LBB198
-	.quad	.LBE198-.LBB198
+	.quad	.LBB199
+	.quad	.LBE199-.LBB199
 	.long	0x21647
 	.uleb128 0x14
 	.ascii "i\0"
 	.byte	0xc
-	.word	0x342
+	.word	0x340
 	.byte	0x10
 	.long	0x17eb9
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -66
-	.uleb128 0x43
-	.quad	.LBB199
-	.quad	.LBE199-.LBB199
+	.uleb128 0x3f
+	.quad	.LBB200
+	.quad	.LBE200-.LBB200
 	.uleb128 0x14
 	.ascii "n\0"
 	.byte	0xc
-	.word	0x344
+	.word	0x342
 	.byte	0xd
 	.long	0x17eda
 	.uleb128 0x3
@@ -46768,25 +46902,25 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.byte	0
 	.uleb128 0x49
-	.quad	.LBB202
-	.quad	.LBE202-.LBB202
+	.quad	.LBB203
+	.quad	.LBE203-.LBB203
 	.long	0x216b3
 	.uleb128 0x14
 	.ascii "i\0"
 	.byte	0xc
-	.word	0x353
+	.word	0x351
 	.byte	0xe
 	.long	0x14d
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -72
-	.uleb128 0x43
-	.quad	.LBB203
-	.quad	.LBE203-.LBB203
+	.uleb128 0x3f
+	.quad	.LBB204
+	.quad	.LBE204-.LBB204
 	.uleb128 0x14
 	.ascii "KeyState\0"
 	.byte	0xc
-	.word	0x355
+	.word	0x353
 	.byte	0xc
 	.long	0x526
 	.uleb128 0x3
@@ -46795,7 +46929,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "down\0"
 	.byte	0xc
-	.word	0x356
+	.word	0x354
 	.byte	0xb
 	.long	0x18095
 	.uleb128 0x3
@@ -46807,13 +46941,13 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.byte	0
 	.uleb128 0x49
-	.quad	.LBB204
-	.quad	.LBE204-.LBB204
+	.quad	.LBB205
+	.quad	.LBE205-.LBB205
 	.long	0x216d8
 	.uleb128 0x14
 	.ascii "i\0"
 	.byte	0xc
-	.word	0x373
+	.word	0x371
 	.byte	0x10
 	.long	0x17eb9
 	.uleb128 0x3
@@ -46942,13 +47076,13 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x80
 	.ascii "WINDOWGraphicsOverlay\0"
 	.byte	0xc
-	.word	0x1e5
+	.word	0x1e3
 	.byte	0xb
 	.long	0x21afc
 	.uleb128 0x23
 	.ascii "CreateWindowOverlay\0"
 	.byte	0xc
-	.word	0x2d4
+	.word	0x2d2
 	.byte	0x8
 	.ascii "_ZN21WINDOWGraphicsOverlay19CreateWindowOverlayEP6MATRIXjj\0"
 	.long	0x479
@@ -46963,7 +47097,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x76
 	.ascii "ShowErrorMessage\0"
 	.byte	0xc
-	.word	0x2cc
+	.word	0x2ca
 	.byte	0x7
 	.ascii "_ZN21WINDOWGraphicsOverlay16ShowErrorMessageEPKc\0"
 	.long	0x21942
@@ -46973,7 +47107,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x23
 	.ascii "WindowProc\0"
 	.byte	0xc
-	.word	0x22f
+	.word	0x22d
 	.byte	0x13
 	.ascii "_ZN21WINDOWGraphicsOverlay10WindowProcEP6HWND__jyx\0"
 	.long	0x170af
@@ -46990,7 +47124,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x23
 	.ascii "blitOverlay\0"
 	.byte	0xc
-	.word	0x214
+	.word	0x212
 	.byte	0x7
 	.ascii "_ZN21WINDOWGraphicsOverlay11blitOverlayEP6HWND__jii\0"
 	.long	0x18095
@@ -47007,7 +47141,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x76
 	.ascii "AllocBrushPool\0"
 	.byte	0xc
-	.word	0x1fd
+	.word	0x1fb
 	.byte	0xe
 	.ascii "_ZN21WINDOWGraphicsOverlay14AllocBrushPoolEP6HWND__\0"
 	.long	0x21a56
@@ -47017,7 +47151,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x23
 	.ascii "GetMaterialColor\0"
 	.byte	0xc
-	.word	0x1f0
+	.word	0x1ee
 	.byte	0xb
 	.ascii "_ZN21WINDOWGraphicsOverlay16GetMaterialColorEN6MATRIX7elementE\0"
 	.long	0x17202
@@ -47028,7 +47162,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x128
 	.ascii "ErrorHandle\0"
 	.byte	0xc
-	.word	0x1e7
+	.word	0x1e5
 	.byte	0xe
 	.ascii "_ZN21WINDOWGraphicsOverlay11ErrorHandleEl\0"
 	.uleb128 0x1
@@ -47046,7 +47180,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x2d4
+	.word	0x2d2
 	.byte	0x24
 	.long	0x1d03a
 	.uleb128 0x2
@@ -47055,7 +47189,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF157
 	.byte	0xc
-	.word	0x2d4
+	.word	0x2d2
 	.byte	0x35
 	.long	0x17eda
 	.uleb128 0x2
@@ -47064,7 +47198,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF158
 	.byte	0xc
-	.word	0x2d4
+	.word	0x2d2
 	.byte	0x45
 	.long	0x17eda
 	.uleb128 0x2
@@ -47073,7 +47207,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF196
 	.byte	0xc
-	.word	0x2d6
+	.word	0x2d4
 	.byte	0x9
 	.long	0x479
 	.uleb128 0x2
@@ -47082,20 +47216,20 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "wc\0"
 	.byte	0xc
-	.word	0x2d8
+	.word	0x2d6
 	.byte	0xe
 	.long	0x174f2
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -112
 	.uleb128 0x49
-	.quad	.LBB185
-	.quad	.LBE185-.LBB185
+	.quad	.LBB186
+	.quad	.LBE186-.LBB186
 	.long	0x21bd0
 	.uleb128 0x14
 	.ascii "errorCode\0"
 	.byte	0xc
-	.word	0x2ef
+	.word	0x2ed
 	.byte	0xa
 	.long	0x4b3
 	.uleb128 0x2
@@ -47104,7 +47238,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF198
 	.byte	0xc
-	.word	0x2f0
+	.word	0x2ee
 	.byte	0xd
 	.long	0x610
 	.uleb128 0x3
@@ -47152,7 +47286,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF198
 	.byte	0xc
-	.word	0x2cc
+	.word	0x2ca
 	.byte	0x24
 	.long	0x15876
 	.uleb128 0x2
@@ -47161,7 +47295,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "len\0"
 	.byte	0xc
-	.word	0x2cd
+	.word	0x2cb
 	.byte	0x7
 	.long	0x14d
 	.uleb128 0x2
@@ -47170,7 +47304,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "wideErrorText\0"
 	.byte	0xc
-	.word	0x2ce
+	.word	0x2cc
 	.byte	0xc
 	.long	0x191
 	.uleb128 0x2
@@ -47196,7 +47330,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF146
 	.byte	0xc
-	.word	0x22f
+	.word	0x22d
 	.byte	0x23
 	.long	0x17143
 	.uleb128 0x2
@@ -47205,7 +47339,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "msg\0"
 	.byte	0xc
-	.word	0x22f
+	.word	0x22d
 	.byte	0x2e
 	.long	0x50a
 	.uleb128 0x2
@@ -47214,7 +47348,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "wp\0"
 	.byte	0xc
-	.word	0x22f
+	.word	0x22d
 	.byte	0x3a
 	.long	0x17091
 	.uleb128 0x2
@@ -47223,20 +47357,20 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "lp\0"
 	.byte	0xc
-	.word	0x22f
+	.word	0x22d
 	.byte	0x45
 	.long	0x170a0
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 24
 	.uleb128 0x49
-	.quad	.LBB146
-	.quad	.LBE146-.LBB146
+	.quad	.LBB147
+	.quad	.LBE147-.LBB147
 	.long	0x21d47
 	.uleb128 0x14
 	.ascii "pcs\0"
 	.byte	0xc
-	.word	0x233
+	.word	0x231
 	.byte	0x18
 	.long	0x221c8
 	.uleb128 0x3
@@ -47245,7 +47379,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x234
+	.word	0x232
 	.byte	0x12
 	.long	0x1d03a
 	.uleb128 0x3
@@ -47256,26 +47390,26 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1dca2
 	.byte	0
 	.uleb128 0x49
-	.quad	.LBB148
-	.quad	.LBE148-.LBB148
+	.quad	.LBB149
+	.quad	.LBE149-.LBB149
 	.long	0x21dab
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x23c
+	.word	0x23a
 	.byte	0xc
 	.long	0x1d03a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -48
 	.uleb128 0x49
-	.quad	.LBB149
-	.quad	.LBE149-.LBB149
+	.quad	.LBB150
+	.quad	.LBE150-.LBB150
 	.long	0x21d90
 	.uleb128 0x14
 	.ascii "i\0"
 	.byte	0xc
-	.word	0x244
+	.word	0x242
 	.byte	0x11
 	.long	0x17eda
 	.uleb128 0x2
@@ -47295,7 +47429,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "hr\0"
 	.byte	0xc
-	.word	0x254
+	.word	0x252
 	.byte	0xd
 	.long	0x63f
 	.uleb128 0x2
@@ -47304,7 +47438,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "dpiX\0"
 	.byte	0xc
-	.word	0x25c
+	.word	0x25a
 	.byte	0xb
 	.long	0x4c1
 	.uleb128 0x3
@@ -47313,7 +47447,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "dpiY\0"
 	.byte	0xc
-	.word	0x25d
+	.word	0x25b
 	.byte	0xb
 	.long	0x4c1
 	.uleb128 0x3
@@ -47322,7 +47456,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "rc\0"
 	.byte	0xc
-	.word	0x260
+	.word	0x25e
 	.byte	0xa
 	.long	0x1725a
 	.uleb128 0x3
@@ -47331,7 +47465,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "size\0"
 	.byte	0xc
-	.word	0x263
+	.word	0x261
 	.byte	0x11
 	.long	0x19efb
 	.uleb128 0x3
@@ -47340,7 +47474,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "props\0"
 	.byte	0xc
-	.word	0x265
+	.word	0x263
 	.byte	0x23
 	.long	0x1addb
 	.uleb128 0x3
@@ -47349,20 +47483,20 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "hwndProps\0"
 	.byte	0xc
-	.word	0x26b
+	.word	0x269
 	.byte	0x28
 	.long	0x1ad84
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -608
 	.uleb128 0x49
-	.quad	.LBB154
-	.quad	.LBE154-.LBB154
+	.quad	.LBB155
+	.quad	.LBE155-.LBB155
 	.long	0x21e67
 	.uleb128 0x33
 	.secrel32	.LASF199
 	.byte	0xc
-	.word	0x257
+	.word	0x255
 	.byte	0xe
 	.long	0x208dd
 	.uleb128 0x3
@@ -47373,26 +47507,26 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1dcff
 	.byte	0
 	.uleb128 0x7e
-	.long	0x23268
-	.quad	.LBB155
-	.quad	.LBE155-.LBB155
-	.word	0x263
+	.long	0x232b4
+	.quad	.LBB156
+	.quad	.LBE156-.LBB156
+	.word	0x261
 	.byte	0x23
 	.long	0x21eca
 	.uleb128 0xb
-	.long	0x2327c
+	.long	0x232c8
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -128
 	.uleb128 0xb
-	.long	0x23271
+	.long	0x232bd
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -124
 	.uleb128 0x7f
 	.long	0x20f83
-	.quad	.LBB157
-	.quad	.LBE157-.LBB157
+	.quad	.LBB158
+	.quad	.LBE158-.LBB158
 	.byte	0xe
 	.byte	0x36
 	.byte	0x18
@@ -47414,77 +47548,77 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.byte	0
 	.uleb128 0x7e
-	.long	0x231fd
-	.quad	.LBB159
-	.quad	.LBE159-.LBB159
-	.word	0x267
+	.long	0x23249
+	.quad	.LBB160
+	.quad	.LBE160-.LBB160
+	.word	0x265
 	.byte	0x1a
 	.long	0x21f02
 	.uleb128 0xb
-	.long	0x23219
+	.long	0x23265
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -164
 	.uleb128 0xb
-	.long	0x23206
+	.long	0x23252
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -160
 	.uleb128 0x60
-	.long	0x23224
+	.long	0x23270
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -616
 	.byte	0
 	.uleb128 0x7e
-	.long	0x231a0
-	.quad	.LBB161
-	.quad	.LBE161-.LBB161
-	.word	0x265
+	.long	0x231ec
+	.quad	.LBB162
+	.quad	.LBE162-.LBB162
+	.word	0x263
 	.byte	0x47
 	.long	0x21f56
 	.uleb128 0xb
-	.long	0x231e7
+	.long	0x23233
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -156
 	.uleb128 0xb
-	.long	0x231d9
+	.long	0x23225
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -152
 	.uleb128 0xb
-	.long	0x231cc
+	.long	0x23218
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -148
 	.uleb128 0xb
-	.long	0x231bf
+	.long	0x2320b
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -144
-	.uleb128 0x42
-	.long	0x231b4
+	.uleb128 0x43
+	.long	0x23200
 	.uleb128 0xb
-	.long	0x231a9
+	.long	0x231f5
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -140
 	.uleb128 0x6c
-	.long	0x231f2
+	.long	0x2323e
 	.byte	0
 	.uleb128 0x21
 	.quad	.LVL28
 	.long	0x1dc3d
 	.byte	0
 	.uleb128 0x49
-	.quad	.LBB166
-	.quad	.LBE166-.LBB166
+	.quad	.LBB167
+	.quad	.LBE167-.LBB167
 	.long	0x21ffd
 	.uleb128 0x33
 	.secrel32	.LASF157
 	.byte	0xc
-	.word	0x283
+	.word	0x281
 	.byte	0x11
 	.long	0x50a
 	.uleb128 0x3
@@ -47493,33 +47627,33 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF158
 	.byte	0xc
-	.word	0x284
+	.word	0x282
 	.byte	0x11
 	.long	0x50a
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -96
 	.uleb128 0x8f
-	.long	0x23268
-	.quad	.LBB167
-	.quad	.LBE167-.LBB167
+	.long	0x232b4
+	.quad	.LBB168
+	.quad	.LBE168-.LBB168
 	.byte	0xc
-	.word	0x285
+	.word	0x283
 	.byte	0x2c
 	.uleb128 0xb
-	.long	0x2327c
+	.long	0x232c8
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -172
 	.uleb128 0xb
-	.long	0x23271
+	.long	0x232bd
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -168
 	.uleb128 0x7f
 	.long	0x20f83
-	.quad	.LBB169
-	.quad	.LBE169-.LBB169
+	.quad	.LBB170
+	.quad	.LBE170-.LBB170
 	.byte	0xe
 	.byte	0x36
 	.byte	0x18
@@ -47547,7 +47681,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x28e
+	.word	0x28c
 	.byte	0xd
 	.long	0x1d03a
 	.uleb128 0x2
@@ -47556,7 +47690,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "x\0"
 	.byte	0xc
-	.word	0x291
+	.word	0x28f
 	.byte	0xe
 	.long	0x17eda
 	.uleb128 0x2
@@ -47565,7 +47699,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "y\0"
 	.byte	0xc
-	.word	0x292
+	.word	0x290
 	.byte	0xe
 	.long	0x17eda
 	.uleb128 0x2
@@ -47574,7 +47708,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "xCell\0"
 	.byte	0xc
-	.word	0x294
+	.word	0x292
 	.byte	0xe
 	.long	0x17eda
 	.uleb128 0x3
@@ -47583,7 +47717,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "yCell\0"
 	.byte	0xc
-	.word	0x295
+	.word	0x293
 	.byte	0xe
 	.long	0x17eda
 	.uleb128 0x3
@@ -47592,7 +47726,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "readcell\0"
 	.byte	0xc
-	.word	0x297
+	.word	0x295
 	.byte	0x12
 	.long	0x1c8b9
 	.uleb128 0x3
@@ -47606,13 +47740,13 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1dc0c
 	.byte	0
 	.uleb128 0x49
-	.quad	.LBB174
-	.quad	.LBE174-.LBB174
+	.quad	.LBB175
+	.quad	.LBE175-.LBB175
 	.long	0x220d7
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x2a8
+	.word	0x2a6
 	.byte	0xd
 	.long	0x1d03a
 	.uleb128 0x3
@@ -47634,7 +47768,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x2b3
+	.word	0x2b1
 	.byte	0xd
 	.long	0x1d03a
 	.uleb128 0x3
@@ -47643,43 +47777,43 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "cam\0"
 	.byte	0xc
-	.word	0x2b8
+	.word	0x2b6
 	.byte	0xc
 	.long	0x1d049
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -1664
 	.uleb128 0x7e
-	.long	0x2322f
-	.quad	.LBB176
-	.quad	.LBE176-.LBB176
-	.word	0x2bd
+	.long	0x2327b
+	.quad	.LBB177
+	.quad	.LBE177-.LBB177
+	.word	0x2bb
 	.byte	0x32
 	.long	0x22185
 	.uleb128 0xb
-	.long	0x2325c
+	.long	0x232a8
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -196
 	.uleb128 0xb
-	.long	0x23251
+	.long	0x2329d
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -192
 	.uleb128 0xb
-	.long	0x23245
+	.long	0x23291
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -188
 	.uleb128 0xb
-	.long	0x23238
+	.long	0x23284
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -184
 	.uleb128 0x7f
 	.long	0x20f39
-	.quad	.LBB178
-	.quad	.LBE178-.LBB178
+	.quad	.LBB179
+	.quad	.LBE179-.LBB179
 	.byte	0xe
 	.byte	0x3f
 	.byte	0x17
@@ -47765,7 +47899,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF146
 	.byte	0xc
-	.word	0x214
+	.word	0x212
 	.byte	0x18
 	.long	0x17143
 	.uleb128 0x2
@@ -47774,7 +47908,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "zLevel\0"
 	.byte	0xc
-	.word	0x214
+	.word	0x212
 	.byte	0x27
 	.long	0x17eda
 	.uleb128 0x2
@@ -47783,7 +47917,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "cellWidth\0"
 	.byte	0xc
-	.word	0x214
+	.word	0x212
 	.byte	0x37
 	.long	0x17eca
 	.uleb128 0x2
@@ -47792,7 +47926,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "cellHeight\0"
 	.byte	0xc
-	.word	0x214
+	.word	0x212
 	.byte	0x4a
 	.long	0x17eca
 	.uleb128 0x2
@@ -47801,7 +47935,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x216
+	.word	0x214
 	.byte	0xb
 	.long	0x1d03a
 	.uleb128 0x2
@@ -47810,80 +47944,80 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "hr\0"
 	.byte	0xc
-	.word	0x22b
+	.word	0x229
 	.byte	0xb
 	.long	0x63f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -68
 	.uleb128 0x49
-	.quad	.LBB136
-	.quad	.LBE136-.LBB136
+	.quad	.LBB137
+	.quad	.LBE137-.LBB137
 	.long	0x2239b
 	.uleb128 0x14
 	.ascii "j\0"
 	.byte	0xc
-	.word	0x221
+	.word	0x21f
 	.byte	0xc
 	.long	0x14d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -52
-	.uleb128 0x43
-	.quad	.LBB138
-	.quad	.LBE138-.LBB138
+	.uleb128 0x3f
+	.quad	.LBB139
+	.quad	.LBE139-.LBB139
 	.uleb128 0x14
 	.ascii "i\0"
 	.byte	0xc
-	.word	0x223
+	.word	0x221
 	.byte	0x10
 	.long	0x14d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -56
-	.uleb128 0x43
-	.quad	.LBB139
-	.quad	.LBE139-.LBB139
+	.uleb128 0x3f
+	.quad	.LBB140
+	.quad	.LBE140-.LBB140
 	.uleb128 0x14
 	.ascii "rect\0"
 	.byte	0xc
-	.word	0x225
+	.word	0x223
 	.byte	0x11
 	.long	0x1ae55
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -160
 	.uleb128 0x8f
-	.long	0x2322f
-	.quad	.LBB140
-	.quad	.LBE140-.LBB140
+	.long	0x2327b
+	.quad	.LBB141
+	.quad	.LBE141-.LBB141
 	.byte	0xc
-	.word	0x225
+	.word	0x223
 	.byte	0x23
 	.uleb128 0xb
-	.long	0x2325c
+	.long	0x232a8
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -112
 	.uleb128 0xb
-	.long	0x23251
+	.long	0x2329d
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -108
 	.uleb128 0xb
-	.long	0x23245
+	.long	0x23291
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -104
 	.uleb128 0xb
-	.long	0x23238
+	.long	0x23284
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -100
 	.uleb128 0x7f
 	.long	0x20f39
-	.quad	.LBB142
-	.quad	.LBE142-.LBB142
+	.quad	.LBB143
+	.quad	.LBE143-.LBB143
 	.byte	0xe
 	.byte	0x3f
 	.byte	0x17
@@ -47915,43 +48049,43 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.byte	0
 	.uleb128 0x7e
-	.long	0x23128
-	.quad	.LBB131
-	.quad	.LBE131-.LBB131
-	.word	0x21f
+	.long	0x23174
+	.quad	.LBB132
+	.quad	.LBE132-.LBB132
+	.word	0x21d
 	.byte	0x19
 	.long	0x22405
 	.uleb128 0xb
-	.long	0x23153
+	.long	0x2319f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -76
 	.uleb128 0xb
-	.long	0x2313f
+	.long	0x2318b
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -72
-	.uleb128 0x42
-	.long	0x23136
+	.uleb128 0x43
+	.long	0x23182
 	.uleb128 0x8f
-	.long	0x230f7
-	.quad	.LBB134
-	.quad	.LBE134-.LBB134
+	.long	0x23143
+	.quad	.LBB135
+	.quad	.LBE135-.LBB135
 	.byte	0xe
 	.word	0x15d
 	.byte	0xd
 	.uleb128 0xb
-	.long	0x2311b
+	.long	0x23167
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -96
 	.uleb128 0xb
-	.long	0x2310e
+	.long	0x2315a
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -92
 	.uleb128 0xb
-	.long	0x23105
+	.long	0x23151
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -88
@@ -47971,7 +48105,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF146
 	.byte	0xc
-	.word	0x1fd
+	.word	0x1fb
 	.byte	0x22
 	.long	0x17143
 	.uleb128 0x2
@@ -47980,7 +48114,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x33
 	.secrel32	.LASF193
 	.byte	0xc
-	.word	0x200
+	.word	0x1fe
 	.byte	0xb
 	.long	0x1d03a
 	.uleb128 0x2
@@ -47989,7 +48123,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "N\0"
 	.byte	0xc
-	.word	0x202
+	.word	0x200
 	.byte	0xc
 	.long	0x17eda
 	.uleb128 0x2
@@ -47998,20 +48132,20 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "memory\0"
 	.byte	0xc
-	.word	0x204
+	.word	0x202
 	.byte	0xa
 	.long	0x177c1
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -48
 	.uleb128 0x49
-	.quad	.LBB126
-	.quad	.LBE126-.LBB126
+	.quad	.LBB127
+	.quad	.LBE127-.LBB127
 	.long	0x22493
 	.uleb128 0x14
 	.ascii "i\0"
 	.byte	0xc
-	.word	0x207
+	.word	0x205
 	.byte	0x10
 	.long	0x17eda
 	.uleb128 0x2
@@ -48019,25 +48153,25 @@ _GLOBAL__sub_I_Factory:
 	.sleb128 -20
 	.byte	0
 	.uleb128 0x49
-	.quad	.LBB127
-	.quad	.LBE127-.LBB127
+	.quad	.LBB128
+	.quad	.LBE128-.LBB128
 	.long	0x22512
 	.uleb128 0x14
 	.ascii "i\0"
 	.byte	0xc
-	.word	0x20c
+	.word	0x20a
 	.byte	0x10
 	.long	0x17eda
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x43
-	.quad	.LBB128
-	.quad	.LBE128-.LBB128
+	.uleb128 0x3f
+	.quad	.LBB129
+	.quad	.LBE129-.LBB129
 	.uleb128 0x14
 	.ascii "Color\0"
 	.byte	0xc
-	.word	0x20e
+	.word	0x20c
 	.byte	0xd
 	.long	0x17202
 	.uleb128 0x2
@@ -48046,19 +48180,19 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "d2dcolor\0"
 	.byte	0xc
-	.word	0x20f
+	.word	0x20d
 	.byte	0x11
 	.long	0x1ae6f
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -80
-	.uleb128 0x43
-	.quad	.LBB130
-	.quad	.LBE130-.LBB130
+	.uleb128 0x3f
+	.quad	.LBB131
+	.quad	.LBE131-.LBB131
 	.uleb128 0x14
 	.ascii "hr\0"
 	.byte	0xc
-	.word	0x210
+	.word	0x20e
 	.byte	0x1b
 	.long	0x63f
 	.uleb128 0x2
@@ -48081,7 +48215,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "e\0"
 	.byte	0xc
-	.word	0x1f0
+	.word	0x1ee
 	.byte	0x2c
 	.long	0x1c794
 	.uleb128 0x2
@@ -48098,19 +48232,19 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "hr\0"
 	.byte	0xc
-	.word	0x1e7
+	.word	0x1e5
 	.byte	0x22
 	.long	0x63f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
-	.uleb128 0x43
-	.quad	.LBB125
-	.quad	.LBE125-.LBB125
+	.uleb128 0x3f
+	.quad	.LBB126
+	.quad	.LBE126-.LBB126
 	.uleb128 0x33
 	.secrel32	.LASF199
 	.byte	0xc
-	.word	0x1eb
+	.word	0x1e9
 	.byte	0xc
 	.long	0x208dd
 	.uleb128 0x3
@@ -48146,13 +48280,41 @@ _GLOBAL__sub_I_Factory:
 	.sleb128 0
 	.byte	0
 	.uleb128 0x1d
-	.long	0x1ce39
+	.long	0x1ce91
 	.long	0x22613
+	.quad	.LFB10175
+	.quad	.LFE10175-.LFB10175
+	.uleb128 0x1
+	.byte	0x9c
+	.long	0x22640
+	.uleb128 0x1b
+	.secrel32	.LASF184
+	.long	0x1d03f
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 0
+	.uleb128 0x3f
+	.quad	.LBB123
+	.quad	.LBE123-.LBB123
+	.uleb128 0x14
+	.ascii "i\0"
+	.byte	0xc
+	.word	0x15d
+	.byte	0x10
+	.long	0x17eda
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -20
+	.byte	0
+	.byte	0
+	.uleb128 0x1d
+	.long	0x1ce39
+	.long	0x2265f
 	.quad	.LFB10174
 	.quad	.LFE10174-.LFB10174
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2262f
+	.long	0x2267b
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48162,7 +48324,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "c\0"
 	.byte	0xc
-	.word	0x157
+	.word	0x155
 	.byte	0x2d
 	.long	0x1c8b9
 	.uleb128 0x3
@@ -48172,12 +48334,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x5f
 	.long	0x1cd11
-	.long	0x2264e
+	.long	0x2269a
 	.quad	.LFB10173
 	.quad	.LFE10173-.LFB10173
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22685
+	.long	0x226d1
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48187,7 +48349,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "x\0"
 	.byte	0xc
-	.word	0x13f
+	.word	0x13d
 	.byte	0x23
 	.long	0x17eda
 	.uleb128 0x2
@@ -48196,7 +48358,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "y\0"
 	.byte	0xc
-	.word	0x13f
+	.word	0x13d
 	.byte	0x2f
 	.long	0x17eda
 	.uleb128 0x2
@@ -48205,7 +48367,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "z\0"
 	.byte	0xc
-	.word	0x13f
+	.word	0x13d
 	.byte	0x3b
 	.long	0x17eda
 	.uleb128 0x2
@@ -48214,12 +48376,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1cc15
-	.long	0x226a4
+	.long	0x226f0
 	.quad	.LFB10171
 	.quad	.LFE10171-.LFB10171
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x227de
+	.long	0x2282a
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48229,7 +48391,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF146
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0x29
 	.long	0x17143
 	.uleb128 0x2
@@ -48238,7 +48400,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "pressed\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0x42
 	.long	0x190f4
 	.uleb128 0x2
@@ -48247,7 +48409,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "held\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0x5e
 	.long	0x190f4
 	.uleb128 0x2
@@ -48256,7 +48418,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "released\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0x77
 	.long	0x190f4
 	.uleb128 0x2
@@ -48265,7 +48427,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF197
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0x94
 	.long	0x19103
 	.uleb128 0x2
@@ -48274,7 +48436,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "ready\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0xb0
 	.long	0x19103
 	.uleb128 0x2
@@ -48283,7 +48445,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "x1\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0xc0
 	.long	0x17eda
 	.uleb128 0x2
@@ -48292,7 +48454,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "x2\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0xcd
 	.long	0x17eda
 	.uleb128 0x3
@@ -48301,7 +48463,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "y1\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0xda
 	.long	0x17eda
 	.uleb128 0x3
@@ -48310,7 +48472,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "y2\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0xe7
 	.long	0x17eda
 	.uleb128 0x3
@@ -48319,7 +48481,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "z1\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.byte	0xf4
 	.long	0x17eda
 	.uleb128 0x3
@@ -48328,43 +48490,43 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x12a
 	.ascii "z2\0"
 	.byte	0xc
-	.word	0x117
+	.word	0x115
 	.word	0x101
 	.long	0x17eda
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 96
-	.uleb128 0x43
+	.uleb128 0x3f
 	.quad	.LBB117
 	.quad	.LBE117-.LBB117
 	.uleb128 0x14
 	.ascii "z\0"
 	.byte	0xc
-	.word	0x124
+	.word	0x122
 	.byte	0x11
 	.long	0x17eda
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x43
+	.uleb128 0x3f
 	.quad	.LBB119
 	.quad	.LBE119-.LBB119
 	.uleb128 0x14
 	.ascii "y\0"
 	.byte	0xc
-	.word	0x128
+	.word	0x126
 	.byte	0x12
 	.long	0x17eda
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -24
-	.uleb128 0x43
+	.uleb128 0x3f
 	.quad	.LBB121
 	.quad	.LBE121-.LBB121
 	.uleb128 0x14
 	.ascii "x\0"
 	.byte	0xc
-	.word	0x12a
+	.word	0x128
 	.byte	0x13
 	.long	0x17eda
 	.uleb128 0x2
@@ -48376,12 +48538,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1cba7
-	.long	0x227fd
+	.long	0x22849
 	.quad	.LFB10170
 	.quad	.LFE10170-.LFB10170
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x228e3
+	.long	0x2292f
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48391,7 +48553,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x4b
 	.secrel32	.LASF197
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0x2d
 	.long	0x19103
 	.uleb128 0x2
@@ -48400,7 +48562,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "x1\0"
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0x3f
 	.long	0x17eda
 	.uleb128 0x2
@@ -48409,7 +48571,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "x2\0"
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0x4c
 	.long	0x17eda
 	.uleb128 0x2
@@ -48418,7 +48580,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "y1\0"
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0x59
 	.long	0x17eda
 	.uleb128 0x2
@@ -48427,7 +48589,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "y2\0"
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0x66
 	.long	0x17eda
 	.uleb128 0x2
@@ -48436,7 +48598,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "z1\0"
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0x73
 	.long	0x17eda
 	.uleb128 0x2
@@ -48445,7 +48607,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x11
 	.ascii "z2\0"
 	.byte	0xc
-	.word	0x103
+	.word	0x101
 	.byte	0x80
 	.long	0x17eda
 	.uleb128 0x2
@@ -48456,7 +48618,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "z\0"
 	.byte	0xc
-	.word	0x105
+	.word	0x103
 	.byte	0x10
 	.long	0x17eda
 	.uleb128 0x2
@@ -48467,7 +48629,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "y\0"
 	.byte	0xc
-	.word	0x109
+	.word	0x107
 	.byte	0x11
 	.long	0x17eda
 	.uleb128 0x2
@@ -48478,7 +48640,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "x\0"
 	.byte	0xc
-	.word	0x10b
+	.word	0x109
 	.byte	0x12
 	.long	0x17eda
 	.uleb128 0x2
@@ -48489,7 +48651,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "genericCellRead\0"
 	.byte	0xc
-	.word	0x10d
+	.word	0x10b
 	.byte	0xb
 	.long	0x1c8b9
 	.uleb128 0x3
@@ -48498,7 +48660,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x14
 	.ascii "MA\0"
 	.byte	0xc
-	.word	0x10e
+	.word	0x10c
 	.byte	0x19
 	.long	0x1c7dd
 	.uleb128 0x3
@@ -48511,12 +48673,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1cb49
-	.long	0x22902
+	.long	0x2294e
 	.quad	.LFB10168
 	.quad	.LFE10168-.LFB10168
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2294d
+	.long	0x22999
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48526,7 +48688,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x6b
 	.secrel32	.LASF146
 	.byte	0xc
-	.byte	0xef
+	.byte	0xed
 	.byte	0x23
 	.long	0x17143
 	.uleb128 0x2
@@ -48535,7 +48697,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x6b
 	.secrel32	.LASF197
 	.byte	0xc
-	.byte	0xef
+	.byte	0xed
 	.byte	0x3c
 	.long	0x19103
 	.uleb128 0x2
@@ -48546,7 +48708,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "i\0"
 	.byte	0xc
-	.byte	0xf3
+	.byte	0xf1
 	.byte	0x11
 	.long	0x17eda
 	.uleb128 0x2
@@ -48559,12 +48721,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1caec
-	.long	0x2296c
+	.long	0x229b8
 	.quad	.LFB10167
 	.quad	.LFE10167-.LFB10167
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x229b1
+	.long	0x229fd
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48574,7 +48736,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x19
 	.ascii "x\0"
 	.byte	0xc
-	.byte	0xe8
+	.byte	0xe6
 	.byte	0x1c
 	.long	0x17eda
 	.uleb128 0x2
@@ -48583,7 +48745,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x19
 	.ascii "y\0"
 	.byte	0xc
-	.byte	0xe8
+	.byte	0xe6
 	.byte	0x28
 	.long	0x17eda
 	.uleb128 0x2
@@ -48592,7 +48754,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x19
 	.ascii "z\0"
 	.byte	0xc
-	.byte	0xe8
+	.byte	0xe6
 	.byte	0x34
 	.long	0x17eda
 	.uleb128 0x2
@@ -48601,7 +48763,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x19
 	.ascii "_data\0"
 	.byte	0xc
-	.byte	0xe8
+	.byte	0xe6
 	.byte	0x43
 	.long	0x1d044
 	.uleb128 0x2
@@ -48610,12 +48772,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1ca9d
-	.long	0x229d0
+	.long	0x22a1c
 	.quad	.LFB10166
 	.quad	.LFE10166-.LFB10166
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22a04
+	.long	0x22a50
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48625,7 +48787,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x19
 	.ascii "x\0"
 	.byte	0xc
-	.byte	0xe2
+	.byte	0xe0
 	.byte	0x1d
 	.long	0x17eda
 	.uleb128 0x2
@@ -48634,7 +48796,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x19
 	.ascii "y\0"
 	.byte	0xc
-	.byte	0xe2
+	.byte	0xe0
 	.byte	0x29
 	.long	0x17eda
 	.uleb128 0x2
@@ -48643,7 +48805,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x19
 	.ascii "z\0"
 	.byte	0xc
-	.byte	0xe2
+	.byte	0xe0
 	.byte	0x35
 	.long	0x17eda
 	.uleb128 0x2
@@ -48652,12 +48814,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1ca52
-	.long	0x22a23
+	.long	0x22a6f
 	.quad	.LFB10157
 	.quad	.LFE10157-.LFB10157
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22b13
+	.long	0x22b5f
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d03f
@@ -48694,7 +48856,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "i1\0"
 	.byte	0xc
-	.byte	0x93
+	.byte	0x91
 	.byte	0xc
 	.long	0x17eda
 	.uleb128 0x2
@@ -48702,11 +48864,11 @@ _GLOBAL__sub_I_Factory:
 	.sleb128 -56
 	.uleb128 0x7c
 	.secrel32	.LLRL0
-	.long	0x22ad0
+	.long	0x22b1c
 	.uleb128 0x37
 	.ascii "i\0"
 	.byte	0xc
-	.byte	0x8c
+	.byte	0x8a
 	.byte	0x10
 	.long	0x17eda
 	.uleb128 0x2
@@ -48717,7 +48879,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "x\0"
 	.byte	0xc
-	.byte	0x8f
+	.byte	0x8d
 	.byte	0xd
 	.long	0x17eda
 	.uleb128 0x3
@@ -48726,7 +48888,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "y\0"
 	.byte	0xc
-	.byte	0x8f
+	.byte	0x8d
 	.byte	0x21
 	.long	0x17eda
 	.uleb128 0x3
@@ -48735,7 +48897,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "z\0"
 	.byte	0xc
-	.byte	0x8f
+	.byte	0x8d
 	.byte	0x3b
 	.long	0x17eda
 	.uleb128 0x3
@@ -48744,7 +48906,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "back_buffer_cell\0"
 	.byte	0xc
-	.byte	0x90
+	.byte	0x8e
 	.byte	0x9
 	.long	0x1c8b9
 	.uleb128 0x3
@@ -48757,7 +48919,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "i\0"
 	.byte	0xc
-	.byte	0x94
+	.byte	0x92
 	.byte	0x10
 	.long	0x17eda
 	.uleb128 0x2
@@ -48768,7 +48930,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "x\0"
 	.byte	0xc
-	.byte	0x97
+	.byte	0x95
 	.byte	0xd
 	.long	0x17eda
 	.uleb128 0x2
@@ -48777,7 +48939,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "y\0"
 	.byte	0xc
-	.byte	0x97
+	.byte	0x95
 	.byte	0x21
 	.long	0x17eda
 	.uleb128 0x3
@@ -48786,7 +48948,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x37
 	.ascii "z\0"
 	.byte	0xc
-	.byte	0x97
+	.byte	0x95
 	.byte	0x3b
 	.long	0x17eda
 	.uleb128 0x3
@@ -48797,12 +48959,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0xf251
-	.long	0x22b32
+	.long	0x22b7e
 	.quad	.LFB10164
 	.quad	.LFE10164-.LFB10164
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22b47
+	.long	0x22b93
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d012
@@ -48817,12 +48979,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0xeef9
-	.long	0x22b66
+	.long	0x22bb2
 	.quad	.LFB10165
 	.quad	.LFE10165-.LFB10165
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22b7b
+	.long	0x22bc7
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1cff9
@@ -48840,56 +49002,56 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xc
 	.byte	0x58
 	.byte	0x9
-	.long	0x22b8b
-	.long	0x22b95
+	.long	0x22bd7
+	.long	0x22be1
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1cf31
 	.byte	0
-	.uleb128 0x41
-	.long	0x22b7b
+	.uleb128 0x42
+	.long	0x22bc7
 	.ascii "_ZN6MATRIX18MaterialAttributesC1Ev\0"
-	.long	0x22bd7
+	.long	0x22c23
 	.quad	.LFB10163
 	.quad	.LFE10163-.LFB10163
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22be0
+	.long	0x22c2c
 	.uleb128 0xb
-	.long	0x22b8b
+	.long	0x22bd7
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.byte	0
 	.uleb128 0x18
 	.long	0x1c8c6
-	.long	0x22bee
+	.long	0x22c3a
 	.byte	0x2
-	.long	0x22bf8
+	.long	0x22c44
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1cf22
 	.byte	0
 	.uleb128 0x25
-	.long	0x22be0
+	.long	0x22c2c
 	.ascii "_ZN6MATRIX4cellC1Ev\0"
-	.long	0x22c2b
+	.long	0x22c77
 	.quad	.LFB10160
 	.quad	.LFE10160-.LFB10160
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22c34
+	.long	0x22c80
 	.uleb128 0xb
-	.long	0x22bee
+	.long	0x22c3a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.byte	0
 	.uleb128 0x18
 	.long	0x1c9bc
-	.long	0x22c42
+	.long	0x22c8e
 	.byte	0x2
-	.long	0x22c55
+	.long	0x22ca1
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1cf22
@@ -48898,25 +49060,25 @@ _GLOBAL__sub_I_Factory:
 	.long	0x154
 	.byte	0
 	.uleb128 0x25
-	.long	0x22c34
+	.long	0x22c80
 	.ascii "_ZN6MATRIX4cellD1Ev\0"
-	.long	0x22c88
+	.long	0x22cd4
 	.quad	.LFB10156
 	.quad	.LFE10156-.LFB10156
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22c91
+	.long	0x22cdd
 	.uleb128 0xb
-	.long	0x22c42
+	.long	0x22c8e
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.byte	0
 	.uleb128 0x18
 	.long	0x1c8f0
-	.long	0x22c9f
+	.long	0x22ceb
 	.byte	0x2
-	.long	0x22cbf
+	.long	0x22d0b
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1cf22
@@ -48928,30 +49090,30 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1c794
 	.byte	0
 	.uleb128 0x25
-	.long	0x22c91
+	.long	0x22cdd
 	.ascii "_ZN6MATRIX4cellC1ENS_7elementE\0"
-	.long	0x22cfd
+	.long	0x22d49
 	.quad	.LFB10144
 	.quad	.LFE10144-.LFB10144
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22d0e
+	.long	0x22d5a
 	.uleb128 0xb
-	.long	0x22c9f
+	.long	0x22ceb
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.uleb128 0xb
-	.long	0x22ca8
+	.long	0x22cf4
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
 	.uleb128 0x18
 	.long	0x1c66f
-	.long	0x22d1c
+	.long	0x22d68
 	.byte	0x2
-	.long	0x22d47
+	.long	0x22d93
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1c775
@@ -48974,44 +49136,44 @@ _GLOBAL__sub_I_Factory:
 	.byte	0x3d
 	.long	0x4cf
 	.byte	0
-	.uleb128 0x41
-	.long	0x22d0e
+	.uleb128 0x42
+	.long	0x22d5a
 	.ascii "_ZN5Vec3DC1Efff\0"
-	.long	0x22d76
+	.long	0x22dc2
 	.quad	.LFB10129
 	.quad	.LFE10129-.LFB10129
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22d97
+	.long	0x22de3
 	.uleb128 0xb
-	.long	0x22d1c
+	.long	0x22d68
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.uleb128 0xb
-	.long	0x22d25
+	.long	0x22d71
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.uleb128 0xb
-	.long	0x22d30
+	.long	0x22d7c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
 	.uleb128 0xb
-	.long	0x22d3b
+	.long	0x22d87
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 24
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1d680
-	.long	0x22db6
+	.long	0x22e02
 	.quad	.LFB10123
 	.quad	.LFE10123-.LFB10123
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22dc3
+	.long	0x22e0f
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1d6c6
@@ -49021,12 +49183,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x5f
 	.long	0x1c30d
-	.long	0x22de2
+	.long	0x22e2e
 	.quad	.LFB10115
 	.quad	.LFE10115-.LFB10115
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22def
+	.long	0x22e3b
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1c62a
@@ -49036,12 +49198,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x5f
 	.long	0x1c2c0
-	.long	0x22e0e
+	.long	0x22e5a
 	.quad	.LFB10114
 	.quad	.LFE10114-.LFB10114
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22e1b
+	.long	0x22e67
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1c62a
@@ -49051,9 +49213,9 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x18
 	.long	0x1c22a
-	.long	0x22e29
+	.long	0x22e75
 	.byte	0x2
-	.long	0x22e3c
+	.long	0x22e88
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1c62a
@@ -49062,16 +49224,16 @@ _GLOBAL__sub_I_Factory:
 	.long	0x154
 	.byte	0
 	.uleb128 0x25
-	.long	0x22e1b
+	.long	0x22e67
 	.ascii "_ZN20olcConsoleGameEngineD2Ev\0"
-	.long	0x22e79
+	.long	0x22ec5
 	.quad	.LFB10110
 	.quad	.LFE10110-.LFB10110
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22e8f
+	.long	0x22edb
 	.uleb128 0xb
-	.long	0x22e29
+	.long	0x22e75
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -49081,12 +49243,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x5f
 	.long	0x1c181
-	.long	0x22eae
+	.long	0x22efa
 	.quad	.LFB10107
 	.quad	.LFE10107-.LFB10107
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22ed5
+	.long	0x22f21
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1c62a
@@ -49114,12 +49276,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1c126
-	.long	0x22ef4
+	.long	0x22f40
 	.quad	.LFB10106
 	.quad	.LFE10106-.LFB10106
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22f93
+	.long	0x22fdf
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1c62a
@@ -49180,7 +49342,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
-	.uleb128 0x43
+	.uleb128 0x3f
 	.quad	.LBB79
 	.quad	.LBE79-.LBB79
 	.uleb128 0x37
@@ -49192,7 +49354,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x43
+	.uleb128 0x3f
 	.quad	.LBB81
 	.quad	.LBE81-.LBB81
 	.uleb128 0x37
@@ -49209,12 +49371,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x5f
 	.long	0x1c0cd
-	.long	0x22fb2
+	.long	0x22ffe
 	.quad	.LFB10105
 	.quad	.LFE10105-.LFB10105
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x22ff5
+	.long	0x23041
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x1c62a
@@ -49260,24 +49422,24 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x18
 	.long	0x1c02d
-	.long	0x23003
+	.long	0x2304f
 	.byte	0x2
-	.long	0x2300d
+	.long	0x23059
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1c62a
 	.byte	0
 	.uleb128 0x25
-	.long	0x22ff5
+	.long	0x23041
 	.ascii "_ZN20olcConsoleGameEngineC2Ev\0"
-	.long	0x2304a
+	.long	0x23096
 	.quad	.LFB10102
 	.quad	.LFE10102-.LFB10102
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2306d
+	.long	0x230b9
 	.uleb128 0xb
-	.long	0x23003
+	.long	0x2304f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -49299,7 +49461,7 @@ _GLOBAL__sub_I_Factory:
 	.quad	.LFE8537-.LFB8537
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x230f7
+	.long	0x23143
 	.uleb128 0x4b
 	.secrel32	.LASF192
 	.byte	0xa
@@ -49330,9 +49492,9 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x18
 	.long	0x1b874
-	.long	0x23105
+	.long	0x23151
 	.byte	0x3
-	.long	0x23128
+	.long	0x23174
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1bb00
@@ -49351,9 +49513,9 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x18
 	.long	0x1b7f1
-	.long	0x23136
+	.long	0x23182
 	.byte	0x2
-	.long	0x23160
+	.long	0x231ac
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x1bb00
@@ -49371,22 +49533,22 @@ _GLOBAL__sub_I_Factory:
 	.long	0x4c1
 	.byte	0
 	.uleb128 0x4a
-	.long	0x23128
+	.long	0x23174
 	.ascii "_ZN4D2D16ColorFC1ENS0_4EnumEf\0"
+	.long	0x231d7
+	.long	0x231e7
+	.uleb128 0x43
+	.long	0x23182
+	.uleb128 0x43
 	.long	0x2318b
-	.long	0x2319b
-	.uleb128 0x42
-	.long	0x23136
-	.uleb128 0x42
-	.long	0x2313f
-	.uleb128 0x42
-	.long	0x23153
+	.uleb128 0x43
+	.long	0x2319f
 	.byte	0
 	.uleb128 0x8
 	.long	0x19ec7
 	.uleb128 0x72
 	.long	0x1b979
-	.long	0x231fd
+	.long	0x23249
 	.uleb128 0x55
 	.secrel32	.LASF2
 	.byte	0x9d
@@ -49396,7 +49558,7 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF176
 	.byte	0x9e
 	.byte	0x22
-	.long	0x2319b
+	.long	0x231e7
 	.uleb128 0x34
 	.ascii "dpiX\0"
 	.byte	0xe
@@ -49429,7 +49591,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x72
 	.long	0x1ba3b
-	.long	0x2322f
+	.long	0x2327b
 	.uleb128 0x34
 	.ascii "dxgiFormat\0"
 	.byte	0xe
@@ -49450,7 +49612,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x72
 	.long	0x1ba93
-	.long	0x23268
+	.long	0x232b4
 	.uleb128 0x34
 	.ascii "left\0"
 	.byte	0xe
@@ -49476,7 +49638,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x72
 	.long	0x1bace
-	.long	0x23288
+	.long	0x232d4
 	.uleb128 0x55
 	.secrel32	.LASF157
 	.byte	0x35
@@ -49494,12 +49656,12 @@ _GLOBAL__sub_I_Factory:
 	.word	0x994
 	.byte	0x1
 	.ascii "_Z14__mingw_uuidofI12ID2D1FactoryERK5_GUIDv\0"
-	.long	0x232f9
+	.long	0x23345
 	.quad	.LFB8436
 	.quad	.LFE8436-.LFB8436
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x232f9
+	.long	0x23345
 	.uleb128 0xd
 	.ascii "T\0"
 	.long	0x1a9ed
@@ -49509,20 +49671,20 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x6
 	.long	0x1aac8
 	.uleb128 0x5
-	.long	0x232fe
+	.long	0x2334a
 	.uleb128 0x8
 	.long	0x19f0f
 	.uleb128 0x1d
 	.long	0x1aad2
-	.long	0x2332c
+	.long	0x23378
 	.quad	.LFB8410
 	.quad	.LFE8410-.LFB8410
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23349
+	.long	0x23395
 	.uleb128 0x1b
 	.secrel32	.LASF184
-	.long	0x23303
+	.long	0x2334f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -49531,7 +49693,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x733
 	.byte	0x27
-	.long	0x23308
+	.long	0x23354
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -49544,12 +49706,12 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1bb41
 	.uleb128 0x1d
 	.long	0x1a9f7
-	.long	0x23377
+	.long	0x233c3
 	.quad	.LFB8405
 	.quad	.LFE8405-.LFB8405
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x233eb
+	.long	0x23437
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x2082b
@@ -49561,7 +49723,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x64a
 	.byte	0x49
-	.long	0x23349
+	.long	0x23395
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -49570,7 +49732,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x64a
 	.byte	0x8b
-	.long	0x2334e
+	.long	0x2339a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
@@ -49579,7 +49741,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x64a
 	.byte	0xbf
-	.long	0x23353
+	.long	0x2339f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 24
@@ -49587,20 +49749,20 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x6
 	.long	0x1ab22
 	.uleb128 0x5
-	.long	0x233eb
+	.long	0x23437
 	.uleb128 0x8
 	.long	0x1ae85
 	.uleb128 0x1d
 	.long	0x1ab3a
-	.long	0x23419
+	.long	0x23465
 	.quad	.LFB8356
 	.quad	.LFE8356-.LFB8356
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2343d
+	.long	0x23489
 	.uleb128 0x1b
 	.secrel32	.LASF184
-	.long	0x233f0
+	.long	0x2343c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -49609,7 +49771,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x397
 	.byte	0x24
-	.long	0x233f5
+	.long	0x23441
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -49620,15 +49782,15 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1ae6a
 	.uleb128 0x1d
 	.long	0x1ab88
-	.long	0x23466
+	.long	0x234b2
 	.quad	.LFB8351
 	.quad	.LFE8351-.LFB8351
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x234f5
+	.long	0x23541
 	.uleb128 0x1b
 	.secrel32	.LASF184
-	.long	0x233f0
+	.long	0x2343c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -49646,7 +49808,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x383
 	.byte	0x3d
-	.long	0x2343d
+	.long	0x23489
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 16
@@ -49673,7 +49835,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x383
 	.byte	0xd6
-	.long	0x23442
+	.long	0x2348e
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 40
@@ -49682,15 +49844,15 @@ _GLOBAL__sub_I_Factory:
 	.long	0x1bb60
 	.uleb128 0x1d
 	.long	0x1ac24
-	.long	0x23519
+	.long	0x23565
 	.quad	.LFB8337
 	.quad	.LFE8337-.LFB8337
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23545
+	.long	0x23591
 	.uleb128 0x1b
 	.secrel32	.LASF184
-	.long	0x233f0
+	.long	0x2343c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -49699,22 +49861,22 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x34b
 	.byte	0x44
-	.long	0x234f5
+	.long	0x23541
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1acae
-	.long	0x23564
+	.long	0x235b0
 	.quad	.LFB8330
 	.quad	.LFE8330-.LFB8330
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2359f
+	.long	0x235eb
 	.uleb128 0x1b
 	.secrel32	.LASF184
-	.long	0x233f0
+	.long	0x2343c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -49723,7 +49885,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0xa
 	.word	0x32f
 	.byte	0x37
-	.long	0x233f5
+	.long	0x23441
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -49739,12 +49901,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x619d
-	.long	0x235be
+	.long	0x2360a
 	.quad	.LFB7935
 	.quad	.LFE7935-.LFB7935
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x235fc
+	.long	0x23648
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x19112
@@ -49777,12 +49939,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x6136
-	.long	0x2361b
+	.long	0x23667
 	.quad	.LFB7933
 	.quad	.LFE7933-.LFB7933
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23637
+	.long	0x23683
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x190f9
@@ -49805,7 +49967,7 @@ _GLOBAL__sub_I_Factory:
 	.quad	.LFE7924-.LFB7924
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23671
+	.long	0x236bd
 	.uleb128 0x19
 	.ascii "__x\0"
 	.byte	0x8
@@ -49827,9 +49989,9 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x18
 	.long	0x39e1
-	.long	0x23688
+	.long	0x236d4
 	.byte	0x2
-	.long	0x2369c
+	.long	0x236e8
 	.uleb128 0xa
 	.secrel32	.LASF48
 	.long	0xde
@@ -49840,37 +50002,37 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF190
 	.long	0x1907c
 	.byte	0
-	.uleb128 0x41
-	.long	0x23671
+	.uleb128 0x42
+	.long	0x236bd
 	.ascii "_ZNSt6chrono8durationIxSt5ratioILx1ELx1EEEC1IxvEERKT_\0"
-	.long	0x236fa
+	.long	0x23746
 	.quad	.LFB7918
 	.quad	.LFE7918-.LFB7918
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2370b
+	.long	0x23757
 	.uleb128 0xa
 	.secrel32	.LASF48
 	.long	0xde
 	.uleb128 0xb
-	.long	0x23688
+	.long	0x236d4
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.uleb128 0xb
-	.long	0x23691
+	.long	0x236dd
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
 	.uleb128 0x5f
 	.long	0x2df0
-	.long	0x2372a
+	.long	0x23776
 	.quad	.LFB7899
 	.quad	.LFE7899-.LFB7899
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23737
+	.long	0x23783
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x19072
@@ -49886,9 +50048,9 @@ _GLOBAL__sub_I_Factory:
 	.byte	0x9c
 	.uleb128 0x18
 	.long	0x329a
-	.long	0x23766
+	.long	0x237b2
 	.byte	0x2
-	.long	0x2377a
+	.long	0x237c6
 	.uleb128 0xa
 	.secrel32	.LASF48
 	.long	0xde
@@ -49899,25 +50061,25 @@ _GLOBAL__sub_I_Factory:
 	.secrel32	.LASF190
 	.long	0x1907c
 	.byte	0
-	.uleb128 0x41
-	.long	0x2374f
+	.uleb128 0x42
+	.long	0x2379b
 	.ascii "_ZNSt6chrono8durationIxSt5ratioILx1ELx1000000000EEEC1IxvEERKT_\0"
-	.long	0x237e1
+	.long	0x2382d
 	.quad	.LFB7897
 	.quad	.LFE7897-.LFB7897
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x237f2
+	.long	0x2383e
 	.uleb128 0xa
 	.secrel32	.LASF48
 	.long	0xde
 	.uleb128 0xb
-	.long	0x23766
+	.long	0x237b2
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.uleb128 0xb
-	.long	0x2376f
+	.long	0x237bb
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
@@ -49934,7 +50096,7 @@ _GLOBAL__sub_I_Factory:
 	.quad	.LFE7820-.LFB7820
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23846
+	.long	0x23892
 	.uleb128 0x11
 	.ascii "__x\0"
 	.byte	0x6
@@ -49956,12 +50118,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x5f
 	.long	0x1f58
-	.long	0x23865
+	.long	0x238b1
 	.quad	.LFB7813
 	.quad	.LFE7813-.LFB7813
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23872
+	.long	0x238be
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x18f79
@@ -49971,12 +50133,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1ec6
-	.long	0x23891
+	.long	0x238dd
 	.quad	.LFB7812
 	.quad	.LFE7812-.LFB7812
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2389e
+	.long	0x238ea
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x18f79
@@ -49986,12 +50148,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1e95
-	.long	0x238bd
+	.long	0x23909
 	.quad	.LFB7809
 	.quad	.LFE7809-.LFB7809
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x238d9
+	.long	0x23925
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x18f60
@@ -50010,12 +50172,12 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.uleb128 0x1d
 	.long	0x1e63
-	.long	0x238f8
+	.long	0x23944
 	.quad	.LFB7808
 	.quad	.LFE7808-.LFB7808
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2392b
+	.long	0x23977
 	.uleb128 0x1b
 	.secrel32	.LASF184
 	.long	0x18f60
@@ -50032,16 +50194,16 @@ _GLOBAL__sub_I_Factory:
 	.byte	0x91
 	.sleb128 8
 	.uleb128 0xce
-	.long	0x23b1b
+	.long	0x23b67
 	.quad	.LBB71
 	.quad	.LBE71-.LBB71
 	.byte	0xa4
 	.byte	0
 	.uleb128 0x18
 	.long	0x1d9f
-	.long	0x23939
+	.long	0x23985
 	.byte	0x2
-	.long	0x2394c
+	.long	0x23998
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x18f60
@@ -50050,30 +50212,30 @@ _GLOBAL__sub_I_Factory:
 	.long	0x154
 	.byte	0
 	.uleb128 0x25
-	.long	0x2392b
+	.long	0x23977
 	.ascii "_ZNSt6threadD1Ev\0"
-	.long	0x2397c
+	.long	0x239c8
 	.quad	.LFB7804
 	.quad	.LFE7804-.LFB7804
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x2399c
+	.long	0x239e8
 	.uleb128 0xb
-	.long	0x23939
+	.long	0x23985
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.uleb128 0xce
-	.long	0x23b1b
+	.long	0x23b67
 	.quad	.LBB69
 	.quad	.LBE69-.LBB69
 	.byte	0x97
 	.byte	0
 	.uleb128 0x18
 	.long	0x1d1f
-	.long	0x239aa
+	.long	0x239f6
 	.byte	0x2
-	.long	0x239c1
+	.long	0x23a0d
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x18f56
@@ -50084,46 +50246,46 @@ _GLOBAL__sub_I_Factory:
 	.byte	0x1d
 	.long	0x1d4c
 	.byte	0
-	.uleb128 0x41
-	.long	0x2399c
+	.uleb128 0x42
+	.long	0x239e8
 	.ascii "_ZNSt6thread2idC1Ey\0"
-	.long	0x239f4
+	.long	0x23a40
 	.quad	.LFB7800
 	.quad	.LFE7800-.LFB7800
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23a05
+	.long	0x23a51
 	.uleb128 0xb
-	.long	0x239aa
+	.long	0x239f6
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
 	.uleb128 0xb
-	.long	0x239b3
+	.long	0x239ff
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 8
 	.byte	0
 	.uleb128 0x18
 	.long	0x1cf6
-	.long	0x23a13
+	.long	0x23a5f
 	.byte	0x2
-	.long	0x23a1d
+	.long	0x23a69
 	.uleb128 0x10
 	.secrel32	.LASF184
 	.long	0x18f56
 	.byte	0
-	.uleb128 0x41
-	.long	0x23a05
+	.uleb128 0x42
+	.long	0x23a51
 	.ascii "_ZNSt6thread2idC1Ev\0"
-	.long	0x23a50
+	.long	0x23a9c
 	.quad	.LFB7797
 	.quad	.LFE7797-.LFB7797
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23a59
+	.long	0x23aa5
 	.uleb128 0xb
-	.long	0x23a13
+	.long	0x23a5f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 0
@@ -50134,7 +50296,7 @@ _GLOBAL__sub_I_Factory:
 	.quad	.LFE7637-.LFB7637
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23a95
+	.long	0x23ae1
 	.uleb128 0x19
 	.ascii "__m\0"
 	.byte	0x5
@@ -50175,7 +50337,7 @@ _GLOBAL__sub_I_Factory:
 	.quad	.LFE6614-.LFB6614
 	.uleb128 0x1
 	.byte	0x9c
-	.long	0x23b03
+	.long	0x23b4f
 	.uleb128 0x5e
 	.long	0xe45
 	.uleb128 0x2
@@ -51233,13 +51395,22 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.byte	0
 	.uleb128 0x3f
+	.uleb128 0xb
+	.byte	0x1
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x7
+	.byte	0
+	.byte	0
+	.uleb128 0x40
 	.uleb128 0x4107
 	.byte	0
 	.uleb128 0x3
 	.uleb128 0xe
 	.byte	0
 	.byte	0
-	.uleb128 0x40
+	.uleb128 0x41
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -51262,7 +51433,7 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x41
+	.uleb128 0x42
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x31
@@ -51283,20 +51454,11 @@ _GLOBAL__sub_I_Factory:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x42
+	.uleb128 0x43
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x31
 	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x43
-	.uleb128 0xb
-	.byte	0x1
-	.uleb128 0x11
-	.uleb128 0x1
-	.uleb128 0x12
-	.uleb128 0x7
 	.byte	0
 	.byte	0
 	.uleb128 0x44
@@ -55729,7 +55891,7 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 	.byte	0
 	.section	.debug_aranges,"dr"
-	.long	0xabc
+	.long	0xacc
 	.word	0x2
 	.secrel32	.Ldebug_info0
 	.byte	0x8
@@ -55840,6 +56002,8 @@ _GLOBAL__sub_I_Factory:
 	.quad	.LFE10173-.LFB10173
 	.quad	.LFB10174
 	.quad	.LFE10174-.LFB10174
+	.quad	.LFB10175
+	.quad	.LFE10175-.LFB10175
 	.quad	.LFB10178
 	.quad	.LFE10178-.LFB10178
 	.quad	.LFB10184
@@ -56181,53 +56345,53 @@ _GLOBAL__sub_I_Factory:
 	.byte	0
 .LLRL9:
 	.byte	0x5
-	.quad	.LBB152
+	.quad	.LBB153
 	.byte	0x4
-	.uleb128 .LBB152-.LBB152
-	.uleb128 .LBE152-.LBB152
+	.uleb128 .LBB153-.LBB153
+	.uleb128 .LBE153-.LBB153
 	.byte	0x4
-	.uleb128 .LBB163-.LBB152
-	.uleb128 .LBE163-.LBB152
+	.uleb128 .LBB164-.LBB153
+	.uleb128 .LBE164-.LBB153
 	.byte	0
 .LLRL10:
 	.byte	0x5
-	.quad	.LBB173
+	.quad	.LBB174
 	.byte	0x4
-	.uleb128 .LBB173-.LBB173
-	.uleb128 .LBE173-.LBB173
+	.uleb128 .LBB174-.LBB174
+	.uleb128 .LBE174-.LBB174
 	.byte	0x4
-	.uleb128 .LBB181-.LBB173
-	.uleb128 .LBE181-.LBB173
+	.uleb128 .LBB182-.LBB174
+	.uleb128 .LBE182-.LBB174
 	.byte	0
 .LLRL11:
 	.byte	0x5
-	.quad	.LBB175
+	.quad	.LBB176
 	.byte	0x4
-	.uleb128 .LBB175-.LBB175
-	.uleb128 .LBE175-.LBB175
+	.uleb128 .LBB176-.LBB176
+	.uleb128 .LBE176-.LBB176
 	.byte	0x4
-	.uleb128 .LBB180-.LBB175
-	.uleb128 .LBE180-.LBB175
+	.uleb128 .LBB181-.LBB176
+	.uleb128 .LBE181-.LBB176
 	.byte	0
 .LLRL12:
 	.byte	0x5
-	.quad	.LBB191
+	.quad	.LBB192
 	.byte	0x4
-	.uleb128 .LBB191-.LBB191
-	.uleb128 .LBE191-.LBB191
+	.uleb128 .LBB192-.LBB192
+	.uleb128 .LBE192-.LBB192
 	.byte	0x4
-	.uleb128 .LBB205-.LBB191
-	.uleb128 .LBE205-.LBB191
+	.uleb128 .LBB206-.LBB192
+	.uleb128 .LBE206-.LBB192
 	.byte	0
 .LLRL13:
 	.byte	0x5
-	.quad	.LBB223
+	.quad	.LBB224
 	.byte	0x4
-	.uleb128 .LBB223-.LBB223
-	.uleb128 .LBE223-.LBB223
+	.uleb128 .LBB224-.LBB224
+	.uleb128 .LBE224-.LBB224
 	.byte	0x4
-	.uleb128 .LBB224-.LBB223
-	.uleb128 .LBE224-.LBB223
+	.uleb128 .LBB225-.LBB224
+	.uleb128 .LBE225-.LBB224
 	.byte	0
 .LLRL14:
 	.byte	0x7
@@ -56386,6 +56550,9 @@ _GLOBAL__sub_I_Factory:
 	.byte	0x7
 	.quad	.LFB10174
 	.uleb128 .LFE10174-.LFB10174
+	.byte	0x7
+	.quad	.LFB10175
+	.uleb128 .LFE10175-.LFB10175
 	.byte	0x7
 	.quad	.LFB10178
 	.uleb128 .LFE10178-.LFB10178
@@ -57161,8 +57328,8 @@ _GLOBAL__sub_I_Factory:
 	.def	malloc;	.scl	2;	.type	32;	.endef
 	.def	__cxa_throw_bad_array_new_length;	.scl	2;	.type	32;	.endef
 	.def	_Znay;	.scl	2;	.type	32;	.endef
-	.def	_ZdlPvy;	.scl	2;	.type	32;	.endef
 	.def	free;	.scl	2;	.type	32;	.endef
+	.def	_ZdlPvy;	.scl	2;	.type	32;	.endef
 	.def	_Znwy;	.scl	2;	.type	32;	.endef
 	.def	_ZNSt6thread20hardware_concurrencyEv;	.scl	2;	.type	32;	.endef
 	.def	round;	.scl	2;	.type	32;	.endef

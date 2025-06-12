@@ -43,28 +43,29 @@ src\main.cpp:88:9:MATRIX::MaterialAttributes::MaterialAttributes()	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:235:24:std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >& std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >::operator=(std::__uniq_ptr_data<_Tp, _Dp, <anonymous>, <anonymous> >&&) [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>; bool <anonymous> = true; bool <anonymous> = true]	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/unique_ptr.h:680:7:std::unique_ptr<_Tp [], _Dp>& std::unique_ptr<_Tp [], _Dp>::operator=(std::unique_ptr<_Tp [], _Dp>&&) [with _Tp = MATRIX::MaterialAttributes; _Dp = std::default_delete<MATRIX::MaterialAttributes []>]	48	static
 src\main.cpp:124:11:uint32_t MATRIX::InitMatrix(uint32_t, uint32_t, uint32_t)	320	static
-src\main.cpp:226:7:MATRIX::cell MATRIX::AccessDataAt(uint32_t, uint32_t, uint32_t)	64	static
-src\main.cpp:232:7:MATRIX::cell MATRIX::WriteDataTo(uint32_t, uint32_t, uint32_t, const cell&)	64	static
-src\main.cpp:239:14:void MATRIX::UpdateWorldView(HWND, std::atomic<bool>&)	64	static
-src\main.cpp:259:14:void MATRIX::FlushMatrix(std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	240	static
-src\main.cpp:279:14:void MATRIX::UpdateSimulationState(HWND, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>&, std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	112	static
-src\main.cpp:319:11:uint32_t MATRIX::FlattenedIndex(uint32_t, uint32_t, uint32_t)	16	static
-src\main.cpp:343:21:MATRIX::MaterialAttributes MATRIX::ReadCellAttributes(cell)	64	static
-src\main.cpp:363:2:Camera::Camera()	48	static
-src\main.cpp:487:14:void WINDOWGraphicsOverlay::ErrorHandle(HRESULT)	1072	static
-src\main.cpp:496:11:COLORREF WINDOWGraphicsOverlay::GetMaterialColor(MATRIX::element)	16	static
-src\main.cpp:509:14:void WINDOWGraphicsOverlay::AllocBrushPool(HWND)	112	static
-src\main.cpp:532:7:bool WINDOWGraphicsOverlay::blitOverlay(HWND, uint32_t, int32_t, int32_t)	192	static
+src\main.cpp:224:7:MATRIX::cell MATRIX::AccessDataAt(uint32_t, uint32_t, uint32_t)	64	static
+src\main.cpp:230:7:MATRIX::cell MATRIX::WriteDataTo(uint32_t, uint32_t, uint32_t, const cell&)	64	static
+src\main.cpp:237:14:void MATRIX::UpdateWorldView(HWND, std::atomic<bool>&)	64	static
+src\main.cpp:257:14:void MATRIX::FlushMatrix(std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	240	static
+src\main.cpp:277:14:void MATRIX::UpdateSimulationState(HWND, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>*, std::atomic<bool>&, std::atomic<bool>&, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t)	112	static
+src\main.cpp:317:11:uint32_t MATRIX::FlattenedIndex(uint32_t, uint32_t, uint32_t)	16	static
+src\main.cpp:341:21:MATRIX::MaterialAttributes MATRIX::ReadCellAttributes(cell)	64	static
+src\main.cpp:347:24:constexpr void MATRIX::DestroyMatrix()	64	static
+src\main.cpp:361:2:Camera::Camera()	48	static
+src\main.cpp:485:14:void WINDOWGraphicsOverlay::ErrorHandle(HRESULT)	1072	static
+src\main.cpp:494:11:COLORREF WINDOWGraphicsOverlay::GetMaterialColor(MATRIX::element)	16	static
+src\main.cpp:507:14:void WINDOWGraphicsOverlay::AllocBrushPool(HWND)	112	static
+src\main.cpp:530:7:bool WINDOWGraphicsOverlay::blitOverlay(HWND, uint32_t, int32_t, int32_t)	192	static
 src\main.cpp:83:8:MATRIX::~MATRIX()	48	static
-src\main.cpp:559:19:LRESULT WINDOWGraphicsOverlay::WindowProc(HWND, UINT, WPARAM, LPARAM)	1712	static
-src\main.cpp:716:7:void WINDOWGraphicsOverlay::ShowErrorMessage(const char*)	80	static
-src\main.cpp:724:8:void* WINDOWGraphicsOverlay::CreateWindowOverlay(MATRIX*, uint32_t, uint32_t)	224	static
+src\main.cpp:557:19:LRESULT WINDOWGraphicsOverlay::WindowProc(HWND, UINT, WPARAM, LPARAM)	1712	static
+src\main.cpp:714:7:void WINDOWGraphicsOverlay::ShowErrorMessage(const char*)	80	static
+src\main.cpp:722:8:void* WINDOWGraphicsOverlay::CreateWindowOverlay(MATRIX*, uint32_t, uint32_t)	224	static
 src\main.cpp:83:8:constexpr MATRIX::MATRIX()	48	static
 src\main.cpp:47:8:MatrixRain::MatrixRain()	48	static
 src\main.cpp:47:8:MatrixRain::~MatrixRain()	48	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/std_thread.h:120:5:std::thread::thread()	48	static
-src\main.cpp:828:7:WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()>	176	static
-src\main.cpp:774:12:INT WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)	1552	static
+src\main.cpp:826:7:WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)::<lambda()>	176	static
+src\main.cpp:772:12:INT WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)	1552	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/move.h:196:5:std::_Require<std::__not_<std::__is_tuple_like<_Tp> >, std::is_move_constructible<_Tp>, std::is_move_assignable<_Tp> > std::swap(_Tp&, _Tp&) [with _Tp = thread::id]	64	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/chrono.h:521:2:constexpr std::chrono::duration<_Rep, _Period>::rep std::chrono::duration<_Rep, _Period>::count() const [with _Rep = long long int; _Period = std::ratio<1>]	16	static
 C:/msys64/mingw64/include/c++/12.2.0/bits/atomic_base.h:354:7:std::__atomic_base<_IntTp>::__int_type std::__atomic_base<_IntTp>::operator=(__int_type) [with _ITp = bool]	80	static
