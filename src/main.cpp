@@ -22,6 +22,7 @@ z = index / (width * height);
 #include <atomic>
 #include <chrono>
 #include <d2d1.h>
+#include <barrier>
 #pragma comment(lib, "d2d1")
 
 #ifndef UNICODE
@@ -35,25 +36,15 @@ ID2D1BitmapRenderTarget* BitmapRT   = nullptr;
 ID2D1Bitmap* Bitmap                 = nullptr;
 ID2D1SolidColorBrush** brushPool    = nullptr;
 
-#include "debug.h"
+void** memory = nullptr;
 
 #define TIME_DURATION 500
+#define TARGET_FPS    60
+
 #define WIDTH         800
 #define HEIGHT        600
 
-std::atomic<bool> olcConsoleGameEngine::m_bAtomActive{false};
-
 // debugging idea...
-struct MatrixRain : public olcConsoleGameEngine
-{
-    virtual void OnUserUpdate()
-    {
-        Fill(0, 0, ScreenWidth(), ScreenHeight(), PIXEL_SOLID, FG_BLACK);
-
-		Draw(0, 0, L'0', FG_RED);
-
-    }
-};
 
 #define GetInstance() GetModuleHandle(NULL)
 #define CHECK_MATRIX_POPULATION() do{if(!matrix){return DefWindowProc(hwnd, msg, wp, lp);}}while(0)
@@ -123,16 +114,27 @@ public:
 public:
 	uint32_t InitMatrix(uint32_t width, uint32_t height, uint32_t depth)
 	{
+		w = width; h = height; d = depth;
+
 		// front buffer
-		memoryfb = malloc(sizeof(cell) * (width * height * depth));
-		CELL_FRONT_BUFFER = new(memoryfb) cell[width * height* depth];
+
+		CELL_FRONT_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
+
+		for(uint32_t i=0; i<width * height * depth; ++i)
+		{
+			new (&CELL_FRONT_BUFFER[i]) cell(element::air);
+		}
 
 		// back buffer
-		memorybb = malloc(sizeof(cell) * (width * height * depth));
-		CELL_BACK_BUFFER  = new(memorybb) cell[width * height * depth];
+		
+		CELL_BACK_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
 
-		matAtt     		  = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
-		w = width; h = height; d = depth;
+		for(uint32_t i=0; i<width * height * depth; ++i)
+		{
+			new (&CELL_BACK_BUFFER[i]) cell(element::air);
+		}
+
+		matAtt = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
 
 		printf("-> cells set to: element::air\n");
 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
@@ -245,7 +247,6 @@ public:
 				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
 				{
 					// copy the back buffer to the front buffer up until the point at which a cell tranformation was detected
-					//memcpy(CELL_FRONT_BUFFER.get() + i, CELL_BACK_BUFFER.get() + i, sizeof(cell) * (w*h*d - i));
 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
 					InvalidateRect(hwnd, nullptr, FALSE);
 					break;
@@ -266,7 +267,7 @@ public:
 				{
 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
-					//WriteDataTo(x, y, z, cell(static_cast<element>(rand() % element::size)));
+					WriteDataTo(x, y, z, cell(static_cast<element>(rand() % element::size)));
 				}
 			}
 		}
@@ -274,13 +275,15 @@ public:
 
 	// THREAD CHUNK FUNCTION //
 
-	inline void UpdateSimulationState(HWND hwnd, std::atomic<bool>* pressed, std::atomic<bool>* held, std::atomic<bool>* released, std::atomic<bool>& running, std::atomic<bool>& ready, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
+	template<class C>
+	inline void UpdateSimulationState(HWND hwnd, std::barrier<C>& SyncPoint, std::atomic<bool>* pressed, std::atomic<bool>* held, std::atomic<bool>* released, std::atomic<bool>& running, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
 	{
-		ready = false;
+		const auto FrameDuration = std::chrono::milliseconds(1000 / TARGET_FPS);
 
 		while(running)
 		{
-			//iterate across this threads chunk
+
+			auto frameStart = std::chrono::high_resolution_clock::now();
 
 			FlushMatrix(running, x1, x2, y1, y2, z1, z2);
 			// first, flush the entire matrix to a default state every frame, then update it into it's proper state. 
@@ -304,12 +307,20 @@ public:
 			{
 				printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
 			}
+
+			SyncPoint.arrive_and_wait();
+
+			auto frameEnd = std::chrono::high_resolution_clock::now();
+    		auto elapsed = frameEnd - frameStart;
+
+			// tally the amount of time - time to finish process for throttling.
 			
-			std::this_thread::sleep_for(std::chrono::milliseconds(TIME_DURATION));
+			if (elapsed < FrameDuration)
+			{
+        		std::this_thread::sleep_for(FrameDuration - elapsed);
+    		}
 
 		}
-
-		ready = true;
 	}
 
 	element ExGetElement(cell c){ return c.MaterialType;}
@@ -326,6 +337,7 @@ public:
 private://///////////////////////////////////////
 	void* memorybb          = nullptr; 
 	cell* CELL_BACK_BUFFER  = nullptr; 
+/////////////////////////////////////////////////
 	std::unique_ptr<MaterialAttributes[]> matAtt;
 public://////////////////////////////////////////
 
@@ -344,15 +356,16 @@ public://////////////////////////////////////////
 		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
 	}
 
-	inline void constexpr DestroyMatrix()
+	inline void DestroyMatrix()
 	{
 		for(uint32_t i=0; i<w * h * d; ++i)
 		{
 			CELL_FRONT_BUFFER[i].~cell();
 			CELL_BACK_BUFFER[ i].~cell();
 		}
-		free(memorybb);
-		free(memoryfb);
+		free(CELL_FRONT_BUFFER); CELL_FRONT_BUFFER = nullptr;
+		free(CELL_BACK_BUFFER ); CELL_BACK_BUFFER  = nullptr;
+		free(memory);                     memory   = nullptr;
 	}
 };
 
@@ -511,7 +524,7 @@ namespace WINDOWGraphicsOverlay
 
 		uint32_t N = static_cast<uint32_t>(MATRIX::element::size);
 
-		void** memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
+		memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
 		brushPool 	  = reinterpret_cast<ID2D1SolidColorBrush**>(memory);
 
 		for(uint32_t i=0; i<=N -1; ++i)
@@ -583,7 +596,8 @@ namespace WINDOWGraphicsOverlay
 					brushPool[i] = nullptr;
 				}
 
-				free(brushPool);
+				free(memory);
+				memory = nullptr;
 			}
 		}
 
@@ -773,8 +787,6 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	MATRIX* matrix = new MATRIX();
 
-	MatrixRain MR;
-
 	uint32_t width  = 200;
 	uint32_t height = 200;
 	uint32_t depth  = 200;
@@ -801,11 +813,15 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		
 		uint32_t splitPerAxis = std::round(std::cbrt(std::thread::hardware_concurrency()));
 
+		auto rondevousPointFunction = [=, &running](){matrix->UpdateWorldView(_handle, running);};
+		std::barrier SyncPoint(splitPerAxis * splitPerAxis * splitPerAxis, rondevousPointFunction);
+
 		uint32_t chunkSizeX = width  / splitPerAxis;
 		uint32_t chunkSizeY = height / splitPerAxis;
 		uint32_t chunkSizeZ = depth  / splitPerAxis;
 
 		uint32_t threadIndex = 0;
+
 		for (uint32_t x = 0; x < splitPerAxis; ++x) 
 		{
 		    for (uint32_t y = 0; y < splitPerAxis; ++y) 
@@ -823,7 +839,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		            ChunkThreads[threadIndex++] = std::thread
 					(
-						[=, &keyPressed, &keyHeld, &keyReleased, &running, &ready, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyHeld, keyHeld, keyReleased, running, ready, x1, x2, y1, y2, z1, z2); }
+						[=, &SyncPoint, &keyPressed, &keyHeld, &keyReleased, &running, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, SyncPoint, keyHeld, keyHeld, keyReleased, running, x1, x2, y1, y2, z1, z2); }
 					);
 		        }
 		    }
@@ -869,9 +885,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 				::DispatchMessage(&msg);
 			}
 
-			matrix->UpdateWorldView(_handle, running);
-
-			std::this_thread::sleep_for(std::chrono::milliseconds(50));
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000 / TARGET_FPS));
 		}
 
 		running = false;
@@ -892,8 +906,6 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		MessageBoxW(nullptr, L"WINDOW HANDLE IS EMPTY", L"ERROR", MB_ICONERROR | MB_OK);
 		return msg.wParam;
 	}
-
-	matrix->DestroyMatrix();
 
 	delete matrix;
 	matrix=nullptr;

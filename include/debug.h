@@ -59,10 +59,10 @@ enum PIXEL_TYPE
 	PIXEL_QUARTER = 0x2591,
 };
 
-class olcConsoleGameEngine
+class ConsoleEngine
 {
 public:
-	olcConsoleGameEngine()
+	ConsoleEngine()
 	{
 		m_nScreenWidth = 80;
 		m_nScreenHeight = 30;
@@ -81,20 +81,6 @@ public:
 		m_nScreenWidth = width;
 		m_nScreenHeight = height;
 
-		// Update 13/09/2017 - It seems that the console behaves differently on some systems
-		// and I'm unsure why this is. It could be to do with windows default settings, or
-		// screen resolutions, or system languages. Unfortunately, MSDN does not offer much
-		// by way of useful information, and so the resulting sequence is the reult of experiment
-		// that seems to work in multiple cases.
-		//
-		// The problem seems to be that the SetConsoleXXX functions are somewhat circular and 
-		// fail depending on the state of the current console properties, i.e. you can't set
-		// the buffer size until you set the screen size, but you can't change the screen size
-		// until the buffer size is correct. This coupled with a precise ordering of calls
-		// makes this procedure seem a little mystical :-P. Thanks to wowLinh for helping - Jx9
-
-		// Change console visual size to a minimum so ScreenBuffer can shrink
-		// below the actual visual size
 		m_rectWindow = { 0, 0, 1, 1 };
 		SetConsoleWindowInfo(m_hConsole, TRUE, &m_rectWindow);
 
@@ -116,16 +102,6 @@ public:
 		cfi.FontFamily = FF_DONTCARE;
 		cfi.FontWeight = FW_NORMAL;
 
-	/*	DWORD version = GetVersion();
-		DWORD major = (DWORD)(LOBYTE(LOWORD(version)));
-		DWORD minor = (DWORD)(HIBYTE(LOWORD(version)));*/
-
-		//if ((major > 6) || ((major == 6) && (minor >= 2) && (minor < 4)))		
-		//	wcscpy_s(cfi.FaceName, L"Raster"); // Windows 8 :(
-		//else
-		//	wcscpy_s(cfi.FaceName, L"Lucida Console"); // Everything else :P
-
-		//wcscpy_s(cfi.FaceName, L"Liberation Mono");
 		wcscpy_s(cfi.FaceName, L"UD Digi Kyokasho N-B");
 		if (!SetCurrentConsoleFontEx(m_hConsole, false, &cfi))
 			return Error(L"SetCurrentConsoleFontEx");
@@ -178,9 +154,9 @@ public:
 	void Clip(int &x, int &y)
 	{
 		if (x < 0) x = 0;
-		if (x >= m_nScreenWidth) x = m_nScreenWidth;
+		if (x >= m_nScreenWidth) x = m_nScreenWidth - 1;
 		if (y < 0) y = 0;
-		if (y >= m_nScreenHeight) y = m_nScreenHeight;
+		if (y >= m_nScreenHeight) y = m_nScreenHeight - 1;
 	}
 
 	void DrawLine(int x1, int y1, int x2, int y2, short c = 0x2588, short col = 0x000F)
@@ -235,10 +211,11 @@ public:
 		}
 	}
 
-	~olcConsoleGameEngine()
+	~ConsoleEngine()
 	{
-		SetConsoleActiveScreenBuffer(m_hOriginalConsole);
+		//SetConsoleActiveScreenBuffer(m_hOriginalConsole);
 		delete[] m_bufScreen;
+		m_bufScreen = nullptr;
 	}
 
 public:
@@ -246,7 +223,7 @@ public:
 	{	
 		// Start the thread
 		m_bAtomActive = true;
-		//std::thread t = std::thread(&olcConsoleGameEngine::GameThread, this, running);
+		//std::thread t = std::thread(&ConsoleEngine::GameThread, this, running);
 
 		std::thread t = std::thread
 		(
@@ -303,16 +280,13 @@ protected:
 	{
 		wchar_t buf[256];
 		FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM, NULL, GetLastError(), MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), buf, 256, NULL);
-		SetConsoleActiveScreenBuffer(m_hOriginalConsole);
+		// SetConsoleActiveScreenBuffer(m_hOriginalConsole);
 		wprintf(L"ERROR: %s\n\t%s\n", msg, buf);
 		return 0;
 	}
 
 	static BOOL CloseHandler(DWORD evt)
 	{
-		// Note this gets called in a seperate OS thread, so it must
-		// only exit when the game has finished cleaning up, or else
-		// the process will be killed before OnUserDestroy() has finished
 		if (evt == CTRL_CLOSE_EVENT)
 		{
 			m_bAtomActive = false;
