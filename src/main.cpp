@@ -238,20 +238,7 @@ public:
 
 	inline void UpdateWorldView(HWND hwnd, std::atomic<bool>& running)
 	{
-		if(running)
-		{
-			for(uint32_t i=0; i<=w*h*d -1; ++i)
-			{
-				if(!running){break;}
-				
-				if(CELL_BACK_BUFFER[i].MaterialType != CELL_FRONT_BUFFER[i].MaterialType)
-				{
-					// copy the back buffer to the front buffer up until the point at which a cell tranformation was detected
-					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
-					break;
-				}
-			}
-		}
+		std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
 	}
 
 	inline void FlushMatrix(std::atomic<bool>& running, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
@@ -345,7 +332,7 @@ public://////////////////////////////////////////
 	uint16_t _pixelWidth  = 5;
 	uint16_t _pixelHeight = 5;
 
-	float cellSize = 0.5f;
+	float cellSize = 1.0f;
 
 	uint16_t _zLevel = 0;
 
@@ -394,15 +381,23 @@ public:
         UpdateBasis();
     }
 
-    void MoveForward(float amount) {
+    void MoveForward(float amount)
+	{
         position = position + forward * amount;
     }
 
-    void MoveRight(float amount) {
+	void MoveBack(float amount)
+	{
+		position = position - forward * amount;
+	}
+
+    void MoveRight(float amount)
+	{
         position = position + right * amount;
     }
 
-    void MoveUp(float amount) {
+    void MoveUp(float amount)
+	{
         position = position + up * amount;
     }
 
@@ -429,8 +424,8 @@ public:
 private:
 	void UpdateBasis()
 	{
-		float radYaw   = yaw * (3.10159f / 180.0f);
-		float radPitch = pitch * (3.10159f / 180.0f);
+		float radYaw   = (yaw + 180.0f) * (3.14159f / 180.0f);
+		float radPitch = pitch * (3.14159f / 180.0f);
 
 		forward.x = cosf(radPitch) * sinf(radYaw);
         forward.y = sinf(radPitch);
@@ -439,8 +434,8 @@ private:
 		forward = normalize(forward);
 		worldup  = Vec3D(0.0f, 1.0f, 0.0f);
 
-		right = normalize(Cross(forward, worldup));
-		up    = Cross(right, forward);
+		right = normalize(Cross(worldup, forward));
+		up    = Cross(forward, right);
 	}
 	static Vec3D normalize(Vec3D vec)
 	{
@@ -517,13 +512,11 @@ namespace WINDOWGraphicsOverlay
 		}
 	}
 
-	bool blitOverlay(HWND hwnd, Camera& cam, uint32_t zLevel, int32_t cellWidth, int32_t cellHeight)
+	bool blitOverlay(HWND hwnd, Camera& cam)
 	{
 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
 
-		cam.SetFOV(90.0f);
-		cam.SetPosition({0.0f, 2.0f, -5.0f});
-		cam.Rotate(90.0f, -10.0f);
+		matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
 
 		float cellSize = matrix->cellSize;
 
@@ -543,13 +536,22 @@ namespace WINDOWGraphicsOverlay
 				Vec3D dir = cam.GenerateRayDirection(i, j, WIDTH, HEIGHT);
 				Vec3D org = cam.GetPosition();
 
-				uint32_t ix = static_cast<uint32_t>(std::floor(org.x / cellSize));
-				uint32_t iy = static_cast<uint32_t>(std::floor(org.y / cellSize));
-				uint32_t iz = static_cast<uint32_t>(std::floor(org.z / cellSize));
+				int ix = static_cast<int>(std::floor(org.x / cellSize));
+				int iy = static_cast<int>(std::floor(org.y / cellSize));
+				int iz = static_cast<int>(std::floor(org.z / cellSize));
 
-				uint32_t stepX = (dir.x >= 0) ? 1 : -1;
-				uint32_t stepY = (dir.y >= 0) ? 1 : -1;
-				uint32_t stepZ = (dir.z >= 0) ? 1 : -1;
+				if (ix < 0 || iy < 0 || iz < 0 ||
+				    ix >= matrix->w || iy >= matrix->h || iz >= matrix->d)
+				{
+					printf("ix, iy, or iz: out of bounds\n");
+				    break;
+				}
+
+				int stepX = (dir.x >= 0) ? 1 : -1;
+				int stepY = (dir.y >= 0) ? 1 : -1;
+				int stepZ = (dir.z >= 0) ? 1 : -1;
+
+				//printf("ixyz[%d]%d][%d]\nstepXYZ[%d][%d][%d]\n", ix, iy, iz, stepX, stepY, stepZ);
 
 				float invDx = (dir.x != 0) ? std::fabs(cellSize / dir.x) : std::numeric_limits<float>::infinity();
     		    float invDy = (dir.y != 0) ? std::fabs(cellSize / dir.y) : std::numeric_limits<float>::infinity();
@@ -576,7 +578,8 @@ namespace WINDOWGraphicsOverlay
 				while (traveled < maxDist)
         		{
         		    // --- hit test ----------------------------------------------------
-        		    uint32_t flat = matrix->FlattenedIndex(ix, iy, iz);
+
+        		    int flat = matrix->FlattenedIndex(ix, iy, iz);
         		    if (matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::air 
 						&& matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::Custom)
 					{
@@ -609,9 +612,6 @@ namespace WINDOWGraphicsOverlay
 				static_cast<float>(i + 1), static_cast<float>(j + 1) );
 
 				BitmapRT->FillRectangle(&pixel, hit ? brushPool[mat] : brushPool[0]);
-
-				//D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-    			//BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
 			}
 		}
 		BitmapRT->EndDraw();
@@ -725,23 +725,6 @@ namespace WINDOWGraphicsOverlay
 				
 				uint32_t x = GET_X_LPARAM(lp);
 				uint32_t y = GET_Y_LPARAM(lp);
-
-				//uint32_t xCell = x / matrix->_pixelWidth;
-				//uint32_t yCell = y / matrix->_pixelHeight;
-//
-				//MATRIX::cell readcell = MATRIX::cell();
-//
-				//if(wp & MK_LBUTTON)
-				//{
-				//	readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-				//	printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-				//}
-//
-				//if(wp & MK_RBUTTON)
-				//{
-				//	readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
-				//	printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-				//}
 			}
 			break;
 			case WM_KEYDOWN:
@@ -911,9 +894,17 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		Camera cam;
 
+		cam.SetFOV(90.0f);
+		cam.SetPosition({10.0f, 2.5f, 10.0f});
+		cam.Rotate(0.0f, -10.0f);
+
+		const std::chrono::duration<float> FrameDuration(1.0f / TARGET_FPS);
+
 		while(running)
 		{
-			WINDOWGraphicsOverlay::blitOverlay(_handle, cam, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+			auto frameStart = std::chrono::high_resolution_clock::now();
+
+			WINDOWGraphicsOverlay::blitOverlay(_handle, cam);
 
 			while(PeekMessage(&msg, NULL, 0, 0,PM_REMOVE))
 			{
@@ -941,7 +932,15 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 				::DispatchMessage(&msg);
 			}
 
-			std::this_thread::sleep_for(std::chrono::milliseconds(1000 / TARGET_FPS));
+			auto frameEnd = std::chrono::high_resolution_clock::now();
+    		float deltaTime = std::chrono::duration<float>(frameEnd - frameStart).count();
+
+			if(keyHeld[0x57]) { cam.MoveBack(5.0f * deltaTime); }
+			if(keyHeld[0x53]) { cam.MoveForward(5.0f); 			}
+
+			// tally the amount of time - time to finish process for throttling.
+			
+        	std::this_thread::sleep_for(std::chrono::milliseconds(1000 / TARGET_FPS));
 		}
 
 		running = false;

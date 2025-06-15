@@ -5,7 +5,7 @@ obj   = main.o
 include	    = -IC:\code\redjader\simulation\include
 linker      = -lgdi32 -ld2d1
 
-flag = -w -fstack-usage -DUNICODE -g -std=c++20 -pthread -fno-inline -fno-omit-frame-pointer -O0 -Wall
+flag = -w -fstack-usage -DUNICODE -g -std=c++20 -pthread -fno-inline -fno-omit-frame-pointer
 
 debug = -O0 -Wall
 
