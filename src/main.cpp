@@ -41,8 +41,8 @@ void** memory = nullptr;
 #define TIME_DURATION 500
 #define TARGET_FPS    60
 
-#define WIDTH         800
-#define HEIGHT        600
+#define WIDTH         320
+#define HEIGHT        240
 
 // debugging idea...
 
@@ -253,7 +253,6 @@ public:
 				{
 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
-					//WriteDataTo(x, y, z, cell(static_cast<element>(rand() % element::size)));
 				}
 			}
 		}
@@ -383,12 +382,12 @@ public:
 
     void MoveForward(float amount)
 	{
-        position = position + forward * amount;
+        position = position - forward * amount;
     }
 
 	void MoveBack(float amount)
 	{
-		position = position - forward * amount;
+		position = position + forward * amount;
 	}
 
     void MoveRight(float amount)
@@ -396,9 +395,19 @@ public:
         position = position + right * amount;
     }
 
+	void MoveLeft(float amount)
+	{
+        position = position - right * amount;
+    }
+
     void MoveUp(float amount)
 	{
         position = position + up * amount;
+    }
+
+	void MoveDown(float amount)
+	{
+        position = position - up * amount;
     }
 
     Vec3D GetPosition() const {
@@ -935,8 +944,14 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			auto frameEnd = std::chrono::high_resolution_clock::now();
     		float deltaTime = std::chrono::duration<float>(frameEnd - frameStart).count();
 
-			if(keyHeld[0x57]) { cam.MoveBack(5.0f * deltaTime); }
-			if(keyHeld[0x53]) { cam.MoveForward(5.0f); 			}
+			if(keyHeld[0x57]) { cam.MoveBack(5.0f * deltaTime);    } // s
+			if(keyHeld[0x53]) { cam.MoveForward(5.0f * deltaTime); } // w
+			if(keyHeld[0x41]) { cam.MoveLeft(5.0f * deltaTime);    } // a
+			if(keyHeld[0x44]) { cam.MoveRight(5.0f * deltaTime);   } // d
+			if(keyHeld[0x20]) { cam.MoveUp(5.0f * deltaTime);      } // space
+			if(keyHeld[0x10]) { cam.MoveDown(5.0f * deltaTime);    } // shift
+			
+			
 
 			// tally the amount of time - time to finish process for throttling.
 			
