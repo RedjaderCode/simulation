@@ -248,7 +248,6 @@ public:
 				{
 					// copy the back buffer to the front buffer up until the point at which a cell tranformation was detected
 					std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
-					InvalidateRect(hwnd, nullptr, FALSE);
 					break;
 				}
 			}
@@ -267,7 +266,7 @@ public:
 				{
 					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
 					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
-					WriteDataTo(x, y, z, cell(static_cast<element>(rand() % element::size)));
+					//WriteDataTo(x, y, z, cell(static_cast<element>(rand() % element::size)));
 				}
 			}
 		}
@@ -288,8 +287,6 @@ public:
 			FlushMatrix(running, x1, x2, y1, y2, z1, z2);
 			// first, flush the entire matrix to a default state every frame, then update it into it's proper state. 
 			
-			
-
 			for(uint32_t z=z1; z<=z2; ++z)
 			{
 				if(!running) break;
@@ -348,6 +345,8 @@ public://////////////////////////////////////////
 	uint16_t _pixelWidth  = 5;
 	uint16_t _pixelHeight = 5;
 
+	float cellSize = 0.5f;
+
 	uint16_t _zLevel = 0;
 
 	MaterialAttributes ReadCellAttributes(cell c)
@@ -371,110 +370,84 @@ public://////////////////////////////////////////
 
 struct Camera
 {
-	Camera() : FOV(90.0f) {}
+	Camera() = default;
 public:
-	bool TraceRayThroughMatrix(Vec3D rayOrigin, Vec3D rayDir, float maxDistance, bool (*IsCellBlocking)(int, int, int))
-	{
-		rayDir = normalize(rayDir);
 
-		int x = static_cast<int>(floor(rayOrigin.x));
-		int y = static_cast<int>(floor(rayOrigin.y));
-		int z = static_cast<int>(floor(rayOrigin.z));
+	void SetFOV(float degrees) {
+        FOV = degrees;
+    }
 
-		int stepX = (rayDir.x >= 0) ? 1 : -1;
-		int stepY = (rayDir.y >= 0) ? 1 : -1;
-		int stepZ = (rayDir.z >= 0) ? 1 : -1;
+    void SetPosition(Vec3D pos) {
+        position = pos;
+        UpdateBasis();
+    }
 
-		float tDeltaX = (rayDir.x != 0) ? fabs(1.0f / rayDir.x) : INFINITY;
-		float tDeltaY = (rayDir.y != 0) ? fabs(1.0f / rayDir.y) : INFINITY;
-		float tDeltaZ = (rayDir.z != 0) ? fabs(1.0f / rayDir.z) : INFINITY;
+    void Rotate(float deltaYaw, float deltaPitch) {
+        yaw += deltaYaw;
+        pitch += deltaPitch;
 
-		float voxelBorderX = (stepX > 0) ? (floor(rayOrigin.x) + 1.0f) : floor(rayOrigin.x);
-		float voxelBorderY = (stepY > 0) ? (floor(rayOrigin.y) + 1.0f) : floor(rayOrigin.y);
-		float voxelBorderZ = (stepZ > 0) ? (floor(rayOrigin.z) + 1.0f) : floor(rayOrigin.z);
+        // Clamp pitch to avoid gimbal lock
+        const float pitchLimit = 89.0f;
+        if (pitch > pitchLimit) pitch = pitchLimit;
+        if (pitch < -pitchLimit) pitch = -pitchLimit;
 
-		float tMaxX = (rayDir.x != 0) ? fabs((voxelBorderX - rayOrigin.x) / rayDir.x) : INFINITY;
-		float tMaxY = (rayDir.y != 0) ? fabs((voxelBorderY - rayOrigin.y) / rayDir.y) : INFINITY;
-		float tMaxZ = (rayDir.z != 0) ? fabs((voxelBorderZ - rayOrigin.z) / rayDir.z) : INFINITY;
+        UpdateBasis();
+    }
 
-		float traveled = 0.0f;
+    void MoveForward(float amount) {
+        position = position + forward * amount;
+    }
 
-		while (traveled < maxDistance)
-		{
-			if (IsCellBlocking(x, y, z)) { return true; }
+    void MoveRight(float amount) {
+        position = position + right * amount;
+    }
 
-			if (tMaxX < tMaxY && tMaxX < tMaxZ)
-			{
-				x += stepX;
-				traveled = tMaxX;
-				tMaxX += tDeltaX;
-			}
-			else if (tMaxY < tMaxZ)
-			{
-				y += stepY;
-				traveled = tMaxY;
-				tMaxY += tDeltaY;
-			}
-			else 
-			{
-				z += stepZ;
-				traveled = tMaxZ;
-				tMaxZ += tDeltaZ;
-			}
-		}
+    void MoveUp(float amount) {
+        position = position + up * amount;
+    }
 
-		return false; // didn't hit anything
-	}
+    Vec3D GetPosition() const {
+        return position;
+    }
 
-	inline void SetViewPosition(float _fov, Vec3D _position = {0.0f, 0.0f, 0.0f}, Vec3D _lookAt = {0.0f, 0.0f, 1.0f})
-	{
-		position = _position; lookAt = _lookAt; FOV = _fov;
+    Vec3D GenerateRayDirection(int i, int j, int screenWidth, int screenHeight) const {
+        float aspectRatio = static_cast<float>(screenWidth) / static_cast<float>(screenHeight);
+        float fovRadians = FOV * (3.14159f / 180.0f);
+        float screenHalfWidth = tanf(fovRadians / 2.0f);
+        float screenHalfHeight = screenHalfWidth / aspectRatio;
 
-		forward = normalize(lookAt - position);
-		worldUp = {0, 1, 0};
-		right   = normalize(Cross(forward, worldUp));
-		up      = Cross(right, forward);
-	}
-	inline void CastRay(uint32_t nScreenWidth, uint32_t nScreenHeight, bool (*IsCellBlocking)(int, int, int))
-	{
-		float aspectRatio = static_cast<float>(nScreenWidth) / static_cast<float>(nScreenHeight);
-		float fovRadians   = FOV * (3.14159f / 180.0f);
-		
-		float screenPlaneHalfWidth  = tanf(fovRadians / 2.0f);
-		float screenPlaneHalfHeight = screenPlaneHalfWidth / aspectRatio;
+        float u = (i + 0.5f) / screenWidth;
+        float v = (j + 0.5f) / screenHeight;
 
-		for(int j=0; j<=nScreenHeight -1; ++j)
-		{
-			for(int i=0; i<=nScreenWidth -1; ++i)
-			{
-				float x 	  = (i + 0.5f) / nScreenWidth;
-				float y 	  = (j + 0.5f) / nScreenHeight;
+        float screenX = (2.0f * u - 1.0f) * screenHalfWidth;
+        float screenY = (1.0f - 2.0f * v) * screenHalfHeight;
 
-				float screenX = (2.0f * x - 1.0f) * screenPlaneHalfWidth;
-				float screenY = (1.0f - 2.0f * y) * screenPlaneHalfHeight;
-
-				Vec3D rayDir  = forward + right * screenX + up * screenY;
-				rayDir        = normalize(rayDir);
-
-				while(0)
-				{
-					bool bHit = TraceRayThroughMatrix(position, rayDir, 100.0f, IsCellBlocking);
-
-					if(bHit)
-					{
-						break;
-					}
-				}
-			}
-		}
-	}
+        Vec3D rayDir = normalize(forward + right * screenX + up * screenY);
+        return rayDir;
+    }
+	
 private:
-	Vec3D normalize(Vec3D vec)
+	void UpdateBasis()
+	{
+		float radYaw   = yaw * (3.10159f / 180.0f);
+		float radPitch = pitch * (3.10159f / 180.0f);
+
+		forward.x = cosf(radPitch) * sinf(radYaw);
+        forward.y = sinf(radPitch);
+        forward.z = cosf(radPitch) * cosf(radYaw);
+
+		forward = normalize(forward);
+		worldup  = Vec3D(0.0f, 1.0f, 0.0f);
+
+		right = normalize(Cross(forward, worldup));
+		up    = Cross(right, forward);
+	}
+	static Vec3D normalize(Vec3D vec)
 	{
 		float len = sqrt(vec.x*vec.x + vec.y*vec.y + vec.z*vec.z);
 		return {vec.x / len, vec.y / len, vec.z / len};
 	}
-	Vec3D Cross(Vec3D a, Vec3D b)
+	static Vec3D Cross(Vec3D a, Vec3D b)
 	{
 	    return
 		{
@@ -484,13 +457,17 @@ private:
 		};
 	}
 protected:
-	Vec3D forward  = Vec3D(0.0f, 0.0f, 0.0f);
-	Vec3D worldUp  = Vec3D(0.0f, 0.0f, 0.0f);
-	Vec3D right    = Vec3D(0.0f, 0.0f, 0.0f);
-	Vec3D up       = Vec3D(0.0f, 0.0f, 0.0f);
+	Vec3D forward  = Vec3D(0.0f, 0.0f, 1.0f);
+	Vec3D right    = Vec3D(1.0f, 0.0f, 0.0f);
+	Vec3D up       = Vec3D(0.0f, 1.0f, 0.0f);
 	Vec3D position = Vec3D(0.0f, 0.0f, 0.0f);
+
 	Vec3D lookAt   = Vec3D(0.0f, 0.0f, 0.0f);
-	float FOV;
+	Vec3D worldup  = Vec3D(0.0f, 1.0f, 0.0f);
+
+	float FOV      = 90.0f;
+	float yaw      = 0.0f;
+	float pitch    = 0.0f;
 };
 
 namespace WINDOWGraphicsOverlay
@@ -540,9 +517,15 @@ namespace WINDOWGraphicsOverlay
 		}
 	}
 
-	bool blitOverlay(HWND hwnd, uint32_t zLevel, int32_t cellWidth, int32_t cellHeight)
+	bool blitOverlay(HWND hwnd, Camera& cam, uint32_t zLevel, int32_t cellWidth, int32_t cellHeight)
 	{
 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+
+		cam.SetFOV(90.0f);
+		cam.SetPosition({0.0f, 2.0f, -5.0f});
+		cam.Rotate(90.0f, -10.0f);
+
+		float cellSize = matrix->cellSize;
 
 		if(!BitmapRT)
 		{
@@ -553,18 +536,92 @@ namespace WINDOWGraphicsOverlay
 		BitmapRT->BeginDraw();
 		BitmapRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 
-		for (int j = 0; j < matrix->h; ++j)
+		for (int j = 0; j < HEIGHT; ++j)
     	{
-    		for (int i = 0; i < matrix->w; ++i)
+    		for (int i = 0; i < WIDTH; ++i)
     		{
-				D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
-    			BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
+				Vec3D dir = cam.GenerateRayDirection(i, j, WIDTH, HEIGHT);
+				Vec3D org = cam.GetPosition();
+
+				uint32_t ix = static_cast<uint32_t>(std::floor(org.x / cellSize));
+				uint32_t iy = static_cast<uint32_t>(std::floor(org.y / cellSize));
+				uint32_t iz = static_cast<uint32_t>(std::floor(org.z / cellSize));
+
+				uint32_t stepX = (dir.x >= 0) ? 1 : -1;
+				uint32_t stepY = (dir.y >= 0) ? 1 : -1;
+				uint32_t stepZ = (dir.z >= 0) ? 1 : -1;
+
+				float invDx = (dir.x != 0) ? std::fabs(cellSize / dir.x) : std::numeric_limits<float>::infinity();
+    		    float invDy = (dir.y != 0) ? std::fabs(cellSize / dir.y) : std::numeric_limits<float>::infinity();
+	        	float invDz = (dir.z != 0) ? std::fabs(cellSize / dir.z) : std::numeric_limits<float>::infinity();
+
+				auto firstT = [&](float posComponent, float dirComponent, int step) -> float
+        		{
+        		    if (dirComponent == 0) return std::numeric_limits<float>::infinity();
+        		    float voxelBorder = (step > 0)
+        		        ? (std::floor(posComponent / cellSize) + 1.0f) * cellSize
+        		        :  std::floor(posComponent / cellSize) * cellSize;
+        		    return std::fabs((voxelBorder - posComponent) / dirComponent);
+        		};
+
+				float tMaxX = firstT(org.x, dir.x, stepX);
+		        float tMaxY = firstT(org.y, dir.y, stepY);
+        		float tMaxZ = firstT(org.z, dir.z, stepZ);
+
+				const float maxDist = 100.0f;   // world units
+        		float traveled = 0.0f;
+        		bool  hit      = false;
+        		MATRIX::element mat = MATRIX::element::air;
+
+				while (traveled < maxDist)
+        		{
+        		    // --- hit test ----------------------------------------------------
+        		    uint32_t flat = matrix->FlattenedIndex(ix, iy, iz);
+        		    if (matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::air 
+						&& matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::Custom)
+					{
+        		        hit = true;
+        		        mat = matrix->CELL_FRONT_BUFFER[flat].MaterialType;
+        		        break;
+        		    }
+				
+        		    // --- advance to next voxel plane --------------------------------
+        		    if (tMaxX < tMaxY && tMaxX < tMaxZ)
+					{
+        		        ix += stepX;
+        		        traveled = tMaxX;
+        		        tMaxX += invDx;
+        		    }
+        		    else if (tMaxY < tMaxZ)
+					{
+        		        iy += stepY;
+        		        traveled = tMaxY;
+        		        tMaxY += invDy;
+        		    }
+        		    else {
+        		        iz += stepZ;
+        		        traveled = tMaxZ;
+        		        tMaxZ += invDz;
+        		    }
+        		}
+
+				D2D1_RECT_F pixel = D2D1::RectF( static_cast<float>(i), static_cast<float>(j), 
+				static_cast<float>(i + 1), static_cast<float>(j + 1) );
+
+				BitmapRT->FillRectangle(&pixel, hit ? brushPool[mat] : brushPool[0]);
+
+				//D2D1_RECT_F rect = D2D1::RectF( static_cast<float>(i * cellWidth), static_cast<float>(j * cellHeight), static_cast<float>((i + 1) * cellWidth), static_cast<float>((j + 1) * cellHeight) );
+    			//BitmapRT->FillRectangle(&rect, brushPool[static_cast<uint32_t>(matrix->CELL_FRONT_BUFFER[matrix->FlattenedIndex(i, j, matrix->_zLevel)].MaterialType)]);
 			}
 		}
 		BitmapRT->EndDraw();
 		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
 		HRESULT hr = BitmapRT->GetBitmap(&Bitmap);
 		ErrorHandle(hr);
+
+		InvalidateRect(hwnd, nullptr, FALSE);
+
+		return true;
 	}
 
 	LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp)
@@ -669,22 +726,22 @@ namespace WINDOWGraphicsOverlay
 				uint32_t x = GET_X_LPARAM(lp);
 				uint32_t y = GET_Y_LPARAM(lp);
 
-				uint32_t xCell = x / matrix->_pixelWidth;
-				uint32_t yCell = y / matrix->_pixelHeight;
-
-				MATRIX::cell readcell = MATRIX::cell();
-
-				if(wp & MK_LBUTTON)
-				{
-					readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
-					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-				}
-
-				if(wp & MK_RBUTTON)
-				{
-					readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
-					printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
-				}
+				//uint32_t xCell = x / matrix->_pixelWidth;
+				//uint32_t yCell = y / matrix->_pixelHeight;
+//
+				//MATRIX::cell readcell = MATRIX::cell();
+//
+				//if(wp & MK_LBUTTON)
+				//{
+				//	readcell = matrix->WriteDataTo(xCell, yCell, matrix->_zLevel, MATRIX::cell(MATRIX::element::fire));
+				//	printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+				//}
+//
+				//if(wp & MK_RBUTTON)
+				//{
+				//	readcell = matrix->AccessDataAt(xCell, yCell, matrix->_zLevel);
+				//	printf("cell[%d, %d][SLICE: %d]->element: %s\n", xCell, yCell, matrix->_zLevel, matrix->ReadCellAttributes(readcell).name);
+				//}
 			}
 			break;
 			case WM_KEYDOWN:
@@ -694,8 +751,6 @@ namespace WINDOWGraphicsOverlay
 				
 				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
 				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
-
-				InvalidateRect(hwnd, nullptr, FALSE);
 			}
 			break;
 			case WM_PAINT:
@@ -704,8 +759,6 @@ namespace WINDOWGraphicsOverlay
 				CHECK_MATRIX_POPULATION();
 
 				ValidateRect(hwnd, nullptr);
-
-				Camera cam;
 
 				if(RenderTarget && Bitmap)
 				{
@@ -802,6 +855,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	std::atomic<bool> running = true;
 	std::atomic<bool> ready   = false;
+	
 	std::thread::id MainThreadID = std::this_thread::get_id();
 
 	MSG msg = {NULL};
@@ -855,9 +909,11 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		printf("Starting...\n\n");
 
+		Camera cam;
+
 		while(running)
 		{
-			WINDOWGraphicsOverlay::blitOverlay(_handle, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
+			WINDOWGraphicsOverlay::blitOverlay(_handle, cam, matrix->_zLevel, matrix->_pixelWidth, matrix->_pixelHeight);
 
 			while(PeekMessage(&msg, NULL, 0, 0,PM_REMOVE))
 			{
