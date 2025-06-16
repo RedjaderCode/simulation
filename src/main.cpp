@@ -42,8 +42,8 @@ uint32_t* elementColor = nullptr;
 #define TIME_DURATION 500
 #define TARGET_FPS    60
 
-#define WIDTH         400//320
-#define HEIGHT        300//240
+#define WIDTH         800//400//320
+#define HEIGHT        600//300//240
 
 // debugging idea...
 
@@ -240,23 +240,15 @@ public:
 	inline void UpdateWorldView(HWND hwnd, std::atomic<bool>& running)
 	{
 		std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
+		D2D1_RECT_U rect = {0, 0, WIDTH, HEIGHT};
+		Bitmap->CopyFromMemory(&rect, pixelBuffer, WIDTH * sizeof(uint32_t));
+		InvalidateRect(hwnd, nullptr, FALSE);
 	}
 
-	inline void FlushMatrix(std::atomic<bool>& running, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
+	inline void FlushMatrix(uint32_t x, uint32_t y, uint32_t z)
 	{
-		for(uint32_t z=z1; z<=z2; ++z)
-		{
-			if(!running) break;
-
-			for(uint32_t y=y1; y<=y2; ++y)
-			{
-				for(uint32_t x=x1; x<=x2; ++x)
-				{
-					cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-					MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
-				}
-			}
-		}
+		cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
+		MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
 	}
 
 	// THREAD CHUNK FUNCTION //
@@ -271,9 +263,6 @@ public:
 
 			auto frameStart = std::chrono::high_resolution_clock::now();
 
-			FlushMatrix(running, x1, x2, y1, y2, z1, z2);
-			// first, flush the entire matrix to a default state every frame, then update it into it's proper state. 
-
 			for(uint32_t z=z1; z<=z2; ++z)
 			{
 				if(!running) break;
@@ -282,7 +271,9 @@ public:
 				{
 					for(uint32_t x=x1; x<=x2; ++x)
 					{
-						
+						FlushMatrix(x,y,z);
+
+
 					}
 				}
 			}
@@ -487,99 +478,113 @@ namespace WINDOWGraphicsOverlay
 		}
 	}
 
-	bool blitOverlay(HWND hwnd, Camera& cam)
+	template<class C>
+	bool blitOverlay(HWND hwnd, std::barrier<C>& SyncPoint, Camera& cam, std::atomic<bool>& running, uint32_t StartX, uint32_t EndX)
 	{
 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
 
 		float cellSize = matrix->cellSize;
 
-		for (int j = 0; j < HEIGHT; ++j)
-    	{
-    		for (int i = 0; i < WIDTH; ++i)
+		const auto FrameDuration = std::chrono::milliseconds(1000 / TARGET_FPS);
+
+		while(running)
+		{	
+			auto frameStart = std::chrono::high_resolution_clock::now();
+
+			for (int j = 0; j < HEIGHT; ++j)
     		{
-				Vec3D dir = cam.GenerateRayDirection(i, j, WIDTH, HEIGHT);
-				Vec3D org = cam.GetPosition();
+    			for (int i = StartX; i < EndX; ++i)
+    			{
+					Vec3D dir = cam.GenerateRayDirection(i, j, WIDTH, HEIGHT);
+					Vec3D org = cam.GetPosition();
 
-				int ix = static_cast<int>(std::floor(org.x / cellSize));
-				int iy = static_cast<int>(std::floor(org.y / cellSize));
-				int iz = static_cast<int>(std::floor(org.z / cellSize));
+					int ix = static_cast<int>(std::floor(org.x / cellSize));
+					int iy = static_cast<int>(std::floor(org.y / cellSize));
+					int iz = static_cast<int>(std::floor(org.z / cellSize));
 
-				if (ix < 0 || iy < 0 || iz < 0 ||
-				    ix >= matrix->w || iy >= matrix->h || iz >= matrix->d)
-				{
-				    break;
+					if (ix < 0 || iy < 0 || iz < 0 ||
+					    ix >= matrix->w || iy >= matrix->h || iz >= matrix->d)
+					{
+					    break;
+					}
+
+					int stepX = (dir.x >= 0) ? 1 : -1;
+					int stepY = (dir.y >= 0) ? 1 : -1;
+					int stepZ = (dir.z >= 0) ? 1 : -1;
+
+					//printf("ixyz[%d]%d][%d]\nstepXYZ[%d][%d][%d]\n", ix, iy, iz, stepX, stepY, stepZ);
+
+					float invDx = (dir.x != 0) ? std::fabs(cellSize / dir.x) : std::numeric_limits<float>::infinity();
+    			    float invDy = (dir.y != 0) ? std::fabs(cellSize / dir.y) : std::numeric_limits<float>::infinity();
+	    	    	float invDz = (dir.z != 0) ? std::fabs(cellSize / dir.z) : std::numeric_limits<float>::infinity();
+
+					auto firstT = [&](float posComponent, float dirComponent, int step) -> float
+        			{
+        			    if (dirComponent == 0) return std::numeric_limits<float>::infinity();
+        			    float voxelBorder = (step > 0)
+        			        ? (std::floor(posComponent / cellSize) + 1.0f) * cellSize
+        			        :  std::floor(posComponent / cellSize) * cellSize;
+        			    return std::fabs((voxelBorder - posComponent) / dirComponent);
+        			};
+
+					float tMaxX = firstT(org.x, dir.x, stepX);
+			        float tMaxY = firstT(org.y, dir.y, stepY);
+        			float tMaxZ = firstT(org.z, dir.z, stepZ);
+
+					const float maxDist = 100.0f;   // world units
+        			float traveled = 0.0f;
+        			bool  hit      = false;
+        			MATRIX::element mat = MATRIX::element::air;
+
+					while (traveled < maxDist)
+        			{
+        			    // --- hit test ----------------------------------------------------
+
+        			    int flat = matrix->FlattenedIndex(ix, iy, iz);
+        			    if (matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::air 
+							&& matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::Custom)
+						{
+        			        hit = true;
+        			        mat = matrix->CELL_FRONT_BUFFER[flat].MaterialType;
+        			        break;
+        			    }
+					
+        			    // --- advance to next voxel plane --------------------------------
+        			    if (tMaxX < tMaxY && tMaxX < tMaxZ)
+						{
+        			        ix += stepX;
+        			        traveled = tMaxX;
+        			        tMaxX += invDx;
+        			    }
+        			    else if (tMaxY < tMaxZ)
+						{
+        			        iy += stepY;
+        			        traveled = tMaxY;
+        			        tMaxY += invDy;
+        			    }
+        			    else {
+        			        iz += stepZ;
+        			        traveled = tMaxZ;
+        			        tMaxZ += invDz;
+        			    }
+        			}
+
+					pixelBuffer[j * WIDTH + i] = hit ? elementColor[static_cast<uint32_t>(mat)] : 0xFFFFFFFF;
 				}
-
-				int stepX = (dir.x >= 0) ? 1 : -1;
-				int stepY = (dir.y >= 0) ? 1 : -1;
-				int stepZ = (dir.z >= 0) ? 1 : -1;
-
-				//printf("ixyz[%d]%d][%d]\nstepXYZ[%d][%d][%d]\n", ix, iy, iz, stepX, stepY, stepZ);
-
-				float invDx = (dir.x != 0) ? std::fabs(cellSize / dir.x) : std::numeric_limits<float>::infinity();
-    		    float invDy = (dir.y != 0) ? std::fabs(cellSize / dir.y) : std::numeric_limits<float>::infinity();
-	        	float invDz = (dir.z != 0) ? std::fabs(cellSize / dir.z) : std::numeric_limits<float>::infinity();
-
-				auto firstT = [&](float posComponent, float dirComponent, int step) -> float
-        		{
-        		    if (dirComponent == 0) return std::numeric_limits<float>::infinity();
-        		    float voxelBorder = (step > 0)
-        		        ? (std::floor(posComponent / cellSize) + 1.0f) * cellSize
-        		        :  std::floor(posComponent / cellSize) * cellSize;
-        		    return std::fabs((voxelBorder - posComponent) / dirComponent);
-        		};
-
-				float tMaxX = firstT(org.x, dir.x, stepX);
-		        float tMaxY = firstT(org.y, dir.y, stepY);
-        		float tMaxZ = firstT(org.z, dir.z, stepZ);
-
-				const float maxDist = 100.0f;   // world units
-        		float traveled = 0.0f;
-        		bool  hit      = false;
-        		MATRIX::element mat = MATRIX::element::air;
-
-				while (traveled < maxDist)
-        		{
-        		    // --- hit test ----------------------------------------------------
-
-        		    int flat = matrix->FlattenedIndex(ix, iy, iz);
-        		    if (matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::air 
-						&& matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::Custom)
-					{
-        		        hit = true;
-        		        mat = matrix->CELL_FRONT_BUFFER[flat].MaterialType;
-        		        break;
-        		    }
-				
-        		    // --- advance to next voxel plane --------------------------------
-        		    if (tMaxX < tMaxY && tMaxX < tMaxZ)
-					{
-        		        ix += stepX;
-        		        traveled = tMaxX;
-        		        tMaxX += invDx;
-        		    }
-        		    else if (tMaxY < tMaxZ)
-					{
-        		        iy += stepY;
-        		        traveled = tMaxY;
-        		        tMaxY += invDy;
-        		    }
-        		    else {
-        		        iz += stepZ;
-        		        traveled = tMaxZ;
-        		        tMaxZ += invDz;
-        		    }
-        		}
-				
-				pixelBuffer[j * WIDTH + i] = hit ? elementColor[static_cast<uint32_t>(mat)] : 0xFFFFFFFF;
 			}
+
+			SyncPoint.arrive_and_wait();
+
+			auto frameEnd = std::chrono::high_resolution_clock::now();
+    		auto elapsed = frameEnd - frameStart;
+
+			// tally the amount of time - time to finish process for throttling.
+			
+			if (elapsed < FrameDuration)
+			{
+        		std::this_thread::sleep_for(FrameDuration - elapsed);
+    		}
 		}
-
-		D2D1_RECT_U rect = {0, 0, WIDTH, HEIGHT};
-		Bitmap->CopyFromMemory(&rect, pixelBuffer, WIDTH * sizeof(uint32_t));
-
-		InvalidateRect(hwnd, nullptr, FALSE);
-
 		return true;
 	}
 
@@ -810,13 +815,17 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	if(_handle)
 	{
+		Camera cam;
+
 		//thread allocation, using smart pointers for now...
 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
 		
 		uint32_t splitPerAxis = std::round(std::cbrt(std::thread::hardware_concurrency()));
+		uint32_t numofMatrixThreads = splitPerAxis * splitPerAxis * splitPerAxis;
+		uint32_t threadsRemaining   = std::thread::hardware_concurrency() - numofMatrixThreads;
 
 		auto rondevousPointFunction = [=, &running](){matrix->UpdateWorldView(_handle, running);};
-		std::barrier SyncPoint(splitPerAxis * splitPerAxis * splitPerAxis, rondevousPointFunction);
+		std::barrier SyncPoint(numofMatrixThreads + threadsRemaining, rondevousPointFunction);
 
 		uint32_t chunkSizeX = width  / splitPerAxis;
 		uint32_t chunkSizeY = height / splitPerAxis;
@@ -839,12 +848,27 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		            uint32_t z1 = z * chunkSizeZ;
 		            uint32_t z2 = (z == splitPerAxis - 1) ? depth : (z + 1) * chunkSizeZ;
 
+					printf("MatrixThread[%d] -> indexed\n", threadIndex);
+
 		            ChunkThreads[threadIndex++] = std::thread
 					(
 						[=, &SyncPoint, &keyPressed, &keyHeld, &keyReleased, &running, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, SyncPoint, keyHeld, keyHeld, keyReleased, running, x1, x2, y1, y2, z1, z2); }
 					);
 		        }
 		    }
+		}
+
+		threadsRemaining = std::thread::hardware_concurrency() - threadIndex;
+
+		for(int i=0; i<threadsRemaining; ++i)
+		{
+			int32_t StartX = i * (WIDTH / threadsRemaining);
+			int32_t EndX   = i == threadsRemaining -1 ? WIDTH : StartX + (WIDTH / threadsRemaining);
+
+			ChunkThreads[threadIndex++] = std::thread
+			(
+				[=, &running, &cam, &SyncPoint](){ WINDOWGraphicsOverlay::blitOverlay(_handle, SyncPoint, cam, running, StartX, EndX); }
+			);
 		}
 
 		for(uint16_t i=0; i<=std::thread::hardware_concurrency() -1; ++i){
@@ -857,8 +881,6 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		printf("Starting...\n\n");
 
-		Camera cam;
-
 		cam.SetFOV(90.0f);
 		cam.SetPosition({10.0f, 2.5f, 10.0f});
 		cam.Rotate(0.0f, -10.0f);
@@ -868,8 +890,6 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		while(running)
 		{
 			auto frameStart = std::chrono::high_resolution_clock::now();
-
-			WINDOWGraphicsOverlay::blitOverlay(_handle, cam);
 
 			while(PeekMessage(&msg, NULL, 0, 0,PM_REMOVE))
 			{
@@ -900,12 +920,12 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			auto frameEnd = std::chrono::high_resolution_clock::now();
     		float deltaTime = std::chrono::duration<float>(frameEnd - frameStart).count();
 
-			if(keyHeld[0x57]) { cam.MoveBack(5.0f * deltaTime);    } // s
-			if(keyHeld[0x53]) { cam.MoveForward(5.0f * deltaTime); } // w
-			if(keyHeld[0x41]) { cam.MoveLeft(5.0f * deltaTime);    } // a
-			if(keyHeld[0x44]) { cam.MoveRight(5.0f * deltaTime);   } // d
-			if(keyHeld[0x20]) { cam.MoveUp(5.0f * deltaTime);      } // space
-			if(keyHeld[0x10]) { cam.MoveDown(5.0f * deltaTime);    } // shift
+			if(keyHeld[0x57]) { cam.MoveBack(10.0f * deltaTime);    } // s
+			if(keyHeld[0x53]) { cam.MoveForward(10.0f * deltaTime); } // w
+			if(keyHeld[0x41]) { cam.MoveLeft(10.0f * deltaTime);    } // a
+			if(keyHeld[0x44]) { cam.MoveRight(10.0f * deltaTime);   } // d
+			if(keyHeld[0x20]) { cam.MoveUp(10.0f * deltaTime);      } // space
+			if(keyHeld[0x10]) { cam.MoveDown(10.0f * deltaTime);    } // shift
 			
 			matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
 			matrix->WriteDataTo(9,  2, 5, MATRIX::cell(MATRIX::element::metal));
