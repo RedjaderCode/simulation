@@ -920,12 +920,12 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			auto frameEnd = std::chrono::high_resolution_clock::now();
     		float deltaTime = std::chrono::duration<float>(frameEnd - frameStart).count();
 
-			if(keyHeld[0x57]) { cam.MoveBack(10.0f * deltaTime);    } // s
-			if(keyHeld[0x53]) { cam.MoveForward(10.0f * deltaTime); } // w
-			if(keyHeld[0x41]) { cam.MoveLeft(10.0f * deltaTime);    } // a
-			if(keyHeld[0x44]) { cam.MoveRight(10.0f * deltaTime);   } // d
-			if(keyHeld[0x20]) { cam.MoveUp(10.0f * deltaTime);      } // space
-			if(keyHeld[0x10]) { cam.MoveDown(10.0f * deltaTime);    } // shift
+			if(keyHeld[0x57]) { cam.MoveBack(0.1f);    } // s
+			if(keyHeld[0x53]) { cam.MoveForward(0.1f); } // w
+			if(keyHeld[0x41]) { cam.MoveLeft(0.1f);    } // a
+			if(keyHeld[0x44]) { cam.MoveRight(0.1f);   } // d
+			if(keyHeld[0x20]) { cam.MoveUp(0.1f);      } // space
+			if(keyHeld[0x10]) { cam.MoveDown(0.1f);    } // shift
 			
 			matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
 			matrix->WriteDataTo(9,  2, 5, MATRIX::cell(MATRIX::element::metal));
