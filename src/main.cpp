@@ -273,8 +273,6 @@ public:
 
 			FlushMatrix(running, x1, x2, y1, y2, z1, z2);
 			// first, flush the entire matrix to a default state every frame, then update it into it's proper state. 
-			
-			WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
 
 			for(uint32_t z=z1; z<=z2; ++z)
 			{
@@ -909,7 +907,25 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			if(keyHeld[0x20]) { cam.MoveUp(5.0f * deltaTime);      } // space
 			if(keyHeld[0x10]) { cam.MoveDown(5.0f * deltaTime);    } // shift
 			
-			
+			matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
+			matrix->WriteDataTo(9,  2, 5, MATRIX::cell(MATRIX::element::metal));
+			matrix->WriteDataTo(8,  2, 5, MATRIX::cell(MATRIX::element::wood));
+			matrix->WriteDataTo(7,  2, 5, MATRIX::cell(MATRIX::element::water));
+
+			matrix->WriteDataTo(10, 2, 6, MATRIX::cell(MATRIX::element::fire));
+			matrix->WriteDataTo(9,  2, 6, MATRIX::cell(MATRIX::element::metal));
+			matrix->WriteDataTo(8,  2, 6, MATRIX::cell(MATRIX::element::wood));
+			matrix->WriteDataTo(7,  2, 6, MATRIX::cell(MATRIX::element::water));
+
+			matrix->WriteDataTo(10, 2, 7, MATRIX::cell(MATRIX::element::fire));
+			matrix->WriteDataTo(9,  2, 7, MATRIX::cell(MATRIX::element::metal));
+			matrix->WriteDataTo(8,  2, 7, MATRIX::cell(MATRIX::element::wood));
+			matrix->WriteDataTo(7,  2, 7, MATRIX::cell(MATRIX::element::water));
+
+			matrix->WriteDataTo(10, 2, 8, MATRIX::cell(MATRIX::element::fire));
+			matrix->WriteDataTo(9,  2, 8, MATRIX::cell(MATRIX::element::metal));
+			matrix->WriteDataTo(8,  2, 8, MATRIX::cell(MATRIX::element::wood));
+			matrix->WriteDataTo(7,  2, 8, MATRIX::cell(MATRIX::element::water));
 
 			// tally the amount of time - time to finish process for throttling.
 			
