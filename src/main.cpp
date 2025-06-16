@@ -32,17 +32,18 @@ z = index / (width * height);
 
 ID2D1Factory* Factory               = nullptr;
 ID2D1HwndRenderTarget* RenderTarget = nullptr;
-ID2D1BitmapRenderTarget* BitmapRT   = nullptr;
 ID2D1Bitmap* Bitmap                 = nullptr;
-ID2D1SolidColorBrush** brushPool    = nullptr;
 
 void** memory = nullptr;
+
+uint32_t* pixelBuffer  = nullptr;
+uint32_t* elementColor = nullptr;
 
 #define TIME_DURATION 500
 #define TARGET_FPS    60
 
-#define WIDTH         320
-#define HEIGHT        240
+#define WIDTH         400//320
+#define HEIGHT        300//240
 
 // debugging idea...
 
@@ -273,6 +274,8 @@ public:
 			FlushMatrix(running, x1, x2, y1, y2, z1, z2);
 			// first, flush the entire matrix to a default state every frame, then update it into it's proper state. 
 			
+			WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
+
 			for(uint32_t z=z1; z<=z2; ++z)
 			{
 				if(!running) break;
@@ -286,7 +289,7 @@ public:
 				}
 			}
 
-			if(held[VK_SPACE])
+			if(held[VK_TAB])
 			{
 				printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
 			}
@@ -485,58 +488,12 @@ namespace WINDOWGraphicsOverlay
        		MessageBoxW(0, errorMsg, L"Error", MB_ICONERROR);
 		}
 	}
-	COLORREF GetMaterialColor(MATRIX::element e)
-	{
-		switch(e)
-		{
-			case MATRIX::element::air:   return RGB(173, 216, 230); break;
-			case MATRIX::element::water: return RGB(0, 0, 255);     break;
-			case MATRIX::element::wood:  return RGB(139, 69, 19);   break;
-			case MATRIX::element::fire:  return RGB(255, 0, 0);     break;
-			case MATRIX::element::metal: return RGB(169, 169, 169); break;
-			default:                	 return RGB(0, 0, 0); break;
-		}
-	}
-
-	inline void AllocBrushPool(HWND hwnd)
-	{ // cache a pool of collours for the direct3d api to use
-
-		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-
-		uint32_t N = static_cast<uint32_t>(MATRIX::element::size);
-
-		memory = static_cast<void**>(malloc(sizeof(ID2D1SolidColorBrush*) * N));
-		brushPool 	  = reinterpret_cast<ID2D1SolidColorBrush**>(memory);
-
-		for(uint32_t i=0; i<=N -1; ++i)
-		{
-			brushPool[i] = nullptr;
-		}
-
-		for(uint32_t i=0; i<=N -1; ++i)
-		{
-			COLORREF Color 		  = WINDOWGraphicsOverlay::GetMaterialColor(static_cast<MATRIX::element>(i));
-			D2D1_COLOR_F d2dcolor = {GetRValue(Color) / 255.0f, GetGValue(Color) / 255.0f, GetBValue(Color) / 255.0f, 1.0f};
-			if(BitmapRT) { HRESULT hr = BitmapRT->CreateSolidColorBrush(d2dcolor, &brushPool[i]); ErrorHandle(hr); }
-		}
-	}
 
 	bool blitOverlay(HWND hwnd, Camera& cam)
 	{
 		MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
 
-		matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
-
 		float cellSize = matrix->cellSize;
-
-		if(!BitmapRT)
-		{
-			printf("bad BitmapRT");
-			return false;
-		}
-
-		BitmapRT->BeginDraw();
-		BitmapRT->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 
 		for (int j = 0; j < HEIGHT; ++j)
     	{
@@ -552,7 +509,6 @@ namespace WINDOWGraphicsOverlay
 				if (ix < 0 || iy < 0 || iz < 0 ||
 				    ix >= matrix->w || iy >= matrix->h || iz >= matrix->d)
 				{
-					printf("ix, iy, or iz: out of bounds\n");
 				    break;
 				}
 
@@ -616,17 +572,13 @@ namespace WINDOWGraphicsOverlay
         		        tMaxZ += invDz;
         		    }
         		}
-
-				D2D1_RECT_F pixel = D2D1::RectF( static_cast<float>(i), static_cast<float>(j), 
-				static_cast<float>(i + 1), static_cast<float>(j + 1) );
-
-				BitmapRT->FillRectangle(&pixel, hit ? brushPool[mat] : brushPool[0]);
+				
+				pixelBuffer[j * WIDTH + i] = hit ? elementColor[static_cast<uint32_t>(mat)] : 0xFFFFFFFF;
 			}
 		}
-		BitmapRT->EndDraw();
-		if(Bitmap) { Bitmap->Release(); Bitmap = nullptr; }
-		HRESULT hr = BitmapRT->GetBitmap(&Bitmap);
-		ErrorHandle(hr);
+
+		D2D1_RECT_U rect = {0, 0, WIDTH, HEIGHT};
+		Bitmap->CopyFromMemory(&rect, pixelBuffer, WIDTH * sizeof(uint32_t));
 
 		InvalidateRect(hwnd, nullptr, FALSE);
 
@@ -652,19 +604,8 @@ namespace WINDOWGraphicsOverlay
 			SetWindowLongPtr(hwnd, GWLP_USERDATA, 0);
 
 			if(RenderTarget){RenderTarget->Release();}
+			if(Bitmap)      {Bitmap->Release();      }
 			if(Factory)     {Factory->Release();     }
-
-			for(uint32_t i=0; i<=static_cast<uint32_t>(MATRIX::element::size) -1; ++i)
-			{
-				if(brushPool[i])
-				{
-					brushPool[i]->Release();
-					brushPool[i] = nullptr;
-				}
-
-				free(memory);
-				memory = nullptr;
-			}
 		}
 
 		switch(msg)
@@ -707,10 +648,30 @@ namespace WINDOWGraphicsOverlay
 
 				if(RenderTarget)
 				{
-					RenderTarget->CreateCompatibleRenderTarget(&BitmapRT);
-				}
-				else{
-					printf("RenderTarget->CreateCompatibleRenderTarget(&BitmapRT); RENDERTARGET = nullptr");
+					D2D1_BITMAP_PROPERTIES bmpProps = {
+					    .pixelFormat = RenderTarget->GetPixelFormat(),
+					    .dpiX = dpiX,
+				    	.dpiY = dpiY
+					};
+
+					RenderTarget->CreateBitmap(
+					    D2D1::SizeU(WIDTH, HEIGHT),
+					    nullptr,
+					    0, // pitch (0 = default pitch)
+					    &bmpProps,
+				    	&Bitmap
+					);
+				
+					pixelBuffer  = (uint32_t*)malloc(sizeof(uint32_t) * WIDTH * HEIGHT);
+					elementColor = (uint32_t*)malloc(sizeof(uint32_t) * MATRIX::element::size );
+					for(int i=0; i<WIDTH * HEIGHT; ++i){ pixelBuffer[i]  = 0xFFFFFFFF; }
+					for(int i=0; i<MATRIX::element::size; ++i) { elementColor[i] = 0xFFFFFFFF; }
+
+					elementColor[static_cast<int>(MATRIX::element::air)]   = 0xFFC5F9FF;
+					elementColor[static_cast<int>(MATRIX::element::water)] = 0xFF11B6FF;
+					elementColor[static_cast<int>(MATRIX::element::wood)]  = 0xFF915119;
+					elementColor[static_cast<int>(MATRIX::element::fire)]  = 0xFFC70000;
+					elementColor[static_cast<int>(MATRIX::element::metal)] = 0xFF636363;
 				}
 			}
 			break;
@@ -747,19 +708,17 @@ namespace WINDOWGraphicsOverlay
 			break;
 			case WM_PAINT:
 			{
-				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-				CHECK_MATRIX_POPULATION();
+				//MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+				//CHECK_MATRIX_POPULATION();
 
 				ValidateRect(hwnd, nullptr);
 
 				if(RenderTarget && Bitmap)
 				{
 					RenderTarget->BeginDraw();
+					RenderTarget->Clear(D2D1::ColorF(D2D1::ColorF::Black));
 					RenderTarget->DrawBitmap(Bitmap, D2D1::RectF(0, 0, static_cast<float>(WIDTH), static_cast<float>(HEIGHT)));
 					RenderTarget->EndDraw();
-				}
-				else{
-					printf("WM_PAINT: RENDERTARGET = nullptr\n");
 				}
 			}
 			break;
@@ -843,7 +802,6 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	uint32_t SizeOfMatrix = matrix->InitMatrix(width, height, depth);
 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
-	WINDOWGraphicsOverlay::AllocBrushPool(_handle);
 
 	std::atomic<bool> running = true;
 	std::atomic<bool> ready   = false;
@@ -976,6 +934,8 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		MessageBoxW(nullptr, L"WINDOW HANDLE IS EMPTY", L"ERROR", MB_ICONERROR | MB_OK);
 		return msg.wParam;
 	}
+
+	matrix->DestroyMatrix();
 
 	delete matrix;
 	matrix=nullptr;
