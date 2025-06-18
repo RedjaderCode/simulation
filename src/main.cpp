@@ -109,8 +109,7 @@ public:
 	struct cell
 	{
 		cell() = default;
-		//cell(element _MaterialType)    : MaterialType(_MaterialType) {}
-		cell(uint8_t _MaterialType)    : MaterialType(_MaterialType) {}
+		cell(element _MaterialType)    : MaterialType(_MaterialType) {}
 		cell(float _tempurature)       : temperature(_tempurature)   {}
 		cell(Vec3D _velocity)          : velocity(_velocity)         {}
 		cell(double _pressure)         : pressure(_pressure)         {}
@@ -126,8 +125,7 @@ public:
 		Vec3D velocity    = Vec3D(0.0f, 0.0f, 0.0f);
 		double pressure   = 0.0;
 
-		//element MaterialType;
-		uint8_t MaterialType;
+		element MaterialType;
 	};
 public:
 	uint32_t InitMatrix(uint32_t width, uint32_t height, uint32_t depth)
