@@ -34,16 +34,33 @@ ID2D1Factory* Factory               = nullptr;
 ID2D1HwndRenderTarget* RenderTarget = nullptr;
 ID2D1Bitmap* Bitmap                 = nullptr;
 
-void** memory = nullptr;
-
 uint32_t* pixelBuffer  = nullptr;
 uint32_t* elementColor = nullptr;
+uint8_t*  ScreenPixelFlag = nullptr;
 
 #define TIME_DURATION 500
 #define TARGET_FPS    60
 
 #define WIDTH         800//400//320
 #define HEIGHT        600//300//240
+
+using s8flagcell   = uint16_t;
+using s8flagScreen = uint8_t;
+
+constexpr s8flagcell CELL_NONE   = 0;
+constexpr s8flagcell CELL_AIR    = (1<<0);
+constexpr s8flagcell CELL_WATER  = (1<<1);
+constexpr s8flagcell CELL_WOOD   = (1<<2);
+constexpr s8flagcell CELL_FIRE   = (1<<3);
+constexpr s8flagcell CELL_METAL  = (1<<4);
+constexpr s8flagcell CELL_CUSTOM = (1<<5);
+constexpr s8flagcell CELL_DIRTY  = (1<<6);
+constexpr s8flagcell CELL_ACTIVE = (1<<7);
+constexpr s8flagcell CELL_STATIC = (1<<8);
+constexpr s8flagcell CELL_VISIBLE= (1<<9);
+constexpr s8flagcell CELL_SOLID  = (1<<10);
+
+constexpr s8flagScreen SCREEN_PIXEL_HIT = (1<<0);
 
 // debugging idea...
 
@@ -92,65 +109,57 @@ public:
 	struct cell
 	{
 		cell() = default;
-		cell(element _MaterialType) : MaterialType(_MaterialType) {}
-		cell(float _tempurature)    : temperature(_tempurature)   {}
-		cell(Vec3D _velocity)       : velocity(_velocity)         {}
-		cell(double _pressure)      : pressure(_pressure)         {}
+		//cell(element _MaterialType)    : MaterialType(_MaterialType) {}
+		cell(uint8_t _MaterialType)    : MaterialType(_MaterialType) {}
+		cell(float _tempurature)       : temperature(_tempurature)   {}
+		cell(Vec3D _velocity)          : velocity(_velocity)         {}
+		cell(double _pressure)         : pressure(_pressure)         {}
 
 		~cell()
 		{
 			temperature  = 0.0f;
 			velocity     = Vec3D(0.0f, 0.0f, 0.0f);
 			pressure     = 0.0;
-			active       = false;
 		}
 
 		float temperature = 0.0f;
 		Vec3D velocity    = Vec3D(0.0f, 0.0f, 0.0f);
 		double pressure   = 0.0;
-		bool active = false;
 
-		element MaterialType;
+		//element MaterialType;
+		uint8_t MaterialType;
 	};
 public:
 	uint32_t InitMatrix(uint32_t width, uint32_t height, uint32_t depth)
 	{
 		w = width; h = height; d = depth;
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// front buffer
 
 		CELL_FRONT_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
-
-		for(uint32_t i=0; i<width * height * depth; ++i)
-		{
-			new (&CELL_FRONT_BUFFER[i]) cell(element::air);
-		}
+		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_FRONT_BUFFER[i]) cell(element::air); }
 
 		// back buffer
 		
 		CELL_BACK_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
+		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_BACK_BUFFER[i]) cell(element::air); }
 
-		for(uint32_t i=0; i<width * height * depth; ++i)
-		{
-			new (&CELL_BACK_BUFFER[i]) cell(element::air);
-		}
+		// flags due for bit level manipulation
 
+		flag = (s8flagcell*)malloc(sizeof(s8flagcell) * (width * height * depth));
 		matAtt = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		printf("-> cells set to: element::air\n");
 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
 		{
-			//CELL_BACK_BUFFER[i].MaterialType = element::air;
 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
 			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
-		}
-
-		uint32_t i1 = 0;
-		for(uint32_t i=FlattenedIndex(w >> 1, h >> 1, d >> 1); i<= static_cast<uint32_t>(element::size) -1; ++i)
-		{
-			//CELL_BACK_BUFFER[i].MaterialType = element::air;
-			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-			WriteDataTo(x, y, z, cell(static_cast<element>(i - FlattenedIndex(w >> 1, h >> 1, d >> 1)))); ++i1;
+			flag[i]              |= CHECK_MATRIX_WALLS() ? CELL_STATIC : CELL_NONE;
 		}
 
 		// create an initializer field for attributes of materials to tell the cells what their attributes are
@@ -234,15 +243,27 @@ public:
 	{
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
+		//flag[FlattenedIndex(x, y, z)] |= 
 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
 	}
 
 	inline void UpdateWorldView(HWND hwnd, std::atomic<bool>& running)
 	{
-		std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
-		D2D1_RECT_U rect = {0, 0, WIDTH, HEIGHT};
-		Bitmap->CopyFromMemory(&rect, pixelBuffer, WIDTH * sizeof(uint32_t));
-		InvalidateRect(hwnd, nullptr, FALSE);
+		flag[ 0 ] |= CELL_DIRTY;
+		
+		if(flag[ 0 ] & CELL_DIRTY)
+		{
+			std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
+			D2D1_RECT_U rect = {0, 0, WIDTH, HEIGHT};
+			Bitmap->CopyFromMemory(&rect, pixelBuffer, WIDTH * sizeof(uint32_t));
+			InvalidateRect(hwnd, nullptr, FALSE);
+		}
+		for(uint32_t i=0; i<w*h*d; ++i)
+		{
+			flag[ i ] |= CELL_BACK_BUFFER[ i ].MaterialType != CELL_FRONT_BUFFER[ i ].MaterialType ? CELL_DIRTY : CELL_NONE;
+			CELL_BACK_BUFFER[ i ] = (flag[ i ] & CELL_DIRTY) ? CELL_FRONT_BUFFER[ i ] : CELL_BACK_BUFFER[ i ];
+			flag[ i ] &= ~CELL_DIRTY;
+		}
 	}
 
 	inline void FlushMatrix(uint32_t x, uint32_t y, uint32_t z)
@@ -271,8 +292,6 @@ public:
 				{
 					for(uint32_t x=x1; x<=x2; ++x)
 					{
-						FlushMatrix(x,y,z);
-
 
 					}
 				}
@@ -305,12 +324,11 @@ public:
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
 		return z * (w * h) + y * w + x; 
 	}
-/////////////////////////////////////////////////	
-	void* memoryfb          = nullptr;
-	cell* CELL_FRONT_BUFFER = nullptr;
 
+	s8flagcell* flag = nullptr;
+/////////////////////////////////////////////////
+	cell* CELL_FRONT_BUFFER = nullptr;
 private://///////////////////////////////////////
-	void* memorybb          = nullptr; 
 	cell* CELL_BACK_BUFFER  = nullptr; 
 /////////////////////////////////////////////////
 	std::unique_ptr<MaterialAttributes[]> matAtt;
@@ -324,8 +342,6 @@ public://////////////////////////////////////////
 	uint16_t _pixelHeight = 5;
 
 	float cellSize = 1.0f;
-
-	uint16_t _zLevel = 0;
 
 	MaterialAttributes ReadCellAttributes(cell c)
 	{
@@ -342,7 +358,8 @@ public://////////////////////////////////////////
 		}
 		free(CELL_FRONT_BUFFER); CELL_FRONT_BUFFER = nullptr;
 		free(CELL_BACK_BUFFER ); CELL_BACK_BUFFER  = nullptr;
-		free(memory);                     memory   = nullptr;
+		free(flag);              flag              = nullptr;
+		free(ScreenPixelFlag);   ScreenPixelFlag   = nullptr;
 	}
 };
 
@@ -360,7 +377,7 @@ public:
         UpdateBasis();
     }
 
-    void Rotate(float deltaYaw, float deltaPitch) {
+    inline void Rotate(float deltaYaw, float deltaPitch) {
         yaw += deltaYaw;
         pitch += deltaPitch;
 
@@ -538,8 +555,6 @@ namespace WINDOWGraphicsOverlay
 
 					while (traveled < maxDist)
         			{
-        			    // --- hit test ----------------------------------------------------
-
         			    int flat = matrix->FlattenedIndex(ix, iy, iz);
         			    if (matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::air 
 							&& matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::Custom)
@@ -549,7 +564,7 @@ namespace WINDOWGraphicsOverlay
         			        break;
         			    }
 					
-        			    // --- advance to next voxel plane --------------------------------
+        			    // advance to next voxel plane
         			    if (tMaxX < tMaxY && tMaxX < tMaxZ)
 						{
         			        ix += stepX;
@@ -675,6 +690,8 @@ namespace WINDOWGraphicsOverlay
 					elementColor[static_cast<int>(MATRIX::element::wood)]  = 0xFF915119;
 					elementColor[static_cast<int>(MATRIX::element::fire)]  = 0xFFC70000;
 					elementColor[static_cast<int>(MATRIX::element::metal)] = 0xFF636363;
+
+					ScreenPixelFlag = (s8flagScreen*)malloc(sizeof(s8flagScreen) * WIDTH * HEIGHT);
 				}
 			}
 			break;
@@ -698,15 +715,6 @@ namespace WINDOWGraphicsOverlay
 				
 				uint32_t x = GET_X_LPARAM(lp);
 				uint32_t y = GET_Y_LPARAM(lp);
-			}
-			break;
-			case WM_KEYDOWN:
-			{
-				MATRIX* matrix = reinterpret_cast<MATRIX*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
-				CHECK_MATRIX_POPULATION();
-				
-				matrix->_zLevel += wp == VK_UP   ? 1 : 0;
-				matrix->_zLevel -= wp == VK_DOWN ? 1 : 0;
 			}
 			break;
 			case WM_PAINT:
@@ -881,9 +889,34 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		printf("Starting...\n\n");
 
+		float yaw   = 0.0f;
+		float pitch = -10.0f;
+
 		cam.SetFOV(90.0f);
 		cam.SetPosition({10.0f, 2.5f, 10.0f});
-		cam.Rotate(0.0f, -10.0f);
+		cam.Rotate(yaw, pitch);
+
+		matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire ));
+		matrix->WriteDataTo(9,  2, 5, MATRIX::cell(MATRIX::element::metal));
+		matrix->WriteDataTo(8,  2, 5, MATRIX::cell(MATRIX::element::wood ));
+		matrix->WriteDataTo(7,  2, 5, MATRIX::cell(MATRIX::element::water));
+
+		matrix->WriteDataTo(10, 2, 6, MATRIX::cell(MATRIX::element::fire ));
+		matrix->WriteDataTo(9,  2, 6, MATRIX::cell(MATRIX::element::metal));
+		matrix->WriteDataTo(8,  2, 6, MATRIX::cell(MATRIX::element::wood ));
+		matrix->WriteDataTo(7,  2, 6, MATRIX::cell(MATRIX::element::water));
+
+		matrix->WriteDataTo(10, 2, 7, MATRIX::cell(MATRIX::element::fire ));
+		matrix->WriteDataTo(9,  2, 7, MATRIX::cell(MATRIX::element::metal));
+		matrix->WriteDataTo(8,  2, 7, MATRIX::cell(MATRIX::element::wood ));
+		matrix->WriteDataTo(7,  2, 7, MATRIX::cell(MATRIX::element::water));
+
+		matrix->WriteDataTo(10, 2, 8, MATRIX::cell(MATRIX::element::fire ));
+		matrix->WriteDataTo(9,  2, 8, MATRIX::cell(MATRIX::element::metal));
+		matrix->WriteDataTo(8,  2, 8, MATRIX::cell(MATRIX::element::wood ));
+		matrix->WriteDataTo(7,  2, 8, MATRIX::cell(MATRIX::element::water));
+
+		printf("camera positoned\n\n");
 
 		const std::chrono::duration<float> FrameDuration(1.0f / TARGET_FPS);
 
@@ -920,32 +953,42 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			auto frameEnd = std::chrono::high_resolution_clock::now();
     		float deltaTime = std::chrono::duration<float>(frameEnd - frameStart).count();
 
-			if(keyHeld[0x57]) { cam.MoveBack(0.1f);    } // s
-			if(keyHeld[0x53]) { cam.MoveForward(0.1f); } // w
-			if(keyHeld[0x41]) { cam.MoveLeft(0.1f);    } // a
-			if(keyHeld[0x44]) { cam.MoveRight(0.1f);   } // d
-			if(keyHeld[0x20]) { cam.MoveUp(0.1f);      } // space
-			if(keyHeld[0x10]) { cam.MoveDown(0.1f);    } // shift
-			
-			matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire));
-			matrix->WriteDataTo(9,  2, 5, MATRIX::cell(MATRIX::element::metal));
-			matrix->WriteDataTo(8,  2, 5, MATRIX::cell(MATRIX::element::wood));
-			matrix->WriteDataTo(7,  2, 5, MATRIX::cell(MATRIX::element::water));
+			if(keyHeld[0x57]) { cam.MoveBack(   0.05f); } // s
+			if(keyHeld[0x53]) { cam.MoveForward(0.05f); } // w
+			if(keyHeld[0x41]) { cam.MoveLeft(   0.05f); } // a
+			if(keyHeld[0x44]) { cam.MoveRight(  0.05f); } // d
+			if(keyHeld[0x20]) { cam.MoveUp(     0.05f); } // space
+			if(keyHeld[0x10]) { cam.MoveDown(   0.05f); } // shift
 
-			matrix->WriteDataTo(10, 2, 6, MATRIX::cell(MATRIX::element::fire));
-			matrix->WriteDataTo(9,  2, 6, MATRIX::cell(MATRIX::element::metal));
-			matrix->WriteDataTo(8,  2, 6, MATRIX::cell(MATRIX::element::wood));
-			matrix->WriteDataTo(7,  2, 6, MATRIX::cell(MATRIX::element::water));
+			// something is wrong here lol (bellow)
 
-			matrix->WriteDataTo(10, 2, 7, MATRIX::cell(MATRIX::element::fire));
-			matrix->WriteDataTo(9,  2, 7, MATRIX::cell(MATRIX::element::metal));
-			matrix->WriteDataTo(8,  2, 7, MATRIX::cell(MATRIX::element::wood));
-			matrix->WriteDataTo(7,  2, 7, MATRIX::cell(MATRIX::element::water));
+			if(keyHeld[VK_UP])
+			{
+				pitch += 0.01f;
+				cam.Rotate(yaw, pitch);
+			}
+			if(keyHeld[VK_DOWN])
+			{
+				pitch -= 0.01f;
+				cam.Rotate(yaw, pitch);
+			}
+			if(keyHeld[VK_RIGHT])
+			{
+				yaw += 0.01f;
+				cam.Rotate(yaw, pitch);
+			}
+			if(keyHeld[VK_LEFT])
+			{
+				yaw -= 0.01f;
+				cam.Rotate(yaw, pitch);
+			}
 
-			matrix->WriteDataTo(10, 2, 8, MATRIX::cell(MATRIX::element::fire));
-			matrix->WriteDataTo(9,  2, 8, MATRIX::cell(MATRIX::element::metal));
-			matrix->WriteDataTo(8,  2, 8, MATRIX::cell(MATRIX::element::wood));
-			matrix->WriteDataTo(7,  2, 8, MATRIX::cell(MATRIX::element::water));
+			if(keyPressed[VK_ESCAPE]) // camera reset button
+			{
+				cam.SetFOV(90.0f);
+				cam.SetPosition({10.0f, 2.5f, 10.0f});
+				cam.Rotate(0.0f, -10.0f);
+			}			
 
 			// tally the amount of time - time to finish process for throttling.
 			
