@@ -59,17 +59,34 @@ constexpr s8flagcell CELL_STATIC = (1<<8);
 constexpr s8flagcell CELL_VISIBLE= (1<<9);
 constexpr s8flagcell CELL_SOLID  = (1<<10);
 
+constexpr s8flagcell CELL_ELEMENT_ALL = (CELL_AIR | CELL_WATER | CELL_WOOD | CELL_FIRE | CELL_METAL | CELL_CUSTOM);
+
 constexpr s8flagkeys KEY_DOWN     = (1<<0);
 constexpr s8flagkeys KEY_PRESSED  = (1<<1);
 constexpr s8flagkeys KEY_HELD     = (1<<2);
 constexpr s8flagkeys KEY_RELEASED = (1<<3);
 constexpr s8flagkeys KEY_PREV     = (1<<4);
 
+constexpr s8flagcell MATERIAL_SIZE = sizeof(s8flagcell) * 8; // num of bits for s8flagcell
+
 // debugging idea...
 
 #define GetInstance() GetModuleHandle(NULL)
 #define CHECK_MATRIX_POPULATION() do{if(!matrix){return DefWindowProc(hwnd, msg, wp, lp);}}while(0)
 #define CHECK_MATRIX_WALLS() x == 0 || x == w -1 || y == 0 || y == h -1 || z == 0 || z == d -1
+
+uint32_t ElementIndex(s8flagcell CELL)
+{
+	switch(CELL)
+	{
+		case CELL_AIR:    return 0;
+		case CELL_WATER:  return 1;
+		case CELL_WOOD:   return 2;
+		case CELL_FIRE:   return 3;
+		case CELL_METAL:  return 4;
+		case CELL_CUSTOM: return 5;
+	}
+}
 
 struct COORD3D{ uint32_t x; uint32_t y; uint32_t z; COORD3D(uint32_t _x, uint32_t _y, uint32_t _z) : x(_x), y(_y), z(_z) {} };
 
@@ -95,7 +112,7 @@ struct entity
 struct MATRIX
 {
 public:
-	enum element{air, water, wood, fire, metal, Custom, size};
+	//enum element{air, water, wood, fire, metal, Custom, size};
 
 	struct MaterialAttributes
 	{
@@ -107,28 +124,23 @@ public:
 		float hardness;
 		bool  liquid;
 
+		float temperature = 0.0f;
+		Vec3D velocity    = Vec3D(0.0f, 0.0f, 0.0f);
+		double pressure   = 0.0;
+
 		const char* name = nullptr;
 	};
 	struct cell
 	{
 		cell() = default;
-		cell(element _MaterialType)    : MaterialType(_MaterialType) {}
-		cell(float _tempurature)       : temperature(_tempurature)   {}
-		cell(Vec3D _velocity)          : velocity(_velocity)         {}
-		cell(double _pressure)         : pressure(_pressure)         {}
-
+		cell(s8flagcell _MaterialType) : MaterialType(_MaterialType) {}
+	
 		~cell()
 		{
-			temperature  = 0.0f;
-			velocity     = Vec3D(0.0f, 0.0f, 0.0f);
-			pressure     = 0.0;
+			MaterialType &= CELL_NONE;
 		}
 
-		float temperature = 0.0f;
-		Vec3D velocity    = Vec3D(0.0f, 0.0f, 0.0f);
-		double pressure   = 0.0;
-
-		element MaterialType;
+		s8flagcell MaterialType;
 	};
 public:
 	uint32_t InitMatrix(uint32_t width, uint32_t height, uint32_t depth)
@@ -140,17 +152,17 @@ public:
 		// front buffer
 
 		CELL_FRONT_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
-		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_FRONT_BUFFER[i]) cell(element::air); }
+		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_FRONT_BUFFER[i]) cell(CELL_NONE); }
 
 		// back buffer
 		
 		CELL_BACK_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
-		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_BACK_BUFFER[i]) cell(element::air); }
+		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_BACK_BUFFER[i]) cell(CELL_NONE); }
 
 		// flags due for bit level manipulation
 
 		flag = (s8flagcell*)malloc(sizeof(s8flagcell) * (width * height * depth));
-		matAtt = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[static_cast<uint32_t>(element::size)]);
+		matAtt = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[MATERIAL_SIZE]);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -159,74 +171,74 @@ public:
 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
 		{
 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : WriteDataTo(x, y, z, cell(element::air));
+			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, CELL_CUSTOM) : WriteDataTo(x, y, z, CELL_CUSTOM);
 			flag[i]              |= CHECK_MATRIX_WALLS() ? CELL_STATIC : CELL_NONE;
 		}
 
 		// create an initializer field for attributes of materials to tell the cells what their attributes are
 		printf("-> elements::name... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].name 			   = "air";
-		matAtt[static_cast<uint32_t>(element::water) ].name 			   = "water";
-		matAtt[static_cast<uint32_t>(element::wood)  ].name 			   = "wood";
-		matAtt[static_cast<uint32_t>(element::fire)  ].name 			   = "fire";
-		matAtt[static_cast<uint32_t>(element::metal) ].name 			   = "metal";
-		matAtt[static_cast<uint32_t>(element::Custom)].name 			   = "Custom";
+		matAtt[ElementIndex(CELL_AIR)   ].name 			      = "air";
+		matAtt[ElementIndex(CELL_WATER) ].name 			      = "water";
+		matAtt[ElementIndex(CELL_WOOD)  ].name 			      = "wood";
+		matAtt[ElementIndex(CELL_FIRE)  ].name 			      = "fire";
+		matAtt[ElementIndex(CELL_METAL) ].name 			      = "metal";
+		matAtt[ElementIndex(CELL_CUSTOM)].name 			      = "Custom";
 
 		printf("-> elements::density... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].density 			   = 1.225f;
-		matAtt[static_cast<uint32_t>(element::water) ].density 			   = 1000.0f;
-		matAtt[static_cast<uint32_t>(element::wood)  ].density 			   = 700.0f;
-		matAtt[static_cast<uint32_t>(element::fire)  ].density 			   = 0.0f;
-		matAtt[static_cast<uint32_t>(element::metal) ].density 			   = 7800.0f;
-		matAtt[static_cast<uint32_t>(element::Custom)].density 			   = 0.0f;
+		matAtt[ElementIndex(CELL_AIR)   ].density 		      = 1.225f;
+		matAtt[ElementIndex(CELL_WATER) ].density 		      = 1000.0f;
+		matAtt[ElementIndex(CELL_WOOD)  ].density 		      = 700.0f;
+		matAtt[ElementIndex(CELL_FIRE)  ].density 		      = 0.0f;
+		matAtt[ElementIndex(CELL_METAL) ].density 		      = 7800.0f;
+		matAtt[ElementIndex(CELL_CUSTOM)].density 		      = 0.0f;
 		
 		printf("-> elements::friction... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].friction 		   = 0.02f;
-		matAtt[static_cast<uint32_t>(element::water) ].friction 		   = 0.1f;
-		matAtt[static_cast<uint32_t>(element::wood)  ].friction 		   = 0.4f;
-		matAtt[static_cast<uint32_t>(element::fire)  ].friction 		   = 0.0f;
-		matAtt[static_cast<uint32_t>(element::metal) ].friction 		   = 0.6f;
-		matAtt[static_cast<uint32_t>(element::Custom)].friction 		   = 0.0f;
+		matAtt[ElementIndex(CELL_AIR)   ].friction 		      = 0.02f;
+		matAtt[ElementIndex(CELL_WATER) ].friction 		      = 0.1f;
+		matAtt[ElementIndex(CELL_WOOD)  ].friction 		      = 0.4f;
+		matAtt[ElementIndex(CELL_FIRE)  ].friction 		      = 0.0f;
+		matAtt[ElementIndex(CELL_METAL) ].friction 		      = 0.6f;
+		matAtt[ElementIndex(CELL_CUSTOM)].friction 		      = 0.0f;
 
 		printf("-> elements::ThermalConductivity... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].thermalConductivity = 0.025f;
-		matAtt[static_cast<uint32_t>(element::water) ].thermalConductivity = 0.6f;
-		matAtt[static_cast<uint32_t>(element::wood)  ].thermalConductivity = 0.12f;
-		matAtt[static_cast<uint32_t>(element::fire)  ].thermalConductivity = 0.0f;
-		matAtt[static_cast<uint32_t>(element::metal) ].thermalConductivity = 400.0f;
-		matAtt[static_cast<uint32_t>(element::Custom)].thermalConductivity = 0.0f;
+		matAtt[ElementIndex(CELL_AIR)   ].thermalConductivity = 0.025f;
+		matAtt[ElementIndex(CELL_WATER) ].thermalConductivity = 0.6f;
+		matAtt[ElementIndex(CELL_WOOD)  ].thermalConductivity = 0.12f;
+		matAtt[ElementIndex(CELL_FIRE)  ].thermalConductivity = 0.0f;
+		matAtt[ElementIndex(CELL_METAL) ].thermalConductivity = 400.0f;
+		matAtt[ElementIndex(CELL_CUSTOM)].thermalConductivity = 0.0f;
 
 		printf("-> elements::specificHeat... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].specificHeat 	   = 1005.0f;
-		matAtt[static_cast<uint32_t>(element::water) ].specificHeat 	   = 4186.0f;
-		matAtt[static_cast<uint32_t>(element::wood)  ].specificHeat 	   = 2400.0f;
-		matAtt[static_cast<uint32_t>(element::fire)  ].specificHeat 	   = 0.0f;
-		matAtt[static_cast<uint32_t>(element::metal) ].specificHeat 	   = 450.0f;
-		matAtt[static_cast<uint32_t>(element::Custom)].specificHeat 	   = 0.0f;
+		matAtt[ElementIndex(CELL_AIR)   ].specificHeat 	  	  = 1005.0f;
+		matAtt[ElementIndex(CELL_WATER) ].specificHeat 	  	  = 4186.0f;
+		matAtt[ElementIndex(CELL_WOOD)  ].specificHeat 	  	  = 2400.0f;
+		matAtt[ElementIndex(CELL_FIRE)  ].specificHeat 	  	  = 0.0f;
+		matAtt[ElementIndex(CELL_METAL) ].specificHeat 	  	  = 450.0f;
+		matAtt[ElementIndex(CELL_CUSTOM)].specificHeat 	  	  = 0.0f;
 
 		printf("-> elements::restitution... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].restitution 		   = 0.0f;
-		matAtt[static_cast<uint32_t>(element::water) ].restitution 		   = 0.1f;
-		matAtt[static_cast<uint32_t>(element::wood)  ].restitution 		   = 0.3f;
-		matAtt[static_cast<uint32_t>(element::fire)  ].restitution 		   = 0.0f;
-		matAtt[static_cast<uint32_t>(element::metal) ].restitution 		   = 0.9f;
-		matAtt[static_cast<uint32_t>(element::Custom)].restitution 		   = 0.0f;
+		matAtt[ElementIndex(CELL_AIR)   ].restitution 		  = 0.0f;
+		matAtt[ElementIndex(CELL_WATER) ].restitution 		  = 0.1f;
+		matAtt[ElementIndex(CELL_WOOD)  ].restitution 		  = 0.3f;
+		matAtt[ElementIndex(CELL_FIRE)  ].restitution 		  = 0.0f;
+		matAtt[ElementIndex(CELL_METAL) ].restitution 		  = 0.9f;
+		matAtt[ElementIndex(CELL_CUSTOM)].restitution 		  = 0.0f;
 
 		printf("-> elements::hardness... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].hardness 		   = 0.0f;
-		matAtt[static_cast<uint32_t>(element::water) ].hardness 		   = 0.1f;
-		matAtt[static_cast<uint32_t>(element::wood)  ].hardness 		   = 0.3f;
-		matAtt[static_cast<uint32_t>(element::fire)  ].hardness 		   = 0.0f;
-		matAtt[static_cast<uint32_t>(element::metal) ].hardness 		   = 0.9f;
-		matAtt[static_cast<uint32_t>(element::Custom)].hardness 		   = 10000.0f;
+		matAtt[ElementIndex(CELL_AIR)   ].hardness 		      = 0.0f;
+		matAtt[ElementIndex(CELL_WATER) ].hardness 		      = 0.1f;
+		matAtt[ElementIndex(CELL_WOOD)  ].hardness 		      = 0.3f;
+		matAtt[ElementIndex(CELL_FIRE)  ].hardness 		      = 0.0f;
+		matAtt[ElementIndex(CELL_METAL) ].hardness 		      = 0.9f;
+		matAtt[ElementIndex(CELL_CUSTOM)].hardness 		      = 10000.0f;
 			   
 		printf("-> elements::hardness... \n");
-		matAtt[static_cast<uint32_t>(element::air)   ].liquid 			   = false;
-		matAtt[static_cast<uint32_t>(element::water) ].liquid 			   = true;
-		matAtt[static_cast<uint32_t>(element::wood)  ].liquid 			   = false;
-		matAtt[static_cast<uint32_t>(element::fire)  ].liquid 			   = false;
-		matAtt[static_cast<uint32_t>(element::metal) ].liquid 			   = false;
-		matAtt[static_cast<uint32_t>(element::Custom)].liquid 			   = false;
+		matAtt[ElementIndex(CELL_AIR)   ].liquid 			  = false;
+		matAtt[ElementIndex(CELL_WATER) ].liquid 			  = true;
+		matAtt[ElementIndex(CELL_WOOD)  ].liquid 			  = false;
+		matAtt[ElementIndex(CELL_FIRE)  ].liquid 			  = false;
+		matAtt[ElementIndex(CELL_METAL) ].liquid 			  = false;
+		matAtt[ElementIndex(CELL_CUSTOM)].liquid 			  = false;
 
 		
 
@@ -240,13 +252,21 @@ public:
 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
 	}
 
-	cell WriteDataTo(uint32_t x, uint32_t y, uint32_t z, const cell& _data)
+	cell WriteDataTo(uint32_t x, uint32_t y, uint32_t z, s8flagcell _data)
 	{
+		ClearDataFrom(x,y,z,CELL_ELEMENT_ALL);
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
+		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)].MaterialType |= _data;
 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
 	}
 
+	cell ClearDataFrom(uint32_t x, uint32_t y, uint32_t z, s8flagcell _data)
+	{
+		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
+		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)].MaterialType &= ~_data;
+		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
+	}
+	
 	inline void UpdateWorldView(HWND hwnd, std::atomic<bool>& running)
 	{
 		flag[ 0 ] |= CELL_DIRTY;
@@ -264,12 +284,6 @@ public:
 			CELL_BACK_BUFFER[ i ] = (flag[ i ] & CELL_DIRTY) ? CELL_FRONT_BUFFER[ i ] : CELL_BACK_BUFFER[ i ];
 			flag[ i ] &= ~CELL_DIRTY;
 		}
-	}
-
-	inline void FlushMatrix(uint32_t x, uint32_t y, uint32_t z)
-	{
-		cell genericCellRead = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, cell(element::Custom)) : cell(element::air);
-		MaterialAttributes MA = ReadCellAttributes(genericCellRead); // read that these cells can't be destroyed... pretty much
 	}
 
 	// THREAD CHUNK FUNCTION //
@@ -317,8 +331,6 @@ public:
 		}
 	}
 
-	element ExGetElement(cell c){ return c.MaterialType;}
-
 	uint32_t FlattenedIndex(uint32_t x, uint32_t y, uint32_t z)
 	{
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
@@ -342,12 +354,6 @@ public://////////////////////////////////////////
 	uint16_t _pixelHeight = 5;
 
 	float cellSize = 1.0f;
-
-	MaterialAttributes ReadCellAttributes(cell c)
-	{
-		if(c.MaterialType >= element::size){ printf("\nWARNING: MaterialType: element::%d is greater than element::size. Defaulting to element::air", static_cast<uint32_t>(c.MaterialType)); }
-		return c.MaterialType < element::size ? matAtt[static_cast<uint32_t>(c.MaterialType)] : matAtt[static_cast<uint32_t>(element::air)];
-	}
 
 	inline void DestroyMatrix()
 	{
@@ -550,16 +556,16 @@ namespace WINDOWGraphicsOverlay
 					const float maxDist = 100.0f;   // world units
         			float traveled = 0.0f;
         			bool  hit      = false;
-        			MATRIX::element mat = MATRIX::element::air;
+        			s8flagcell mat = 0x0;
 
 					while (traveled < maxDist)
         			{
         			    int flat = matrix->FlattenedIndex(ix, iy, iz);
-        			    if (matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::air 
-							&& matrix->CELL_FRONT_BUFFER[flat].MaterialType != MATRIX::element::Custom)
+        			    
+						if(matrix->CELL_FRONT_BUFFER[flat].MaterialType & ~(CELL_AIR | CELL_CUSTOM))
 						{
         			        hit = true;
-        			        mat = matrix->CELL_FRONT_BUFFER[flat].MaterialType;
+        			        mat |= matrix->CELL_FRONT_BUFFER[flat].MaterialType;
         			        break;
         			    }
 					
@@ -583,7 +589,7 @@ namespace WINDOWGraphicsOverlay
         			    }
         			}
 
-					pixelBuffer[j * WIDTH + i] = hit ? elementColor[static_cast<uint32_t>(mat)] : 0xFFFFFFFF;
+					pixelBuffer[j * WIDTH + i] = hit ? elementColor[ElementIndex(mat)] : 0xFFFFFFFF;
 				}
 			}
 
@@ -680,15 +686,15 @@ namespace WINDOWGraphicsOverlay
 					);
 				
 					pixelBuffer  = (uint32_t*)malloc(sizeof(uint32_t) * WIDTH * HEIGHT);
-					elementColor = (uint32_t*)malloc(sizeof(uint32_t) * MATRIX::element::size );
+					elementColor = (uint32_t*)malloc(sizeof(uint32_t) * MATERIAL_SIZE );
 					for(int i=0; i<WIDTH * HEIGHT; ++i){ pixelBuffer[i]  = 0xFFFFFFFF; }
-					for(int i=0; i<MATRIX::element::size; ++i) { elementColor[i] = 0xFFFFFFFF; }
+					for(int i=0; i<MATERIAL_SIZE; ++i) { elementColor[i] = 0xFFFFFFFF; }
 
-					elementColor[static_cast<int>(MATRIX::element::air)]   = 0xFFC5F9FF;
-					elementColor[static_cast<int>(MATRIX::element::water)] = 0xFF11B6FF;
-					elementColor[static_cast<int>(MATRIX::element::wood)]  = 0xFF915119;
-					elementColor[static_cast<int>(MATRIX::element::fire)]  = 0xFFC70000;
-					elementColor[static_cast<int>(MATRIX::element::metal)] = 0xFF636363;
+					elementColor[ElementIndex(CELL_AIR)  ] = 0xFFC5F9FF;
+					elementColor[ElementIndex(CELL_WATER)] = 0xFF11B6FF;
+					elementColor[ElementIndex(CELL_WOOD) ] = 0xFF915119; 
+					elementColor[ElementIndex(CELL_FIRE) ] = 0xFFC70000; 
+					elementColor[ElementIndex(CELL_METAL)] = 0xFF636363;
 				}
 			}
 			break;
@@ -890,32 +896,32 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		cam.SetPosition({10.0f, 2.5f, 10.0f});
 		cam.Rotate(yaw, pitch);
 
-		matrix->WriteDataTo(10, 2, 5, MATRIX::cell(MATRIX::element::fire ));
-		matrix->WriteDataTo(9,  2, 5, MATRIX::cell(MATRIX::element::metal));
-		matrix->WriteDataTo(8,  2, 5, MATRIX::cell(MATRIX::element::wood ));
-		matrix->WriteDataTo(7,  2, 5, MATRIX::cell(MATRIX::element::water));
+		matrix->WriteDataTo(10, 2, 5, CELL_FIRE );
+		matrix->WriteDataTo(9,  2, 5, CELL_METAL);
+		matrix->WriteDataTo(8,  2, 5, CELL_WOOD );
+		matrix->WriteDataTo(7,  2, 5, CELL_WATER);
 
-		matrix->WriteDataTo(10, 2, 6, MATRIX::cell(MATRIX::element::fire ));
-		matrix->WriteDataTo(9,  2, 6, MATRIX::cell(MATRIX::element::metal));
-		matrix->WriteDataTo(8,  2, 6, MATRIX::cell(MATRIX::element::wood ));
-		matrix->WriteDataTo(7,  2, 6, MATRIX::cell(MATRIX::element::water));
+		matrix->WriteDataTo(10, 2, 6, CELL_FIRE );
+		matrix->WriteDataTo(9,  2, 6, CELL_METAL);
+		matrix->WriteDataTo(8,  2, 6, CELL_WOOD );
+		matrix->WriteDataTo(7,  2, 6, CELL_WATER);
 
-		matrix->WriteDataTo(10, 2, 7, MATRIX::cell(MATRIX::element::fire ));
-		matrix->WriteDataTo(9,  2, 7, MATRIX::cell(MATRIX::element::metal));
-		matrix->WriteDataTo(8,  2, 7, MATRIX::cell(MATRIX::element::wood ));
-		matrix->WriteDataTo(7,  2, 7, MATRIX::cell(MATRIX::element::water));
+		matrix->WriteDataTo(10, 2, 7, CELL_FIRE );
+		matrix->WriteDataTo(9,  2, 7, CELL_METAL);
+		matrix->WriteDataTo(8,  2, 7, CELL_WOOD );
+		matrix->WriteDataTo(7,  2, 7, CELL_WATER);
 
-		matrix->WriteDataTo(10, 2, 8, MATRIX::cell(MATRIX::element::fire ));
-		matrix->WriteDataTo(9,  2, 8, MATRIX::cell(MATRIX::element::metal));
-		matrix->WriteDataTo(8,  2, 8, MATRIX::cell(MATRIX::element::wood ));
-		matrix->WriteDataTo(7,  2, 8, MATRIX::cell(MATRIX::element::water));
+		matrix->WriteDataTo(10, 2, 8, CELL_FIRE );
+		matrix->WriteDataTo(9,  2, 8, CELL_METAL);
+		matrix->WriteDataTo(8,  2, 8, CELL_WOOD );
+		matrix->WriteDataTo(7,  2, 8, CELL_WATER);
 
 		for(uint32_t i=0; i<matrix->w * matrix->h * matrix->d; ++i)
 		{
 			uint32_t x = i % matrix->w;
 			uint32_t y = (i / matrix->w) % matrix->h;
 			uint32_t z = i / (matrix->w * matrix->h);
-			if(matrix->AccessDataAt(x, y, z).MaterialType != MATRIX::element::air && matrix->AccessDataAt(x, y, z).MaterialType != MATRIX::element::Custom)
+			if(matrix->AccessDataAt(x, y, z).MaterialType & ~(CELL_AIR | CELL_CUSTOM))
 			{
 				printf("Creating block: (%d, %d, %d)\n", x, y, z);
 			}
@@ -1023,8 +1029,5 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	}
 
 	matrix->DestroyMatrix();
-
-	delete matrix;
-	matrix=nullptr;
 	return EXIT_SUCCESS;
 }
