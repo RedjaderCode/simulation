@@ -275,7 +275,7 @@ public:
 	// THREAD CHUNK FUNCTION //
 
 	template<class C>
-	inline void UpdateSimulationState(HWND hwnd, std::barrier<C>& SyncPoint, std::atomic<bool>& running, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
+	inline void UpdateSimulationState(HWND hwnd, std::atomic<s8flagkeys>* keyfield, std::barrier<C>& SyncPoint, std::atomic<bool>& running, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
 	{
 		const auto FrameDuration = std::chrono::milliseconds(1000 / TARGET_FPS);
 
@@ -297,10 +297,10 @@ public:
 				}
 			}
 
-			//if(held[VK_TAB])
-			//{
-			//	printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
-			//}
+			if(keyfield[VK_TAB] & KEY_HELD)
+			{
+				printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
+			}
 
 			SyncPoint.arrive_and_wait();
 
@@ -803,7 +803,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	uint32_t height = 200;
 	uint32_t depth  = 200;
 
-	s8flagkeys keyfield[0xFF] = { 0 };
+	std::atomic<s8flagkeys> keyfield[0xFF] = { 0 };
 
 	uint32_t SizeOfMatrix = matrix->InitMatrix(width, height, depth);
 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
@@ -854,7 +854,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		            ChunkThreads[threadIndex++] = std::thread
 					(
-						[=, &SyncPoint, &running, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, SyncPoint, running, x1, x2, y1, y2, z1, z2); }
+						[=, &SyncPoint, &keyfield, &running, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, keyfield, SyncPoint, running, x1, x2, y1, y2, z1, z2); }
 					);
 		        }
 		    }
