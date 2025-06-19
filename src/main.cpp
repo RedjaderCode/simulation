@@ -36,7 +36,6 @@ ID2D1Bitmap* Bitmap                 = nullptr;
 
 uint32_t* pixelBuffer  = nullptr;
 uint32_t* elementColor = nullptr;
-uint8_t*  ScreenPixelFlag = nullptr;
 
 #define TIME_DURATION 500
 #define TARGET_FPS    60
@@ -45,7 +44,7 @@ uint8_t*  ScreenPixelFlag = nullptr;
 #define HEIGHT        600//300//240
 
 using s8flagcell   = uint16_t;
-using s8flagScreen = uint8_t;
+using s8flagkeys   = uint8_t;
 
 constexpr s8flagcell CELL_NONE   = 0;
 constexpr s8flagcell CELL_AIR    = (1<<0);
@@ -60,7 +59,11 @@ constexpr s8flagcell CELL_STATIC = (1<<8);
 constexpr s8flagcell CELL_VISIBLE= (1<<9);
 constexpr s8flagcell CELL_SOLID  = (1<<10);
 
-constexpr s8flagScreen SCREEN_PIXEL_HIT = (1<<0);
+constexpr s8flagkeys KEY_DOWN     = (1<<0);
+constexpr s8flagkeys KEY_PRESSED  = (1<<1);
+constexpr s8flagkeys KEY_HELD     = (1<<2);
+constexpr s8flagkeys KEY_RELEASED = (1<<3);
+constexpr s8flagkeys KEY_PREV     = (1<<4);
 
 // debugging idea...
 
@@ -241,7 +244,6 @@ public:
 	{
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] = _data; // [x][y][z]
-		//flag[FlattenedIndex(x, y, z)] |= 
 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
 	}
 
@@ -273,7 +275,7 @@ public:
 	// THREAD CHUNK FUNCTION //
 
 	template<class C>
-	inline void UpdateSimulationState(HWND hwnd, std::barrier<C>& SyncPoint, std::atomic<bool>* pressed, std::atomic<bool>* held, std::atomic<bool>* released, std::atomic<bool>& running, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
+	inline void UpdateSimulationState(HWND hwnd, std::barrier<C>& SyncPoint, std::atomic<bool>& running, uint32_t x1, uint32_t x2, uint32_t y1, uint32_t y2, uint32_t z1, uint32_t z2)
 	{
 		const auto FrameDuration = std::chrono::milliseconds(1000 / TARGET_FPS);
 
@@ -295,10 +297,10 @@ public:
 				}
 			}
 
-			if(held[VK_TAB])
-			{
-				printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
-			}
+			//if(held[VK_TAB])
+			//{
+			//	printf("Thread[%d] - Updated [(%d, %d, %d),(%d, %d, %d)]\n", std::this_thread::get_id(), x1, y1, z1, x2, y2, z2);
+			//}
 
 			SyncPoint.arrive_and_wait();
 
@@ -357,7 +359,6 @@ public://////////////////////////////////////////
 		free(CELL_FRONT_BUFFER); CELL_FRONT_BUFFER = nullptr;
 		free(CELL_BACK_BUFFER ); CELL_BACK_BUFFER  = nullptr;
 		free(flag);              flag              = nullptr;
-		free(ScreenPixelFlag);   ScreenPixelFlag   = nullptr;
 	}
 };
 
@@ -688,8 +689,6 @@ namespace WINDOWGraphicsOverlay
 					elementColor[static_cast<int>(MATRIX::element::wood)]  = 0xFF915119;
 					elementColor[static_cast<int>(MATRIX::element::fire)]  = 0xFFC70000;
 					elementColor[static_cast<int>(MATRIX::element::metal)] = 0xFF636363;
-
-					ScreenPixelFlag = (s8flagScreen*)malloc(sizeof(s8flagScreen) * WIDTH * HEIGHT);
 				}
 			}
 			break;
@@ -804,10 +803,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	uint32_t height = 200;
 	uint32_t depth  = 200;
 
-	std::atomic<bool> keyPressed[0xFF]   = { 0 };
-	std::atomic<bool> keyReleased[0xFF]  = { 0 };
-	std::atomic<bool> keyHeld[0xFF]      = { 0 };
-	std::atomic<bool> keyPrev[0xFF]      = { 0 };
+	s8flagkeys keyfield[0xFF] = { 0 };
 
 	uint32_t SizeOfMatrix = matrix->InitMatrix(width, height, depth);
 	HWND _handle = (HWND)WINDOWGraphicsOverlay::CreateWindowOverlay(matrix, width, height);
@@ -858,7 +854,7 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		            ChunkThreads[threadIndex++] = std::thread
 					(
-						[=, &SyncPoint, &keyPressed, &keyHeld, &keyReleased, &running, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, SyncPoint, keyHeld, keyHeld, keyReleased, running, x1, x2, y1, y2, z1, z2); }
+						[=, &SyncPoint, &running, x1,  x2,  y1,  y2,  z1, z2](){ matrix->UpdateSimulationState(_handle, SyncPoint, running, x1, x2, y1, y2, z1, z2); }
 					);
 		        }
 		    }
@@ -914,7 +910,18 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		matrix->WriteDataTo(8,  2, 8, MATRIX::cell(MATRIX::element::wood ));
 		matrix->WriteDataTo(7,  2, 8, MATRIX::cell(MATRIX::element::water));
 
-		printf("camera positoned\n\n");
+		for(uint32_t i=0; i<matrix->w * matrix->h * matrix->d; ++i)
+		{
+			uint32_t x = i % matrix->w;
+			uint32_t y = (i / matrix->w) % matrix->h;
+			uint32_t z = i / (matrix->w * matrix->h);
+			if(matrix->AccessDataAt(x, y, z).MaterialType != MATRIX::element::air && matrix->AccessDataAt(x, y, z).MaterialType != MATRIX::element::Custom)
+			{
+				printf("Creating block: (%d, %d, %d)\n", x, y, z);
+			}
+		}
+
+		printf("\ncamera positoned -> at(%f, %f, %f)\n\n", cam.GetPosition().x, cam.GetPosition().y, cam.GetPosition().z);
 
 		const std::chrono::duration<float> FrameDuration(1.0f / TARGET_FPS);
 
@@ -927,17 +934,20 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 				
 				for (int i = 0; i <= 0xFF - 1; i++)
 				{
-					short KeyState = GetAsyncKeyState( i );
-					bool down      = (KeyState >> 15) & 0x1;
+					short   state  =  GetAsyncKeyState(i);
+    				uint8_t down   = ((state >> 15) & 0x1) * KEY_DOWN;
+    				uint8_t prev   =  keyfield[i] & KEY_DOWN;
 
-					keyPressed[i]  = !keyPrev[i] && down;
-					keyHeld[i]     = keyPrev[i]  && down;
-					keyReleased[i] = keyPrev[i]  && !down;
+    				keyfield[i] &= ~(KEY_PRESSED | KEY_HELD | KEY_RELEASED);
 
-					keyPrev[i] = down;
+    				uint8_t pressed   = (~prev &  down) ? KEY_PRESSED  : 0;
+    				uint8_t held      = ( prev &  down) ? KEY_HELD     : 0;
+    				uint8_t released  = ( prev & ~down) ? KEY_RELEASED : 0;
+
+    				keyfield[i] = (keyfield[i] & ~KEY_DOWN) | down | pressed | held | released;
 				}
 
-				if(keyReleased[VK_INSERT])
+				if(keyfield[VK_INSERT] & KEY_RELEASED)
 				{
 					running = false;
 					printf("Goodbye!\n\n");
@@ -951,37 +961,37 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			auto frameEnd = std::chrono::high_resolution_clock::now();
     		float deltaTime = std::chrono::duration<float>(frameEnd - frameStart).count();
 
-			if(keyHeld[0x57]) { cam.MoveBack(   0.05f); } // s
-			if(keyHeld[0x53]) { cam.MoveForward(0.05f); } // w
-			if(keyHeld[0x41]) { cam.MoveLeft(   0.05f); } // a
-			if(keyHeld[0x44]) { cam.MoveRight(  0.05f); } // d
-			if(keyHeld[0x20]) { cam.MoveUp(     0.05f); } // space
-			if(keyHeld[0x10]) { cam.MoveDown(   0.05f); } // shift
+			if(keyfield[0x57] & KEY_HELD) { cam.MoveBack(   0.05f); } // s
+			if(keyfield[0x53] & KEY_HELD) { cam.MoveForward(0.05f); } // w
+			if(keyfield[0x41] & KEY_HELD) { cam.MoveLeft(   0.05f); } // a
+			if(keyfield[0x44] & KEY_HELD) { cam.MoveRight(  0.05f); } // d
+			if(keyfield[0x20] & KEY_HELD) { cam.MoveUp(     0.05f); } // space
+			if(keyfield[0x10] & KEY_HELD) { cam.MoveDown(   0.05f); } // shift
 
 			// something is wrong here lol (bellow)
 
-			if(keyHeld[VK_UP])
+			if(keyfield[VK_UP] & KEY_HELD)
 			{
 				pitch += 0.01f;
 				cam.Rotate(yaw, pitch);
 			}
-			if(keyHeld[VK_DOWN])
+			if(keyfield[VK_DOWN] & KEY_HELD)
 			{
 				pitch -= 0.01f;
 				cam.Rotate(yaw, pitch);
 			}
-			if(keyHeld[VK_RIGHT])
+			if(keyfield[VK_RIGHT] & KEY_HELD)
 			{
 				yaw += 0.01f;
 				cam.Rotate(yaw, pitch);
 			}
-			if(keyHeld[VK_LEFT])
+			if(keyfield[VK_LEFT] & KEY_HELD)
 			{
 				yaw -= 0.01f;
 				cam.Rotate(yaw, pitch);
 			}
 
-			if(keyPressed[VK_ESCAPE]) // camera reset button
+			if(keyfield[VK_ESCAPE] & KEY_PRESSED) // camera reset button
 			{
 				cam.SetFOV(90.0f);
 				cam.SetPosition({10.0f, 2.5f, 10.0f});
