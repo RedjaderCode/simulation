@@ -3,6 +3,7 @@ NEXT THINGS TO DO:
  - render pipeline is causing a bottleneck. Implement different pipeline.
  - perhaps it's time to retry d3dx11...
  - Further back-end cell matrix optimizations. at 60 fps target framerate, cpu runs at about 75%
+ - bitwise key states and yaw and pitch transformation problem
 
 
 enum CellFlags : uint8_t {

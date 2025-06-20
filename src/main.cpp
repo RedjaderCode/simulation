@@ -260,11 +260,10 @@ public:
 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
 	}
 
-	cell ClearDataFrom(uint32_t x, uint32_t y, uint32_t z, s8flagcell _data)
+	inline void ClearDataFrom(uint32_t x, uint32_t y, uint32_t z, s8flagcell _data)
 	{
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
 		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)].MaterialType &= ~_data;
-		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
 	}
 	
 	inline void UpdateWorldView(HWND hwnd, std::atomic<bool>& running)
@@ -553,7 +552,7 @@ namespace WINDOWGraphicsOverlay
 			        float tMaxY = firstT(org.y, dir.y, stepY);
         			float tMaxZ = firstT(org.z, dir.z, stepZ);
 
-					const float maxDist = 100.0f;   // world units
+					const float maxDist = 50.0f;   // world units
         			float traveled = 0.0f;
         			bool  hit      = false;
         			s8flagcell mat = 0x0;
@@ -805,9 +804,9 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	MATRIX* matrix = new MATRIX();
 
-	uint32_t width  = 200;
-	uint32_t height = 200;
-	uint32_t depth  = 200;
+	uint32_t width  = 100;
+	uint32_t height = 100;
+	uint32_t depth  = 100;
 
 	std::atomic<s8flagkeys> keyfield[0xFF] = { 0 };
 
@@ -889,12 +888,11 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		printf("Starting...\n\n");
 
-		float yaw   = 0.0f;
-		float pitch = -10.0f;
+		float RotationState = 0.5f;
 
 		cam.SetFOV(90.0f);
-		cam.SetPosition({10.0f, 2.5f, 10.0f});
-		cam.Rotate(yaw, pitch);
+		cam.SetPosition({10.0f, 3.0f, 12.0f});
+		cam.Rotate(0.0f, -10.0f);
 
 		matrix->WriteDataTo(10, 2, 5, CELL_FIRE );
 		matrix->WriteDataTo(9,  2, 5, CELL_METAL);
@@ -916,14 +914,55 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		matrix->WriteDataTo(8,  2, 8, CELL_WOOD );
 		matrix->WriteDataTo(7,  2, 8, CELL_WATER);
 
-		for(uint32_t i=0; i<matrix->w * matrix->h * matrix->d; ++i)
+		matrix->WriteDataTo(10, 2, 9, CELL_FIRE );
+		matrix->WriteDataTo(9,  2, 9, CELL_METAL);
+		matrix->WriteDataTo(8,  2, 9, CELL_WOOD );
+		matrix->WriteDataTo(7,  2, 9, CELL_WATER);
+
+		matrix->WriteDataTo(10, 2, 10, CELL_FIRE );
+		matrix->WriteDataTo(9,  2, 10, CELL_METAL);
+		matrix->WriteDataTo(8,  2, 10, CELL_WOOD );
+		matrix->WriteDataTo(7,  2, 10, CELL_WATER);
+
+		matrix->WriteDataTo(10, 7, 5, CELL_FIRE );
+		matrix->WriteDataTo(9,  7, 5, CELL_METAL);
+		matrix->WriteDataTo(8,  7, 5, CELL_WOOD );
+		matrix->WriteDataTo(7,  7, 5, CELL_WATER);
+
+		matrix->WriteDataTo(10, 7, 6, CELL_FIRE );
+		matrix->WriteDataTo(9,  7, 6, CELL_METAL);
+		matrix->WriteDataTo(8,  7, 6, CELL_WOOD );
+		matrix->WriteDataTo(7,  7, 6, CELL_WATER);
+
+		matrix->WriteDataTo(10, 7, 7, CELL_FIRE );
+		matrix->WriteDataTo(9,  7, 7, CELL_METAL);
+		matrix->WriteDataTo(8,  7, 7, CELL_WOOD );
+		matrix->WriteDataTo(7,  7, 7, CELL_WATER);
+
+		matrix->WriteDataTo(10, 7, 8, CELL_FIRE );
+		matrix->WriteDataTo(9,  7, 8, CELL_METAL);
+		matrix->WriteDataTo(8,  7, 8, CELL_WOOD );
+		matrix->WriteDataTo(7,  7, 8, CELL_WATER);
+
+		matrix->WriteDataTo(10, 7, 9, CELL_FIRE );
+		matrix->WriteDataTo(9,  7, 9, CELL_METAL);
+		matrix->WriteDataTo(8,  7, 9, CELL_WOOD );
+		matrix->WriteDataTo(7,  7, 9, CELL_WATER);
+
+		matrix->WriteDataTo(10, 7, 10, CELL_FIRE );
+		matrix->WriteDataTo(9,  7, 10, CELL_METAL);
+		matrix->WriteDataTo(8,  7, 10, CELL_WOOD );
+		matrix->WriteDataTo(7,  7, 10, CELL_WATER);
+
+		for(uint32_t j = 1; j<matrix->w; ++j)
 		{
-			uint32_t x = i % matrix->w;
-			uint32_t y = (i / matrix->w) % matrix->h;
-			uint32_t z = i / (matrix->w * matrix->h);
-			if(matrix->AccessDataAt(x, y, z).MaterialType & ~(CELL_AIR | CELL_CUSTOM))
+			for(uint32_t i=1; i<matrix->d; ++i)
 			{
-				printf("Creating block: (%d, %d, %d)\n", x, y, z);
+				if((j*i)%10==0)
+				{
+					printf("*");
+				}
+				matrix->WriteDataTo(j, 2, i, (1<<((rand() % 4) + 1)));
 			}
 		}
 
@@ -967,35 +1006,19 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 			auto frameEnd = std::chrono::high_resolution_clock::now();
     		float deltaTime = std::chrono::duration<float>(frameEnd - frameStart).count();
 
-			if(keyfield[0x57] & KEY_HELD) { cam.MoveBack(   0.05f); } // s
-			if(keyfield[0x53] & KEY_HELD) { cam.MoveForward(0.05f); } // w
-			if(keyfield[0x41] & KEY_HELD) { cam.MoveLeft(   0.05f); } // a
-			if(keyfield[0x44] & KEY_HELD) { cam.MoveRight(  0.05f); } // d
-			if(keyfield[0x20] & KEY_HELD) { cam.MoveUp(     0.05f); } // space
-			if(keyfield[0x10] & KEY_HELD) { cam.MoveDown(   0.05f); } // shift
+			if(keyfield[0x57] & KEY_HELD) { cam.MoveBack(   0.1f); } // s
+			if(keyfield[0x53] & KEY_HELD) { cam.MoveForward(0.1f); } // w
+			if(keyfield[0x41] & KEY_HELD) { cam.MoveLeft(   0.1f); } // a
+			if(keyfield[0x44] & KEY_HELD) { cam.MoveRight(  0.1f); } // d
+			if(keyfield[0x20] & KEY_HELD) { cam.MoveUp(     0.1f); } // space
+			if(keyfield[0x10] & KEY_HELD) { cam.MoveDown(   0.1f); } // shift
 
 			// something is wrong here lol (bellow)
 
-			if(keyfield[VK_UP] & KEY_HELD)
-			{
-				pitch += 0.01f;
-				cam.Rotate(yaw, pitch);
-			}
-			if(keyfield[VK_DOWN] & KEY_HELD)
-			{
-				pitch -= 0.01f;
-				cam.Rotate(yaw, pitch);
-			}
-			if(keyfield[VK_RIGHT] & KEY_HELD)
-			{
-				yaw += 0.01f;
-				cam.Rotate(yaw, pitch);
-			}
-			if(keyfield[VK_LEFT] & KEY_HELD)
-			{
-				yaw -= 0.01f;
-				cam.Rotate(yaw, pitch);
-			}
+			if(keyfield[VK_UP] & KEY_HELD)   { cam.Rotate(0.0f, RotationState);  }
+			if(keyfield[VK_DOWN] & KEY_HELD) { cam.Rotate(0.0f, -RotationState); }
+			if(keyfield[VK_RIGHT] & KEY_HELD){ cam.Rotate(RotationState, 0.0f);  }
+			if(keyfield[VK_LEFT] & KEY_HELD) { cam.Rotate(-RotationState, 0.0f); }
 
 			if(keyfield[VK_ESCAPE] & KEY_PRESSED) // camera reset button
 			{
