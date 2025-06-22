@@ -88,8 +88,6 @@ uint32_t ElementIndex(s8flagcell CELL)
 	}
 }
 
-struct COORD3D{ uint32_t x; uint32_t y; uint32_t z; COORD3D(uint32_t _x, uint32_t _y, uint32_t _z) : x(_x), y(_y), z(_z) {} };
-
 struct Vec3D
 {
 	float x; float y; float z; Vec3D(float _x, float _y, float _z) : x(_x), y(_y), z(_z) {}
@@ -804,9 +802,9 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	MATRIX* matrix = new MATRIX();
 
-	uint32_t width  = 100;
-	uint32_t height = 100;
-	uint32_t depth  = 100;
+	uint32_t width  = 200;
+	uint32_t height = 200;
+	uint32_t depth  = 200;
 
 	std::atomic<s8flagkeys> keyfield[0xFF] = { 0 };
 
@@ -888,81 +886,17 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 		printf("Starting...\n\n");
 
-		float RotationState = 0.5f;
+		float RotationState = 2.0f;
 
 		cam.SetFOV(90.0f);
 		cam.SetPosition({10.0f, 3.0f, 12.0f});
 		cam.Rotate(0.0f, -10.0f);
 
-		matrix->WriteDataTo(10, 2, 5, CELL_FIRE );
-		matrix->WriteDataTo(9,  2, 5, CELL_METAL);
-		matrix->WriteDataTo(8,  2, 5, CELL_WOOD );
-		matrix->WriteDataTo(7,  2, 5, CELL_WATER);
-
-		matrix->WriteDataTo(10, 2, 6, CELL_FIRE );
-		matrix->WriteDataTo(9,  2, 6, CELL_METAL);
-		matrix->WriteDataTo(8,  2, 6, CELL_WOOD );
-		matrix->WriteDataTo(7,  2, 6, CELL_WATER);
-
-		matrix->WriteDataTo(10, 2, 7, CELL_FIRE );
-		matrix->WriteDataTo(9,  2, 7, CELL_METAL);
-		matrix->WriteDataTo(8,  2, 7, CELL_WOOD );
-		matrix->WriteDataTo(7,  2, 7, CELL_WATER);
-
-		matrix->WriteDataTo(10, 2, 8, CELL_FIRE );
-		matrix->WriteDataTo(9,  2, 8, CELL_METAL);
-		matrix->WriteDataTo(8,  2, 8, CELL_WOOD );
-		matrix->WriteDataTo(7,  2, 8, CELL_WATER);
-
-		matrix->WriteDataTo(10, 2, 9, CELL_FIRE );
-		matrix->WriteDataTo(9,  2, 9, CELL_METAL);
-		matrix->WriteDataTo(8,  2, 9, CELL_WOOD );
-		matrix->WriteDataTo(7,  2, 9, CELL_WATER);
-
-		matrix->WriteDataTo(10, 2, 10, CELL_FIRE );
-		matrix->WriteDataTo(9,  2, 10, CELL_METAL);
-		matrix->WriteDataTo(8,  2, 10, CELL_WOOD );
-		matrix->WriteDataTo(7,  2, 10, CELL_WATER);
-
-		matrix->WriteDataTo(10, 7, 5, CELL_FIRE );
-		matrix->WriteDataTo(9,  7, 5, CELL_METAL);
-		matrix->WriteDataTo(8,  7, 5, CELL_WOOD );
-		matrix->WriteDataTo(7,  7, 5, CELL_WATER);
-
-		matrix->WriteDataTo(10, 7, 6, CELL_FIRE );
-		matrix->WriteDataTo(9,  7, 6, CELL_METAL);
-		matrix->WriteDataTo(8,  7, 6, CELL_WOOD );
-		matrix->WriteDataTo(7,  7, 6, CELL_WATER);
-
-		matrix->WriteDataTo(10, 7, 7, CELL_FIRE );
-		matrix->WriteDataTo(9,  7, 7, CELL_METAL);
-		matrix->WriteDataTo(8,  7, 7, CELL_WOOD );
-		matrix->WriteDataTo(7,  7, 7, CELL_WATER);
-
-		matrix->WriteDataTo(10, 7, 8, CELL_FIRE );
-		matrix->WriteDataTo(9,  7, 8, CELL_METAL);
-		matrix->WriteDataTo(8,  7, 8, CELL_WOOD );
-		matrix->WriteDataTo(7,  7, 8, CELL_WATER);
-
-		matrix->WriteDataTo(10, 7, 9, CELL_FIRE );
-		matrix->WriteDataTo(9,  7, 9, CELL_METAL);
-		matrix->WriteDataTo(8,  7, 9, CELL_WOOD );
-		matrix->WriteDataTo(7,  7, 9, CELL_WATER);
-
-		matrix->WriteDataTo(10, 7, 10, CELL_FIRE );
-		matrix->WriteDataTo(9,  7, 10, CELL_METAL);
-		matrix->WriteDataTo(8,  7, 10, CELL_WOOD );
-		matrix->WriteDataTo(7,  7, 10, CELL_WATER);
-
 		for(uint32_t j = 1; j<matrix->w; ++j)
 		{
 			for(uint32_t i=1; i<matrix->d; ++i)
 			{
-				if((j*i)%10==0)
-				{
-					printf("*");
-				}
-				matrix->WriteDataTo(j, 2, i, (1<<((rand() % 4) + 1)));
+				matrix->WriteDataTo(j, 2, i, (1<<((rand() % 4) + 1)) | CELL_STATIC);
 			}
 		}
 
