@@ -128,18 +128,6 @@ public:
 
 		const char* name = nullptr;
 	};
-	struct cell
-	{
-		cell() = default;
-		cell(s8flagcell _MaterialType) : MaterialType(_MaterialType) {}
-	
-		~cell()
-		{
-			MaterialType &= CELL_NONE;
-		}
-
-		s8flagcell MaterialType;
-	};
 public:
 	uint32_t InitMatrix(uint32_t width, uint32_t height, uint32_t depth)
 	{
@@ -149,18 +137,16 @@ public:
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// front buffer
 
-		CELL_FRONT_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
-		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_FRONT_BUFFER[i]) cell(CELL_NONE); }
+		CELL_FRONT_BUFFER = static_cast<s8flagcell*>(malloc(sizeof(s8flagcell) * (width * height * depth)));
 
 		// back buffer
 		
-		CELL_BACK_BUFFER = static_cast<cell*>(malloc(sizeof(cell) * (width * height * depth)));
-		for(uint32_t i=0; i<width * height * depth; ++i){ new (&CELL_BACK_BUFFER[i]) cell(CELL_NONE); }
-
+		CELL_BACK_BUFFER = static_cast<s8flagcell*>(malloc(sizeof(s8flagcell) * (width * height * depth)));
 		// flags due for bit level manipulation
 
-		flag = (s8flagcell*)malloc(sizeof(s8flagcell) * (width * height * depth));
 		matAtt = std::unique_ptr<MaterialAttributes[]>(new MaterialAttributes[MATERIAL_SIZE]);
+
+		s8flagcell back_buffer_cell = CELL_NONE;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -169,8 +155,7 @@ public:
 		for(uint32_t i=0; i<= width * height * depth -1; ++i)
 		{
 			uint32_t x = i % w; uint32_t y = (i / w) % h; uint32_t z = i / (w * h);
-			cell back_buffer_cell = CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, CELL_CUSTOM) : WriteDataTo(x, y, z, CELL_CUSTOM);
-			flag[i]              |= CHECK_MATRIX_WALLS() ? CELL_STATIC : CELL_NONE;
+			back_buffer_cell |= CHECK_MATRIX_WALLS() ? WriteDataTo(x, y, z, CELL_CUSTOM | CELL_STATIC) : WriteDataTo(x, y, z, CELL_CUSTOM);
 		}
 
 		// create an initializer field for attributes of materials to tell the cells what their attributes are
@@ -244,31 +229,31 @@ public:
 		return width * height * depth;
 	}
 
-	cell AccessDataAt(uint32_t x, uint32_t y, uint32_t z)
+	s8flagcell AccessDataAt(uint32_t x, uint32_t y, uint32_t z)
 	{ 
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)]; // [x][y][z]
 	}
 
-	cell WriteDataTo(uint32_t x, uint32_t y, uint32_t z, s8flagcell _data)
+	s8flagcell WriteDataTo(uint32_t x, uint32_t y, uint32_t z, s8flagcell _data)
 	{
 		ClearDataFrom(x,y,z,CELL_ELEMENT_ALL);
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)].MaterialType |= _data;
+		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] |= _data;
 		return CELL_BACK_BUFFER[FlattenedIndex(x, y, z)];
 	}
 
 	inline void ClearDataFrom(uint32_t x, uint32_t y, uint32_t z, s8flagcell _data)
 	{
 		x = x>=w ? w-1 : x; y = y>=h ? h-1 : y; z = z>=d ? d-1 : z;
-		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)].MaterialType &= ~_data;
+		CELL_BACK_BUFFER[FlattenedIndex(x, y, z)] &= ~_data;
 	}
 	
 	inline void UpdateWorldView(HWND hwnd, std::atomic<bool>& running)
 	{
-		flag[ 0 ] |= CELL_DIRTY;
+		CELL_BACK_BUFFER[ 0 ] |= CELL_DIRTY;
 		
-		if(flag[ 0 ] & CELL_DIRTY)
+		if(CELL_BACK_BUFFER[ 0 ] & CELL_DIRTY)
 		{
 			std::swap(CELL_FRONT_BUFFER, CELL_BACK_BUFFER);
 			D2D1_RECT_U rect = {0, 0, WIDTH, HEIGHT};
@@ -277,9 +262,9 @@ public:
 		}
 		for(uint32_t i=0; i<w*h*d; ++i)
 		{
-			flag[ i ] |= CELL_BACK_BUFFER[ i ].MaterialType != CELL_FRONT_BUFFER[ i ].MaterialType ? CELL_DIRTY : CELL_NONE;
-			CELL_BACK_BUFFER[ i ] = (flag[ i ] & CELL_DIRTY) ? CELL_FRONT_BUFFER[ i ] : CELL_BACK_BUFFER[ i ];
-			flag[ i ] &= ~CELL_DIRTY;
+			CELL_BACK_BUFFER[ i ] |= CELL_BACK_BUFFER[ i ] != CELL_FRONT_BUFFER[ i ] ? CELL_DIRTY : CELL_NONE;
+			CELL_BACK_BUFFER[ i ] |= (CELL_BACK_BUFFER[ i ] & CELL_DIRTY) ? CELL_FRONT_BUFFER[ i ] : CELL_BACK_BUFFER[ i ];
+			CELL_BACK_BUFFER[ i ] &= ~CELL_DIRTY;
 		}
 	}
 
@@ -334,11 +319,10 @@ public:
 		return z * (w * h) + y * w + x; 
 	}
 
-	s8flagcell* flag = nullptr;
 /////////////////////////////////////////////////
-	cell* CELL_FRONT_BUFFER = nullptr;
+	s8flagcell* CELL_FRONT_BUFFER = nullptr;
 private://///////////////////////////////////////
-	cell* CELL_BACK_BUFFER  = nullptr; 
+	s8flagcell* CELL_BACK_BUFFER  = nullptr; 
 /////////////////////////////////////////////////
 	std::unique_ptr<MaterialAttributes[]> matAtt;
 public://////////////////////////////////////////
@@ -354,14 +338,8 @@ public://////////////////////////////////////////
 
 	inline void DestroyMatrix()
 	{
-		for(uint32_t i=0; i<w * h * d; ++i)
-		{
-			CELL_FRONT_BUFFER[i].~cell();
-			CELL_BACK_BUFFER[ i].~cell();
-		}
 		free(CELL_FRONT_BUFFER); CELL_FRONT_BUFFER = nullptr;
 		free(CELL_BACK_BUFFER ); CELL_BACK_BUFFER  = nullptr;
-		free(flag);              flag              = nullptr;
 	}
 };
 
@@ -559,10 +537,10 @@ namespace WINDOWGraphicsOverlay
         			{
         			    int flat = matrix->FlattenedIndex(ix, iy, iz);
         			    
-						if(matrix->CELL_FRONT_BUFFER[flat].MaterialType & ~(CELL_AIR | CELL_CUSTOM))
+						if(matrix->CELL_FRONT_BUFFER[flat] & ~(CELL_AIR | CELL_CUSTOM))
 						{
         			        hit = true;
-        			        mat |= matrix->CELL_FRONT_BUFFER[flat].MaterialType;
+        			        mat |= matrix->CELL_FRONT_BUFFER[flat];
         			        break;
         			    }
 					
@@ -686,12 +664,12 @@ namespace WINDOWGraphicsOverlay
 					elementColor = (uint32_t*)malloc(sizeof(uint32_t) * MATERIAL_SIZE );
 					for(int i=0; i<WIDTH * HEIGHT; ++i){ pixelBuffer[i]  = 0xFFFFFFFF; }
 					for(int i=0; i<MATERIAL_SIZE; ++i) { elementColor[i] = 0xFFFFFFFF; }
-
-					elementColor[ElementIndex(CELL_AIR)  ] = 0xFFC5F9FF;
-					elementColor[ElementIndex(CELL_WATER)] = 0xFF11B6FF;
-					elementColor[ElementIndex(CELL_WOOD) ] = 0xFF915119; 
-					elementColor[ElementIndex(CELL_FIRE) ] = 0xFFC70000; 
-					elementColor[ElementIndex(CELL_METAL)] = 0xFF636363;
+				
+					elementColor[ElementIndex(CELL_AIR)  ] = 0xFFF9C5FF;
+					elementColor[ElementIndex(CELL_WATER)] = 0xFF0000FF;
+					elementColor[ElementIndex(CELL_WOOD) ] = 0xFF00FF00;
+					elementColor[ElementIndex(CELL_FIRE) ] = 0xFFFF0000;
+					elementColor[ElementIndex(CELL_METAL)] = 0xFF000000;
 				}
 			}
 			break;
@@ -802,9 +780,9 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	MATRIX* matrix = new MATRIX();
 
-	uint32_t width  = 200;
-	uint32_t height = 200;
-	uint32_t depth  = 200;
+	uint32_t width  = 100;
+	uint32_t height = 100;
+	uint32_t depth  = 100;
 
 	std::atomic<s8flagkeys> keyfield[0xFF] = { 0 };
 
