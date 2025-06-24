@@ -825,7 +825,15 @@ INT WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 		//thread allocation, using smart pointers for now...
 		std::unique_ptr<std::thread[]> ChunkThreads = std::unique_ptr<std::thread[]>(new std::thread[std::thread::hardware_concurrency()]);
 		
-		uint32_t splitPerAxis = std::round(std::cbrt(std::thread::hardware_concurrency()));
+		//uint32_t splitPerAxis = std::static_cast<uint32_t>(std::cbrt(std::thread::hardware_concurrency())); printf("splitPerAxis[%d]", splitPerAxis);
+		uint32_t splitPerAxis = 1;
+
+		while((splitPerAxis * splitPerAxis * splitPerAxis) <= std::thread::hardware_concurrency())
+		{
+			++splitPerAxis;
+		}
+		--splitPerAxis;
+		
 		uint32_t numofMatrixThreads = splitPerAxis * splitPerAxis * splitPerAxis;
 		uint32_t threadsRemaining   = std::thread::hardware_concurrency() - numofMatrixThreads;
 
